@@ -1,23 +1,32 @@
-const SENHA_ADMIN = "copa2026";
+import { login }
+from './auth.js';
 
-document.getElementById('entrar').onclick = () => {
+document
+.getElementById('entrar')
+.onclick = async () => {
+
+    const email =
+        document.getElementById('email').value;
 
     const senha =
         document.getElementById('senha').value;
 
-    if(senha === SENHA_ADMIN){
+    try{
 
-        localStorage.setItem(
-            'adminLogado',
-            'true'
+        await login(
+            email,
+            senha
         );
 
         window.location.href =
             'admin.html';
 
-    } else {
+    }catch(e){
 
-        alert('Senha incorreta.');
+        alert(
+            'Usuário ou senha inválidos.'
+        );
 
     }
+
 };
