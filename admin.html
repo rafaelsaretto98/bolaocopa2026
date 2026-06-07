@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Administração do Bolão</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="nav-btn">📝 Palpites</a>
+    <a href="ranking.html" class="nav-btn">🏆 Ranking</a>
+    <a href="admin.html" class="nav-btn active">⚙️ Admin</a>
+    <a href="resultados.html" class="nav-btn">⚽ Resultados</a>
+    <a href="jogos.html" class="nav-btn">⚽ Jogos</a>
+</nav>
+
+<div class="painel-topo">
+
+    <header class="header-card">
+        <h1>⚙️ Administração do Bolão</h1>
+    </header>
+
+    <section class="regras-card">
+
+        <h3>Importar Palpite</h3>
+
+        <textarea
+            id="jsonEntrada"
+            placeholder="Cole aqui o JSON recebido pelo WhatsApp"
+            style="
+                width:100%;
+                min-height:250px;
+                padding:15px;
+                box-sizing:border-box;
+                font-family:monospace;
+            "
+        ></textarea>
+
+        <br><br>
+
+        <button id="importar">
+            Importar Palpite
+        </button>
+
+    </section>
+
+    <section class="regras-card">
+
+        <h3>
+            Participantes Importados
+            (<span id="contadorParticipantes">0</span>)
+        </h3>
+
+        <input
+                type="text"
+                id="buscaParticipante"
+                placeholder="🔍 Buscar participante..."
+                style="
+                    width:100%;
+                    padding:12px;
+                    margin-bottom:15px;
+                    box-sizing:border-box;
+                "
+            >
+        <div id="listaParticipantes"></div>
+
+        <br>
+
+        <button disabled>
+            ✅ Ranking Atualizado Automaticamente
+        </button>
+
+    </section>
+
+</div>
+
+<button id="limparTudo">
+    Limpar Todos os Participantes
+</button>
+
+<button id="exportarBackup">
+    📤 Exportar Backup
+</button>
+
+<button id="logout">
+    🚪 Sair
+</button>
+
+<input
+    type="file"
+    id="importarBackup"
+    accept=".json"
+/>
+
+<script src="admin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolão Copa 2026</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-btn">📝 Palpites</a>
+        <a href="ranking.html" class="nav-btn">🏆 Ranking</a>
+        <a href="admin.html" class="nav-btn active">⚙️ Admin</a>
+        <a href="resultados.html" class="nav-btn">⚽ Resultados</a>
+        <a href="jogos.html" class="nav-btn">⚽ Jogos</a>
+    </nav>
+
+    <div class="painel-topo">
+        
+        <header class="header-card">
+            <h1>⚽ Bolão Copa 2026 🏆</h1>
+            <div class="input-container">
+                <input id="nome" placeholder="Digite seu nome para o palpite">
+            </div>
+            <div class="progress-container">
+                <div id="progressText">0/12 grupos concluídos</div>
+                <progress id="progressBar" value="0" max="12"></progress>
+            </div>
+        </header>
+
+        <section class="regras-card">
+            <h3>📜 Regulamento do Bolão</h3>
+            <ul>
+                <li><strong>Como participar:</strong> Preencha a classificação completa de todos os 12 grupos, clique em <em>Copiar Código</em> e envie o código gerado para o administrador via WhatsApp.</li>
+                <li><strong>Formato Simplificado:</strong> O nosso bolão avalia apenas o seu acerto na <strong>tabela de cada grupo</strong>.</li>
+                <li><strong>Sistema de Pontuação:</strong> Você ganha exatamente <strong>1 ponto</strong> para cada seleção que acertar na posição exata do grupo (1º, 2º, 3º ou 4º lugar). O máximo possível é de 4 pontos por grupo (Total: 48 pontos no bolão).</li>
+            </ul>
+        </section>
+
+    </div>
+    
+    <main id="conteudo-principal">
+        <div id="container"></div>
+    </main>
+
+    <div class="botoes-acao">
+        <button id="copiarCodigo" disabled>
+            Finalizar e Copiar Código 📋
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
