@@ -4,6 +4,7 @@ from './auth.js';
 document
 .getElementById('entrar')
 .onclick = async () => {
+    console.log('Botão clicado');
 
     const email =
         document.getElementById('email').value;
@@ -22,11 +23,13 @@ document
             'admin.html';
 
     }catch(e){
-
+    
+        console.error(e);
+    
         alert(
-            'Usuário ou senha inválidos.'
+            'Erro: ' + e.message
         );
-
+    
     }
 
 };
