@@ -497,7 +497,17 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
     .botoes-acao{
     flex-direction:column;
-}
+    }
+
+        #nome{
+
+        width:100%;
+
+        max-width:100%;
+
+        box-sizing:border-box;
+
+    }
 
     #calcular,
     #copiarCodigo{
