@@ -257,6 +257,20 @@ document.getElementById('copiarCodigo').onclick = async () => {
 
     const estado = JSON.parse(salvo);
 
+    const codigo = {
+
+    nome,
+
+    data: new Date().toLocaleString('pt-BR'),
+
+    protocolo: gerarHash(),
+
+    versao: '1.0',
+
+    palpites: estado
+
+};
+
     let faltamGrupos = false;
 
     for (const grupo in estado) {
