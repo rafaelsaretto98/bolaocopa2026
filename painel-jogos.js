@@ -59,10 +59,10 @@ document
     const jogo = {
 
         grupo:
-            document.getElementById('grupo').value,
+            document.getElementById('grupo').value.trim(),
 
         rodada:
-            document.getElementById('rodada').value,
+            document.getElementById('rodada').value.trim(),
 
         data:
             document.getElementById('data').value,
@@ -71,16 +71,16 @@ document
             document.getElementById('horario').value,
 
         cidade:
-            document.getElementById('cidade').value,
+            document.getElementById('cidade').value.trim(),
 
         estadio:
-            document.getElementById('estadio').value,
+            document.getElementById('estadio').value.trim(),
 
         timeA:
-            document.getElementById('timeA').value,
+            document.getElementById('timeA').value.trim(),
 
         timeB:
-            document.getElementById('timeB').value,
+            document.getElementById('timeB').value.trim(),
 
         golsA: null,
 
@@ -88,6 +88,19 @@ document
 
         encerrado: false
     };
+
+    if(
+        !jogo.grupo ||
+        !jogo.data ||
+        !jogo.horario ||
+        !jogo.timeA ||
+        !jogo.timeB
+    ){
+        alert(
+            'Preencha os campos obrigatórios.'
+        );
+        return;
+    }
 
     try {
 
@@ -99,13 +112,14 @@ document
 
         location.reload();
 
-    } catch (erro) {
+    } catch(erro){
 
         console.error(erro);
 
         alert(
             'Erro ao salvar jogo.'
         );
+
     }
 
 });
