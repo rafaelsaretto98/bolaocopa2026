@@ -45,3 +45,15 @@ export async function atualizarResultado(
         }
     );
 }
+
+export async function excluirJogo(id){
+
+    await deleteDoc(
+        doc(
+            db,
+            'jogos',
+            id
+        )
+    );
+
+}
