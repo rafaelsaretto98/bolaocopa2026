@@ -1,0 +1,103 @@
+import {
+    carregarJogos
+}
+from './jogos-firebase.js';
+
+import {
+    gerarClassificacao
+}
+from './classificacao-utils.js';
+
+const grupos = [
+    'A','B','C','D',
+    'E','F','G','H',
+    'I','J','K','L'
+];
+
+async function iniciar(){
+
+    const jogos =
+        await carregarJogos();
+
+    const container =
+        document.getElementById(
+            'classificacoes'
+        );
+
+    grupos.forEach(grupo => {
+
+        const classificacao =
+            gerarClassificacao(
+                jogos,
+                grupo
+            );
+
+        if(
+            classificacao.length === 0
+        ){
+            return;
+        }
+
+        const card =
+            document.createElement('div');
+
+        card.className =
+            'regras-card';
+
+        let html = `
+            <h2>
+                Grupo ${grupo}
+            </h2>
+
+            <table
+                style="
+                    width:100%;
+                    border-collapse:collapse;
+                "
+            >
+                <tr>
+                    <th>Pos</th>
+                    <th>Seleção</th>
+                    <th>Pts</th>
+                    <th>SG</th>
+                </tr>
+        `;
+
+        classificacao.forEach(
+            (time,index) => {
+
+            html += `
+                <tr>
+                    <td>
+                        ${index + 1}
+                    </td>
+
+                    <td>
+                        ${time.time}
+                    </td>
+
+                    <td>
+                        ${time.pontos}
+                    </td>
+
+                    <td>
+                        ${time.saldo}
+                    </td>
+                </tr>
+            `;
+
+        });
+
+        html += `
+            </table>
+        `;
+
+        card.innerHTML = html;
+
+        container.appendChild(card);
+
+    });
+
+}
+
+iniciar();
