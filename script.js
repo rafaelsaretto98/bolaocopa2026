@@ -239,7 +239,7 @@ carregarEstado();
 // ----------------------------------------------------
 // NOVA FUNÇÃO: COPIAR CÓDIGO PARA O ADMIN
 // ----------------------------------------------------
-document.getElementById('copiarCodigo').onclick = () => {
+document.getElementById('copiarCodigo').onclick = async () => {
 
     const nome = document.getElementById('nome').value.trim();
 
