@@ -1,3 +1,8 @@
+import {
+    carregarParticipantes
+}
+from './participantes.js';
+
 if(
     localStorage.getItem(
         'adminLogado'
@@ -7,12 +12,17 @@ if(
         'login.html';
 }
 
-const STORAGE_KEY = 'bolaoParticipantes';
+let participantes = [];
 
-let participantes =
-    JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+async function iniciar(){
 
-renderizar();
+    participantes =
+        await carregarParticipantes();
+
+    renderizar();
+}
+
+iniciar();
 
 document.getElementById('importar').onclick = () => {
 
@@ -75,11 +85,6 @@ document.getElementById('importar').onclick = () => {
 
 
 function salvar() {
-
-    localStorage.setItem(
-        STORAGE_KEY,
-        JSON.stringify(participantes)
-    );
 
     renderizar();
 }
