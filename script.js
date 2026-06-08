@@ -275,6 +275,37 @@ document.getElementById('copiarCodigo').onclick = () => {
 
     const codigoTexto = JSON.stringify(codigo, null, 2);
 
+    try {
+
+    const existe =
+        await participanteExiste(nome);
+
+    if(existe){
+
+        alert(
+            'Já existe um palpite cadastrado para este nome.'
+        );
+
+        return;
+    }
+
+    await salvarParticipante(codigo);
+
+    alert(
+        `✅ Palpite enviado com sucesso!
+
+Protocolo:
+${codigo.protocolo}`
+    );
+
+} catch(erro){
+
+    console.error(erro);
+
+    alert(
+        'Erro ao enviar palpite.'
+    );
+}
 
 };
 
