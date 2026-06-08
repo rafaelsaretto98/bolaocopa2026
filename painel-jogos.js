@@ -78,8 +78,16 @@ ${jogo.timeB}
 
 <button
     onclick="salvarResultado('${jogo.id}')"
+    style="
+        background:${jogo.encerrado ? '#16a34a' : '#2563eb'};
+        color:white;
+        border:none;
+        padding:8px 12px;
+        border-radius:6px;
+        cursor:pointer;
+    "
 >
-    💾 Salvar Resultado
+    ${jogo.encerrado ? '✅ Resultado Salvo' : '💾 Salvar Resultado'}
 </button>
 
 <br><br>
