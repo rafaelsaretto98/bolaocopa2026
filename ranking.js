@@ -1,3 +1,8 @@
+import {
+    carregarParticipantesRanking
+}
+from './ranking-firebase.js';
+
 const resultadosOficiais =
     JSON.parse(
         localStorage.getItem('resultadosOficiais')
@@ -24,9 +29,7 @@ function calcularPontos(palpiteUsuario) {
 
 // 2. Calcula pontos de todos e ordena do maior para o menor
 const palpitesAmigos =
-    JSON.parse(
-        localStorage.getItem('bolaoParticipantes')
-    ) || [];
+    await carregarParticipantesRanking();
 
 const participantesRanking =
     palpitesAmigos.map(p => ({
