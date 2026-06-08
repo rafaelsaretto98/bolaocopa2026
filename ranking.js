@@ -172,3 +172,13 @@ function abrirPalpite(participante){
         'modalPalpite'
     ).style.display = 'block';
 }
+
+document
+.getElementById('fecharModal')
+.onclick = () => {
+
+    document.getElementById(
+        'modalPalpite'
+    ).style.display = 'none';
+
+};
