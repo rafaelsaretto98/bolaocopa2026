@@ -50,6 +50,40 @@ async function iniciar(){
 
         <br>
 
+        <br><br>
+
+<input
+    type="number"
+    min="0"
+    id="golsA-${jogo.id}"
+    value="${jogo.golsA ?? ''}"
+    style="width:60px;"
+>
+
+${jogo.timeA}
+
+x
+
+${jogo.timeB}
+
+<input
+    type="number"
+    min="0"
+    id="golsB-${jogo.id}"
+    value="${jogo.golsB ?? ''}"
+    style="width:60px;"
+>
+
+<br><br>
+
+<button
+    onclick="salvarResultado('${jogo.id}')"
+>
+    💾 Salvar Resultado
+</button>
+
+<br><br>
+
         <button
             onclick="excluirJogoTela('${jogo.id}')"
             style="
