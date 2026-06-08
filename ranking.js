@@ -67,8 +67,7 @@ if(participantesRanking.length === 0){
         </div>
     `;
 
-    return;
-}
+} else {
 
 participantesRanking.forEach((amigo,index)=>{
     const posicao = index + 1;
