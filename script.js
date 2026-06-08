@@ -275,18 +275,7 @@ document.getElementById('copiarCodigo').onclick = () => {
 
     const codigoTexto = JSON.stringify(codigo, null, 2);
 
-    navigator.clipboard.writeText(codigoTexto)
-        .then(() => {
-            alert(
-                `✅ Palpite registrado!\n\n` +
-                `Protocolo: ${codigo.protocolo}\n\n` +
-                `O código foi copiado para sua área de transferência.\n\n` +
-                `Agora envie para o administrador pelo WhatsApp.`
-            );
-        })
-        .catch(() => {
-            alert('Erro ao copiar o código.');
-        });
+
 };
 
 function gerarHash() {
