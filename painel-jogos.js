@@ -20,39 +20,53 @@ async function iniciar(){
 
     jogos.forEach(jogo => {
 
-        const div =
-            document.createElement('div');
+    const div =
+        document.createElement('div');
 
-        div.className =
-            'regras-card';
+    div.className =
+        'regras-card';
 
-        div.innerHTML = `
-            <h3>
-                ${jogo.timeA}
-                x
-                ${jogo.timeB}
-            </h3>
+    div.innerHTML = `
+        <h3>
+            ${jogo.timeA}
+            x
+            ${jogo.timeB}
+        </h3>
 
-            <p>
-                Grupo ${jogo.grupo}
-            </p>
+        <p>
+            Grupo ${jogo.grupo}
+        </p>
 
-            <p>
-                ${jogo.data}
-                -
-                ${jogo.horario}
-            </p>
+        <p>
+            ${jogo.data}
+            -
+            ${jogo.horario}
+        </p>
 
-            <p>
-                ${jogo.estadio}
-            </p>
-        `;
+        <p>
+            ${jogo.estadio}
+        </p>
 
-        lista.appendChild(div);
+        <br>
 
-    });
+        <button
+            onclick="excluirJogoTela('${jogo.id}')"
+            style="
+                background:#dc2626;
+                color:white;
+                border:none;
+                padding:8px 12px;
+                border-radius:6px;
+                cursor:pointer;
+            "
+        >
+            🗑 Excluir
+        </button>
+    `;
 
-}
+    lista.appendChild(div);
+
+});
 
 document
 .getElementById('salvarJogo')
@@ -125,5 +139,37 @@ document
     }
 
 });
+
+window.excluirJogoTela = async function(id){
+
+    if(
+        !confirm(
+            'Deseja excluir este jogo?'
+        )
+    ){
+        return;
+    }
+
+    try {
+
+        await excluirJogo(id);
+
+        alert(
+            'Jogo excluído.'
+        );
+
+        location.reload();
+
+    } catch(erro){
+
+        console.error(erro);
+
+        alert(
+            'Erro ao excluir jogo.'
+        );
+
+    }
+
+};
 
 iniciar();
