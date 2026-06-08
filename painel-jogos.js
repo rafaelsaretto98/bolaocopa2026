@@ -1,7 +1,8 @@
 import {
     carregarJogos,
     adicionarJogo,
-    excluirJogo
+    excluirJogo,
+    atualizarResultado
 }
 from './jogos-firebase.js';
 
