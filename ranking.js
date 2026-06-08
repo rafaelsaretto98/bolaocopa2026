@@ -188,15 +188,7 @@ function abrirPalpite(participante){
     ).style.display = 'block';
 }
 
-document
-.getElementById('fecharModal')
-.onclick = () => {
 
-    document.getElementById(
-        'modalPalpite'
-    ).style.display = 'none';
-
-};
 }
 
 iniciar();
