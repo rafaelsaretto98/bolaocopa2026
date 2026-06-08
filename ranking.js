@@ -110,7 +110,13 @@ participantesRanking.forEach((amigo,index)=>{
             </div>
         </div>
         <div style="display: none; border-top: 1px solid #e2e8f0; margin-top: 15px; padding-top: 15px;">
-            <h4 style="margin: 0 0 10px 0; color: #64748b;">Palpites de ${amigo.nome}:</h4>
+            <h4 style="
+                margin:0 0 15px 0;
+                color:#1e3a8a;
+                font-size:18px;
+            ">
+                📋 Palpites de ${amigo.nome}
+            </h4>
             ${htmlPalpites}
         </div>
     `;
