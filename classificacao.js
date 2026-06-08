@@ -1,0 +1,107 @@
+export function gerarClassificacao(jogos, grupo){
+
+    const tabela = {};
+
+    jogos
+    .filter(j =>
+        j.grupo === grupo &&
+        j.encerrado
+    )
+    .forEach(jogo => {
+
+        const timeA = jogo.timeA;
+        const timeB = jogo.timeB;
+
+        if(!tabela[timeA]){
+
+            tabela[timeA] = {
+                time: timeA,
+                pontos: 0,
+                jogos: 0,
+                vitorias: 0,
+                empates: 0,
+                derrotas: 0,
+                golsPro: 0,
+                golsContra: 0,
+                saldo: 0
+            };
+
+        }
+
+        if(!tabela[timeB]){
+
+            tabela[timeB] = {
+                time: timeB,
+                pontos: 0,
+                jogos: 0,
+                vitorias: 0,
+                empates: 0,
+                derrotas: 0,
+                golsPro: 0,
+                golsContra: 0,
+                saldo: 0
+            };
+
+        }
+
+        tabela[timeA].jogos++;
+        tabela[timeB].jogos++;
+
+        tabela[timeA].golsPro += jogo.golsA;
+        tabela[timeA].golsContra += jogo.golsB;
+
+        tabela[timeB].golsPro += jogo.golsB;
+        tabela[timeB].golsContra += jogo.golsA;
+
+        if(jogo.golsA > jogo.golsB){
+
+            tabela[timeA].pontos += 3;
+            tabela[timeA].vitorias++;
+
+            tabela[timeB].derrotas++;
+
+        }
+        else if(jogo.golsA < jogo.golsB){
+
+            tabela[timeB].pontos += 3;
+            tabela[timeB].vitorias++;
+
+            tabela[timeA].derrotas++;
+
+        }
+        else{
+
+            tabela[timeA].pontos += 1;
+            tabela[timeB].pontos += 1;
+
+            tabela[timeA].empates++;
+            tabela[timeB].empates++;
+
+        }
+
+    });
+
+    Object.values(tabela)
+    .forEach(time => {
+
+        time.saldo =
+            time.golsPro -
+            time.golsContra;
+
+    });
+
+    return Object
+        .values(tabela)
+        .sort((a,b) => {
+
+            if(b.pontos !== a.pontos)
+                return b.pontos - a.pontos;
+
+            if(b.saldo !== a.saldo)
+                return b.saldo - a.saldo;
+
+            return b.golsPro - a.golsPro;
+
+        });
+
+}
