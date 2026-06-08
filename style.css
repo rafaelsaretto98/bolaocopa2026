@@ -424,3 +424,34 @@ progress::-webkit-progress-value { background-color: #10b981; }
     font-weight:bold;
 }
 
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 6px;
+
+        height: auto;
+
+        padding: 8px;
+
+    }
+
+    .nav-btn {
+
+        font-size: 12px;
+
+        padding: 6px 10px;
+
+        letter-spacing: 0;
+
+    }
+
+}
