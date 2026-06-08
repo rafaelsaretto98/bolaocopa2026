@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Palpites dos Participantes</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="nav-btn">
+        📝 Palpite
+    </a>
+
+    <a href="ranking.html" class="nav-btn">
+        🏆 Ranking
+    </a>
+
+    <a href="jogos.html" class="nav-btn">
+        📅 Jogos
+    </a>
+
+    <a href="classificacao.html" class="nav-btn">
+        📊 Grupos
+    </a>
+
+    <a href="palpites.html"
+       class="nav-btn active">
+       📋 Palpites
+    </a>
+</nav>
+
+<div class="painel-topo">
+
+    <header class="header-card">
+        <h1>
+            📋 Palpites dos Participantes
+        </h1>
+    </header>
+
+    <section class="regras-card">
+
+        <select
+            id="participanteSelect"
+            style="
+                width:100%;
+                padding:12px;
+                font-size:16px;
+            "
+        >
+            <option>
+                Carregando...
+            </option>
+        </select>
+
+    </section>
+
+    <div id="conteudoPalpite"></div>
+
+</div>
+
+<script
+    type="module"
+    src="palpites.js">
+</script>
+
+</body>
+</html>
