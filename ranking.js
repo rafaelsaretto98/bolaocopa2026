@@ -197,3 +197,4 @@ document
     ).style.display = 'none';
 
 };
+}
