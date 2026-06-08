@@ -398,3 +398,29 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 .animate-pop { animation: puloEncaixe 0.3s ease-out !important; }
 
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.6);
+    z-index:9999;
+}
+
+.modal-content{
+    background:white;
+    max-width:800px;
+    margin:40px auto;
+    padding:20px;
+    border-radius:12px;
+    max-height:80vh;
+    overflow:auto;
+}
+
+#fecharModal{
+    float:right;
+    cursor:pointer;
+    font-size:28px;
+    font-weight:bold;
+}
+
