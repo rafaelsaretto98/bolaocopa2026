@@ -479,4 +479,60 @@ progress::-webkit-progress-value { background-color: #10b981; }
         font-size:24px;
     }
 
+    .botoes-acao{
+    flex-direction:column;
+}
+
+    #calcular,
+    #copiarCodigo{
+        min-width:100%;
+        width:100%;
+    }
+
+    .modal-content{
+    width:90%;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    body{
+        padding-top:130px;
+    }
+
+    .painel-topo{
+        gap:12px;
+    }
+
+    .header-card,
+    .regras-card{
+        padding:15px;
+    }
+
+    .header-card h1{
+        font-size:24px;
+    }
+
+    #container{
+        grid-template-columns:1fr;
+    }
+
+    .area{
+        grid-template-columns:1fr;
+    }
+
+    .botoes-acao{
+        flex-direction:column;
+    }
+
+    #calcular,
+    #copiarCodigo{
+        width:100%;
+        min-width:100%;
+    }
+
+    .modal-content{
+        width:90%;
+    }
 }
