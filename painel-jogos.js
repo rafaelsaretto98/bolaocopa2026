@@ -175,6 +175,58 @@ document
 
 });
 
+    window.salvarResultado = async function(id){
+
+    const golsA =
+        parseInt(
+            document.getElementById(
+                `golsA-${id}`
+            ).value
+        );
+
+    const golsB =
+        parseInt(
+            document.getElementById(
+                `golsB-${id}`
+            ).value
+        );
+
+    if(
+        isNaN(golsA) ||
+        isNaN(golsB)
+    ){
+        alert(
+            'Informe os dois placares.'
+        );
+        return;
+    }
+
+    try{
+
+        await atualizarResultado(
+            id,
+            golsA,
+            golsB
+        );
+
+        alert(
+            'Resultado salvo.'
+        );
+
+        location.reload();
+
+    }catch(erro){
+
+        console.error(erro);
+
+        alert(
+            'Erro ao salvar resultado.'
+        );
+
+    }
+
+};
+
 window.excluirJogoTela = async function(id){
 
     if(
