@@ -1,56 +1,42 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Administração</title>
+import { login } from './auth.js';
 
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+document
+    .getElementById('entrar')
+    .addEventListener('click', async (e) => {
 
-<div class="painel-topo">
+        e.preventDefault();
 
-    <header class="header-card">
+        const email =
+            document.getElementById('email').value.trim();
 
-        <h1>🔒 Área Administrativa</h1>
+        const senha =
+            document.getElementById('senha').value;
 
-        <p>
-            Informe a senha para acessar o painel.
-        </p>
+        if (!email || !senha) {
+            alert('Informe email e senha.');
+            return;
+        }
 
-        <br>
+        try {
 
-        <input
-            type="email"
-            id="email"
-            placeholder="Email"
-        >
-        
-        <br><br>
-        
-        <input
-            type="password"
-            id="senha"
-            placeholder="Senha"
-        >
+            await login(email, senha);
 
-        <br><br>
+            localStorage.setItem(
+                'adminLogado',
+                'true'
+            );
 
-        <button 
-            type="button"
-            id="entrar">
-            Entrar
-        </button>
+            window.location.href =
+                'admin.html';
 
-    </header>
+        } catch (erro) {
 
-</div>
+            console.error(erro);
 
-<script
-    type="module"
-    src="login.js">
-</script>
+            alert(
+                'Erro ao fazer login:\n\n' +
+                erro.message
+            );
+        }
 
-</body>
-</html>
+    });
