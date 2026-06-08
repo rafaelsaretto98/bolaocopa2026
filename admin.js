@@ -1,5 +1,6 @@
 import {
-    carregarParticipantes
+    carregarParticipantes,
+    excluirParticipanteFirebase
 }
 from './participantes.js';
 
@@ -132,7 +133,7 @@ function renderizar() {
             Data: ${p.data}<br><br>
 
                         <button
-                onclick="excluirParticipante('${p.protocolo}')"
+                onclick="excluirParticipante('${p.id}')"
                 style="
                     background:#dc2626;
                     color:white;
@@ -224,18 +225,18 @@ document.getElementById('exportarBackup').onclick = () => {
     URL.revokeObjectURL(url);
 };
 
-window.excluirParticipante = function(protocolo){
+window.excluirParticipante = async function(id){
 
     if(!confirm('Excluir este participante?')){
-        return;
-    }
-
-    participantes = participantes.filter(
-        p => p.protocolo !== protocolo
-    );
-
-    salvar();
+    return;
 }
+
+await excluirParticipanteFirebase(id);
+
+participantes =
+    await carregarParticipantes();
+
+renderizar();
 
 document.getElementById('logout')
 .onclick = () => {
