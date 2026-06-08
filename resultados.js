@@ -1,5 +1,5 @@
 const grupos = {
-    A: ['México', 'África do Sul', 'Coreia do Sul', 'Chéquia'],
+    A: ['México', 'África do Sul', 'Coreia do Sul', 'Tchéquia'],
     B: ['Canadá', 'Bósnia e Herzegovina', 'Catar', 'Suíça'],
     C: ['Brasil', 'Marrocos', 'Haiti', 'Escócia'],
     D: ['Estados Unidos', 'Paraguai', 'Austrália', 'Turquia'],
