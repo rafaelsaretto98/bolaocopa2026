@@ -34,7 +34,9 @@ const palpitesAmigos =
 const participantesRanking =
     palpitesAmigos.map(p => ({
         nome: p.nome,
-        palpites: p.palpites
+        palpites: p.palpites,
+        protocolo: p.protocolo,
+        data: p.data
     }));
 
     participantesRanking.forEach(amigo => {
