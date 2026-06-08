@@ -19,6 +19,8 @@ async function iniciar(){
     const jogos =
         await carregarJogos();
 
+    console.log(jogos);
+
     const container =
         document.getElementById(
             'classificacoes'
