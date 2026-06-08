@@ -285,10 +285,6 @@ document.getElementById('copiarCodigo').onclick = async () => {
         return;
     }
 
-    await salvarParticipante(codigo);
-
-    const codigoTexto = JSON.stringify(codigo, null, 2);
-
     try {
 
     const existe =
