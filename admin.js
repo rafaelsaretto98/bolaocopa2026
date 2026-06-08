@@ -17,7 +17,7 @@ if(
 
 let participantes = [];
 
-console.log('admin.js carregou');
+
 
 async function iniciar(){
 
