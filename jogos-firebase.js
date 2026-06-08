@@ -8,7 +8,7 @@ import {
     deleteDoc,
     doc
 }
-from "...firebase-firestore.js";
+from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
 export async function carregarJogos(){
 
