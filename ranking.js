@@ -106,6 +106,14 @@ participantesRanking.forEach((amigo,index)=>{
             <div style="font-size: 20px; font-weight: 800; color: #1e3a8a;">
                 <span style="color: ${corMedalha}; margin-right: 10px;">${posicao}º</span>
                 ${amigo.nome}
+                <br>
+                
+                <span style="
+                    font-size:12px;
+                    color:#64748b;
+                ">
+                    ${amigo.data}
+                </span>
             </div>
             <div style="font-size: 24px; font-weight: 900; color: #10b981;">
                 ${amigo.pontuacao} pts <span style="font-size: 12px; color: #94a3b8;">▼</span>
