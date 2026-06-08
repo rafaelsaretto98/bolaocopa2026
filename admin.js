@@ -4,6 +4,8 @@ import {
 }
 from './participantes.js';
 
+console.log('admin.js carregou');
+
 if(
     localStorage.getItem(
         'adminLogado'
@@ -15,10 +17,16 @@ if(
 
 let participantes = [];
 
+console.log('admin.js carregou');
+
 async function iniciar(){
+
+    console.log('Buscando participantes...');
 
     participantes =
         await carregarParticipantes();
+
+    console.log(participantes);
 
     renderizar();
 }
