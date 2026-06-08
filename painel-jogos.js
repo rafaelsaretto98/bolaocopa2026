@@ -102,6 +102,7 @@ ${jogo.timeB}
     lista.appendChild(div);
 
 });
+}
 
 document
 .getElementById('salvarJogo')
