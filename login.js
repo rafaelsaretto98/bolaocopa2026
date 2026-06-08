@@ -1,1 +1,56 @@
-alert('login.js carregou');
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Administração</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="painel-topo">
+
+    <header class="header-card">
+
+        <h1>🔒 Área Administrativa</h1>
+
+        <p>
+            Informe a senha para acessar o painel.
+        </p>
+
+        <br>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Email"
+        >
+        
+        <br><br>
+        
+        <input
+            type="password"
+            id="senha"
+            placeholder="Senha"
+        >
+
+        <br><br>
+
+        <button 
+            type="button"
+            id="entrar">
+            Entrar
+        </button>
+
+    </header>
+
+</div>
+
+<script
+    type="module"
+    src="login.js">
+</script>
+
+</body>
+</html>
