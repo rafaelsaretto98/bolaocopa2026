@@ -228,15 +228,17 @@ document.getElementById('exportarBackup').onclick = () => {
 window.excluirParticipante = async function(id){
 
     if(!confirm('Excluir este participante?')){
-    return;
-}
+        return;
+    }
 
-await excluirParticipanteFirebase(id);
+    await excluirParticipanteFirebase(id);
 
-participantes =
-    await carregarParticipantes();
+    participantes =
+        await carregarParticipantes();
 
-renderizar();
+    renderizar();
+
+};
 
 document.getElementById('logout')
 .onclick = () => {
@@ -247,4 +249,5 @@ document.getElementById('logout')
 
     window.location.href =
         'login.html';
+
 };
