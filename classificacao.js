@@ -100,4 +100,35 @@ async function iniciar(){
 
 }
 
+async function iniciar(){
+
+    const jogos =
+        await carregarJogos();
+
+    console.log('JOGOS:', jogos);
+
+    const container =
+        document.getElementById(
+            'classificacoes'
+        );
+
+    console.log('CONTAINER:', container);
+
+    grupos.forEach(grupo => {
+
+        const classificacao =
+            gerarClassificacao(
+                jogos,
+                grupo
+            );
+
+        console.log(
+            grupo,
+            classificacao
+        );
+
+    });
+
+}
+
 iniciar();
