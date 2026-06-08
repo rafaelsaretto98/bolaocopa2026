@@ -117,3 +117,58 @@ participantesRanking.forEach((amigo,index)=>{
 
     listaRanking.appendChild(card);
 });
+
+function abrirPalpite(participante){
+
+    document.getElementById(
+        'nomeParticipante'
+    ).textContent =
+        participante.nome;
+
+    const conteudo =
+        document.getElementById(
+            'conteudoPalpite'
+        );
+
+    conteudo.innerHTML = '';
+
+    const palpites =
+        participante.palpites;
+
+    Object.keys(palpites)
+    .sort()
+    .forEach(grupo => {
+
+        const bloco =
+            document.createElement('div');
+
+        bloco.innerHTML = `
+            <h3>Grupo ${grupo}</h3>
+
+            <p>
+                1º ${palpites[grupo]['1º']}
+            </p>
+
+            <p>
+                2º ${palpites[grupo]['2º']}
+            </p>
+
+            <p>
+                3º ${palpites[grupo]['3º']}
+            </p>
+
+            <p>
+                4º ${palpites[grupo]['4º']}
+            </p>
+
+            <hr>
+        `;
+
+        conteudo.appendChild(bloco);
+
+    });
+
+    document.getElementById(
+        'modalPalpite'
+    ).style.display = 'block';
+}
