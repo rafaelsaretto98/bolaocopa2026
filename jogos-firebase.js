@@ -5,9 +5,10 @@ import {
     addDoc,
     getDocs,
     updateDoc,
+    deleteDoc,
     doc
 }
-from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+from "...firebase-firestore.js";
 
 export async function carregarJogos(){
 
