@@ -134,12 +134,5 @@ participantesRanking.forEach((amigo,index)=>{
 });
 
 
-    document.getElementById(
-        'modalPalpite'
-    ).style.display = 'block';
 }
 
-
-}
-
-iniciar();
