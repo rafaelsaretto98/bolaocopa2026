@@ -265,13 +265,7 @@ document.getElementById('copiarCodigo').onclick = () => {
         return;
     }
 
-        const codigo = {
-            nome,
-            data: new Date().toLocaleString('pt-BR'),
-            protocolo: gerarHash(),
-            versao: '1.0',
-            palpites: estado
-        };
+    await salvarParticipante(codigo);
 
     const codigoTexto = JSON.stringify(codigo, null, 2);
 
