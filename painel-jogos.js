@@ -1,8 +1,10 @@
 import {
     carregarJogos,
-    adicionarJogo
+    adicionarJogo,
+    excluirJogo
 }
 from './jogos-firebase.js';
+
 
 async function iniciar(){
 
