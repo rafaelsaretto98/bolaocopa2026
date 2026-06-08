@@ -454,4 +454,29 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
     }
 
+    body{
+    padding-top: 130px;
+        }
+
+    #container{
+    grid-template-columns:1fr;
+    }
+
+    .area{
+        grid-template-columns:1fr;
+    }
+
+    .painel-topo{
+    gap:12px;
+    }
+    
+    .header-card,
+    .regras-card{
+        padding:15px;
+    }
+    
+    .header-card h1{
+        font-size:24px;
+    }
+
 }
