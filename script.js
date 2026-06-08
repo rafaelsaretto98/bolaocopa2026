@@ -1,3 +1,9 @@
+import {
+    salvarParticipante,
+    participanteExiste
+}
+from './firestore.js';
+
 document.addEventListener('DOMContentLoaded', () => {
 
 // 1. Dicionário de Grupos
