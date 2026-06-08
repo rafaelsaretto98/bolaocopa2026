@@ -430,30 +430,41 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 @media (max-width: 768px) {
 
-    .navbar {
+    .navbar{
 
-        justify-content: center;
+        justify-content:flex-start;
 
-        flex-wrap: wrap;
+        overflow-x:auto;
 
-        gap: 6px;
+        overflow-y:hidden;
 
-        height: auto;
-        min-height:60px;
+        flex-wrap:nowrap;
 
-        padding: 8px;
+        white-space:nowrap;
+
+        gap:8px;
+
+        padding:8px 12px;
+
+        height:60px;
+
+    }
+
+    .navbar::-webkit-scrollbar{
+        display:none;
+    }
+
+    .nav-btn{
+
+        flex-shrink:0;
+
+        font-size:12px;
+
+        padding:8px 12px;
 
     }
 
-    .nav-btn {
-
-        font-size: 12px;
-
-        padding: 6px 10px;
-
-        letter-spacing: 0;
-
-    }
+}
 
     body{
     padding-top: 130px;
