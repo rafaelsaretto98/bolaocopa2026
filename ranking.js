@@ -3,6 +3,16 @@ import {
 }
 from './ranking-firebase.js';
 
+import {
+    carregarJogos
+}
+from './jogos-firebase.js';
+
+import {
+    calcularPontuacao
+}
+from './ranking-utils.js';
+
 const resultadosOficiais =
     JSON.parse(
         localStorage.getItem('resultadosOficiais')
