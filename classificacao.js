@@ -85,8 +85,13 @@ async function iniciar(){
         classificacao.forEach(
             (time,index) => {
 
+                const corLinha =
+                    index < 2
+                    ? '#dcfce7'
+                    : '#ffffff';
+
             html += `
-                <tr>
+                <tr style="background:${corLinha};">
                     <td>${index + 1}</td>
 
                     <td>${time.time}</td>
