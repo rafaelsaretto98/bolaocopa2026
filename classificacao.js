@@ -19,7 +19,16 @@ async function iniciar(){
     const jogos =
         await carregarJogos();
 
-    console.log(jogos);
+    console.log(
+    jogos.map(j => ({
+        grupo: j.grupo,
+        timeA: j.timeA,
+        timeB: j.timeB,
+        golsA: j.golsA,
+        golsB: j.golsB,
+        encerrado: j.encerrado
+    }))
+);
     console.log('JOGOS:', jogos);
     console.log('TOTAL:', jogos.length);
 
