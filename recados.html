@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mural de Recados</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="nav-btn">📝 Palpite</a>
+    <a href="ranking.html" class="nav-btn">🏆 Ranking</a>
+    <a href="palpites.html" class="nav-btn">📋 Palpites</a>
+    <a href="jogos.html" class="nav-btn">📅 Jogos</a>
+    <a href="classificacao.html" class="nav-btn">📊 Grupos</a>
+    <a href="recados.html" class="nav-btn active">💬 Recados</a>
+</nav>
+
+<div class="painel-topo">
+
+    <header class="header-card">
+        <h1>💬 Mural de Recados</h1>
+    </header>
+
+    <div class="regras-card">
+
+        <input
+            id="nomeRecado"
+            placeholder="Seu nome"
+            style="
+                width:100%;
+                padding:10px;
+                margin-bottom:10px;
+            "
+        >
+
+        <textarea
+            id="textoRecado"
+            maxlength="250"
+            placeholder="Escreva seu recado..."
+            style="
+                width:100%;
+                min-height:120px;
+                padding:10px;
+                box-sizing:border-box;
+            "
+        ></textarea>
+
+        <br><br>
+
+        <button id="enviarRecado">
+            💬 Publicar
+        </button>
+
+    </div>
+
+    <div id="listaRecados"></div>
+
+</div>
+
+<script
+    type="module"
+    src="recados.js">
+</script>
+
+</body>
+</html>
