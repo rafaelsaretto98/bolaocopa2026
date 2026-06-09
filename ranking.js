@@ -13,33 +13,14 @@ import {
 }
 from './ranking-utils.js';
 
-const resultadosOficiais =
-    JSON.parse(
-        localStorage.getItem('resultadosOficiais')
-    ) || {};
 
-function calcularPontos(palpiteUsuario) {
-    let pontos = 0;
-    
-    for(const grupo in resultadosOficiais) {
-        if(palpiteUsuario[grupo]) {
-            for(let p of ['1º', '2º', '3º', '4º']) {
-                const escolha = palpiteUsuario[grupo][p];
-                const oficial = resultadosOficiais[grupo][p];
-
-                // Ganha 1 ponto apenas se acertar o país na posição exata
-                if(escolha && oficial && escolha === oficial) {
-                    pontos += 1; 
-                }
-            }
-        }
-    }
-    return pontos;
-}
 
 // 2. Calcula pontos de todos e ordena do maior para o menor
 const palpitesAmigos =
     await carregarParticipantesRanking();
+
+const jogos =
+    await carregarJogos();
 
 const participantesRanking =
     palpitesAmigos.map(p => ({
@@ -49,10 +30,13 @@ const participantesRanking =
         data: p.data
     }));
 
-    participantesRanking.forEach(amigo => {
+  participantesRanking.forEach(amigo => {
 
     amigo.pontuacao =
-        calcularPontos(amigo.palpites);
+        calcularPontuacao(
+            amigo,
+            jogos
+        );
 
 });
 
