@@ -72,6 +72,12 @@ async function iniciar(){
                     <th>Pos</th>
                     <th>Seleção</th>
                     <th>Pts</th>
+                    <th>J</th>
+                    <th>V</th>
+                    <th>E</th>
+                    <th>D</th>
+                    <th>GP</th>
+                    <th>GC</th>
                     <th>SG</th>
                 </tr>
         `;
