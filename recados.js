@@ -30,19 +30,35 @@ async function carregarTela(){
         card.className =
             'regras-card';
 
-        card.innerHTML = `
-            <h3>
-                ${recado.nome}
-            </h3>
+card.innerHTML = `
+    <div style="
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        margin-bottom:10px;
+    ">
 
-            <small>
-                ${formatarData(recado.data)}
-            </small>
+        <strong>
+            👤 ${recado.nome}
+        </strong>
 
-            <p>
-                ${recado.texto}
-            </p>
-        `;
+        <small
+            style="
+                color:#64748b;
+            "
+        >
+            🕒 ${formatarData(recado.data)}
+        </small>
+
+    </div>
+
+    <p style="
+        margin:0;
+        line-height:1.5;
+    ">
+        ${recado.texto}
+    </p>
+`;
 
         lista.appendChild(card);
 
