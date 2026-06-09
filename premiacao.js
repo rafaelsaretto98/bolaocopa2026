@@ -1,7 +1,7 @@
 import {
     carregarParticipantes
 }
-from './participantes.js';
+from './participantes-firebase.js';
 
 async function carregarPremiacao(){
 
