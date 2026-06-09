@@ -20,6 +20,8 @@ async function iniciar(){
         await carregarJogos();
 
     console.log(jogos);
+    console.log('JOGOS:', jogos);
+    console.log('TOTAL:', jogos.length);
 
     const container =
         document.getElementById(
