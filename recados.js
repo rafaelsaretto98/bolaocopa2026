@@ -9,6 +9,11 @@ async function carregarTela(){
     const recados =
         await carregarRecados();
 
+    document.querySelector(
+        '.header-card h1'
+        ).textContent =
+        `💬 Mural de Recados (${recados.length})`;
+
     recados.sort(
         (a,b) =>
             new Date(b.data) -
