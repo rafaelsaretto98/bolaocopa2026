@@ -1,132 +1,72 @@
-if (
-    localStorage.getItem('adminLogado')
-    !== 'true'
-){
-    window.location.href = 'login.html';
+import {
+    carregarJogos
 }
+from './jogos-firebase.js';
 
-let jogosSalvos =
-    JSON.parse(
-        localStorage.getItem(
-            'jogosCopa2026'
-        )
-    );
+async function iniciar(){
 
-if(!jogosSalvos){
+    const jogos =
+        await carregarJogos();
 
-    jogosSalvos = jogos;
-
-    localStorage.setItem(
-        'jogosCopa2026',
-        JSON.stringify(jogos)
-    );
-}
-
-const lista =
-    document.getElementById('listaJogos');
-
-jogosSalvos.forEach(jogo => {
-
-    const card =
-        document.createElement('div');
-
-    card.className = 'regras-card';
-
-    card.innerHTML = `
-
-        <h3>
-            Grupo ${jogo.grupo}
-        </h3>
-
-        <p>
-            📅 ${jogo.data}
-        </p>
-
-        <p>
-            🏟 ${jogo.estadio}
-        </p>
-
-        <p>
-            📍 ${jogo.cidade}
-        </p>
-
-        <div style="
-            display:flex;
-            gap:10px;
-            align-items:center;
-        ">
-
-            <strong>${jogo.timeA}</strong>
-
-                <input
-                    type="number"
-                    min="0"
-                    class="golsA"
-                    data-id="${jogo.id}"
-                    value="${jogo.golsA}"
-                    style="width:60px"
-                >
-
-                x
-
-                <input
-                    type="number"
-                    min="0"
-                    class="golsB"
-                    data-id="${jogo.id}"
-                    value="${jogo.golsB}"
-                    style="width:60px"
-                >
-
-                <br><br>
-
-                <button
-                    class="salvarJogo"
-                    data-id="${jogo.id}"
-                >
-                    💾 Salvar Resultado
-                </button>
-
-            <strong>${jogo.timeB}</strong>
-
-        </div>
-
-    `;
-
-    lista.appendChild(card);
-
-    const botao =
-    card.querySelector('.salvarJogo');
-
-botao.onclick = () => {
-
-    const golsA =
-        card.querySelector('.golsA').value;
-
-    const golsB =
-        card.querySelector('.golsB').value;
-
-    const jogosSalvos =
-        JSON.parse(
-            localStorage.getItem(
-                'jogosCopa2026'
-            )
-        ) || jogos;
-
-    const jogoSalvar =
-        jogosSalvos.find(
-            j => j.id == jogo.id
+    const lista =
+        document.getElementById(
+            'listaJogos'
         );
 
-    jogoSalvar.golsA = golsA;
-    jogoSalvar.golsB = golsB;
+    lista.innerHTML = '';
 
-    localStorage.setItem(
-        'jogosCopa2026',
-        JSON.stringify(jogosSalvos)
-    );
+    jogos.forEach(jogo => {
 
-    alert('Resultado salvo.');
-};
+        const card =
+            document.createElement('div');
 
-});
+        card.className =
+            'regras-card';
+
+        card.innerHTML = `
+            <h3>
+                ${jogo.timeA}
+                x
+                ${jogo.timeB}
+            </h3>
+
+            <p>
+                Grupo ${jogo.grupo}
+            </p>
+
+            <p>
+                📅 ${jogo.data}
+                às
+                ${jogo.horario}
+            </p>
+
+            <p>
+                🏟 ${jogo.estadio}
+            </p>
+
+            ${
+                jogo.encerrado
+                ?
+                `
+                <h2>
+                    ${jogo.golsA}
+                    x
+                    ${jogo.golsB}
+                </h2>
+                `
+                :
+                `
+                <strong>
+                    Aguardando resultado
+                </strong>
+                `
+            }
+        `;
+
+        lista.appendChild(card);
+
+    });
+
+}
+
+iniciar();
