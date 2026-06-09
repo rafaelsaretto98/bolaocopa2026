@@ -87,21 +87,18 @@ async function iniciar(){
 
             html += `
                 <tr>
-                    <td>
-                        ${index + 1}
-                    </td>
+                    <td>${index + 1}</td>
 
-                    <td>
-                        ${time.time}
-                    </td>
+                    <td>${time.time}</td>
 
-                    <td>
-                        ${time.pontos}
-                    </td>
-
-                    <td>
-                        ${time.saldo}
-                    </td>
+                     <td>${time.pontos}</td>
+                    <td>${time.jogos}</td>
+                    <td>${time.vitorias}</td>
+                    <td>${time.empates}</td>
+                    <td>${time.derrotas}</td>
+                    <td>${time.golsPro}</td>
+                    <td>${time.golsContra}</td>
+                    <td>${time.saldo}</td>
                 </tr>
             `;
 
