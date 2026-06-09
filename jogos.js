@@ -7,21 +7,17 @@ async function iniciar(){
 
     const jogos =
         await carregarJogos();
-    
-        jogos.sort((a, b) => {
-    
+
+    jogos.sort((a, b) => {
+
         const dataA =
-            new Date(
-                `${a.data}T${a.horario}`
-            );
-    
+            new Date(`${a.data}T${a.horario}`);
+
         const dataB =
-            new Date(
-                `${b.data}T${b.horario}`
-            );
-    
+            new Date(`${b.data}T${b.horario}`);
+
         return dataA - dataB;
-    
+
     });
 
     let dataAtual = '';
@@ -33,29 +29,82 @@ async function iniciar(){
 
     lista.innerHTML = '';
 
-   jogos.forEach(jogo => {
+    jogos.forEach(jogo => {
 
-    if(dataAtual !== jogo.data){
+        if(dataAtual !== jogo.data){
 
-        dataAtual = jogo.data;
+            dataAtual = jogo.data;
 
-        const tituloData =
+            const tituloData =
+                document.createElement('div');
+
+            tituloData.className =
+                'header-card';
+
+            tituloData.style.marginTop =
+                '20px';
+
+            tituloData.innerHTML = `
+                <h2>
+                    📅 ${formatarData(jogo.data)}
+                </h2>
+            `;
+
+            lista.appendChild(
+                tituloData
+            );
+
+        }
+
+        const card =
             document.createElement('div');
 
-        tituloData.className =
-            'header-card';
+        card.className =
+            'regras-card';
 
-        tituloData.style.marginTop = '20px';
+        card.innerHTML = `
+            <h3>
+                ${jogo.timeA}
+                x
+                ${jogo.timeB}
+            </h3>
 
-        tituloData.innerHTML = `
-            <h2>
-                📅 ${formatarData(jogo.data)}
-            </h2>
+            <p>
+                Grupo ${jogo.grupo}
+            </p>
+
+            <p>
+                🕒 ${jogo.horario}
+            </p>
+
+            <p>
+                🏟 ${jogo.estadio}
+            </p>
+
+            ${
+                jogo.encerrado
+                ?
+                `
+                <h2>
+                    ${jogo.golsA}
+                    x
+                    ${jogo.golsB}
+                </h2>
+                `
+                :
+                `
+                <strong>
+                    Aguardando resultado
+                </strong>
+                `
+            }
         `;
 
-        lista.appendChild(tituloData);
+        lista.appendChild(card);
 
-    }
+    });
+
+}
 
 function formatarData(data){
 
