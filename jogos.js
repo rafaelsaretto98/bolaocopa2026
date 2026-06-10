@@ -178,7 +178,7 @@ async function iniciar(){
         
         `;
 
-        lista.appendChild(card);
+        containerDia.appendChild(card);
 
     });
 
