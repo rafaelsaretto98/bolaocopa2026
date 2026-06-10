@@ -63,41 +63,108 @@ async function iniciar(){
             'regras-card';
 
         card.innerHTML = `
-            <h3>
-                ${jogo.timeA}
-                x
-                ${jogo.timeB}
-            </h3>
 
-            <p>
-                Grupo ${jogo.grupo}
-            </p>
-
-            <p>
+            <div style="
+                background:#1e3a8a;
+                color:white;
+                padding:10px;
+                border-radius:8px;
+                text-align:center;
+                font-weight:800;
+                margin-bottom:15px;
+            ">
+                🏆 Grupo ${jogo.grupo}
+            </div>
+        
+            <div style="
+                text-align:center;
+                margin:20px 0;
+            ">
+        
+                <div style="
+                    font-size:22px;
+                    font-weight:800;
+                ">
+                    ${jogo.timeA}
+                </div>
+        
+                <div style="
+                    font-size:28px;
+                    color:#64748b;
+                    margin:10px 0;
+                ">
+                    X
+                </div>
+        
+                <div style="
+                    font-size:22px;
+                    font-weight:800;
+                ">
+                    ${jogo.timeB}
+                </div>
+        
+            </div>
+        
+            <div style="
+                text-align:center;
+                color:#475569;
+                margin-bottom:10px;
+            ">
                 🕒 ${jogo.horario}
-            </p>
-
-            <p>
+            </div>
+        
+            <div style="
+                text-align:center;
+                color:#475569;
+                margin-bottom:20px;
+            ">
                 🏟 ${jogo.estadio}
-            </p>
-
+            </div>
+        
             ${
                 jogo.encerrado
                 ?
                 `
-                <h2>
-                    ${jogo.golsA}
-                    x
-                    ${jogo.golsB}
-                </h2>
+                <div style="
+                    text-align:center;
+                ">
+        
+                    <div style="
+                        font-size:42px;
+                        font-weight:900;
+                        color:#10b981;
+                    ">
+                        ${jogo.golsA}
+                        x
+                        ${jogo.golsB}
+                    </div>
+        
+                    <div style="
+                        color:#16a34a;
+                        font-weight:700;
+                    ">
+                        🟢 Encerrado
+                    </div>
+        
+                </div>
                 `
                 :
                 `
-                <strong>
-                    Aguardando resultado
-                </strong>
+                <div style="
+                    text-align:center;
+                ">
+        
+                    <div style="
+                        color:#ca8a04;
+                        font-weight:700;
+                    ">
+                        🟡 Não iniciado
+                    </div>
+        
+                </div>
                 `
             }
+        
         `;
 
         lista.appendChild(card);
