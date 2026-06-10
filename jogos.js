@@ -21,6 +21,7 @@ async function iniciar(){
     });
 
     let dataAtual = '';
+    let containerDia = null;
 
     const lista =
         document.getElementById(
@@ -53,6 +54,16 @@ async function iniciar(){
             lista.appendChild(
                 tituloData
             );
+            
+            containerDia =
+                document.createElement('div');
+                
+                containerDia.className =
+                    'jogos-dia';
+                
+                lista.appendChild(
+                    containerDia
+                );
 
         }
 
