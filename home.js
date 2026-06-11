@@ -82,6 +82,20 @@ dashboard.innerHTML = `
         </div>
     </div>
 
+    <div class="regras-card">
+
+    <h2>
+        💬 Último Recado
+    </h2>
+
+    <div id="ultimoRecado">
+
+        Carregando...
+
+    </div>
+
+    </div>
+
 `;
 
 async function carregarResumoBolao(){
