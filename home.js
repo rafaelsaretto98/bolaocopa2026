@@ -180,3 +180,12 @@ async function carregarProximosJogos(){
 
 }
 carregarProximosJogos();
+
+function formatarData(data){
+
+    const partes =
+        data.split('-');
+
+    return `${partes[2]}/${partes[1]}`;
+
+}
