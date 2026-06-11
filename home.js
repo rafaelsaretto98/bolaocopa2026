@@ -377,7 +377,11 @@ async function carregarUltimoRecado(){
     }
 
     const ultimo =
-        recados[0];
+    recados[
+        recados.length - 1
+    ];
+
+console.log(ultimo);
 
     container.innerHTML = `
 
