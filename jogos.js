@@ -77,7 +77,12 @@ async function iniciar(){
             jogo.timeB === 'Brasil';
 
         card.className =
-            'regras-card';
+
+            jogoDoBrasil
+        
+            ? 'regras-card jogo-brasil'
+        
+            : 'regras-card';
 
         card.innerHTML = `
 
