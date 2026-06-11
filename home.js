@@ -1,3 +1,8 @@
+import {
+    carregarJogos
+}
+from './jogos-firebase.js';
+
 const dashboard =
     document.getElementById(
         'dashboard'
