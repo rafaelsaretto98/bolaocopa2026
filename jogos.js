@@ -1,5 +1,5 @@
 import {
-    carregarJogos
+    carregarJogos 
 }
 from './jogos-firebase.js';
 
