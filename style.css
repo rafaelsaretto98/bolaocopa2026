@@ -460,6 +460,58 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 }
 
+.hero-bolao{
+
+    grid-column:1/-1;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+.hero-bolao h1{
+
+    margin-bottom:10px;
+
+    color:#1e3a8a;
+
+}
+
+.hero-numeros{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:60px;
+
+    margin-top:30px;
+
+    flex-wrap:wrap;
+
+}
+
+.hero-numeros h2{
+
+    margin:10px 0;
+
+    color:#10b981;
+
+    font-size:32px;
+
+}
+
+.hero-numeros p{
+
+    margin:0;
+
+    color:#64748b;
+
+    font-weight:600;
+
+}
+
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
    ========================================= */
