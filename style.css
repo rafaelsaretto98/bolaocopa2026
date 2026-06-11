@@ -392,6 +392,17 @@ progress::-webkit-progress-value { background-color: #10b981; }
     margin-bottom:25px;
 }
 
+.jogo-brasil{
+
+    border:3px solid #facc15;
+
+    box-shadow:
+        0 0 25px rgba(250,204,21,.35);
+
+    position:relative;
+
+}
+
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
    ========================================= */
