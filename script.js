@@ -5,6 +5,7 @@ import {
 from './firestore.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+    const PALPITES_ABERTOS = false;
 
 // 1. Dicionário de Grupos
 const grupos = {
@@ -240,6 +241,22 @@ carregarEstado();
 // NOVA FUNÇÃO: COPIAR CÓDIGO PARA O ADMIN
 // ----------------------------------------------------
 document.getElementById('copiarCodigo').onclick = async () => {
+    const prazoEncerramento =
+    new Date(
+        '2026-06-11T16:00:00'
+    );
+
+if(
+    new Date() >= prazoEncerramento
+){
+
+    alert(
+        '🔒 O prazo para envio dos palpites foi encerrado.'
+    );
+
+    return;
+
+}
 
     const nome = document.getElementById('nome').value.trim();
 
