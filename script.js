@@ -255,7 +255,16 @@ carregarEstado();
 // ----------------------------------------------------
 document.getElementById('copiarCodigo').onclick = async () => {
     
+    if(!PALPITES_ABERTOS){
 
+    alert(
+        '🔒 Os palpites estão encerrados.'
+    );
+
+    return;
+
+    }
+    
     const nome = document.getElementById('nome').value.trim();
 
     if (!nome) {
