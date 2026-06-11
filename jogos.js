@@ -66,15 +66,15 @@ async function iniciar(){
                 );
 
         }
-
-        const card =
-            document.createElement('div');
-        
         const jogoDoBrasil =
 
             jogo.timeA === 'Brasil' ||
         
             jogo.timeB === 'Brasil';
+        
+        const card =
+            document.createElement('div');
+    
 
         card.className =
 
