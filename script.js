@@ -6,6 +6,19 @@ from './firestore.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const PALPITES_ABERTOS = false;
+    if(!PALPITES_ABERTOS){
+
+    const botao =
+        document.getElementById(
+            'copiarCodigo'
+        );
+
+    botao.disabled = true;
+
+    botao.textContent =
+        '🔒 Palpites Encerrados';
+
+}
 
 // 1. Dicionário de Grupos
 const grupos = {
