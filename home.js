@@ -22,25 +22,45 @@ const dashboard =
 
 dashboard.innerHTML = `
 
-    <div class="regras-card">
-        <h2>
-            👥 Participantes
-        </h2>
+    <div class="regras-card hero-bolao">
 
-        <h1 id="totalParticipantes">
-            ...
-        </h1>
+    <h1>
+        🏆 Bolão Família Corazza 2026
+    </h1>
+
+    <p class="rumo-hexa">
+        🇧🇷 Rumo ao Hexa 🇧🇷
+    </p>
+
+    <div class="hero-numeros">
+
+        <div>
+
+            <span>👥</span>
+
+            <h2 id="totalParticipantes">
+                ...
+            </h2>
+
+            <p>Participantes</p>
+
+        </div>
+
+        <div>
+
+            <span>💰</span>
+
+            <h2 id="premiacao">
+                ...
+            </h2>
+
+            <p>Premiação Atual</p>
+
+        </div>
+
     </div>
 
-    <div class="regras-card">
-        <h2>
-            💰 Premiação Atual
-        </h2>
-
-        <h1 id="premiacao">
-            ...
-        </h1>
-    </div>
+</div>
 
     <div class="regras-card">
         <h2>
