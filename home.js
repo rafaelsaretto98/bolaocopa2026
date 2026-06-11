@@ -13,6 +13,11 @@ import {
 }
 from './ranking-firebase.js';
 
+import {
+    carregarRecados
+}
+from './recados-firebase.js';
+
 
 
 const dashboard =
