@@ -3,6 +3,11 @@ import {
 }
 from './jogos-firebase.js';
 
+import {
+    carregarParticipantes
+}
+from './participantes-firebase.js';
+
 const dashboard =
     document.getElementById(
         'dashboard'
