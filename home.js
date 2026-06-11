@@ -88,7 +88,7 @@ async function carregarResumoBolao(){
 
     const participantes =
         await carregarParticipantes();
-    console.log(jogos);
+   
 
     const total =
         participantes.length;
