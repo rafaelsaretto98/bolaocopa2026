@@ -353,3 +353,50 @@ async function carregarTopRanking(){
 }
 
 carregarTopRanking();
+
+async function carregarUltimoRecado(){
+
+    const recados =
+        await carregarRecados();
+
+    const container =
+        document.getElementById(
+            'ultimoRecado'
+        );
+
+    if(
+        !recados ||
+        recados.length === 0
+    ){
+
+        container.innerHTML =
+            'Nenhum recado ainda.';
+
+        return;
+
+    }
+
+    const ultimo =
+        recados[0];
+
+    container.innerHTML = `
+
+        <div style="
+            font-style:italic;
+            margin-bottom:10px;
+        ">
+            "${ultimo.mensagem}"
+        </div>
+
+        <div style="
+            font-weight:700;
+            color:#1e3a8a;
+        ">
+            — ${ultimo.nome}
+        </div>
+
+    `;
+
+}
+
+carregarUltimoRecado();
