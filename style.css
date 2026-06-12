@@ -788,4 +788,13 @@ progress::-webkit-progress-value { background-color: #10b981; }
     margin:auto;
 }
 
+    #premiacao{
+        font-size:2.5rem;
+    }
+
+    #totalParticipantes{
+        font-size:2.5rem;
+    }
+
+
 }
