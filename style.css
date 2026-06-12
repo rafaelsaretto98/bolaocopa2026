@@ -511,15 +511,13 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 .hero-numeros div{
 
+    width:220px;
+
     background:white;
 
-    padding:20px;
+    padding:18px;
 
     border-radius:16px;
-
-    min-width:180px;
-
-    border:2px solid #e2e8f0;
 
     box-shadow:
         0 6px 15px rgba(0,0,0,.08);
