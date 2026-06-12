@@ -410,22 +410,27 @@ console.log(ultimo);
 
     container.innerHTML = `
 
-        <div style="
-            font-style:italic;
-            margin-bottom:10px;
-        ">
-            "${ultimo.texto}"
-        </div>
+    <div style="
+        background:#f8fafc;
+        padding:15px;
+        border-radius:12px;
+        margin-bottom:15px;
+        border-left:5px solid #2563eb;
+        font-style:italic;
+        line-height:1.5;
+    ">
+        "${ultimo.texto}"
+    </div>
 
-        <div style="
-            font-weight:700;
-            color:#1e3a8a;
-        ">
-            — ${ultimo.nome}
-        </div>
+    <div style="
+        font-weight:700;
+        color:#1e3a8a;
+        text-align:right;
+    ">
+        — ${ultimo.nome}
+    </div>
 
-    `;
-
+`;
 }
 
 carregarUltimoRecado();
