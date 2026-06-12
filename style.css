@@ -765,4 +765,27 @@ progress::-webkit-progress-value { background-color: #10b981; }
     .modal-content{
         width:90%;
     }
+
+    .hero-numeros{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+        margin-top:20px;
+    }
+
+    .hero-numeros > div{
+        width:100%;
+        padding:15px;
+        box-sizing:border-box;
+    }
+
+    .hero-numeros h2{
+        font-size:32px;
+    }
+
+    .hero-bolao h1{
+    max-width:500px;
+    margin:auto;
+}
+
 }
