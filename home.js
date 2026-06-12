@@ -32,6 +32,16 @@ const dashboard =
 
 dashboard.innerHTML = `
 
+    <div class="regras-card hero-bolao">
+    
+        <h1>
+            🏆 Bolão Família Corazza 2026
+        </h1>
+    
+        <p class="rumo-hexa">
+            🇧🇷 Rumo ao Hexa 🇧🇷
+        </p>
+
     <div class="regras-card status-bolao">
 
         <h2>
@@ -73,15 +83,7 @@ dashboard.innerHTML = `
 
 </div>
 
-    <div class="regras-card hero-bolao">
 
-    <h1>
-        🏆 Bolão Família Corazza 2026
-    </h1>
-
-    <p class="rumo-hexa">
-        🇧🇷 Rumo ao Hexa 🇧🇷
-    </p>
 
     <div class="hero-numeros">
 
