@@ -523,6 +523,65 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 }
 
+.atalhos-home{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px,1fr)
+        );
+
+    gap:15px;
+
+    margin-bottom:20px;
+
+}
+
+.atalho-card{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:25px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:#1e3a8a;
+
+    font-size:32px;
+
+    font-weight:800;
+
+    box-shadow:
+        0 4px 10px
+        rgba(0,0,0,.08);
+
+    transition:.2s;
+
+}
+
+.atalho-card:hover{
+
+    transform:
+        translateY(-4px);
+
+}
+
+.atalho-card span{
+
+    display:block;
+
+    margin-top:10px;
+
+    font-size:16px;
+
+}
+
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
    ========================================= */
