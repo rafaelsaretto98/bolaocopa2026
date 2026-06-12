@@ -463,9 +463,19 @@ progress::-webkit-progress-value { background-color: #10b981; }
 .hero-bolao{
 
     text-align:center;
-
     padding:35px;
+    background:
+        linear-gradient(
+            rgba(255,255,255,.92),
+            rgba(255,255,255,.92)
+        ),
+        url('img/bandeira_Brasil.png');
 
+    background-repeat:no-repeat;
+
+    background-position:center;
+
+    background-size:180px;
 }
 
 .subtitulo-copa{
