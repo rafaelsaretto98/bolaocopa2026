@@ -335,16 +335,29 @@ async function carregarTopRanking(){
                 '10px';
 
             div.innerHTML = `
-                <strong>
-                    ${medalhas[index]}
-                    ${p.nome}
-                </strong>
 
-                <br>
+    <div style="
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:10px 0;
+    ">
 
-                ${p.pontuacao} pts
-            `;
+        <strong>
+            ${medalhas[index]}
+            ${p.nome}
+        </strong>
 
+        <span style="
+            color:#10b981;
+            font-weight:800;
+        ">
+            ${p.pontuacao} pts
+        </span>
+
+    </div>
+
+`;
             container.appendChild(
                 div
             );
