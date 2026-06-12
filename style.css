@@ -512,6 +512,17 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 }
 
+.status-bolao{
+
+    grid-column:1/-1;
+
+    text-align:center;
+
+    border-left:
+        6px solid #facc15;
+
+}
+
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
    ========================================= */
