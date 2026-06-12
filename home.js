@@ -33,7 +33,7 @@ const dashboard =
 
 dashboard.innerHTML = `
 
-<div class="hero-bolao">
+<div class="regras-card hero-bolao">
 
     <h1>
         🏆 Bolão Família Corazza
@@ -53,32 +53,32 @@ dashboard.innerHTML = `
     </div>
 
     <div class="hero-numeros">
-
-        ...    <div class="hero-numeros">
-
-        <div>
-
-            <span>👥</span>
-
-            <h2 id="totalParticipantes">
-                ...
-            </h2>
-
-            <p>Participantes</p>
-
-        </div>
-
-        <div>
-
-            <span>💰</span>
-
-            <h2 id="premiacao">
-                ...
-            </h2>
-
-            <p>Premiação Atual</p>
-
-        </div>
+        
+            <div>
+        
+                <span>👥</span>
+        
+                <h2 id="totalParticipantes">
+                    ...
+                </h2>
+        
+                <p>Participantes</p>
+        
+            </div>
+        
+            <div>
+        
+                <span>💰</span>
+        
+                <h2 id="premiacao">
+                    ...
+                </h2>
+        
+                <p>Premiação Atual</p>
+        
+            </div>
+        
+    
 
     </div>
 
