@@ -389,7 +389,7 @@ console.log(ultimo);
             font-style:italic;
             margin-bottom:10px;
         ">
-            "${ultimo.mensagem}"
+            "${ultimo.texto}"
         </div>
 
         <div style="
