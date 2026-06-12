@@ -247,11 +247,15 @@ async function carregarTopRanking(){
     const participantes =
         await carregarParticipantesRanking();
 
+    const jogos =
+        await carregarJogos();
+
     participantes.forEach(p => {
 
         p.pontuacao =
-            calcularPontos(
-                p.palpites
+            calcularPontuacao(
+                p,
+                jogos
             );
 
     });
