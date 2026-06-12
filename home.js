@@ -50,6 +50,8 @@ dashboard.innerHTML = `
             🇧🇷 Rumo ao Hexa 🇧🇷
         </p>
 
+         </div>
+
     <div class="regras-card status-bolao">
 
         <h2>
@@ -375,6 +377,46 @@ async function carregarTopRanking(){
         }
     );
 
+    const botao =
+    document.createElement('a');
+
+botao.href =
+    'ranking.html';
+
+botao.textContent =
+    '🏆 Ver Classificação Completa';
+
+botao.style.display =
+    'block';
+
+botao.style.marginTop =
+    '15px';
+
+botao.style.padding =
+    '12px';
+
+botao.style.background =
+    '#1e3a8a';
+
+botao.style.color =
+    'white';
+
+botao.style.textAlign =
+    'center';
+
+botao.style.textDecoration =
+    'none';
+
+botao.style.borderRadius =
+    '10px';
+
+botao.style.fontWeight =
+    '700';
+
+container.appendChild(
+    botao
+);
+
 }
 
 carregarTopRanking();
@@ -406,7 +448,7 @@ async function carregarUltimoRecado(){
         recados.length - 1
     ];
 
-console.log(ultimo);
+
 
     container.innerHTML = `
 
