@@ -462,33 +462,49 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 .hero-bolao{
 
-    grid-column:1/-1;
-
     text-align:center;
 
-    padding:50px;
+    padding:35px;
 
 }
 
-.hero-bolao h1{
+.subtitulo-copa{
 
-    margin-bottom:10px;
+    color:#64748b;
 
-    color:#1e3a8a;
+    font-size:18px;
+
+    margin-top:-5px;
+
+    margin-bottom:20px;
 
 }
 
-.hero-numeros{
+.bandeira-topo{
 
-    display:flex;
+    width:90px;
 
-    justify-content:center;
+    margin:10px auto;
 
-    gap:60px;
+    display:block;
 
-    margin-top:30px;
+}
 
-    flex-wrap:wrap;
+.selo-hexa{
+
+    display:inline-block;
+
+    background:#fef9c3;
+
+    color:#15803d;
+
+    font-weight:800;
+
+    padding:10px 20px;
+
+    border-radius:999px;
+
+    margin:15px 0;
 
 }
 
