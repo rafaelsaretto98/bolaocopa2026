@@ -462,10 +462,6 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 .hero-bolao{
 
-    text-align:center;
-
-    padding:40px;
-
     background:
         linear-gradient(
             rgba(255,255,255,.95),
