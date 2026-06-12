@@ -37,6 +37,14 @@ dashboard.innerHTML = `
         <h1>
             🏆 Bolão Família Corazza 2026
         </h1>
+        
+        <p style="
+            font-size:20px;
+            font-weight:600;
+            color:#64748b;
+        ">
+            ⚽ Copa do Mundo 2026
+        </p>
     
         <p class="rumo-hexa">
             🇧🇷 Rumo ao Hexa 🇧🇷
