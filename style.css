@@ -463,11 +463,13 @@ progress::-webkit-progress-value { background-color: #10b981; }
 .hero-bolao{
 
     text-align:center;
-    padding:35px;
+
+    padding:40px;
+
     background:
         linear-gradient(
-            rgba(255,255,255,.92),
-            rgba(255,255,255,.92)
+            rgba(255,255,255,.95),
+            rgba(255,255,255,.95)
         ),
         url('img/bandeira_Brasil.png');
 
@@ -475,18 +477,7 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
     background-position:center;
 
-    background-size:180px;
-}
-
-.subtitulo-copa{
-
-    color:#64748b;
-
-    font-size:18px;
-
-    margin-top:-5px;
-
-    margin-bottom:20px;
+    background-size:220px;
 
 }
 
@@ -694,6 +685,17 @@ progress::-webkit-progress-value { background-color: #10b981; }
     margin:8px 0;
     font-size:32px;
     color:#1e3a8a;
+}
+
+.hero-bolao{
+    grid-column: 1 / -1;
+}
+
+.atalhos-home{
+    grid-column: 1 / -1;
+}
+.status-bolao{
+    grid-column: 1 / -1;
 }
 
 /* =========================================
