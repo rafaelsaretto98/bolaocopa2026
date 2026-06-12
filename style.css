@@ -636,6 +636,21 @@ progress::-webkit-progress-value { background-color: #10b981; }
     font-size:16px;
 
 }
+.atalho-card:nth-child(1){
+    border-top:4px solid #fbbf24;
+}
+
+.atalho-card:nth-child(2){
+    border-top:4px solid #3b82f6;
+}
+
+.atalho-card:nth-child(3){
+    border-top:4px solid #10b981;
+}
+
+.atalho-card:nth-child(4){
+    border-top:4px solid #8b5cf6;
+}
 
 
 
