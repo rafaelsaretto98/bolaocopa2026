@@ -33,36 +33,28 @@ const dashboard =
 
 dashboard.innerHTML = `
 
-<div class="regras-card hero-bolao">
+<div class="hero-bolao">
 
     <h1>
-        🏆 Bolão Família Corazza 2026
+        🏆 Bolão Família Corazza
     </h1>
 
-    <p style="
-        font-size:20px;
-        font-weight:600;
-        color:#64748b;
-    ">
-        ⚽ Copa do Mundo 2026
+    <p class="subtitulo-copa">
+        Copa do Mundo 2026
     </p>
 
-    <p class="rumo-hexa">
-
     <img
         src="img/bandeira_Brasil.png"
-        class="bandeira-hexa"
+        class="bandeira-topo"
     >
 
-    Rumo ao Hexa 2026
+    <div class="selo-hexa">
+        ⭐ Rumo ao Hexa ⭐
+    </div>
 
-    <img
-        src="img/bandeira_Brasil.png"
-        class="bandeira-hexa"
-    >
-
-</p>
     <div class="hero-numeros">
+
+        ...    <div class="hero-numeros">
 
         <div>
 
