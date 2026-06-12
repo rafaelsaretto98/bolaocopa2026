@@ -462,18 +462,11 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 .hero-bolao{
 
-    background:
-        linear-gradient(
-            rgba(255,255,255,.95),
-            rgba(255,255,255,.95)
-        ),
-        url('img/bandeira_Brasil.png');
+    text-align:center;
 
-    background-repeat:no-repeat;
+    padding:40px;
 
-    background-position:center;
-
-    background-size:220px;
+    background:white;
 
 }
 
