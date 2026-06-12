@@ -582,6 +582,36 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 }
 
+.bandeira-hexa{
+
+    width:32px;
+
+    height:auto;
+
+    vertical-align:middle;
+
+    margin:0 10px;
+
+}
+
+.rumo-hexa{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:22px;
+
+    font-weight:800;
+
+    color:#15803d;
+
+}
+
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
    ========================================= */
