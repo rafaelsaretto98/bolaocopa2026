@@ -124,3 +124,71 @@ function formatarData(data){
 }
 
 carregarTela();
+
+<div class="regras-card">
+
+    <h2>🧠 Quiz da Copa</h2>
+
+    <div id="quizContainer">
+
+        <p id="perguntaQuiz">
+            Carregando pergunta...
+        </p>
+
+        <div id="opcoesQuiz"></div>
+
+        <button id="responderQuiz">
+            Responder
+        </button>
+
+        <div id="resultadoQuiz"></div>
+
+    </div>
+
+</div>
+
+const perguntas = [
+
+{
+    pergunta:
+        'Qual país venceu a Copa de 2002?',
+
+    opcoes: [
+        'Brasil',
+        'Alemanha',
+        'Argentina',
+        'França'
+    ],
+
+    correta: 0
+},
+
+{
+    pergunta:
+        'Quem marcou os 2 gols da final de 2002?',
+
+    opcoes: [
+        'Ronaldinho',
+        'Ronaldo',
+        'Rivaldo',
+        'Kaká'
+    ],
+
+    correta: 1
+},
+
+{
+    pergunta:
+        'Qual seleção tem mais títulos mundiais?',
+
+    opcoes: [
+        'Alemanha',
+        'Argentina',
+        'Brasil',
+        'Itália'
+    ],
+
+    correta: 2
+}
+
+];
