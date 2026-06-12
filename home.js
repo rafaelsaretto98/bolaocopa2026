@@ -32,6 +32,47 @@ const dashboard =
 
 dashboard.innerHTML = `
 
+    <div class="regras-card status-bolao">
+
+        <h2>
+            🔒 Palpites Encerrados
+        </h2>
+    
+        <p>
+            14 participantes estão disputando a premiação do bolão.
+        </p>
+    
+        <p>
+            Agora é hora de acompanhar os jogos,
+            o ranking e torcer pelo hexa! 🇧🇷
+        </p>
+
+    </div>
+
+    <div class="atalhos-home">
+
+    <a href="ranking.html" class="atalho-card">
+        🏆
+        <span>Ranking</span>
+    </a>
+
+    <a href="jogos.html" class="atalho-card">
+        📅
+        <span>Jogos</span>
+    </a>
+
+    <a href="classificacao.html" class="atalho-card">
+        📊
+        <span>Grupos</span>
+    </a>
+
+    <a href="recados.html" class="atalho-card">
+        🎉
+        <span>Interações</span>
+    </a>
+
+</div>
+
     <div class="regras-card hero-bolao">
 
     <h1>
