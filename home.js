@@ -48,9 +48,20 @@ dashboard.innerHTML = `
     </p>
 
     <p class="rumo-hexa">
-        🇧🇷 Rumo ao Hexa 🇧🇷
-    </p>
 
+    <img
+        src="img/bandeira_Brasil.png"
+        class="bandeira-hexa"
+    >
+
+    Rumo ao Hexa 2026
+
+    <img
+        src="img/bandeira_Brasil.png"
+        class="bandeira-hexa"
+    >
+
+</p>
     <div class="hero-numeros">
 
         <div>
