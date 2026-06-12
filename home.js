@@ -18,6 +18,11 @@ import {
 }
 from './recados-firebase.js';
 
+import {
+    calcularPontuacao
+}
+from './ranking-utils.js';
+
 
 
 const dashboard =
@@ -235,55 +240,7 @@ function formatarData(data){
 
 }
 
-const resultadosOficiais =
-    JSON.parse(
-        localStorage.getItem(
-            'resultadosOficiais'
-        )
-    ) || {};
 
-function calcularPontos(palpiteUsuario){
-
-    let pontos = 0;
-
-    for(const grupo in resultadosOficiais){
-
-        if(palpiteUsuario[grupo]){
-
-            for(
-                let p of [
-                    '1º',
-                    '2º',
-                    '3º',
-                    '4º'
-                ]
-            ){
-
-                const escolha =
-                    palpiteUsuario[grupo][p];
-
-                const oficial =
-                    resultadosOficiais[grupo][p];
-
-                if(
-                    escolha &&
-                    oficial &&
-                    escolha === oficial
-                ){
-
-                    pontos++;
-
-                }
-
-            }
-
-        }
-
-    }
-
-    return pontos;
-
-}
 
 async function carregarTopRanking(){
 
