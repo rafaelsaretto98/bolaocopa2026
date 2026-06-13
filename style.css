@@ -697,11 +697,8 @@ progress::-webkit-progress-value { background-color: #10b981; }
 .topo-relampago{
 
     display:flex;
-
     gap:20px;
-
     margin-bottom:20px;
-
     align-items:flex-start;
 
 }
@@ -711,27 +708,23 @@ progress::-webkit-progress-value { background-color: #10b981; }
 }
 
 .painel-palpites-relampago{
+
     flex:1;
     min-height:320px;
+    max-height:420px;
     overflow-y:auto;
+
 }
 
 .palpite-item{
 
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     padding:12px;
-
     margin-bottom:10px;
-
     background:#f8fafc;
-
     border-radius:10px;
-
     border-left:4px solid #16a34a;
 
 }
