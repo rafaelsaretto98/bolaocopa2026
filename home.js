@@ -40,7 +40,7 @@ dashboard.innerHTML = `
     </h2>
 
     <p>
-        🇧🇷 Brasil x Paraguai
+         Brasil x Marrocos
     </p>
 
     <p>
@@ -97,11 +97,17 @@ dashboard.innerHTML = `
 
     </div>
 
-    <button id="enviarPalpiteRelampago">
-
-        ⚽ Enviar Palpite
-
-    </button>
+            <button
+                id="enviarPalpiteRelampago"
+                class="btn-relampago"
+            >
+                ⚽ Enviar Palpite
+            </button><button
+                id="enviarPalpiteRelampago"
+                class="btn-relampago"
+            >
+                ⚽ Enviar Palpite
+            </button>
 
     <div
         id="mensagemRelampago"
