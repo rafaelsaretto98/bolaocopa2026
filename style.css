@@ -740,9 +740,7 @@ progress::-webkit-progress-value { background-color: #10b981; }
 }
 
 .placar-relampago-card{
-
-    flex:1;
-
+    flex:0 0 380px;
 }
 
 .painel-palpites-relampago{
