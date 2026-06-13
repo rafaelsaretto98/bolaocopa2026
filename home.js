@@ -33,6 +33,86 @@ const dashboard =
 
 dashboard.innerHTML = `
 
+<div class="regras-card placar-relampago-card">
+
+    <h2>
+        🔥 Palpite Relâmpago
+    </h2>
+
+    <p>
+        🇧🇷 Brasil x Paraguai
+    </p>
+
+    <p>
+        Qual será o placar?
+    </p>
+
+    <input
+        id="nomeBolao"
+        placeholder="Seu nome"
+        style="
+            width:100%;
+            padding:10px;
+            margin-bottom:10px;
+        "
+    >
+
+    <div style="
+        display:flex;
+        gap:10px;
+        margin-bottom:15px;
+        align-items:center;
+    ">
+
+        <input
+            id="golsBrasil"
+            type="number"
+            min="0"
+            value="0"
+            style="
+                flex:1;
+                padding:10px;
+                text-align:center;
+            "
+        >
+
+        <span style="
+            font-size:22px;
+            font-weight:800;
+        ">
+            x
+        </span>
+
+        <input
+            id="golsMarrocos"
+            type="number"
+            min="0"
+            value="0"
+            style="
+                flex:1;
+                padding:10px;
+                text-align:center;
+            "
+        >
+
+    </div>
+
+    <button id="enviarPalpiteRelampago">
+
+        ⚽ Enviar Palpite
+
+    </button>
+
+    <div
+        id="mensagemRelampago"
+        style="
+            margin-top:10px;
+            font-weight:700;
+        "
+    ></div>
+
+</div>
+
 <div class="regras-card hero-bolao">
 
     <h1>
