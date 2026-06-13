@@ -131,7 +131,7 @@ dashboard.innerHTML = `
 </div>
 
 
-
+<div class="conteudo-home">
 
     <div class="regras-card hero-bolao">
 
@@ -255,6 +255,8 @@ dashboard.innerHTML = `
     <div id="ultimoRecado">
 
         Carregando...
+
+    </div>
 
     </div>
 
