@@ -73,6 +73,19 @@ if(btn){
                     'mensagemRelampago'
                 ).innerHTML =
                     '✅ Palpite registrado!';
+               
+                document.getElementById(
+                    
+                            'nomeBolao'
+                        ).value = '';
+                        
+                        document.getElementById(
+                            'golsBrasil'
+                        ).value = 0;
+                        
+                        document.getElementById(
+                            'golsMarrocos'
+                        ).value = 0;
                 carregarPalpitesRelampago();
 
             }
