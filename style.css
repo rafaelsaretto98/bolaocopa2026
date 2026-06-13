@@ -840,7 +840,7 @@ progress::-webkit-progress-value { background-color: #10b981; }
     .hero-bolao h1{
     max-width:500px;
     margin:auto;
-}
+    }
 
     #premiacao{
         font-size:2.5rem;
@@ -849,6 +849,27 @@ progress::-webkit-progress-value { background-color: #10b981; }
     #totalParticipantes{
         font-size:2.5rem;
     }
+    
+     .placar-relampago-card{
+        margin-bottom:20px;
+    }
 
+    .placar-relampago-card h2{
+        font-size:24px;
+    }
+
+    .placar-linha{
+        gap:10px;
+    }
+
+    .placar-linha input{
+        width:70px;
+        font-size:22px;
+    }
+
+    .btn-relampago{
+        font-size:18px;
+        padding:16px;
+    }
 
 }
