@@ -446,13 +446,9 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 #dashboard{
 
-    display:grid;
+    display:flex;
 
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(320px,1fr)
-        );
+    flex-direction:column;
 
     gap:20px;
 
@@ -461,8 +457,6 @@ progress::-webkit-progress-value { background-color: #10b981; }
 }
 
 .hero-bolao{
-
-    grid-column:1/-1;
 
     text-align:center;
 
@@ -559,8 +553,6 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 .status-bolao{
 
-    grid-column:1/-1;
-
     text-align:center;
 
     border-left:
@@ -642,9 +634,7 @@ progress::-webkit-progress-value { background-color: #10b981; }
     border-top:4px solid #8b5cf6;
 }
 
-.atalhos-home{
-    grid-column: 1 / -1;
-}
+
 .status-bolao{
     grid-column: 1 / -1;
 }
@@ -703,29 +693,6 @@ progress::-webkit-progress-value { background-color: #10b981; }
     background:#15803d;
 }
 
-.home-topo{
-
-    display:flex;
-
-    gap:20px;
-
-    align-items:flex-start;
-
-}
-
-.hero-bolao{
-
-    flex:2;
-
-}
-
-.painel-palpites-relampago{
-
-    flex:1;
-
-    min-width:280px;
-
-}
 
 .topo-relampago{
 
