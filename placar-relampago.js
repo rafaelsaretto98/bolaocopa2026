@@ -73,6 +73,7 @@ if(btn){
                     'mensagemRelampago'
                 ).innerHTML =
                     '✅ Palpite registrado!';
+                carregarPalpitesRelampago();
 
             }
             catch(erro){
@@ -156,3 +157,5 @@ async function carregarPalpitesRelampago(){
     }
 
 }
+
+carregarPalpitesRelampago();
