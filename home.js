@@ -33,7 +33,9 @@ const dashboard =
 
 dashboard.innerHTML = `
 
-<div class="regras-card placar-relampago-card">
+<div class="topo-relampago">
+
+    <div class="regras-card placar-relampago-card">
 
     <h2>
         🔥 Palpite Relâmpago
@@ -114,7 +116,22 @@ dashboard.innerHTML = `
 
 </div>
 
-<div class="home-topo">
+    <div class="regras-card painel-palpites-relampago">
+
+        <h2>
+            🔥 Últimos Palpites
+        </h2>
+
+        <div id="listaPalpitesRelampago">
+            Carregando...
+        </div>
+
+    </div>
+
+</div>
+
+
+
 
     <div class="regras-card hero-bolao">
 
@@ -163,21 +180,8 @@ dashboard.innerHTML = `
         
       </div>
 
-</div>
 
-<div class="regras-card painel-palpites-relampago">
 
-    <h2>
-        🔥 Últimos Palpites
-    </h2>
-
-    <div id="listaPalpitesRelampago">
-
-        Carregando...
-
-    </div>
-
-</div>
 
 </div>
 
