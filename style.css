@@ -742,6 +742,19 @@ progress::-webkit-progress-value { background-color: #10b981; }
     margin-bottom:20px;
 
 }
+
+.cards-inferiores{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:20px;
+
+    margin-top:20px;
+
+}
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
    ========================================= */
@@ -930,5 +943,11 @@ progress::-webkit-progress-value { background-color: #10b981; }
         width:100%;
 
     }
+
+    .cards-inferiores{
+
+    grid-template-columns:1fr;
+
+}
 
 }
