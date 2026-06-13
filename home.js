@@ -102,11 +102,6 @@ dashboard.innerHTML = `
                 class="btn-relampago"
             >
                 ⚽ Enviar Palpite
-            </button><button
-                id="enviarPalpiteRelampago"
-                class="btn-relampago"
-            >
-                ⚽ Enviar Palpite
             </button>
 
     <div
@@ -119,7 +114,9 @@ dashboard.innerHTML = `
 
 </div>
 
-<div class="regras-card hero-bolao">
+<div class="home-topo">
+
+    <div class="regras-card hero-bolao">
 
     <h1>
         🏆 Bolão Família Corazza
@@ -164,9 +161,23 @@ dashboard.innerHTML = `
         
             </div>
         
-    
+      </div>
+
+</div>
+
+<div class="regras-card painel-palpites-relampago">
+
+    <h2>
+        🔥 Últimos Palpites
+    </h2>
+
+    <div id="listaPalpitesRelampago">
+
+        Carregando...
 
     </div>
+
+</div>
 
 </div>
 
