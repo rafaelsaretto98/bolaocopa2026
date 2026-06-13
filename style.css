@@ -446,18 +446,7 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 #dashboard{
     display:block;
-    display:grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(320px,1fr)
-        );
-
-    gap:20px;
-
     margin-top:20px;
-
 }
 
 .hero-bolao{
@@ -734,31 +723,29 @@ progress::-webkit-progress-value { background-color: #10b981; }
     border-left:4px solid #16a34a;
 
 }
+.topo-relampago{
 
-.conteudo-home{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(350px,1fr)
-        );
-
+    display:flex;
     gap:20px;
+    align-items:flex-start;
+    margin-bottom:20px;
 
 }
 
-.hero-bolao,
-.status-bolao,
-.atalhos-home{
+.placar-relampago-card{
 
-    grid-column:1 / -1;
+    width:380px;
+    flex-shrink:0;
 
 }
 
+.painel-palpites-relampago{
 
+    flex:1;
+    max-height:420px;
+    overflow-y:auto;
 
+}
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
    ========================================= */
@@ -935,11 +922,12 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
     }
 
-        .topo-relampago{
+    .topo-relampago{
 
-        flex-direction:column;
+    display:flex;
+    flex-direction:column;
 
-    }
+}
 
     .placar-relampago-card,
     .painel-palpites-relampago{
