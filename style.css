@@ -944,9 +944,17 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
     }
 
+    
+
     .cards-inferiores{
 
-    grid-template-columns:1fr;
+        grid-template-columns:1fr;
+
+        gap:15px;
+
+        margin-top:15px;
+
+    }
 
 }
 
