@@ -445,8 +445,11 @@ progress::-webkit-progress-value { background-color: #10b981; }
 }
 
 #dashboard{
-    display:block;
-    margin-top:20px;
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+
 }
 
 .hero-bolao{
@@ -549,8 +552,14 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 .status-bolao{
 
-    max-width:900px;
+    width:100%;
+    max-width:1200px;
+
     margin:0 auto 20px auto;
+
+    text-align:center;
+
+    border-left:6px solid #facc15;
 
 }
 
@@ -721,10 +730,16 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 .topo-relampago{
 
-    display:flex;
+    display:grid;
+    grid-template-columns:
+        320px
+        420px;
+
     justify-content:center;
+
     gap:20px;
-    margin-bottom:25px;
+
+    margin-bottom:20px;
 
 }
 /* =========================================
@@ -861,10 +876,15 @@ progress::-webkit-progress-value { background-color: #10b981; }
         font-size:32px;
     }
 
-    .hero-bolao h1{
-    max-width:500px;
-    margin:auto;
-    }
+    .hero-bolao{
+
+    width:100%;
+
+    max-width:1200px;
+
+    margin:0 auto;
+
+}
 
     #premiacao{
         font-size:2.5rem;
@@ -895,11 +915,7 @@ progress::-webkit-progress-value { background-color: #10b981; }
     }
 
     
-    .home-topo{
-
-        flex-direction:column;
-
-    }
+  
 
     .topo-relampago{
 
