@@ -89,3 +89,70 @@ if(btn){
     );
 
 }
+
+async function carregarPalpitesRelampago(){
+
+    const container =
+        document.getElementById(
+            'listaPalpitesRelampago'
+        );
+
+    if(!container) return;
+
+    try{
+
+        const q =
+            query(
+                collection(
+                    db,
+                    'placar-relampago'
+                ),
+                orderBy(
+                    'criadoEm',
+                    'desc'
+                ),
+                limit(20)
+            );
+
+        const snapshot =
+            await getDocs(q);
+
+        container.innerHTML = '';
+
+        snapshot.forEach(doc => {
+
+            const p =
+                doc.data();
+
+            container.innerHTML += `
+
+                <div style="
+                    padding:10px;
+                    margin-bottom:8px;
+                    border-bottom:1px solid #e5e7eb;
+                ">
+
+                    <strong>
+                        ${p.nome}
+                    </strong>
+
+                    <br>
+
+                    🇧🇷 ${p.brasil}
+                    x
+                    ${p.marrocos} 🇲🇦
+
+                </div>
+
+            `;
+
+        });
+
+    }
+    catch(erro){
+
+        console.error(erro);
+
+    }
+
+}
