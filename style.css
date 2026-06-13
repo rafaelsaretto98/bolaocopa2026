@@ -648,6 +648,60 @@ progress::-webkit-progress-value { background-color: #10b981; }
 .status-bolao{
     grid-column: 1 / -1;
 }
+.placar-relampago-card{
+    max-width:700px;
+    margin:0 auto 30px auto;
+    text-align:center;
+}
+
+.placar-relampago-card h2{
+    margin-bottom:15px;
+}
+
+.placar-relampago-card input{
+    width:100%;
+    padding:12px;
+    border:1px solid #cbd5e1;
+    border-radius:10px;
+    box-sizing:border-box;
+}
+
+.placar-linha{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    margin:15px 0;
+}
+
+.placar-linha input{
+    width:90px;
+    text-align:center;
+    font-size:24px;
+    font-weight:700;
+}
+
+.placar-x{
+    font-size:28px;
+    font-weight:900;
+    color:#1e3a8a;
+}
+
+.btn-relampago{
+    width:100%;
+    background:#16a34a;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:10px;
+    font-weight:800;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.btn-relampago:hover{
+    background:#15803d;
+}
 
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
