@@ -703,6 +703,32 @@ progress::-webkit-progress-value { background-color: #10b981; }
     background:#15803d;
 }
 
+.home-topo{
+
+    display:flex;
+
+    gap:20px;
+
+    align-items:flex-start;
+
+}
+
+.hero-bolao{
+
+    flex:2;
+
+}
+
+.painel-palpites-relampago{
+
+    flex:1;
+
+    min-width:280px;
+
+}
+
+
+
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
    ========================================= */
@@ -870,6 +896,13 @@ progress::-webkit-progress-value { background-color: #10b981; }
     .btn-relampago{
         font-size:18px;
         padding:16px;
+    }
+
+    
+    .home-topo{
+
+        flex-direction:column;
+
     }
 
 }
