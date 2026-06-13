@@ -744,13 +744,9 @@ progress::-webkit-progress-value { background-color: #10b981; }
 }
 
 .painel-palpites-relampago{
-
     flex:1;
-
-    max-height:400px;
-
+    min-height:320px;
     overflow-y:auto;
-
 }
 
 .palpite-item{
@@ -759,13 +755,17 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
     justify-content:space-between;
 
-    padding:10px;
+    align-items:center;
 
-    margin-bottom:8px;
+    padding:12px;
+
+    margin-bottom:10px;
 
     background:#f8fafc;
 
     border-radius:10px;
+
+    border-left:4px solid #16a34a;
 
 }
 
