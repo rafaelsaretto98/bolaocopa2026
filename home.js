@@ -226,6 +226,8 @@ dashboard.innerHTML = `
 
 </div>
 
+<div class="cards-inferiores">
+
     <div class="regras-card">
         <h2>
             🔥 Próximos Jogos
@@ -256,9 +258,9 @@ dashboard.innerHTML = `
 
         Carregando...
 
-    </div>
-
-    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 
