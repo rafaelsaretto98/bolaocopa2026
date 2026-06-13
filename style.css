@@ -445,7 +445,7 @@ progress::-webkit-progress-value { background-color: #10b981; }
 }
 
 #dashboard{
-
+    display:block;
     display:grid;
 
     grid-template-columns:
@@ -700,10 +700,12 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 .topo-relampago{
 
-    display:flex;
+    display:grid;
+    grid-template-columns:
+        350px
+        350px;
     gap:20px;
     margin-bottom:20px;
-    align-items:flex-start;
 
 }
 
@@ -730,6 +732,28 @@ progress::-webkit-progress-value { background-color: #10b981; }
     background:#f8fafc;
     border-radius:10px;
     border-left:4px solid #16a34a;
+
+}
+
+.conteudo-home{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(350px,1fr)
+        );
+
+    gap:20px;
+
+}
+
+.hero-bolao,
+.status-bolao,
+.atalhos-home{
+
+    grid-column:1 / -1;
 
 }
 
