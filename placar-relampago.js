@@ -3,7 +3,11 @@ from './firebase.js';
 
 import {
     collection,
-    addDoc
+    addDoc,
+    getDocs,
+    query,
+    orderBy,
+    limit
 }
 from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js';
 
