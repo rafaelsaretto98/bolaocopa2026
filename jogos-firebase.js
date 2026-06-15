@@ -34,7 +34,11 @@ export async function adicionarJogo(jogo){
 export async function atualizarResultado(
     id,
     golsA,
-    golsB
+    golsB,
+    amarelosA,
+    amarelosB,
+    vermelhosA,
+    vermelhosB
 ){
 
     await updateDoc(
@@ -42,6 +46,13 @@ export async function atualizarResultado(
         {
             golsA,
             golsB,
+
+            amarelosA,
+            amarelosB,
+
+            vermelhosA,
+            vermelhosB,
+
             encerrado: true
         }
     );
