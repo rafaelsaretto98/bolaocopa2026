@@ -126,31 +126,45 @@ dashboard.innerHTML = `
 
         <div id="listaPalpitesRelampago">
 
-    <div style="
-        text-align:center;
-        line-height:1.8;
-    ">
+            <div style="
+                text-align:center;
+                padding:15px;
+            ">
 
-            <strong>
-                Brasil 1 x 1 Marrocos
-            </strong>
+                <div style="
+                    font-size:24px;
+                    font-weight:800;
+                    color:#1e3a8a;
+                ">
+                    🇧🇷 1 x 1 🇲🇦
+                </div>
 
-            <br><br>
+                <div style="
+                    margin-top:10px;
+                    font-size:18px;
+                    font-weight:700;
+                ">
+                    Brasil x Marrocos
+                </div>
 
-            ❌ Nenhum ganhador
+                <div style="
+                    margin-top:15px;
+                    color:#dc2626;
+                    font-weight:700;
+                ">
+                    ❌ Nenhum ganhador
+                </div>
 
-            <br>
+                <div style="
+                    margin-top:10px;
+                    color:#64748b;
+                ">
+                    Ninguém acertou o empate em 1x1
+                </div>
 
-            Todo mundo passou longe
-            do empate em 1x1.
-
-            <br><br>
-
-            📊 12 palpites enviados
+            </div>
 
         </div>
-
-    </div>
 
     </div>
 
