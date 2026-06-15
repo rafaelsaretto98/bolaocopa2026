@@ -42,11 +42,13 @@ dashboard.innerHTML = `
     </h2>
 
     <p>
-         Brasil x Marrocos
+         Brasil x Haiti
     </p>
 
     <p>
-        Qual será o placar?
+        Quarta-feira • 19/06
+        <br>
+        Deixe seu palpite!
     </p>
 
     <input
@@ -119,12 +121,36 @@ dashboard.innerHTML = `
     <div class="regras-card painel-palpites-relampago">
 
         <h2>
-            🔥 Últimos Palpites
+            🏁 Resultado do Bolão #1
         </h2>
 
         <div id="listaPalpitesRelampago">
-            Carregando...
+
+    <div style="
+        text-align:center;
+        line-height:1.8;
+    ">
+
+            <strong>
+                Brasil 1 x 1 Marrocos
+            </strong>
+
+            <br><br>
+
+            ❌ Nenhum ganhador
+
+            <br>
+
+            Todo mundo passou longe
+            do empate em 1x1.
+
+            <br><br>
+
+            📊 12 palpites enviados
+
         </div>
+
+    </div>
 
     </div>
 
