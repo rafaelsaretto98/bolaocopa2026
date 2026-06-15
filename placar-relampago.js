@@ -61,7 +61,7 @@ if(btn){
                         nome,
                         brasil:Number(brasil),
                         marrocos:Number(marrocos),
-                        jogo:'Brasil x Marrocos',
+                        jogo:'Brasil x Haiti',
                         criadoEm:
                             new Date()
                             .toISOString()
@@ -86,7 +86,7 @@ if(btn){
                         document.getElementById(
                             'golsMarrocos'
                         ).value = 0;
-                carregarPalpitesRelampago();
+                //carregarPalpitesRelampago();
 
             }
             catch(erro){
@@ -171,4 +171,4 @@ async function carregarPalpitesRelampago(){
 
 }
 
-carregarPalpitesRelampago();
+//carregarPalpitesRelampago();
