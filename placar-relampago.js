@@ -32,7 +32,7 @@ if(btn){
                     'golsBrasil'
                 ).value;
 
-            const marrocos =
+            const adversario =
                 document.getElementById(
                     'golsMarrocos'
                 ).value;
@@ -40,7 +40,7 @@ if(btn){
             if(
                 !nome ||
                 brasil === '' ||
-                marrocos === ''
+                adversario === ''
             ){
                 alert(
                     'Preencha todos os campos.'
@@ -60,7 +60,7 @@ if(btn){
                     {
                         nome,
                         brasil:Number(brasil),
-                        marrocos:Number(marrocos),
+                        marrocos:Number(adversario),
                         jogo:'Brasil x Haiti',
                         criadoEm:
                             new Date()
@@ -154,7 +154,7 @@ async function carregarPalpitesRelampago(){
 
                     🇧🇷 ${p.brasil}
                     x
-                    ${p.marrocos} 🇲🇦
+                    ${p.adversario} 🇲🇦
 
                 </div>
 
