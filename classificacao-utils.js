@@ -1,3 +1,8 @@
+import {
+    rankingFifa
+}
+from './ranking-fifa.js';
+
 export function gerarClassificacao(jogos, grupo){
 
     const tabela = {};
@@ -23,7 +28,11 @@ export function gerarClassificacao(jogos, grupo){
                 derrotas: 0,
                 golsPro: 0,
                 golsContra: 0,
-                saldo: 0
+                saldo: 0,
+
+                amarelos: 0,
+                vermelhos: 0,
+                fairPlay: 0
             };
 
         }
@@ -39,7 +48,11 @@ export function gerarClassificacao(jogos, grupo){
                 derrotas: 0,
                 golsPro: 0,
                 golsContra: 0,
-                saldo: 0
+                saldo: 0,
+
+                amarelos: 0,
+                vermelhos: 0,
+                fairPlay: 0
             };
 
         }
@@ -52,6 +65,14 @@ export function gerarClassificacao(jogos, grupo){
 
         tabela[timeB].golsPro += jogo.golsB;
         tabela[timeB].golsContra += jogo.golsA;
+        tabela[timeA].amarelos +=
+            Number(jogo.amarelosA || 0);
+        tabela[timeA].vermelhos +=
+            Number(jogo.vermelhosA || 0);
+        tabela[timeB].amarelos +=
+            Number(jogo.amarelosB || 0);
+        tabela[timeB].vermelhos +=
+            Number(jogo.vermelhosB || 0);
 
         if(jogo.golsA > jogo.golsB){
 
@@ -87,6 +108,12 @@ export function gerarClassificacao(jogos, grupo){
         time.saldo =
             time.golsPro -
             time.golsContra;
+
+        time.fairPlay =
+
+            time.amarelos +
+
+            (time.vermelhos * 3);
 
     });
 
