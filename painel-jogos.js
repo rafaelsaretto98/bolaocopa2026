@@ -59,6 +59,49 @@ async function iniciar(){
     value="${jogo.golsA ?? ''}"
     style="width:60px;"
 >
+<br><br>
+
+🟨 ${jogo.timeA}
+
+<input
+    type="number"
+    min="0"
+    id="amarelosA-${jogo.id}"
+    value="${jogo.amarelosA ?? 0}"
+    style="width:60px;"
+>
+
+🟨 ${jogo.timeB}
+
+<input
+    type="number"
+    min="0"
+    id="amarelosB-${jogo.id}"
+    value="${jogo.amarelosB ?? 0}"
+    style="width:60px;"
+>
+
+<br><br>
+
+🟥 ${jogo.timeA}
+
+<input
+    type="number"
+    min="0"
+    id="vermelhosA-${jogo.id}"
+    value="${jogo.vermelhosA ?? 0}"
+    style="width:60px;"
+>
+
+🟥 ${jogo.timeB}
+
+<input
+    type="number"
+    min="0"
+    id="vermelhosB-${jogo.id}"
+    value="${jogo.vermelhosB ?? 0}"
+    style="width:60px;"
+>
 
 ${jogo.timeA}
 
@@ -146,6 +189,14 @@ document
 
         golsB: null,
 
+        amarelosA: 0,
+
+        amarelosB: 0,
+
+        vermelhosA: 0,
+
+        vermelhosB: 0,
+
         encerrado: false
     };
 
@@ -199,6 +250,34 @@ document
                 `golsB-${id}`
             ).value
         );
+    
+    const amarelosA =
+    parseInt(
+        document.getElementById(
+            `amarelosA-${id}`
+        ).value
+    ) || 0;
+
+    const amarelosB =
+        parseInt(
+            document.getElementById(
+                `amarelosB-${id}`
+            ).value
+        ) || 0;
+
+    const vermelhosA =
+        parseInt(
+            document.getElementById(
+                `vermelhosA-${id}`
+            ).value
+        ) || 0;
+
+    const vermelhosB =
+        parseInt(
+            document.getElementById(
+                `vermelhosB-${id}`
+            ).value
+        ) || 0;
 
     if(
         isNaN(golsA) ||
@@ -215,7 +294,13 @@ document
         await atualizarResultado(
             id,
             golsA,
-            golsB
+            golsB,
+
+            amarelosA,
+            amarelosB,
+
+            vermelhosA,
+            vermelhosB
         );
 
         alert(
