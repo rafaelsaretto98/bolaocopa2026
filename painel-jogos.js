@@ -52,70 +52,122 @@ async function iniciar(){
 
         <br><br>
 
-<input
-    type="number"
-    min="0"
-    id="golsA-${jogo.id}"
-    value="${jogo.golsA ?? ''}"
-    style="width:60px;"
->
-<br><br>
+<div style="
+    background:#f8fafc;
+    padding:15px;
+    border-radius:10px;
+    margin-top:15px;
+">
 
-🟨 ${jogo.timeA}
+    <div style="
+        text-align:center;
+        font-weight:700;
+        margin-bottom:10px;
+    ">
+        ⚽ Resultado
+    </div>
 
-<input
-    type="number"
-    min="0"
-    id="amarelosA-${jogo.id}"
-    value="${jogo.amarelosA ?? 0}"
-    style="width:60px;"
->
+    <div style="
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        gap:10px;
+        flex-wrap:wrap;
+    ">
 
-🟨 ${jogo.timeB}
+        <span>${jogo.timeA}</span>
 
-<input
-    type="number"
-    min="0"
-    id="amarelosB-${jogo.id}"
-    value="${jogo.amarelosB ?? 0}"
-    style="width:60px;"
->
+        <input
+            type="number"
+            min="0"
+            id="golsA-${jogo.id}"
+            value="${jogo.golsA ?? ''}"
+            style="width:60px;"
+        >
 
-<br><br>
+        <strong>x</strong>
 
-🟥 ${jogo.timeA}
+        <input
+            type="number"
+            min="0"
+            id="golsB-${jogo.id}"
+            value="${jogo.golsB ?? ''}"
+            style="width:60px;"
+        >
 
-<input
-    type="number"
-    min="0"
-    id="vermelhosA-${jogo.id}"
-    value="${jogo.vermelhosA ?? 0}"
-    style="width:60px;"
->
+        <span>${jogo.timeB}</span>
 
-🟥 ${jogo.timeB}
+    </div>
 
-<input
-    type="number"
-    min="0"
-    id="vermelhosB-${jogo.id}"
-    value="${jogo.vermelhosB ?? 0}"
-    style="width:60px;"
->
+</div>
 
-${jogo.timeA}
+<br>
 
-x
+<div style="
+    background:#fffbeb;
+    padding:15px;
+    border-radius:10px;
+">
 
-${jogo.timeB}
+    <strong>🟨 Cartões Amarelos</strong>
 
-<input
-    type="number"
-    min="0"
-    id="golsB-${jogo.id}"
-    value="${jogo.golsB ?? ''}"
-    style="width:60px;"
->
+    <br><br>
+
+    ${jogo.timeA}
+
+    <input
+        type="number"
+        min="0"
+        id="amarelosA-${jogo.id}"
+        value="${jogo.amarelosA ?? 0}"
+        style="width:60px;margin:0 10px;"
+    >
+
+    ${jogo.timeB}
+
+    <input
+        type="number"
+        min="0"
+        id="amarelosB-${jogo.id}"
+        value="${jogo.amarelosB ?? 0}"
+        style="width:60px;margin-left:10px;"
+    >
+
+</div>
+
+<br>
+
+<div style="
+    background:#fef2f2;
+    padding:15px;
+    border-radius:10px;
+">
+
+    <strong>🟥 Cartões Vermelhos</strong>
+
+    <br><br>
+
+    ${jogo.timeA}
+
+    <input
+        type="number"
+        min="0"
+        id="vermelhosA-${jogo.id}"
+        value="${jogo.vermelhosA ?? 0}"
+        style="width:60px;margin:0 10px;"
+    >
+
+    ${jogo.timeB}
+
+    <input
+        type="number"
+        min="0"
+        id="vermelhosB-${jogo.id}"
+        value="${jogo.vermelhosB ?? 0}"
+        style="width:60px;margin-left:10px;"
+    >
+
+</div>
 
 <br><br>
 
