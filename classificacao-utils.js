@@ -114,6 +114,10 @@ export function gerarClassificacao(jogos, grupo){
             time.amarelos +
 
             (time.vermelhos * 3);
+        time.ranking =
+            rankingFifa[
+            time.time
+        ] || 999;
 
     });
 
@@ -121,14 +125,51 @@ export function gerarClassificacao(jogos, grupo){
         .values(tabela)
         .sort((a,b) => {
 
-            if(b.pontos !== a.pontos)
-                return b.pontos - a.pontos;
+        if(
+            b.pontos !==
+            a.pontos
+        ){
+            return (
+                b.pontos -
+                a.pontos
+            );
+        }
 
-            if(b.saldo !== a.saldo)
-                return b.saldo - a.saldo;
+        if(
+            b.saldo !==
+            a.saldo
+        ){
+            return (
+                b.saldo -
+                a.saldo
+            );
+        }
 
-            return b.golsPro - a.golsPro;
+        if(
+            b.golsPro !==
+            a.golsPro
+        ){
+            return (
+                b.golsPro -
+                a.golsPro
+            );
+        }
 
-        });
+        if(
+            a.fairPlay !==
+            b.fairPlay
+        ){
+            return (
+                a.fairPlay -
+                b.fairPlay
+            );
+        }
+
+        return (
+            a.ranking -
+            b.ranking
+        );
+
+    });
 
 }
