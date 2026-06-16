@@ -62,11 +62,10 @@ async function iniciar(){
                 Grupo ${grupo}
             </h2>
 
+            <div class="tabela-wrapper">
+
             <table
-                style="
-                    width:100%;
-                    border-collapse:collapse;
-                "
+                class="tabela-classificacao"
             >
                 <tr>
                     <th>Pos</th>
@@ -79,6 +78,8 @@ async function iniciar(){
                     <th>GP</th>
                     <th>GC</th>
                     <th>SG</th>
+                    <th>CA</th>
+                    <th>CV</th>
                 </tr>
         `;
 
@@ -104,14 +105,18 @@ async function iniciar(){
                     <td>${time.golsPro}</td>
                     <td>${time.golsContra}</td>
                     <td>${time.saldo}</td>
+                    <td>${time.amarelos ?? 0}</td>
+                    <td>${time.vermelhos ?? 0}</td>
                 </tr>
             `;
 
         });
 
         html += `
-            </table>
-        `;
+    </table>
+
+    </div>
+`;
 
         card.innerHTML = html;
 
