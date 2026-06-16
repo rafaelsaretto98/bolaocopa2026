@@ -779,6 +779,10 @@ progress::-webkit-progress-value { background-color: #10b981; }
     border-bottom:1px solid #e5e7eb;
 }
 
+#classificacoes .regras-card{
+    margin-bottom:40px;
+}
+
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
    ========================================= */
