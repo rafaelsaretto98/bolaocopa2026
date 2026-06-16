@@ -45,6 +45,18 @@ dashboard.innerHTML = `
          Brasil x Haiti
     </p>
 
+    <div style="
+    background:#dcfce7;
+    color:#166534;
+    padding:10px;
+    border-radius:8px;
+    margin:12px 0;
+    font-weight:700;
+    text-align:center;
+    ">
+        🔓 Palpites abertos até o início da partida
+    </div>
+
     <p>
         Quarta-feira • 19/06
         <br>
@@ -121,7 +133,7 @@ dashboard.innerHTML = `
     <div class="regras-card painel-palpites-relampago">
 
         <h2>
-            🏁 Resultado do Bolão #1
+            🏆 Bolão #1 Encerrado
         </h2>
 
         <div id="listaPalpitesRelampago">
@@ -136,7 +148,14 @@ dashboard.innerHTML = `
                     font-weight:800;
                     color:#1e3a8a;
                 ">
-                    🇧🇷 1 x 1 🇲🇦
+                    <div style="
+                    font-size:32px;
+                    font-weight:900;
+                    color:#1e3a8a;
+                ">
+                    🇧🇷 1 × 1 🇲🇦
+                </div>
+                
                 </div>
 
                 <div style="
@@ -152,7 +171,7 @@ dashboard.innerHTML = `
                     color:#dc2626;
                     font-weight:700;
                 ">
-                    ❌ Nenhum ganhador
+                    🏁 Bolão encerrado sem vencedores
                 </div>
 
                 <div style="
