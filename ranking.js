@@ -72,7 +72,9 @@ participantesRanking.forEach((amigo,index)=>{
 
     // Monta o mini-gabarito do usuário para exibição
     let htmlPalpites = '<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 15px;">';
-    for(const g in amigo.palpites) {
+    Object.keys(amigo.palpites)
+    .sort()
+    .forEach(g => {
         htmlPalpites += `
             <div style="background: #f1f5f9; padding: 10px; border-radius: 8px; font-size: 12px;">
                 <strong>Grupo ${g}</strong><br>
@@ -82,7 +84,8 @@ participantesRanking.forEach((amigo,index)=>{
                 4º ${amigo.palpites[g]['4º']}<br>
             </div>
         `;
-    }
+    });
+    
     htmlPalpites += '</div>';
 
     // Cria o cartão do ranking
@@ -129,4 +132,3 @@ participantesRanking.forEach((amigo,index)=>{
 
 
 }
-
