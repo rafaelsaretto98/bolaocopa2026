@@ -34,7 +34,7 @@ if(btn){
 
             const adversario =
                 document.getElementById(
-                    'golsMarrocos'
+                    'golsAdversario'
                 ).value;
 
             if(
@@ -59,12 +59,18 @@ if(btn){
 
                     {
                         nome,
-                        brasil:Number(brasil),
-                        marrocos:Number(adversario),
+
+                        golsBrasil:Number(brasil),
+
+                        golsAdversario:Number(adversario),
+
+                        selecaoA:'Brasil',
+
+                        selecaoB:'Haiti',
+
                         jogo:'Brasil x Haiti',
-                        criadoEm:
-                            new Date()
-                            .toISOString()
+
+                        criadoEm:new Date().toISOString()
                     }
 
                 );
@@ -84,7 +90,7 @@ if(btn){
                         ).value = 0;
                         
                         document.getElementById(
-                            'golsMarrocos'
+                            'golsAdversario'
                         ).value = 0;
                 //carregarPalpitesRelampago();
 
@@ -138,6 +144,12 @@ async function carregarPalpitesRelampago(){
             const p =
                 doc.data();
 
+            const golsBrasil =
+            p.golsBrasil ?? p.brasil;
+
+            const golsAdversario =
+            p.golsAdversario ?? p.marrocos;
+
             container.innerHTML += `
 
                 <div style="
@@ -152,9 +164,15 @@ async function carregarPalpitesRelampago(){
 
                     <br>
 
-                    🇧🇷 ${p.brasil}
+                    ${p.selecaoA === 'Brasil' ? '🇧🇷' : ''}
+
+                    ${golsBrasil}
+
                     x
-                    ${p.adversario} 🇲🇦
+
+                    ${golsAdversario}
+
+                    ${p.selecaoB === 'Haiti' ? '🇭🇹' : p.selecaoB}
 
                 </div>
 
