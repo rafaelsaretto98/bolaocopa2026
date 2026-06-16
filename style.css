@@ -755,6 +755,30 @@ progress::-webkit-progress-value { background-color: #10b981; }
     margin-top:20px;
 
 }
+
+.tabela-wrapper{
+    overflow-x:auto;
+}
+
+.tabela-classificacao{
+    width:100%;
+    border-collapse:collapse;
+    min-width:700px;
+}
+
+.tabela-classificacao th{
+    background:#1e3a8a;
+    color:white;
+    padding:10px;
+    text-align:center;
+}
+
+.tabela-classificacao td{
+    padding:10px;
+    text-align:center;
+    border-bottom:1px solid #e5e7eb;
+}
+
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
    ========================================= */
