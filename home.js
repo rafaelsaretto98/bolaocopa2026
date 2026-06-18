@@ -133,7 +133,7 @@ dashboard.innerHTML = `
 
 </div>
 
-   </div>
+   
 
            <button
                id="enviarPalpiteRelampago"
@@ -142,13 +142,7 @@ dashboard.innerHTML = `
                ⚽ Enviar Palpite
            </button>
 
-   <div
-       id="mensagemRelampago"
-       style="
-           margin-top:10px;
-           font-weight:700;
-       "
-   ></div>
+   <div id="mensagemRelampago"style="margin-top:10px;font-weight:700;"></div>
 
 </div>
 
@@ -158,62 +152,57 @@ dashboard.innerHTML = `
            🏆 Bolão #1 Encerrado
        </h2>
 
-       <div class="resultado-relampago-conteudo">
+      <div class="resultado-relampago-conteudo">
 
-           <div style="
-               text-align:center;
-               padding:15px;
-           ">
+    <div style="
+        text-align:center;
+        padding:15px;
+    ">
 
-                   <div style="
-                   font-size:32px;
-                   font-weight:900;
-                   color:#1e3a8a;
-               ">
-                   🇧🇷 1 × 1 🇲🇦
-               </div>
-               
-               </div>
+        <div style="
+            font-size:32px;
+            font-weight:900;
+            color:#1e3a8a;
+        ">
+            🇧🇷 1 × 1 🇲🇦
+        </div>
 
-               <div style="
-                   margin-top:10px;
-                   font-size:18px;
-                   font-weight:700;
-               ">
-                   Brasil x Marrocos
-               </div>
+        <div style="
+            margin-top:10px;
+            font-size:18px;
+            font-weight:700;
+        ">
+            Brasil x Marrocos
+        </div>
 
-               <div style="
-                   margin-top:15px;
-                   color:#dc2626;
-                   font-weight:700;
-               ">
-                   🏁 Bolão encerrado sem vencedores
-               </div>
+        <div style="
+            margin-top:15px;
+            color:#dc2626;
+            font-weight:700;
+        ">
+            🏁 Bolão encerrado sem vencedores
+        </div>
 
-               <div style="
-                   margin-top:10px;
-                   color:#64748b;
-               ">
-                   Ninguém acertou o empate em 1x1             
+        <div style="
+            margin-top:10px;
+            color:#64748b;
+        ">
+            Ninguém acertou o empate em 1x1
+        </div>
 
-</div>
-
-<div style="
-    margin-top:18px;
-    padding-top:15px;
-    border-top:1px solid #e5e7eb;
-    color:#16a34a;
-    font-weight:700;
-">
-
-🔥 Já estão abertos os palpites para Brasil x Haiti!
-               </div>
-
+        <div style="
+            margin-top:18px;
+            padding-top:15px;
+            border-top:1px solid #e5e7eb;
+            color:#16a34a;
+            font-weight:700;
+        ">
+            🔥 Já estão abertos os palpites para Brasil x Haiti!
            </div>
 
        </div>
 
+      </div>
    </div>
 
 </div>
@@ -347,7 +336,7 @@ dashboard.innerHTML = `
        Carregando...
 
                </div>
-
+          </div>
    </div>
 
 `;
