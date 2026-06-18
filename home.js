@@ -58,7 +58,7 @@ dashboard.innerHTML = `
    </div>
 
    <p>
-        Quarta-feira • 19/06
+      
         Sexta-feira • 19/06
        <br>
        Deixe seu palpite!
