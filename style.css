@@ -677,15 +677,26 @@ progress::-webkit-progress-value { background-color: #10b981; }
 }
 
 .btn-relampago{
+
     width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
     background:#16a34a;
     color:white;
-    border:none;
-    padding:14px;
-    border-radius:10px;
-    font-weight:800;
+    font-size:17px;
+    font-weight:700;
     cursor:pointer;
-    font-size:16px;
+    transition:.25s;
+
+}
+
+.btn-relampago:hover{
+
+    background:#15803d;
+
+    transform:translateY(-2px);
+
 }
 
 .btn-relampago:hover{
@@ -911,11 +922,17 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 }
 
-.resultado-relampago-conteudo{
+.lista-relampago{
 
-    text-align:center;
+    max-height:360px;
 
-    padding:15px;
+    overflow-y:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
 
 }
 
@@ -968,10 +985,41 @@ progress::-webkit-progress-value { background-color: #10b981; }
 .resultado-relampago{
 
     display:flex;
-
     flex-direction:column;
 
 }
+
+.time-input input{
+
+    width:75px;
+
+    padding:12px;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    text-align:center;
+
+    border-radius:10px;
+
+    border:2px solid #d1d5db;
+
+    transition:.2s;
+
+}
+
+.time-input input:focus{
+
+    outline:none;
+
+    border-color:#16a34a;
+
+    transform:scale(1.05);
+
+}
+
+
 
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
@@ -1171,6 +1219,12 @@ progress::-webkit-progress-value { background-color: #10b981; }
         gap:15px;
 
         margin-top:15px;
+
+    }
+
+    .topo-relampago{
+
+        grid-template-columns:1fr;
 
     }
 
