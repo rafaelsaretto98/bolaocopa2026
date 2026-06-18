@@ -74,13 +74,6 @@ dashboard.innerHTML = `
        "
    >
 
-   <div style="
-       display:flex;
-       gap:10px;
-       margin-bottom:15px;
-       align-items:center;
-   ">
-
        <div style="
     display:flex;
     align-items:center;
@@ -172,11 +165,6 @@ dashboard.innerHTML = `
                padding:15px;
            ">
 
-               <div style="
-                   font-size:24px;
-                   font-weight:800;
-                   color:#1e3a8a;
-               ">
                    <div style="
                    font-size:32px;
                    font-weight:900;
@@ -207,7 +195,19 @@ dashboard.innerHTML = `
                    margin-top:10px;
                    color:#64748b;
                ">
-                   Ninguém acertou o empate em 1x1
+                   Ninguém acertou o empate em 1x1             
+
+</div>
+
+<div style="
+    margin-top:18px;
+    padding-top:15px;
+    border-top:1px solid #e5e7eb;
+    color:#16a34a;
+    font-weight:700;
+">
+
+🔥 Já estão abertos os palpites para Brasil x Haiti!
                </div>
 
            </div>
@@ -347,8 +347,6 @@ dashboard.innerHTML = `
        Carregando...
 
                </div>
-           </div>
-       </div>
 
    </div>
 
