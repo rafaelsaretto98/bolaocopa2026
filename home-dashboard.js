@@ -178,7 +178,7 @@ export function criarDashboard(){
    </p>
 
    <img
-       src="img/bandeira_Brasil.png"
+       src="img/band_Brasil.png"
        class="bandeira-topo"
    >
 
