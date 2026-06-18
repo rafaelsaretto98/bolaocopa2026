@@ -1,3 +1,8 @@
+import {
+    carregarJogos
+}
+from './jogos-firebase.js';
+
 export async function carregarProximosJogos(){
 
 const jogos =
