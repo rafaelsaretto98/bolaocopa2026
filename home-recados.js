@@ -57,4 +57,3 @@ container.innerHTML = `
 `;
 }
 
-carregarUltimoRecado();
