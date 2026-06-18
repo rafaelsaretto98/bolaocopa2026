@@ -1,4 +1,4 @@
-async function carregarProximosJogos(){
+export async function carregarProximosJogos(){
 
 const jogos =
 await carregarJogos();
