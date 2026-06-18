@@ -161,9 +161,6 @@ export function criarDashboard(){
     </div>
 
 </div>
-   </div>
-
-</div>
 
 
 <div class="conteudo-home">
