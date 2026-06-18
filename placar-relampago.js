@@ -80,6 +80,8 @@ if(btn){
                     'mensagemRelampago'
                 ).innerHTML =
                     '✅ Palpite registrado!';
+                
+                carregarPalpitesRelampago();
                
                 document.getElementById(
                     
