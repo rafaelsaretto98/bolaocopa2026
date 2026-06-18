@@ -185,4 +185,4 @@ async function carregarPalpitesRelampago(){
 
 }
 
-//carregarPalpitesRelampago();
+carregarPalpitesRelampago();
