@@ -25,7 +25,7 @@ export const boloesRelampago = [
     timeB:'Haiti',
 
     bandeiraA:'img/band_Brasil.png',
-    bandeiraB:'img/band_Haiti.png',
+    bandeiraB:'img/Band_Haiti.png',
 
     textoData:'Sexta-feira • 19/06'
 }
