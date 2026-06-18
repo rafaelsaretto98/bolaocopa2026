@@ -783,6 +783,12 @@ progress::-webkit-progress-value { background-color: #10b981; }
     margin-bottom:40px;
 }
 
+.resultado-relampago{
+
+    margin:25px 0;
+
+}
+
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
    ========================================= */
