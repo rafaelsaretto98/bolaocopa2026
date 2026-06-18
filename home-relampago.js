@@ -35,7 +35,7 @@ export const boloesRelampago = [
 
         data: '19/06/2026',
 
-        horario: '20:00',
+        horario: '21:30',
 
         textoData: 'Sexta-feira • 19/06'
     }
