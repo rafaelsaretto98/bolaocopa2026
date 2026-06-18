@@ -42,9 +42,10 @@ export function criarDashboard(){
 
             <div class="time-input">
 
-                <div class="bandeira">
-                    ${bolaoAtual.bandeiraA}
-                </div>
+                <img
+            src="${bolaoAtual.bandeiraA}"
+            class="bandeira-img"
+        >
 
                 <div class="nome-time">
                     ${bolaoAtual.timeA}
@@ -65,9 +66,10 @@ export function criarDashboard(){
 
             <div class="time-input">
 
-                <div class="bandeira">
-                    ${bolaoAtual.bandeiraB}
-                </div>
+                <img
+                src="${bolaoAtual.bandeiraB}"
+                class="bandeira-img"
+            >
 
                 <div class="nome-time">
                     ${bolaoAtual.timeB}
