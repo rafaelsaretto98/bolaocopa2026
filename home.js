@@ -81,36 +81,64 @@ dashboard.innerHTML = `
        align-items:center;
    ">
 
-       <input
-           id="golsBrasil"
-           type="number"
-           min="0"
-           value="0"
-           style="
-               flex:1;
-               padding:10px;
-               text-align:center;
-           "
-       >
+       <div style="
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+    margin-bottom:18px;
+">
 
-       <span style="
-           font-size:22px;
-           font-weight:800;
-       ">
-           x
-       </span>
+    <div style="text-align:center;">
 
-       <input
-          id="golsAdversario"
-          type="number"
-          min="0"
-          value="0"
-          style="
-              flex:1;
-              padding:10px;
-              text-align:center;
-          "
->
+        🇧🇷
+
+        <br>
+
+        <input
+            id="golsBrasil"
+            type="number"
+            min="0"
+            value="0"
+            style="
+                width:70px;
+                padding:10px;
+                text-align:center;
+                font-size:20px;
+            "
+        >
+
+    </div>
+
+    <div style="
+        font-size:28px;
+        font-weight:900;
+    ">
+        ×
+    </div>
+
+    <div style="text-align:center;">
+
+        🇭🇹
+
+        <br>
+
+        <input
+            id="golsAdversario"
+            type="number"
+            min="0"
+            value="0"
+            style="
+                width:70px;
+                padding:10px;
+                text-align:center;
+                font-size:20px;
+            "
+        >
+
+    </div>
+
+</div>
 
    </div>
 
