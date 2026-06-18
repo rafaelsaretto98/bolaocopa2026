@@ -963,6 +963,16 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 }
 
+.placar-relampago-card,
+.painel-palpites-relampago,
+.resultado-relampago{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
    ========================================= */
