@@ -1,43 +1,33 @@
 export const boloesRelampago = [
 
-    {
-        id: 1,
+{
+    id:1,
+    encerrado:true,
 
-        encerrado: true,
+    timeA:'Brasil',
+    timeB:'Marrocos',
 
-        timeA: 'Brasil',
+    bandeiraA:'img/band_Brasil.png',
+    bandeiraB:'img/band_Marrocos.png',
 
-        timeB: 'Marrocos',
+    placar:'1 × 1',
 
-        bandeiraA: '🇧🇷',
+    vencedor:false,
 
-        bandeiraB: '🇲🇦',
+    mensagem:'Nenhum participante acertou o placar.'
+},
 
-        placar: '1 × 1',
+{
+    id:2,
+    encerrado:false,
 
-        vencedor: false,
+    timeA:'Brasil',
+    timeB:'Haiti',
 
-        mensagem: 'Nenhum participante acertou o placar.'
-    },
+    bandeiraA:'img/band_Brasil.png',
+    bandeiraB:'img/band_Haiti.png',
 
-    {
-        id: 2,
-
-        encerrado: false,
-
-        timeA: 'Brasil',
-
-        timeB: 'Haiti',
-
-        bandeiraA: '🇧🇷',
-
-        bandeiraB: '🇭🇹',
-
-        data: '19/06/2026',
-
-        horario: '21:30',
-
-        textoData: 'Sexta-feira • 19/06'
-    }
+    textoData:'Sexta-feira • 19/06'
+}
 
 ];
