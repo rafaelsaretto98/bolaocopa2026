@@ -1,3 +1,13 @@
+import { boloesRelampago } from './home-relampago.js';
+
+const bolaoAtual =
+    boloesRelampago.find(b => !b.encerrado);
+
+const ultimoBolao =
+    [...boloesRelampago]
+    .reverse()
+    .find(b => b.encerrado);
+
 export function criarDashboard(){
 
     const dashboard =
@@ -14,7 +24,7 @@ export function criarDashboard(){
    </h2>
 
    <p>
-        Brasil x Haiti
+        ${bolaoAtual.timeA} x ${bolaoAtual.timeB}
    </p>
 
    <div style="
@@ -31,7 +41,7 @@ export function criarDashboard(){
 
    <p>
       
-        Sexta-feira • 19/06
+       ${bolaoAtual.textoData}
        <br>
        Deixe seu palpite!
    </p>
@@ -56,7 +66,7 @@ export function criarDashboard(){
 
     <div style="text-align:center;">
 
-        🇧🇷
+        ${bolaoAtual.bandeiraA}
 
         <br>
 
@@ -84,7 +94,7 @@ export function criarDashboard(){
 
     <div style="text-align:center;">
 
-        🇭🇹
+       ${bolaoAtual.bandeiraB}
 
         <br>
 
@@ -136,7 +146,9 @@ export function criarDashboard(){
             font-weight:900;
             color:#1e3a8a;
         ">
-            🇧🇷 1 × 1 🇲🇦
+            ${ultimoBolao.bandeiraA}
+            ${ultimoBolao.placar}
+            ${ultimoBolao.bandeiraB}
         </div>
 
         <div style="
@@ -144,7 +156,7 @@ export function criarDashboard(){
             font-size:18px;
             font-weight:700;
         ">
-            Brasil x Marrocos
+            ${ultimoBolao.timeA} x ${ultimoBolao.timeB}
         </div>
 
         <div style="
@@ -159,7 +171,7 @@ export function criarDashboard(){
             margin-top:10px;
             color:#64748b;
         ">
-            Ninguém acertou o empate em 1x1
+            ${ultimoBolao.mensagem}
         </div>
 
         <div style="
@@ -169,7 +181,8 @@ export function criarDashboard(){
             color:#16a34a;
             font-weight:700;
         ">
-            🔥 Já estão abertos os palpites para Brasil x Haiti!
+            🔥 Já estão abertos os palpites para
+                    ${bolaoAtual.timeA} x ${bolaoAtual.timeB}!
            </div>
 
        </div>
