@@ -101,16 +101,16 @@ dashboard.innerHTML = `
        </span>
 
        <input
-           id="golsMarrocos"
-           type="number"
-           min="0"
-           value="0"
-           style="
-               flex:1;
-               padding:10px;
-               text-align:center;
-           "
-       >
+          id="golsAdversario"
+          type="number"
+          min="0"
+          value="0"
+          style="
+              flex:1;
+              padding:10px;
+              text-align:center;
+          "
+>
 
    </div>
 
