@@ -6,6 +6,7 @@ import {
     addDoc,
     getDocs,
     query,
+    where,
     orderBy,
     limit
 }
@@ -122,17 +123,12 @@ async function carregarPalpitesRelampago(){
     try{
 
         const q =
-            query(
-                collection(
-                    db,
-                    'placar-relampago'
-                ),
-                orderBy(
-                    'criadoEm',
-                    'desc'
-                ),
-                limit(20)
-            );
+        query(
+        collection(db, 'placar-relampago'),
+        where('jogo', '==', 'Brasil x Haiti'),
+        orderBy('criadoEm', 'desc'),
+        limit(20)
+    );
 
         const snapshot =
             await getDocs(q);
