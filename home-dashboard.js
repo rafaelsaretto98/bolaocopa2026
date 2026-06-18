@@ -26,10 +26,6 @@ export function criarDashboard(){
             ${bolaoAtual.timeA} x ${bolaoAtual.timeB}
         </p>
 
-        //<div class="status-relampago">
-            //🔓 Palpites abertos até o início da partida
-        //</div>
-
         <p class="data-relampago">
             ${bolaoAtual.textoData}
             <br>
