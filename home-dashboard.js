@@ -144,14 +144,6 @@ export function criarDashboard(){
 
             </div>
 
-            <div class="texto-final">
-
-                🔥 Já estão abertos os palpites para
-
-                ${bolaoAtual.timeA} x ${bolaoAtual.timeB}
-
-            </div>
-
         </div>
 
     </div>
