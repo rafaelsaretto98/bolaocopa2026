@@ -1,3 +1,18 @@
+import {
+    carregarParticipantesRanking
+}
+from './ranking-firebase.js';
+
+import {
+    carregarJogos
+}
+from './jogos-firebase.js';
+
+import {
+    calcularPontuacao
+}
+from './ranking-utils.js';
+
 export async function carregarTopRanking(){
 
 const participantes =
