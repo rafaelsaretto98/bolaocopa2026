@@ -1,3 +1,8 @@
+import {
+    carregarRecados
+}
+from './recados-firebase.js';
+
 export async function carregarUltimoRecado(){
 
 const recados =
