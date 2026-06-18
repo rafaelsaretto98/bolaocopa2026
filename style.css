@@ -844,16 +844,16 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 .bandeira-img{
 
-    width:10px;
-    height:10px;
+    width:40px;
+    height:40px;
     object-fit:contain;
 
 }
 
 .bandeira-placar{
 
-    width:10px;
-    height:10px;
+    width:40px;
+    height:40px;
     object-fit:contain;
     vertical-align:middle;
 
