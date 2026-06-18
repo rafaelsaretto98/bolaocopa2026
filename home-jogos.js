@@ -93,7 +93,7 @@ container.appendChild(div);
 });
 
 }
-carregarProximosJogos();
+
 
 function formatarData(data){
 
