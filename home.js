@@ -37,96 +37,65 @@ dashboard.innerHTML = `
 
     <div class="regras-card placar-relampago-card">
 
+        ...
+        formulário do Brasil x Haiti
+        ...
+
+    </div>
+
+    <div class="regras-card painel-palpites-relampago">
+
+        <h2>
+            📋 Últimos Palpites
+        </h2>
+
+        <div id="listaPalpitesRelampago">
+
+            Carregando...
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="regras-card resultado-relampago">
+
     <h2>
-        🔥 Palpite Relâmpago
+        🏆 Bolão #1 Encerrado
     </h2>
 
-    <p>
-         Brasil x Haiti
-    </p>
-
     <div style="
-    background:#dcfce7;
-    color:#166534;
-    padding:10px;
-    border-radius:8px;
-    margin:12px 0;
-    font-weight:700;
-    text-align:center;
-    ">
-        🔓 Palpites abertos até o início da partida
-    </div>
-
-    <p>
-        Sexta-feira • 19/06
-        <br>
-        Deixe seu palpite!
-    </p>
-
-    <input
-        id="nomeBolao"
-        placeholder="Seu nome"
-        style="
-            width:100%;
-            padding:10px;
-            margin-bottom:10px;
-        "
-    >
-
-    <div style="
-        display:flex;
-        gap:10px;
-        margin-bottom:15px;
-        align-items:center;
+        text-align:center;
+        padding:20px;
     ">
 
-        <input
-            id="golsBrasil"
-            type="number"
-            min="0"
-            value="0"
-            style="
-                flex:1;
-                padding:10px;
-                text-align:center;
-            "
-        >
+        <div style="
+            font-size:34px;
+            font-weight:900;
+            color:#1e3a8a;
+        ">
+            🇧🇷 1 × 1 🇲🇦
+        </div>
 
-        <span style="
-            font-size:22px;
+        <div style="
+            margin-top:15px;
+            font-size:18px;
+            font-weight:700;
+        ">
+            Brasil x Marrocos
+        </div>
+
+        <div style="
+            margin-top:20px;
+            color:#dc2626;
+            font-size:18px;
             font-weight:800;
         ">
-            x
-        </span>
-
-        <input
-            id="golsMarrocos"
-            type="number"
-            min="0"
-            value="0"
-            style="
-                flex:1;
-                padding:10px;
-                text-align:center;
-            "
-        >
+            ❌ Nenhum participante acertou o placar.
+        </div>
 
     </div>
-
-            <button
-                id="enviarPalpiteRelampago"
-                class="btn-relampago"
-            >
-                ⚽ Enviar Palpite
-            </button>
-
-    <div
-        id="mensagemRelampago"
-        style="
-            margin-top:10px;
-            font-weight:700;
-        "
-    ></div>
 
 </div>
 
