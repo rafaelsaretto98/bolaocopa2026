@@ -137,4 +137,4 @@ botao
 
 }
 
-carregarTopRanking();
+
