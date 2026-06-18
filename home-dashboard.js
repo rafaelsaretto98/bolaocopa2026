@@ -124,11 +124,23 @@ export function criarDashboard(){
 
             <div class="placar-final">
 
-                ${ultimoBolao.bandeiraA}
+                <div class="placar-final">
 
-                ${ultimoBolao.placar}
+    <img
+        src="${ultimoBolao.bandeiraA}"
+        class="bandeira-placar"
+    >
 
-                ${ultimoBolao.bandeiraB}
+    <span>
+        ${ultimoBolao.placar}
+    </span>
+
+    <img
+        src="${ultimoBolao.bandeiraB}"
+        class="bandeira-placar"
+    >
+
+</div>
 
             </div>
 
