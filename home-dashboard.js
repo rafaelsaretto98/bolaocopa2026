@@ -17,177 +17,150 @@ export function criarDashboard(){
 
 <div class="topo-relampago">
 
-   <div class="regras-card placar-relampago-card">
+    <!-- PALPITE -->
+    <div class="regras-card placar-relampago-card">
 
-   <h2>
-       🔥 Palpite Relâmpago
-   </h2>
+        <h2>🔥 Palpite Relâmpago</h2>
 
-   <p>
-        ${bolaoAtual.timeA} x ${bolaoAtual.timeB}
-   </p>
+        <p style="text-align:center;font-size:18px;font-weight:700;">
+            ${bolaoAtual.timeA} x ${bolaoAtual.timeB}
+        </p>
 
-   <div style="
-   background:#dcfce7;
-   color:#166534;
-   padding:10px;
-   border-radius:8px;
-   margin:12px 0;
-   font-weight:700;
-   text-align:center;
-   ">
-       🔓 Palpites abertos até o início da partida
-   </div>
+        <div class="status-relampago">
+            🔓 Palpites abertos até o início da partida
+        </div>
 
-   <p>
-      
-       ${bolaoAtual.textoData}
-       <br>
-       Deixe seu palpite!
-   </p>
-
-   <input
-       id="nomeBolao"
-       placeholder="Seu nome"
-       style="
-           width:100%;
-           padding:10px;
-           margin-bottom:10px;
-       "
-   >
-
-       <div style="
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:15px;
-    margin-bottom:18px;
-">
-
-    <div style="text-align:center;">
-
-        ${bolaoAtual.bandeiraA}
-
-        <br>
+        <p class="data-relampago">
+            ${bolaoAtual.textoData}
+            <br>
+            Deixe seu palpite!
+        </p>
 
         <input
-            id="golsBrasil"
-            type="number"
-            min="0"
-            value="0"
-            style="
-                width:70px;
-                padding:10px;
-                text-align:center;
-                font-size:20px;
-            "
+            id="nomeBolao"
+            placeholder="Seu nome"
+            class="input-relampago"
         >
+
+        <div class="placar-input">
+
+            <div class="time-input">
+
+                <div class="bandeira">
+                    ${bolaoAtual.bandeiraA}
+                </div>
+
+                <div class="nome-time">
+                    ${bolaoAtual.timeA}
+                </div>
+
+                <input
+                    id="golsBrasil"
+                    type="number"
+                    min="0"
+                    value="0"
+                >
+
+            </div>
+
+            <div class="versus">
+                ×
+            </div>
+
+            <div class="time-input">
+
+                <div class="bandeira">
+                    ${bolaoAtual.bandeiraB}
+                </div>
+
+                <div class="nome-time">
+                    ${bolaoAtual.timeB}
+                </div>
+
+                <input
+                    id="golsAdversario"
+                    type="number"
+                    min="0"
+                    value="0"
+                >
+
+            </div>
+
+        </div>
+
+        <button
+            id="enviarPalpiteRelampago"
+            class="btn-relampago"
+        >
+            ⚽ Enviar Palpite
+        </button>
+
+        <div id="mensagemRelampago"></div>
 
     </div>
 
-    <div style="
-        font-size:28px;
-        font-weight:900;
-    ">
-        ×
+    <!-- ÚLTIMOS PALPITES -->
+    <div class="regras-card painel-palpites-relampago">
+
+        <h2>📋 Últimos Palpites</h2>
+
+        <div
+            id="listaPalpitesRelampago"
+            class="lista-relampago"
+        >
+
+            Carregando...
+
+        </div>
+
     </div>
 
-    <div style="text-align:center;">
+    <!-- RESULTADO -->
+    <div class="regras-card resultado-relampago">
 
-       ${bolaoAtual.bandeiraB}
+        <h2>
+            🏆 Bolão #${ultimoBolao.id}
+        </h2>
 
-        <br>
+        <div class="resultado-relampago-conteudo">
 
-        <input
-            id="golsAdversario"
-            type="number"
-            min="0"
-            value="0"
-            style="
-                width:70px;
-                padding:10px;
-                text-align:center;
-                font-size:20px;
-            "
-        >
+            <div class="placar-final">
+
+                ${ultimoBolao.bandeiraA}
+
+                ${ultimoBolao.placar}
+
+                ${ultimoBolao.bandeiraB}
+
+            </div>
+
+            <div class="jogo-final">
+
+                ${ultimoBolao.timeA}
+                x
+                ${ultimoBolao.timeB}
+
+            </div>
+
+            <div class="sem-vencedor">
+
+                ${ultimoBolao.mensagem}
+
+            </div>
+
+            <div class="texto-final">
+
+                🔥 Já estão abertos os palpites para
+
+                ${bolaoAtual.timeA} x ${bolaoAtual.timeB}
+
+            </div>
+
+        </div>
 
     </div>
 
 </div>
-
-   
-
-           <button
-               id="enviarPalpiteRelampago"
-               class="btn-relampago"
-           >
-               ⚽ Enviar Palpite
-           </button>
-
-   <div id="mensagemRelampago"style="margin-top:10px;font-weight:700;"></div>
-
-</div>
-
-   <div class="regras-card painel-palpites-relampago">
-
-       <h2>
-           🏆 Bolão #1 Encerrado
-       </h2>
-
-      <div class="resultado-relampago-conteudo">
-
-    <div style="
-        text-align:center;
-        padding:15px;
-    ">
-
-        <div style="
-            font-size:32px;
-            font-weight:900;
-            color:#1e3a8a;
-        ">
-            ${ultimoBolao.bandeiraA}
-            ${ultimoBolao.placar}
-            ${ultimoBolao.bandeiraB}
-        </div>
-
-        <div style="
-            margin-top:10px;
-            font-size:18px;
-            font-weight:700;
-        ">
-            ${ultimoBolao.timeA} x ${ultimoBolao.timeB}
-        </div>
-
-        <div style="
-            margin-top:15px;
-            color:#dc2626;
-            font-weight:700;
-        ">
-            🏁 Bolão encerrado sem vencedores
-        </div>
-
-        <div style="
-            margin-top:10px;
-            color:#64748b;
-        ">
-            ${ultimoBolao.mensagem}
-        </div>
-
-        <div style="
-            margin-top:18px;
-            padding-top:15px;
-            border-top:1px solid #e5e7eb;
-            color:#16a34a;
-            font-weight:700;
-        ">
-            🔥 Já estão abertos os palpites para
-                    ${bolaoAtual.timeA} x ${bolaoAtual.timeB}!
-           </div>
-
-       </div>
-
-      </div>
    </div>
 
 </div>
