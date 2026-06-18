@@ -165,7 +165,7 @@ dashboard.innerHTML = `
            🏆 Bolão #1 Encerrado
        </h2>
 
-       <div id="listaPalpitesRelampago">
+       <div class="resultado-relampago-conteudo">
 
            <div style="
                text-align:center;
