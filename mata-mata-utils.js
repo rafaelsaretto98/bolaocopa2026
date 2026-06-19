@@ -4,8 +4,49 @@ import {
 from './mata-mata-config.js';
 
 
-export function gerarOitavas(){
+function resolverCodigo(codigo, classificados){
 
-    return confrontosOitavas;
+    const posicao =
+        codigo[0];
+
+    const grupo =
+        codigo[1];
+
+    if(posicao === '1'){
+
+        return classificados.primeiros[grupo];
+
+    }
+
+    if(posicao === '2'){
+
+        return classificados.segundos[grupo];
+
+    }
+
+    return null;
+
+}
+
+
+export function gerarOitavas(classificados){
+
+    return confrontosOitavas.map(confronto => ({
+
+        id: confronto.id,
+
+        timeA:
+            resolverCodigo(
+                confronto.mandante,
+                classificados
+            ),
+
+        timeB:
+            resolverCodigo(
+                confronto.visitante,
+                classificados
+            )
+
+    }));
 
 }
