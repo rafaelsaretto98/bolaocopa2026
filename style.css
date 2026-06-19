@@ -871,6 +871,128 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 }
 
+/* ==========================
+   CHAVEAMENTO
+========================== */
+
+.pagina-mata-mata{
+
+    padding:25px;
+
+    overflow-x:auto;
+
+}
+
+.bracket{
+
+    display:flex;
+
+    gap:40px;
+
+    align-items:flex-start;
+
+    min-width:1800px;
+
+}
+
+.fase{
+
+    width:300px;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.fase h2{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    color:#1e3a8a;
+
+    font-size:24px;
+
+}
+
+.lista-fase{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.jogo-card{
+
+    background:white;
+
+    border-radius:12px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+    overflow:hidden;
+
+    border:2px solid #e5e7eb;
+
+}
+
+.time-linha{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px 15px;
+
+}
+
+.time-linha:first-child{
+
+    border-bottom:1px solid #e5e7eb;
+
+}
+
+.nome-time{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-weight:700;
+
+}
+
+.gols{
+
+    font-size:18px;
+
+    font-weight:800;
+
+    color:#1e3a8a;
+
+}
+
+.fase-vazia{
+
+    color:#94a3b8;
+
+    text-align:center;
+
+    padding:40px 0;
+
+    font-style:italic;
+
+}
+
 
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
