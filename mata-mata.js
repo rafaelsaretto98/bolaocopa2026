@@ -60,4 +60,147 @@ async function iniciar(){
 
 }
 
+function desenharBracket(jogos16){
+
+    const container =
+        document.getElementById(
+            'mataMata'
+        );
+
+    container.innerHTML = `
+
+<div class="bracket">
+
+    <div class="fase">
+
+        <h2>16 Avos</h2>
+
+        <div
+            id="fase16"
+            class="lista-fase"
+        ></div>
+
+    </div>
+
+    <div class="fase">
+
+        <h2>Oitavas</h2>
+
+        <div
+            id="faseOitavas"
+            class="lista-fase"
+        ></div>
+
+    </div>
+
+    <div class="fase">
+
+        <h2>Quartas</h2>
+
+        <div
+            id="faseQuartas"
+            class="lista-fase"
+        ></div>
+
+    </div>
+
+    <div class="fase">
+
+        <h2>Semifinais</h2>
+
+        <div
+            id="faseSemi"
+            class="lista-fase"
+        ></div>
+
+    </div>
+
+    <div class="fase">
+
+        <h2>Final</h2>
+
+        <div
+            id="faseFinal"
+            class="lista-fase"
+        ></div>
+
+    </div>
+
+</div>
+
+`;
+
+    const fase16 =
+        document.getElementById(
+            'fase16'
+        );
+
+    jogos16.forEach(jogo=>{
+
+        fase16.appendChild(
+
+            criarCardJogo(
+                jogo
+            )
+
+        );
+
+    });
+
+}
+
+function criarCardJogo(jogo){
+
+    const card =
+        document.createElement(
+            'div'
+        );
+
+    card.className =
+        'jogo-card';
+
+    card.innerHTML = `
+
+<div class="time-linha">
+
+    <div class="nome-time">
+
+        ${jogo.timeA?.bandeira ?? '🏳️'}
+
+        ${jogo.timeA?.time ?? 'A definir'}
+
+    </div>
+
+    <div class="gols">
+
+        ${jogo.golsA ?? ''}
+
+    </div>
+
+</div>
+
+<div class="time-linha">
+
+    <div class="nome-time">
+
+        ${jogo.timeB?.bandeira ?? '🏳️'}
+
+        ${jogo.timeB?.time ?? 'A definir'}
+
+    </div>
+
+    <div class="gols">
+
+        ${jogo.golsB ?? ''}
+
+    </div>
+
+</div>
+
+`;
+
+    return card;
+
+}
+
 iniciar();
