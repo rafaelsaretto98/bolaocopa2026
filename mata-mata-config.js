@@ -1,4 +1,4 @@
-export const confrontosOitavas = [
+export const confrontos16Avos = [
 
 {
     id:1,
