@@ -40,7 +40,7 @@ function resolverCodigo(codigo, classificados){
 
 }
 
-export function gerarOitavas(classificados){
+export function gerar16Avos(classificados){
 
    return confrontos16Avos.map(confronto => ({
 
