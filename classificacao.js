@@ -50,16 +50,16 @@ async function iniciar(){
                 jogos,
                 grupo
             );
-        
-            todasClassificacoes.push(
-                classificacao
-        );
 
         if(
             classificacao.length === 0
         ){
             return;
         }
+        
+        todasClassificacoes.push(
+                classificacao
+        );
 
         const card =
             document.createElement('div');
@@ -133,6 +133,89 @@ async function iniciar(){
         container.appendChild(card);
 
     });
+
+    const terceiros =
+    gerarRankingTerceiros(
+        todasClassificacoes
+    );
+
+console.log(terceiros);
+
+
+
+const cardTerceiros =
+    document.createElement('div');
+
+cardTerceiros.className =
+    'regras-card';
+
+let htmlTerceiros = `
+<h2>
+🥉 Melhores Terceiros Colocados
+</h2>
+
+<div class="tabela-wrapper">
+
+<table class="tabela-classificacao">
+
+<tr>
+
+<th>#</th>
+
+<th>Grupo</th>
+
+<th>Seleção</th>
+
+<th>Pts</th>
+
+<th>SG</th>
+
+<th>GP</th>
+
+</tr>
+`;
+
+terceiros.forEach((time,index)=>{
+
+    const cor =
+        index < 8
+        ? '#dcfce7'
+        : '#fee2e2';
+
+    htmlTerceiros += `
+
+<tr style="background:${cor};">
+
+<td>${index+1}</td>
+
+<td>${time.grupo}</td>
+
+<td>${time.time}</td>
+
+<td>${time.pontos}</td>
+
+<td>${time.saldo}</td>
+
+<td>${time.golsPro}</td>
+
+</tr>
+
+`;
+
+});
+
+htmlTerceiros += `
+</table>
+
+</div>
+`;
+
+cardTerceiros.innerHTML =
+    htmlTerceiros;
+
+container.appendChild(
+    cardTerceiros
+);
 
 }
 
