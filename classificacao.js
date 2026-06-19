@@ -13,6 +13,11 @@ import {
 }
 from './terceiros-utils.js';
 
+import {
+    gerarClassificados
+}
+from './classificados-utils.js';
+
 const grupos = [
     'A','B','C','D',
     'E','F','G','H',
