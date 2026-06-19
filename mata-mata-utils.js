@@ -42,23 +42,37 @@ function resolverCodigo(codigo, classificados){
 
 export function gerarOitavas(classificados){
 
-    return confrontosOitavas.map(confronto => ({
+   return confrontosOitavas.map(confronto => ({
 
-        id: confronto.id,
+    id: confronto.id,
 
-        timeA:
-            resolverCodigo(
-                confronto.mandante,
-                classificados
-            ),
+    fase:"32-avos",
 
-        timeB:
-            resolverCodigo(
-                confronto.visitante,
-                classificados
-            )
+    timeA:
+        resolverCodigo(
+            confronto.mandante,
+            classificados
+        ),
 
-    }));
+    timeB:
+        resolverCodigo(
+            confronto.visitante,
+            classificados
+        ),
+
+    golsA:null,
+
+    golsB:null,
+
+    penaltisA:null,
+
+    penaltisB:null,
+
+    vencedor:null,
+
+    encerrado:false
+
+}));
 
 }
 
