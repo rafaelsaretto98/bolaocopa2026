@@ -1,12 +1,12 @@
-export function gerarRankingTerceiros(classificacoes){
+export function gerarRankingTerceiros(todasClassificacoes){
 
     const terceiros = [];
 
-    classificacoes.forEach(grupo=>{
+    todasClassificacoes.forEach(classificacao => {
 
-        if(grupo.length >= 3){
+        if(classificacao.length >= 3){
 
-            terceiros.push(grupo[2]);
+            terceiros.push(classificacao[2]);
 
         }
 
@@ -22,6 +22,15 @@ export function gerarRankingTerceiros(classificacoes){
 
         if(b.golsPro !== a.golsPro)
             return b.golsPro - a.golsPro;
+
+        if(a.golsContra !== b.golsContra)
+            return a.golsContra - b.golsContra;
+
+        if(a.amarelos !== b.amarelos)
+            return a.amarelos - b.amarelos;
+
+        if(a.vermelhos !== b.vermelhos)
+            return a.vermelhos - b.vermelhos;
 
         return a.time.localeCompare(b.time);
 
