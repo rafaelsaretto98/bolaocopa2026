@@ -1,5 +1,5 @@
 import {
-    confrontosOitavas
+    confrontos16Avos
 }
 from './mata-mata-config.js';
 
@@ -42,7 +42,7 @@ function resolverCodigo(codigo, classificados){
 
 export function gerarOitavas(classificados){
 
-   return confrontosOitavas.map(confronto => ({
+   return confrontos16Avos.map(confronto => ({
 
     id: confronto.id,
 
