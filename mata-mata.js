@@ -14,14 +14,14 @@ import {
 from './classificados-utils.js';
 
 import {
-    gerarOitavas
+    gerar16Avos
 }
 from './mata-mata-utils.js';
 
 const grupos = [
-    'A','B','C','D',
-    'E','F','G','H',
-    'I','J','K','L'
+'A','B','C','D',
+'E','F','G','H',
+'I','J','K','L'
 ];
 
 async function iniciar(){
@@ -29,15 +29,15 @@ async function iniciar(){
     const jogos =
         await carregarJogos();
 
-    const todasClassificacoes = [];
+    const classificacoes=[];
 
-    grupos.forEach(grupo => {
+    grupos.forEach(g=>{
 
-        todasClassificacoes.push(
+        classificacoes.push(
 
             gerarClassificacao(
                 jogos,
-                grupo
+                g
             )
 
         );
@@ -46,15 +46,17 @@ async function iniciar(){
 
     const classificados =
         gerarClassificados(
-            todasClassificacoes
+            classificacoes
         );
 
-    const oitavas =
-        gerarOitavas(
+    const jogos16Avos =
+        gerar16Avos(
             classificados
         );
 
-    console.log(oitavas);
+    desenharBracket(
+        jogos16Avos
+    );
 
 }
 
