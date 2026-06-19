@@ -36,6 +36,7 @@ async function iniciar(){
         document.getElementById(
             'classificacoes'
         );
+    const todasClassificacoes = [];
 
     grupos.forEach(grupo => {
 
@@ -44,6 +45,10 @@ async function iniciar(){
                 jogos,
                 grupo
             );
+        
+            todasClassificacoes.push(
+                classificacao
+        );
 
         if(
             classificacao.length === 0
