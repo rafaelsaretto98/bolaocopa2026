@@ -20,6 +20,7 @@ export function gerarClassificacao(jogos, grupo){
         if(!tabela[timeA]){
 
             tabela[timeA] = {
+                grupo: grupo,
                 time: timeA,
                 pontos: 0,
                 jogos: 0,
@@ -40,6 +41,7 @@ export function gerarClassificacao(jogos, grupo){
         if(!tabela[timeB]){
 
             tabela[timeB] = {
+                grupo: grupo,
                 time: timeB,
                 pontos: 0,
                 jogos: 0,
