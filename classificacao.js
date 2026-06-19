@@ -9,11 +9,6 @@ import {
 from './classificacao-utils.js';
 
 import {
-    gerarRankingTerceiros
-}
-from './terceiros-utils.js';
-
-import {
     gerarClassificados
 }
 from './classificados-utils.js';
@@ -139,15 +134,15 @@ async function iniciar(){
 
     });
 
-    const terceiros =
-    gerarRankingTerceiros(
+    const classificados =
+    gerarClassificados(
         todasClassificacoes
     );
 
-console.log("Todas as classificações");
-console.log(todasClassificacoes);
+    const terceiros =
+    classificados.terceiros;
 
-console.log("Ranking dos terceiros");
+console.log(classificados);
 console.log(terceiros);
 
 
