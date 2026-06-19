@@ -1,3 +1,10 @@
+console.log("UTILS CARREGADO");
+
+export function gerar16Avos(){
+    console.log("FUNÇÃO GERAR16AVOS");
+    return [];
+}
+
 import {
     confrontos16Avos
 }
