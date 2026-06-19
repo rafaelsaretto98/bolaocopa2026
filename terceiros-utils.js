@@ -1,12 +1,14 @@
-export function gerarRankingTerceiros(grupos){
+export function gerarRankingTerceiros(classificacoes){
 
     const terceiros = [];
 
-    grupos.forEach(classificacao=>{
+    classificacoes.forEach(grupo=>{
 
-        if(classificacao.length < 3) return;
+        if(grupo.length >= 3){
 
-        terceiros.push(classificacao[2]);
+            terceiros.push(grupo[2]);
+
+        }
 
     });
 
