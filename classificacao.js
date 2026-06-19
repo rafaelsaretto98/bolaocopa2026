@@ -8,6 +8,11 @@ import {
 }
 from './classificacao-utils.js';
 
+import {
+    gerarRankingTerceiros
+}
+from './terceiros-utils.js';
+
 const grupos = [
     'A','B','C','D',
     'E','F','G','H',
