@@ -139,6 +139,10 @@ async function iniciar(){
         todasClassificacoes
     );
 
+console.log("Todas as classificações");
+console.log(todasClassificacoes);
+
+console.log("Ranking dos terceiros");
 console.log(terceiros);
 
 
