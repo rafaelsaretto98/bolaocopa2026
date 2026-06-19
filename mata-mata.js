@@ -1,45 +1,61 @@
 import {
+    carregarJogos
+}
+from './jogos-firebase.js';
+
+import {
+    gerarClassificacao
+}
+from './classificacao-utils.js';
+
+import {
+    gerarClassificados
+}
+from './classificados-utils.js';
+
+import {
     gerarOitavas
 }
 from './mata-mata-utils.js';
 
+const grupos = [
+    'A','B','C','D',
+    'E','F','G','H',
+    'I','J','K','L'
+];
 
-const jogos =
-    gerarOitavas();
+async function iniciar(){
 
-const container =
-    document.getElementById(
-        'mataMata'
-    );
+    const jogos =
+        await carregarJogos();
 
-jogos.forEach(jogo=>{
+    const todasClassificacoes = [];
 
-    const card =
-        document.createElement('div');
+    grupos.forEach(grupo => {
 
-    card.className =
-        'regras-card';
+        todasClassificacoes.push(
 
-    card.innerHTML = `
+            gerarClassificacao(
+                jogos,
+                grupo
+            )
 
-<h2>
+        );
 
-Oitavas ${jogo.id}
+    });
 
-</h2>
+    const classificados =
+        gerarClassificados(
+            todasClassificacoes
+        );
 
-<p>
+    const oitavas =
+        gerarOitavas(
+            classificados
+        );
 
-${jogo.mandante}
+    console.log(oitavas);
 
-x
+}
 
-${jogo.visitante}
-
-</p>
-
-`;
-
-    container.appendChild(card);
-
-});
+iniciar();
