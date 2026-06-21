@@ -144,15 +144,20 @@ function criarCardJogo(jogo){
         <img
             class="bandeira-mata"
             src="${bandeira(jogo.timeA?.time ?? 'placeholder')}"
+            onerror="this.src='img/band_placeholder.png'"
         >
 
-        ${jogo.timeA?.time ?? 'A definir'}
+        <span>
+
+            ${jogo.timeA?.time ?? 'A definir'}
+
+        </span>
 
     </div>
 
     <div class="gols">
 
-        ${jogo.golsA ?? ''}
+        ${jogo.golsA ?? "-"}
 
     </div>
 
@@ -165,15 +170,20 @@ function criarCardJogo(jogo){
         <img
             class="bandeira-mata"
             src="${bandeira(jogo.timeB?.time ?? 'placeholder')}"
+            onerror="this.src='img/band_placeholder.png'"
         >
 
-        ${jogo.timeB?.time ?? 'A definir'}
+        <span>
+
+            ${jogo.timeB?.time ?? 'A definir'}
+
+        </span>
 
     </div>
 
     <div class="gols">
 
-        ${jogo.golsB ?? ''}
+        ${jogo.golsB ?? "-"}
 
     </div>
 
