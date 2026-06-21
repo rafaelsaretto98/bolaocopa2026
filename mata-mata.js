@@ -71,60 +71,30 @@ function desenharBracket(jogos16){
 
 <div class="bracket">
 
-    <div class="fase">
+    <div class="fase fase-16">
+    <h2>16 Avos</h2>
+    <div id="fase16" class="lista-fase"></div>
+</div>
 
-        <h2>16 Avos</h2>
+<div class="fase fase-oitavas">
+    <h2>Oitavas</h2>
+    <div id="faseOitavas" class="lista-fase"></div>
+</div>
 
-        <div
-            id="fase16"
-            class="lista-fase"
-        ></div>
+<div class="fase fase-quartas">
+    <h2>Quartas</h2>
+    <div id="faseQuartas" class="lista-fase"></div>
+</div>
 
-    </div>
+<div class="fase fase-semi">
+    <h2>Semifinais</h2>
+    <div id="faseSemi" class="lista-fase"></div>
+</div>
 
-    <div class="fase">
-
-        <h2>Oitavas</h2>
-
-        <div
-            id="faseOitavas"
-            class="lista-fase"
-        ></div>
-
-    </div>
-
-    <div class="fase">
-
-        <h2>Quartas</h2>
-
-        <div
-            id="faseQuartas"
-            class="lista-fase"
-        ></div>
-
-    </div>
-
-    <div class="fase">
-
-        <h2>Semifinais</h2>
-
-        <div
-            id="faseSemi"
-            class="lista-fase"
-        ></div>
-
-    </div>
-
-    <div class="fase">
-
-        <h2>Final</h2>
-
-        <div
-            id="faseFinal"
-            class="lista-fase"
-        ></div>
-
-    </div>
+<div class="fase fase-final">
+    <h2>Final</h2>
+    <div id="faseFinal" class="lista-fase"></div>
+</div>
 
 </div>
 
