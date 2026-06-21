@@ -877,23 +877,26 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 .pagina-mata-mata{
 
-    padding:30px;
+    width:100%;
     overflow-x:auto;
-
+    overflow-y:hidden;
+    padding:20px;
+    box-sizing:border-box;
 }
 
 .bracket{
 
     display:flex;
-    gap:80px;
+    gap:60px;
     align-items:flex-start;
-    min-width:2100px;
-
+    width:max-content;
+    padding:20px;
+    padding-left:40px;
 }
 
 .fase{
 
-    width:280px;
+    width:240px;
     flex-shrink: 0;
 
 }
@@ -1183,14 +1186,12 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
     display:flex;
     flex-direction:column;
-
 }
 
     .placar-relampago-card,
     .painel-palpites-relampago{
 
         width:100%;
-
     }
 
     
@@ -1200,13 +1201,11 @@ progress::-webkit-progress-value { background-color: #10b981; }
         grid-template-columns:1fr;
         gap:15px;
         margin-top:15px;
-
     }
 
     .topo-relampago{
 
         grid-template-columns:1fr;
-
     }
 
 }
