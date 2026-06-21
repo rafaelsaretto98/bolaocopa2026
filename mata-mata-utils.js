@@ -41,6 +41,7 @@ function resolverCodigo(codigo, classificados){
 }
 
 export function gerar16Avos(classificados){
+    console.log(classificados);
 
    return confrontos16Avos.map(confronto => ({
 
