@@ -1,10 +1,3 @@
-console.log("UTILS CARREGADO");
-
-export function gerar16Avos(){
-    console.log("FUNÇÃO GERAR16AVOS");
-    return [];
-}
-
 import {
     confrontos16Avos
 }
@@ -53,7 +46,7 @@ export function gerar16Avos(classificados){
 
     id: confronto.id,
 
-    fase:"32-avos",
+    fase:"16-avos",
 
     timeA:
         resolverCodigo(
