@@ -149,6 +149,12 @@ function desenharBracket(jogos16){
 
 }
 
+function bandeira(nome){
+
+    return `img/band_${nome.replaceAll(' ','_')}.png`;
+
+}
+
 function criarCardJogo(jogo){
 
     const card =
@@ -165,7 +171,10 @@ function criarCardJogo(jogo){
 
     <div class="nome-time">
 
-        ${jogo.timeA?.bandeira ?? '🏳️'}
+        <img
+            class="bandeira-mata"
+            src="${bandeira(jogo.timeA?.time ?? 'placeholder')}"
+        >
 
         ${jogo.timeA?.time ?? 'A definir'}
 
@@ -183,7 +192,10 @@ function criarCardJogo(jogo){
 
     <div class="nome-time">
 
-        ${jogo.timeB?.bandeira ?? '🏳️'}
+        <img
+            class="bandeira-mata"
+            src="${bandeira(jogo.timeB?.time ?? 'placeholder')}"
+        >
 
         ${jogo.timeB?.time ?? 'A definir'}
 
