@@ -44,15 +44,11 @@ async function iniciar(){
 
     });
 
-    const classificados =
-        gerarClassificados(
-            classificacoes
-        );
+   const jogos16Avos =
+    await gerar16Avos(
+        classificados
+    );
 
-    const jogos16Avos =
-        gerar16Avos(
-            classificados
-        );
     console.log(jogos16Avos);
 
     desenharBracket(
