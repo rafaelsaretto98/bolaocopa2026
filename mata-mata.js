@@ -44,10 +44,15 @@ async function iniciar(){
 
     });
 
-   const jogos16Avos =
-    await gerar16Avos(
-        classificados
+   const classificados =
+    gerarClassificados(
+        classificacoes
     );
+
+    const jogos16Avos =
+        await gerar16Avos(
+            classificados
+        );
 
     console.log(jogos16Avos);
 
