@@ -4,9 +4,9 @@ import {
 from './mata-mata-config.js';
 
 import {
-    tabelaTerceiros
+    carregarTabelaTerceiros
 }
-from './terceiros-config.js';
+from "./terceiros-loader.js";
 
 
 function resolverCodigo(codigo, classificados){
