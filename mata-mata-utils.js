@@ -179,4 +179,4 @@ function resolverTerceiro(
     ) || null;
 
 }
-console.log(jogos16Avos);
+
