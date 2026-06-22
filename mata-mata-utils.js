@@ -8,6 +8,8 @@ import {
 }
 from './terceiros-loader.js';
 
+console.log("MATA-MATA UTILS NOVO");
+
 export async function gerar16Avos(classificados){
 
     const tabela =
