@@ -58,19 +58,126 @@ async function iniciar(){
     );
 
     const jogos16Avos =
-        await gerar16Avos(
-            classificados
-        );
-
-    console.log(jogos16Avos);
-
-    desenharBracket(
-        jogos16Avos
+    await gerar16Avos(
+        classificados
     );
+
+const jogosOitavas =
+    Array.from({length:8}, (_,i)=>({
+
+        id:i+1,
+
+        timeA:null,
+
+        timeB:null,
+
+        golsA:null,
+
+        golsB:null,
+
+        vencedor:null
+
+    }));
+
+const jogosQuartas =
+    Array.from({length:4}, (_,i)=>({
+
+        id:i+1,
+
+        timeA:null,
+
+        timeB:null,
+
+        golsA:null,
+
+        golsB:null,
+
+        vencedor:null
+
+    }));
+
+const jogosSemi =
+    Array.from({length:2}, (_,i)=>({
+
+        id:i+1,
+
+        timeA:null,
+
+        timeB:null,
+
+        golsA:null,
+
+        golsB:null,
+
+        vencedor:null
+
+    }));
+
+const jogoFinal = {
+
+    id:1,
+
+    timeA:null,
+
+    timeB:null,
+
+    golsA:null,
+
+    golsB:null,
+
+    vencedor:null
+
+};
+
+atualizarOitavas(
+    jogos16Avos,
+    jogosOitavas
+);
+
+atualizarQuartas(
+    jogosOitavas,
+    jogosQuartas
+);
+
+atualizarSemifinais(
+    jogosQuartas,
+    jogosSemi
+);
+
+atualizarFinal(
+    jogosSemi,
+    jogoFinal
+);
+
+desenharBracket(
+
+    jogos16Avos,
+
+    jogosOitavas,
+
+    jogosQuartas,
+
+    jogosSemi,
+
+    jogoFinal
+
+);
 
 }
 
-function desenharBracket(jogos16){
+function desenharBracket(
+
+    jogos16,
+
+    jogosOitavas,
+
+    jogosQuartas,
+
+    jogosSemi,
+
+    jogoFinal
+
+){
 
     const container =
         document.getElementById(
@@ -110,19 +217,40 @@ function desenharBracket(jogos16){
 
 `;
 
-    const fase16 =
-        document.getElementById(
-            'fase16'
-        );
+   desenharFase(
+    "fase16",
+    jogos16
+);
 
-    jogos16.forEach(jogo=>{
+desenharFase(
+    "faseOitavas",
+    jogosOitavas
+);
 
-        fase16.appendChild(
+desenharFase(
+    "faseQuartas",
+    jogosQuartas
+);
 
-            criarCardJogo(
-                jogo
-            )
+desenharFase(
+    "faseSemi",
+    jogosSemi
+);
 
+desenharFase(
+    "faseFinal",
+    [jogoFinal]
+);
+}
+function desenharFase(id, jogos){
+
+    const fase =
+        document.getElementById(id);
+
+    jogos.forEach(jogo=>{
+
+        fase.appendChild(
+            criarCardJogo(jogo)
         );
 
     });
@@ -131,7 +259,11 @@ function desenharBracket(jogos16){
 
 function bandeira(nome){
 
-    return `img/band_${nome.replaceAll(' ','_')}.png`;
+    if(!nome){
+        return "img/band_placeholder.png";
+    }
+
+    return `img/band_${nome}.png`;
 
 }
 
