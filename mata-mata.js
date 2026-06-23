@@ -18,6 +18,14 @@ import {
 }
 from './mata-mata-utils.js';
 
+import {
+    atualizarOitavas,
+    atualizarQuartas,
+    atualizarSemifinais,
+    atualizarFinal
+}
+from './mata-mata-progressao.js';
+
 const grupos = [
 'A','B','C','D',
 'E','F','G','H',
