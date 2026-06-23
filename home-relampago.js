@@ -19,7 +19,7 @@ export const boloesRelampago = [
 
 {
     id:2,
-    encerrado:false,
+    encerrado:true,
 
     timeA:'Brasil',
     timeB:'Haiti',
