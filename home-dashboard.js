@@ -20,7 +20,7 @@ export function criarDashboard(){
     <!-- PALPITE -->
     <div class="regras-card placar-relampago-card">
 
-        <h2>🔥 Palpite Relâmpago #2</h2>
+        <h2>🔥 Palpite Relâmpago #3</h2>
 
         <p style="text-align:center;font-size:18px;font-weight:700;">
             ${bolaoAtual.timeA} x ${bolaoAtual.timeB}
