@@ -32,8 +32,6 @@ export const boloesRelampago = [
     vencedor:false,
 
     mensagem:'Nenhum participante acertou o placar.'
-
-    textoData:'Sexta-feira • 19/06'
 },
 
     {
