@@ -885,16 +885,26 @@ progress::-webkit-progress-value { background-color: #10b981; }
 }
 
 .bracket{
-
     display:flex;
-    align-items:flex-start;
-    gap:40px;
-    overflow-x:auto;
-    padding:20px;
+    justify-content:center;
+    align-items:center;
+    gap:70px;
+}
+
+.lado{
+    display:flex;
+    gap:45px;
+}
+
+.centro{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    min-width:320px;
 }
 
 .fase{
-
     display:flex;
     flex-direction:column;
     min-width:230px;
