@@ -887,18 +887,17 @@ progress::-webkit-progress-value { background-color: #10b981; }
 .bracket{
 
     display:flex;
-    gap:60px;
     align-items:flex-start;
-    width:max-content;
+    gap:40px;
+    overflow-x:auto;
     padding:20px;
-    padding-left:40px;
 }
 
 .fase{
 
-    width:240px;
-    flex-shrink: 0;
-
+    display:flex;
+    flex-direction:column;
+    min-width:230px;
 }
 
 .fase h2{
@@ -1008,6 +1007,43 @@ progress::-webkit-progress-value { background-color: #10b981; }
     margin-top:620px;
 }
 
+#fase16{
+
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+#faseOitavas{
+
+    display:flex;
+    flex-direction:column;
+    gap:48px;
+    margin-top:40px;
+}
+
+#faseQuartas{
+    
+    display:flex;
+    flex-direction:column;
+    gap:120px;
+    margin-top:90px;
+}
+
+#faseSemi{
+
+    display:flex;
+    flex-direction:column;
+    gap:280px;
+    margin-top:190px;
+}
+
+#faseFinal{
+
+    display:flex;
+    justify-content:center;
+    margin-top:340px;
+}
 
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
