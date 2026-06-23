@@ -170,7 +170,7 @@ async function carregarPalpitesRelampago(){
 
                     ${golsAdversario}
 
-                    ${p.selecaoB === 'Escócia' ? '🇭🇹' : p.selecaoB}
+                    ${p.selecaoB}
 
                 </div>
 
