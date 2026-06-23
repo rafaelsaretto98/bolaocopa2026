@@ -16,7 +16,7 @@ const btn =
     document.getElementById(
         'enviarPalpiteRelampago'
     );
-
+ 
 if(btn){
 
     btn.addEventListener(
