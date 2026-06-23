@@ -26,7 +26,7 @@ export const boloesRelampago = [
 
     bandeiraA:'img/band_Brasil.png',
     bandeiraB:'img/Band_Haiti.png',
-    
+
     placar:'3 × 0',
 
     vencedor:false,
@@ -34,7 +34,7 @@ export const boloesRelampago = [
     mensagem:'Nenhum participante acertou o placar.'
 },
 
-    {
+{
     id:3,
     encerrado:false,
 
@@ -45,6 +45,6 @@ export const boloesRelampago = [
     bandeiraB:'img/band_Escocia.png',
 
     textoData:'Quarta-feira • 24/06 • 19:00'
-},
+}
 
 ];
