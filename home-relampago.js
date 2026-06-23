@@ -26,6 +26,12 @@ export const boloesRelampago = [
 
     bandeiraA:'img/band_Brasil.png',
     bandeiraB:'img/Band_Haiti.png',
+    
+    placar:'3 × 0',
+
+    vencedor:false,
+
+    mensagem:'Nenhum participante acertou o placar.'
 
     textoData:'Sexta-feira • 19/06'
 },
