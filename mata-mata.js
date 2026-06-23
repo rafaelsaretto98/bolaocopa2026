@@ -188,53 +188,104 @@ function desenharBracket(
 
 <div class="bracket">
 
-    <div class="fase fase-16">
-    <h2>16 Avos</h2>
-    <div id="fase16" class="lista-fase"></div>
-</div>
+    <div class="lado lado-esquerdo">
 
-<div class="fase fase-oitavas">
-    <h2>Oitavas</h2>
-    <div id="faseOitavas" class="lista-fase"></div>
-</div>
+        <div class="fase">
+            <h2>16 Avos</h2>
+            <div id="fase16E"></div>
+        </div>
 
-<div class="fase fase-quartas">
-    <h2>Quartas</h2>
-    <div id="faseQuartas" class="lista-fase"></div>
-</div>
+        <div class="fase">
+            <h2>Oitavas</h2>
+            <div id="faseOitavasE"></div>
+        </div>
 
-<div class="fase fase-semi">
-    <h2>Semifinais</h2>
-    <div id="faseSemi" class="lista-fase"></div>
-</div>
+        <div class="fase">
+            <h2>Quartas</h2>
+            <div id="faseQuartasE"></div>
+        </div>
 
-<div class="fase fase-final">
-    <h2>Final</h2>
-    <div id="faseFinal" class="lista-fase"></div>
-</div>
+        <div class="fase">
+            <h2>Semifinal</h2>
+            <div id="faseSemiE"></div>
+        </div>
+
+    </div>
+
+    <div class="centro">
+
+        <h2>🏆 Final</h2>
+
+        <div id="faseFinal"></div>
+
+    </div>
+
+    <div class="lado lado-direito">
+
+        <div class="fase">
+            <h2>Semifinal</h2>
+            <div id="faseSemiD"></div>
+        </div>
+
+        <div class="fase">
+            <h2>Quartas</h2>
+            <div id="faseQuartasD"></div>
+        </div>
+
+        <div class="fase">
+            <h2>Oitavas</h2>
+            <div id="faseOitavasD"></div>
+        </div>
+
+        <div class="fase">
+            <h2>16 Avos</h2>
+            <div id="fase16D"></div>
+        </div>
+
+    </div>
 
 </div>
 
 `;
 
    desenharFase(
-    "fase16",
-    jogos16
+    "fase16E",
+    jogos16.slice(0,8)
+);
+
+    desenharFase(
+    "fase16D",
+    jogos16.slice(8)
 );
 
 desenharFase(
-    "faseOitavas",
-    jogosOitavas
+    "faseOitavasE",
+    jogosOitavas.slice(0,4)
 );
 
 desenharFase(
-    "faseQuartas",
-    jogosQuartas
+    "faseOitavasD",
+    jogosOitavas.slice(4)
 );
 
 desenharFase(
-    "faseSemi",
-    jogosSemi
+    "faseQuartasE",
+    jogosQuartas.slice(0,2)
+);
+
+desenharFase(
+    "faseQuartasD",
+    jogosQuartas.slice(2)
+);
+    
+desenharFase(
+    "faseSemiE",
+    [jogosSemi[0]]
+);
+
+desenharFase(
+    "faseSemiD",
+    [jogosSemi[1]]
 );
 
 desenharFase(
@@ -242,6 +293,7 @@ desenharFase(
     [jogoFinal]
 );
 }
+
 function desenharFase(id, jogos){
 
     const fase =
