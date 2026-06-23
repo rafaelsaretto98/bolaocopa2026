@@ -67,9 +67,9 @@ if(btn){
 
                         selecaoA:'Brasil',
 
-                        selecaoB:'Haiti',
+                        selecaoB:'Escócia',
 
-                        jogo:'Brasil x Haiti',
+                        jogo:'Brasil x Escócia',
 
                         criadoEm:new Date().toISOString()
                     }
@@ -127,7 +127,7 @@ async function carregarPalpitesRelampago(){
         const q =
         query(
         collection(db, 'placar-relampago'),
-        where('jogo', '==', 'Brasil x Haiti'),
+        where('jogo', '==', 'Brasil x Escócia'),
         orderBy('criadoEm', 'desc'),
         limit(20)
     );
@@ -146,7 +146,7 @@ async function carregarPalpitesRelampago(){
             p.golsBrasil ?? p.brasil;
 
             const golsAdversario =
-            p.golsAdversario ?? p.marrocos;
+            p.golsAdversario ?? p.Escócia;
 
             container.innerHTML += `
 
@@ -170,7 +170,7 @@ async function carregarPalpitesRelampago(){
 
                     ${golsAdversario}
 
-                    ${p.selecaoB === 'Haiti' ? '🇭🇹' : p.selecaoB}
+                    ${p.selecaoB === 'Escócia' ? '🇭🇹' : p.selecaoB}
 
                 </div>
 
