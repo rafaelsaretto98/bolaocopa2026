@@ -28,7 +28,7 @@ export const boloesRelampago = [
     bandeiraB:'img/Band_Haiti.png',
 
     textoData:'Sexta-feira • 19/06'
-}
+},
 
     {
     id:3,
@@ -41,6 +41,6 @@ export const boloesRelampago = [
     bandeiraB:'img/band_Escocia.png',
 
     textoData:'Quarta-feira • 24/06 • 19:00'
-}
+},
 
 ];
