@@ -30,4 +30,17 @@ export const boloesRelampago = [
     textoData:'Sexta-feira • 19/06'
 }
 
+    {
+    id:3,
+    encerrado:false,
+
+    timeA:'Brasil',
+    timeB:'Escócia',
+
+    bandeiraA:'img/band_Brasil.png',
+    bandeiraB:'img/band_Escocia.png',
+
+    textoData:'Quarta-feira • 24/06 • 19:00'
+}
+
 ];
