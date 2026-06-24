@@ -129,7 +129,7 @@ export function desenharBracket(
 
 <div class="bracket">
 
-    <div class="coluna">
+    <div class="coluna col16E">
 
         <h2>16 Avos</h2>
 
@@ -137,7 +137,7 @@ export function desenharBracket(
 
     </div>
 
-    <div class="coluna">
+    <div class="coluna col8E">
 
         <h2>Oitavas</h2>
 
@@ -145,7 +145,7 @@ export function desenharBracket(
 
     </div>
 
-    <div class="coluna">
+    <div class="coluna col4E">
 
         <h2>Quartas</h2>
 
@@ -153,7 +153,7 @@ export function desenharBracket(
 
     </div>
 
-    <div class="coluna">
+   <div class="coluna col2E">
 
         <h2>Semifinal</h2>
 
@@ -169,7 +169,7 @@ export function desenharBracket(
 
     </div>
 
-    <div class="coluna">
+    <div class="coluna col2D">
 
         <h2>Semifinal</h2>
 
@@ -177,7 +177,7 @@ export function desenharBracket(
 
     </div>
 
-    <div class="coluna">
+    <div class="coluna col4D">
 
         <h2>Quartas</h2>
 
@@ -185,7 +185,7 @@ export function desenharBracket(
 
     </div>
 
-    <div class="coluna">
+   <div class="coluna col8D">
 
         <h2>Oitavas</h2>
 
@@ -193,7 +193,7 @@ export function desenharBracket(
 
     </div>
 
-    <div class="coluna">
+    <div class="coluna col16D">
 
         <h2>16 Avos</h2>
 
