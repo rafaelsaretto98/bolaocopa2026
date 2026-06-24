@@ -1,12 +1,61 @@
 function bandeira(nome){
 
     if(!nome){
-        return "img/band_placeholder.png";
+        return "img/band_placeholder.jpg";
     }
 
-    return `img/band_${nome}.png`;
+    if(bandeiras[nome]){
+        return `img/${bandeiras[nome]}`;
+    }
+
+    const arquivo = nome
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replaceAll(" ", "_")
+        .replaceAll("'", "");
+
+    return `img/band_${arquivo}.png`;
 
 }
+
+const bandeiras = {
+    
+    "Alemanha": "band_Alemanha.png",
+    "Argentina": "band_Argentina.png",
+    "Austrália": "band_Australia.png",
+    "Áustria": "band_Austria.png",
+    "Bélgica": "band_Belgica.png",
+    "Brasil": "band_Brasil.png",
+    "Cabo Verde": "band_Cabo_Verde.png",
+    "Canadá": "band_Canada.png",
+    "Chéquia": "band_Chequia.png",
+    "Colômbia": "band_Colombia.png",
+    "Coreia do Sul": "band_Coreia_do_Sul.png",
+    "Egito": "band_Egito.png",
+    "Equador": "band_Equador.png",
+    "Escócia": "band_Escocia.png",
+    "Espanha": "band_Espanha.png",
+    "Estados Unidos": "band_Estados_Unidos.png",
+    "França": "band_França.png",
+    "Gana": "band_Gana.png",
+    "Haiti": "band_Haiti.png",
+    "Holanda": "band_Holanda.png",
+    "Inglaterra": "band_Inglaterra.png",
+    "Irã": "band_Ira.png",
+    "Japão": "band_Japao.png",
+    "Marrocos": "band_Marrocos.png",
+    "México": "band_Mexico.png",
+    "Noruega": "band_Noruega.png",
+    "Paraguai": "band_Paraguai.png",
+    "Portugal": "band_Portugal.png",
+    "RD Congo": "band_RD_Congo.png",
+    "Suécia": "band_Suecia.png",
+    "Suíça": "band_Suiça"
+
+    
+};
+
+
 
 function criarCardJogo(jogo){
 
