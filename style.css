@@ -1019,29 +1019,43 @@ progress::-webkit-progress-value { background-color: #10b981; }
     border:3px solid #f59e0b;
 }
 
-.match::after{
-    content:"";
-    position:absolute;
-    right:-35px;
-    width:35px;
-    height:2px;
-    background:#94a3b8;
-}
-
 .match{
     position:relative;
 }
 
-.match:nth-child(odd)::before{
-    content:"";
-    position:absolute;
-    right:-35px;
-    top:50%;
-    width:2px;
-    height:calc(100% + 70px);
-    background:#94a3b8;
+.match-wrapper{
+    position:relative;
 }
 
+#col16E .match-wrapper:nth-child(odd)::after{
+    content:"";
+    position:absolute;
+    top:50%;
+    right:-20px;
+    width:20px;
+    height:2px;
+    background:#cbd5e1;
+}
+
+#col16E .match-wrapper:nth-child(even)::after{
+    content:"";
+    position:absolute;
+    top:50%;
+    right:-20px;
+    width:20px;
+    height:2px;
+    background:#cbd5e1;
+}
+
+#col16E .match-wrapper:nth-child(odd)::before{
+    content:"";
+    position:absolute;
+    right:-20px;
+    top:50%;
+    width:2px;
+    height:92px;
+    background:#cbd5e1;
+}
 
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
