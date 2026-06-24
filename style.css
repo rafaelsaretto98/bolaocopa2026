@@ -1027,35 +1027,37 @@ progress::-webkit-progress-value { background-color: #10b981; }
     position:relative;
 }
 
-#col16E .match-wrapper:nth-child(odd)::after{
+.col16E .match-wrapper:nth-child(odd)::before{
     content:"";
     position:absolute;
     top:50%;
-    right:-20px;
-    width:20px;
+    right:-18px;
+    width:18px;
     height:2px;
     background:#cbd5e1;
 }
 
-#col16E .match-wrapper:nth-child(even)::after{
+.col16E .match-wrapper:nth-child(even)::before{
     content:"";
     position:absolute;
     top:50%;
-    right:-20px;
-    width:20px;
+    right:-18px;
+    width:18px;
     height:2px;
     background:#cbd5e1;
 }
 
-#col16E .match-wrapper:nth-child(odd)::before{
+.col16E .match-wrapper:nth-child(odd)::after{
     content:"";
     position:absolute;
-    right:-20px;
+    right:-18px;
     top:50%;
     width:2px;
     height:92px;
     background:#cbd5e1;
 }
+
+
 
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
