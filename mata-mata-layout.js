@@ -68,7 +68,14 @@ function criarCardJogo(jogo){
 
 `;
 
-    return card;
+   const match =
+    document.createElement("div");
+
+        match.className = "match";
+        
+        match.appendChild(card);
+        
+        return match;
 
 }
 
