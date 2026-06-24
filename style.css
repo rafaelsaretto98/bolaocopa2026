@@ -951,110 +951,84 @@ progress::-webkit-progress-value { background-color: #10b981; }
     flex-direction:column;
 
     margin-top:360px;
-
 }
 
 #colFinal{
-
     display:flex;
-
     justify-content:center;
-
     margin-top:360px;
-
 }
 
 .jogo-card{
-
     width:220px;
-
     background:white;
-
     border-radius:14px;
-
     border:2px solid #dbeafe;
-
     overflow:hidden;
-
     box-shadow:0 8px 18px rgba(0,0,0,.08);
-
     transition:.2s;
+}
 
+.match{
+    position:relative;
+    display:flex;
+    align-items:center;
 }
 
 .jogo-card:hover{
-
     transform:translateY(-4px);
-
     box-shadow:0 12px 22px rgba(0,0,0,.15);
-
 }
 
 .time-linha{
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     padding:12px;
-
 }
 
 .time-linha:first-child{
-
     border-bottom:1px solid #e5e7eb;
-
 }
 
 .nome-time{
-
     display:flex;
-
     align-items:center;
-
     gap:10px;
-
     font-size:14px;
-
     font-weight:700;
-
 }
 
 .bandeira-mata{
-
     width:28px;
-
     height:20px;
-
     object-fit:cover;
-
     border-radius:3px;
-
 }
 
 .gols{
-
     width:26px;
-
     text-align:center;
-
     font-size:18px;
-
     font-weight:800;
-
     color:#1e3a8a;
-
 }
 
 .coluna-final .jogo-card{
-
     transform:scale(1.10);
-
     border:3px solid #f59e0b;
-
 }
+
+.match::after{
+    content:"";
+    position:absolute;
+    right:-35px;
+    width:35px;
+    height:2px;
+    background:#94a3b8;
+}
+
+
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
    ========================================= */
