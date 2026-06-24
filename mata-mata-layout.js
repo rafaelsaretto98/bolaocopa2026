@@ -129,80 +129,58 @@ export function desenharBracket(
 
 <div class="bracket">
 
-    <div id="col16E" class="fase-coluna"></div>
+    container.innerHTML = `
 
+<div class="bracket">
+
+    <div class="coluna">
         <h2>16 Avos</h2>
-
         <div id="col16E"></div>
-
     </div>
 
-    <div id="col8E" class="fase-coluna"></div>
-
+    <div class="coluna">
         <h2>Oitavas</h2>
-
         <div id="col8E"></div>
-
     </div>
 
-    <div id="col4E" class="fase-coluna"></div>
-
+    <div class="coluna">
         <h2>Quartas</h2>
-
         <div id="col4E"></div>
-
     </div>
 
-   <div id="col2E" class="fase-coluna"></div>
-
+    <div class="coluna">
         <h2>Semifinal</h2>
-
         <div id="col2E"></div>
-
     </div>
 
-    <div id="colFinal" class="fase-coluna"></div>
-
+    <div class="coluna coluna-final">
         <h2>🏆 Final</h2>
-
         <div id="colFinal"></div>
-
     </div>
 
-   <div id="col2D" class="fase-coluna"></div>
-
+    <div class="coluna">
         <h2>Semifinal</h2>
-
         <div id="col2D"></div>
-
     </div>
 
-    <div id="col4D" class="fase-coluna"></div>
-
+    <div class="coluna">
         <h2>Quartas</h2>
-
         <div id="col4D"></div>
-
     </div>
 
-   <div id="col8D" class="fase-coluna"></div>
-
+    <div class="coluna">
         <h2>Oitavas</h2>
-
         <div id="col8D"></div>
-
     </div>
 
-    <div id="col16D" class="fase-coluna"></div>
-
+    <div class="coluna">
         <h2>16 Avos</h2>
-
         <div id="col16D"></div>
-
     </div>
 
 </div>
 
+`;
 `;
 
     desenharColuna(
