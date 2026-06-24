@@ -72,6 +72,10 @@ async function iniciar(){
         classificados
     );
 
+    await salvarJogosMataMata(
+    jogos16Avos
+);
+
 const jogosOitavas =
     Array.from({length:8}, (_,i)=>({
 
