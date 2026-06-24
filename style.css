@@ -849,166 +849,211 @@ progress::-webkit-progress-value { background-color: #10b981; }
 }
 
 /* ==========================
-   CHAVEAMENTO
+   MATA-MATA FIFA
 ========================== */
 
-.pagina-mata-mata{
+#mataMata{
 
     width:100%;
     overflow-x:auto;
-    overflow-y:hidden;
-    padding:20px;
-    box-sizing:border-box;
+    padding:30px 0;
 }
 
 .bracket{
-    display:flex;
-    justify-content:flex-start;
-    align-items:flex-start;
-    gap:50px;
-    min-width:max-content;
-    padding:30px;
+
+    display:grid;
+
+    grid-template-columns:
+        240px
+        240px
+        240px
+        220px
+        280px
+        220px
+        240px
+        240px
+        240px;
+
+    gap:35px;
+
+    width:max-content;
+
+    margin:auto;
+
+    align-items:start;
+
 }
 
-.lado{
-    display:flex;
-    gap:45px;
-}
+.coluna{
 
-.centro{
     display:flex;
+
     flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    min-width:320px;
+
 }
 
-#mataMata{
-    width:100%;
-    overflow-x:auto;
-    overflow-y:hidden;
-}
-
-.fase{
-    display:flex;
-    flex-direction:column;
-    min-width:230px;
-}
-
-.fase h2{
+.coluna h2{
 
     text-align:center;
+
     margin-bottom:25px;
+
     color:#1e3a8a;
-    font-size:24px;
+
+    font-size:22px;
+
     font-weight:800;
+
 }
 
-.lista-fase{
+#col16E,
+#col16D{
 
     display:flex;
+
     flex-direction:column;
-    gap:22px;
+
+    gap:14px;
+
+}
+
+#col8E,
+#col8D{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:72px;
+
+    margin-top:55px;
+
+}
+
+#col4E,
+#col4D{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:205px;
+
+    margin-top:165px;
+
+}
+
+#col2E,
+#col2D{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-top:360px;
+
+}
+
+#colFinal{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:360px;
+
 }
 
 .jogo-card{
 
+    width:220px;
+
     background:white;
+
     border-radius:14px;
-    overflow:hidden;
+
     border:2px solid #dbeafe;
+
+    overflow:hidden;
+
     box-shadow:0 8px 18px rgba(0,0,0,.08);
+
     transition:.2s;
+
 }
 
 .jogo-card:hover{
 
-    transform:translateY(-3px);
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 22px rgba(0,0,0,.15);
+
 }
 
 .time-linha{
 
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
-    padding:12px 15px;
+
+    padding:12px;
+
 }
 
 .time-linha:first-child{
 
     border-bottom:1px solid #e5e7eb;
+
 }
 
 .nome-time{
+
     display:flex;
+
     align-items:center;
+
     gap:10px;
+
+    font-size:14px;
+
     font-weight:700;
+
 }
 
 .bandeira-mata{
-    width:26px;
-    height:18px;
+
+    width:28px;
+
+    height:20px;
+
     object-fit:cover;
-    border-radius:2px;
-    border:1px solid #d1d5db;
+
+    border-radius:3px;
+
 }
 
 .gols{
-    width:28px;
+
+    width:26px;
+
     text-align:center;
-    font-size:20px;
+
+    font-size:18px;
+
     font-weight:800;
+
     color:#1e3a8a;
+
 }
 
-.fase-vazia{
-    color:#94a3b8;
-    text-align:center;
-    padding:40px 0;
-    font-style:italic;
-}
+.coluna-final .jogo-card{
 
-.lado{
-    display:flex;
-    gap:40px;
-    align-items:flex-start;
-}
+    transform:scale(1.10);
 
-#fase16E,
-#fase16D{
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-}
+    border:3px solid #f59e0b;
 
-#faseOitavasE,
-#faseOitavasD{
-    display:flex;
-    flex-direction:column;
-    gap:70px;
-    margin-top:55px;
-}
-
-#faseQuartasE,
-#faseQuartasD{
-    display:flex;
-    flex-direction:column;
-    gap:190px;
-    margin-top:160px;
-}
-
-#faseSemiE,
-#faseSemiD{
-    display:flex;
-    flex-direction:column;
-    margin-top:330px;
-}
-
-#faseFinal{
-    display:flex;
-    justify-content:center;
-    margin-top:330px;
 }
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
