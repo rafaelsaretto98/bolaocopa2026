@@ -86,10 +86,20 @@ function desenharColuna(id, jogos){
 
     coluna.innerHTML = "";
 
-    jogos.forEach(jogo=>{
+    jogos.forEach((jogo,index)=>{
+
+        const wrapper =
+            document.createElement("div");
+
+        wrapper.className =
+            "match-wrapper";
+
+        wrapper.appendChild(
+            criarCardJogo(jogo)
+        );
 
         coluna.appendChild(
-            criarCardJogo(jogo)
+            wrapper
         );
 
     });
