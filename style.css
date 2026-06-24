@@ -1028,6 +1028,20 @@ progress::-webkit-progress-value { background-color: #10b981; }
     background:#94a3b8;
 }
 
+.match{
+    position:relative;
+}
+
+.match:nth-child(odd)::before{
+    content:"";
+    position:absolute;
+    right:-35px;
+    top:50%;
+    width:2px;
+    height:calc(100% + 70px);
+    background:#94a3b8;
+}
+
 
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
