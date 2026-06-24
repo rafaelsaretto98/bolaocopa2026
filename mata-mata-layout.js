@@ -129,10 +129,6 @@ export function desenharBracket(
 
 <div class="bracket">
 
-    container.innerHTML = `
-
-<div class="bracket">
-
     <div class="coluna">
         <h2>16 Avos</h2>
         <div id="col16E"></div>
@@ -180,7 +176,6 @@ export function desenharBracket(
 
 </div>
 
-`;
 `;
 
     desenharColuna(
