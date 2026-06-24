@@ -1,4 +1,9 @@
 import {
+    salvarJogosMataMata
+}
+from './mata-mata-firebase.js';
+
+import {
     carregarJogos
 }
 from './jogos-firebase.js';
