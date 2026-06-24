@@ -940,7 +940,6 @@ progress::-webkit-progress-value { background-color: #10b981; }
 }
 
 .nome-time{
-
     display:flex;
     align-items:center;
     gap:10px;
@@ -948,7 +947,6 @@ progress::-webkit-progress-value { background-color: #10b981; }
 }
 
 .bandeira-mata{
-
     width:26px;
     height:18px;
     object-fit:cover;
@@ -957,7 +955,6 @@ progress::-webkit-progress-value { background-color: #10b981; }
 }
 
 .gols{
-
     width:28px;
     text-align:center;
     font-size:20px;
@@ -966,80 +963,53 @@ progress::-webkit-progress-value { background-color: #10b981; }
 }
 
 .fase-vazia{
-
     color:#94a3b8;
     text-align:center;
     padding:40px 0;
     font-style:italic;
-
 }
 
-.fase-16 .lista-fase{
-
-    gap:18px;
+.lado{
+    display:flex;
+    gap:40px;
+    align-items:flex-start;
 }
 
-.fase-oitavas .lista-fase{
-
-    gap:90px;
-    margin-top:60px;
-}
-
-.fase-quartas .lista-fase{
-
-    gap:210px;
-    margin-top:170px;
-}
-
-.fase-semi .lista-fase{
-
-    gap:470px;
-    margin-top:370px;
-}
-
-.fase-final .lista-fase{
-
-    margin-top:620px;
-}
-
-#fase16{
-
+#fase16E,
+#fase16D{
     display:flex;
     flex-direction:column;
-    gap:12px;
+    gap:14px;
 }
 
-#faseOitavas{
-
+#faseOitavasE,
+#faseOitavasD{
     display:flex;
     flex-direction:column;
-    gap:48px;
-    margin-top:40px;
+    gap:70px;
+    margin-top:55px;
 }
 
-#faseQuartas{
-    
+#faseQuartasE,
+#faseQuartasD{
     display:flex;
     flex-direction:column;
-    gap:120px;
-    margin-top:90px;
+    gap:190px;
+    margin-top:160px;
 }
 
-#faseSemi{
-
+#faseSemiE,
+#faseSemiD{
     display:flex;
     flex-direction:column;
-    gap:280px;
-    margin-top:190px;
+    margin-top:330px;
 }
 
 #faseFinal{
-
     display:flex;
     justify-content:center;
-    margin-top:340px;
+    margin-top:330px;
 }
-
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
    ========================================= */
