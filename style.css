@@ -864,17 +864,17 @@ progress::-webkit-progress-value { background-color: #10b981; }
     display:grid;
 
     grid-template-columns:
-        240px
-        240px
-        240px
         220px
-        280px
-        220px
+        180px
+        180px
+        180px
         240px
-        240px
-        240px;
+        180px
+        180px
+        180px
+        220px;
 
-    gap:35px;
+    gap:15px;
 
     width:max-content;
 
