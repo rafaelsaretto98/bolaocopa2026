@@ -1,63 +1,59 @@
-export function atualizarOitavas(jogos16Avos, jogosOitavas){
+export const mapaProgressao = {
 
-    jogosOitavas.forEach((jogo,index)=>{
+    // 16 Avos → Oitavas
 
-        const jogo1 = jogos16Avos[index * 2];
+    "16A-1":  { jogo:"OIT-1",  lado:"A" },
+    "16A-2":  { jogo:"OIT-1",  lado:"B" },
 
-        const jogo2 = jogos16Avos[index * 2 + 1];
+    "16A-3":  { jogo:"OIT-2",  lado:"A" },
+    "16A-4":  { jogo:"OIT-2",  lado:"B" },
 
-        jogo.timeA =
-            jogo1.vencedor;
+    "16A-5":  { jogo:"OIT-3",  lado:"A" },
+    "16A-6":  { jogo:"OIT-3",  lado:"B" },
 
-        jogo.timeB =
-            jogo2.vencedor;
+    "16A-7":  { jogo:"OIT-4",  lado:"A" },
+    "16A-8":  { jogo:"OIT-4",  lado:"B" },
 
-    });
+    "16A-9":  { jogo:"OIT-5",  lado:"A" },
+    "16A-10": { jogo:"OIT-5",  lado:"B" },
 
-}
+    "16A-11": { jogo:"OIT-6",  lado:"A" },
+    "16A-12": { jogo:"OIT-6",  lado:"B" },
 
-export function atualizarQuartas(jogosOitavas, jogosQuartas){
+    "16A-13": { jogo:"OIT-7",  lado:"A" },
+    "16A-14": { jogo:"OIT-7",  lado:"B" },
 
-    jogosQuartas.forEach((jogo,index)=>{
+    "16A-15": { jogo:"OIT-8",  lado:"A" },
+    "16A-16": { jogo:"OIT-8",  lado:"B" },
 
-        const jogo1 = jogosOitavas[index * 2];
 
-        const jogo2 = jogosOitavas[index * 2 + 1];
+    // Oitavas → Quartas
 
-        jogo.timeA =
-            jogo1.vencedor;
+    "OIT-1": { jogo:"QUA-1", lado:"A" },
+    "OIT-2": { jogo:"QUA-1", lado:"B" },
 
-        jogo.timeB =
-            jogo2.vencedor;
+    "OIT-3": { jogo:"QUA-2", lado:"A" },
+    "OIT-4": { jogo:"QUA-2", lado:"B" },
 
-    });
+    "OIT-5": { jogo:"QUA-3", lado:"A" },
+    "OIT-6": { jogo:"QUA-3", lado:"B" },
 
-}
+    "OIT-7": { jogo:"QUA-4", lado:"A" },
+    "OIT-8": { jogo:"QUA-4", lado:"B" },
 
-export function atualizarSemifinais(jogosQuartas, jogosSemifinais){
 
-    jogosSemifinais.forEach((jogo,index)=>{
+    // Quartas → Semi
 
-        const jogo1 = jogosQuartas[index * 2];
+    "QUA-1": { jogo:"SEMI-1", lado:"A" },
+    "QUA-2": { jogo:"SEMI-1", lado:"B" },
 
-        const jogo2 = jogosQuartas[index * 2 + 1];
+    "QUA-3": { jogo:"SEMI-2", lado:"A" },
+    "QUA-4": { jogo:"SEMI-2", lado:"B" },
 
-        jogo.timeA =
-            jogo1.vencedor;
 
-        jogo.timeB =
-            jogo2.vencedor;
+    // Semi → Final
 
-    });
+    "SEMI-1": { jogo:"FINAL-1", lado:"A" },
+    "SEMI-2": { jogo:"FINAL-1", lado:"B" }
 
-}
-
-export function atualizarFinal(jogosSemifinais, jogoFinal){
-
-    jogoFinal.timeA =
-        jogosSemifinais[0].vencedor;
-
-    jogoFinal.timeB =
-        jogosSemifinais[1].vencedor;
-
-}
+};
