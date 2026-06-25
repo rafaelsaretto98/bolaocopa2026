@@ -1,20 +1,60 @@
-const participante = {
+async function iniciar(){
 
-    nome,
+    const nome =
+        localStorage.getItem(
+            "nomeParticipante"
+        );
 
-    pontosGrupo:0,
+    if(!nome){
 
-    pontosMataMata:0,
+        alert(
+            "Identifique-se primeiro."
+        );
 
-    total:0
+        location.href =
+            "index.html";
 
-};
+        return;
 
-document.getElementById(
+    }
 
-    "dashboardParticipante"
+    const participante = {
 
-).innerHTML = `
+        nome,
+
+        pontosGrupo:0,
+
+        pontosMataMata:0,
+
+        total:0
+
+    };
+
+    montarDashboard(
+        participante
+    );
+
+    const config =
+        await carregarConfiguracoes();
+
+    const jogos =
+        await carregarJogosPorFase(
+            config.faseAtual
+        );
+
+    desenharJogos(
+        jogos
+    );
+
+}
+
+function montarDashboard(participante){
+
+    document.getElementById(
+
+        "dashboardParticipante"
+
+    ).innerHTML = `
 
 <h2>
 
@@ -69,3 +109,129 @@ document.getElementById(
 </div>
 
 `;
+
+}
+
+function desenharJogos(jogos){
+
+    const lista =
+        document.getElementById(
+            "listaJogos"
+        );
+
+    lista.innerHTML = "";
+
+    jogos.forEach(jogo=>{
+
+        lista.appendChild(
+
+            criarCardJogo(jogo)
+
+        );
+
+    });
+
+}
+
+function criarCardJogo(jogo){
+
+    const card =
+        document.createElement(
+            "div"
+        );
+
+    card.className =
+        "regras-card";
+
+    card.innerHTML = `
+
+<h3 style="text-align:center;">
+
+${jogo.timeA?.time}
+
+<span style="
+color:#9ca3af;
+font-size:14px;
+padding:0 10px;
+">
+VS
+</span>
+
+${jogo.timeB?.time}
+
+</h3>
+
+<div class="escolha-time">
+
+<label>
+
+<input
+    type="radio"
+    name="${jogo.id}"
+    value="${jogo.timeA?.time}"
+>
+
+<img
+    class="bandeira-mata"
+    src="img/band_${jogo.timeA?.time}.png"
+    onerror="this.src='img/band_placeholder.png'"
+>
+
+<span>
+
+${jogo.timeA?.time}
+
+</span>
+
+</label>
+
+</div>
+
+<div class="escolha-time">
+
+<label>
+
+<input
+    type="radio"
+    name="${jogo.id}"
+    value="${jogo.timeB?.time}"
+>
+
+<img
+    class="bandeira-mata"
+    src="img/band_${jogo.timeB?.time}.png"
+    onerror="this.src='img/band_placeholder.png'"
+>
+
+<span>
+
+${jogo.timeB?.time}
+
+</span>
+
+</label>
+
+</div>
+
+<div
+    style="
+        text-align:center;
+        margin-top:20px;
+    "
+>
+
+<button
+    class="btn-relampago"
+>
+
+💾 Salvar Palpite
+
+</button>
+
+</div>
+
+`;
+
+    return card;
+
+}
