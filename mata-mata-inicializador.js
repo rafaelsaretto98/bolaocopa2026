@@ -11,10 +11,24 @@ export async function inicializarMataMata(classificados){
     const jogos16 =
         await gerar16Avos(classificados);
 
+    jogos16.forEach(jogo=>{
+
+        jogo.encerrado = false;
+
+        jogo.palpitesAbertos = false;
+
+        jogo.penalti = false;
+
+        jogo.golsPenaltiA = null;
+
+        jogo.golsPenaltiB = null;
+
+    });
+
     jogos.push(...jogos16);
 
     // Oitavas
-    for(let i = 1; i <= 8; i++){
+    for(let i=1;i<=8;i++){
 
         jogos.push({
 
@@ -32,24 +46,24 @@ export async function inicializarMataMata(classificados){
 
             golsB:null,
 
-            penaltisA:null,
+            golsPenaltiA:null,
 
-            penaltisB:null,
+            golsPenaltiB:null,
 
             vencedor:null,
 
-            encerrado:false
-                
-            palpitesAbertos: false,
+            encerrado:false,
 
+            palpitesAbertos:false,
 
+            penalti:false
 
         });
 
     }
 
     // Quartas
-    for(let i = 1; i <= 4; i++){
+    for(let i=1;i<=4;i++){
 
         jogos.push({
 
@@ -67,22 +81,24 @@ export async function inicializarMataMata(classificados){
 
             golsB:null,
 
-            penaltisA:null,
+            golsPenaltiA:null,
 
-            penaltisB:null,
+            golsPenaltiB:null,
 
             vencedor:null,
 
-            encerrado:false
-                
-             palpitesAbertos: false,
+            encerrado:false,
+
+            palpitesAbertos:false,
+
+            penalti:false
 
         });
 
     }
 
     // Semifinais
-    for(let i = 1; i <= 2; i++){
+    for(let i=1;i<=2;i++){
 
         jogos.push({
 
@@ -100,15 +116,17 @@ export async function inicializarMataMata(classificados){
 
             golsB:null,
 
-            penaltisA:null,
+            golsPenaltiA:null,
 
-            penaltisB:null,
+            golsPenaltiB:null,
 
             vencedor:null,
 
-            encerrado:false
+            encerrado:false,
 
-             palpitesAbertos: false,
+            palpitesAbertos:false,
+
+            penalti:false
 
         });
 
@@ -131,15 +149,17 @@ export async function inicializarMataMata(classificados){
 
         golsB:null,
 
-        penaltisA:null,
+        golsPenaltiA:null,
 
-        penaltisB:null,
+        golsPenaltiB:null,
 
         vencedor:null,
 
-        encerrado:false
+        encerrado:false,
 
-         palpitesAbertos: false,
+        palpitesAbertos:false,
+
+        penalti:false
 
     });
 
