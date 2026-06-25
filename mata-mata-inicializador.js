@@ -39,6 +39,10 @@ export async function inicializarMataMata(classificados){
             vencedor:null,
 
             encerrado:false
+                
+            palpitesAbertos: false,
+
+
 
         });
 
@@ -70,6 +74,8 @@ export async function inicializarMataMata(classificados){
             vencedor:null,
 
             encerrado:false
+                
+             palpitesAbertos: false,
 
         });
 
@@ -102,6 +108,8 @@ export async function inicializarMataMata(classificados){
 
             encerrado:false
 
+             palpitesAbertos: false,
+
         });
 
     }
@@ -130,6 +138,8 @@ export async function inicializarMataMata(classificados){
         vencedor:null,
 
         encerrado:false
+
+         palpitesAbertos: false,
 
     });
 
