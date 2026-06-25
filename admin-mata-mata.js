@@ -58,55 +58,63 @@ ${jogo.timeB?.time ?? "A definir"}
 
 </h3>
 
+<div class="placar-admin">
+
+    <input
+        type="number"
+        id="golsA-${jogo.id}"
+        value="${jogo.golsA ?? ""}"
+        min="0"
+    >
+
+    <strong>x</strong>
+
+    <input
+        type="number"
+        id="golsB-${jogo.id}"
+        value="${jogo.golsB ?? ""}"
+        min="0"
+    >
+
+</div>
+
 <div
-style="
-display:flex;
-justify-content:center;
-align-items:center;
-gap:10px;
-margin-top:20px;
-">
-
-<input
-
-type="number"
-
-id="golsA-${jogo.id}"
-
-value="${jogo.golsA ?? ""}"
-
-style="width:70px;"
-
+    id="penaltis-${jogo.id}"
+    style="
+        display:none;
+        margin-top:15px;
+    "
 >
 
-<strong>
+    <strong>
+        Decisão por Pênaltis
+    </strong>
 
-x
+    <br><br>
 
-</strong>
+    <input
+        type="number"
+        id="penaltiA-${jogo.id}"
+        placeholder="${jogo.timeA?.time ?? ""}"
+        min="0"
+    >
 
-<input
+    x
 
-type="number"
-
-id="golsB-${jogo.id}"
-
-value="${jogo.golsB ?? ""}"
-
-style="width:70px;"
-
->
+    <input
+        type="number"
+        id="penaltiB-${jogo.id}"
+        placeholder="${jogo.timeB?.time ?? ""}"
+        min="0"
+    >
 
 </div>
 
 <br>
 
 <button
-
-id="salvar-${jogo.id}"
-
-class="btn-relampago"
-
+    class="btn-relampago"
+    id="salvar-${jogo.id}"
 >
 
 💾 Salvar Resultado
