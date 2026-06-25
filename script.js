@@ -291,7 +291,15 @@ document.getElementById('copiarCodigo').onclick = async () => {
 
     versao: '1.0',
 
-    palpites: estado
+    palpites: estado,
+
+    palpitesMataMata: {},
+
+    pontosGrupo: 0,
+
+    pontosMataMata: 0,
+
+    total: 0
 
 };
 
