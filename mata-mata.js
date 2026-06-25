@@ -1,4 +1,9 @@
 import {
+    carregarConfiguracoes
+}
+from "./configuracoes-firebase.js";
+
+import {
     salvarJogosMataMata,
     carregarJogosMataMata
 }
@@ -36,6 +41,9 @@ const grupos = [
 ];
 
 async function iniciar(){
+
+    const config =
+    await carregarConfiguracoes();
 
     const jogosGrupos =
     await carregarJogos();
