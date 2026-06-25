@@ -1,7 +1,13 @@
 import {
-    salvarJogosMataMata
+    salvarJogosMataMata,
+    carregarJogosMataMata
 }
-from './mata-mata-firebase.js';
+from "./mata-mata-firebase.js";
+
+import {
+    inicializarMataMata
+}
+from "./mata-mata-inicializador.js";
 
 import {
     carregarJogos
@@ -19,19 +25,6 @@ import {
 from './classificados-utils.js';
 
 import {
-    gerar16Avos
-}
-from './mata-mata-utils.js';
-
-import {
-    atualizarOitavas,
-    atualizarQuartas,
-    atualizarSemifinais,
-    atualizarFinal
-}
-from './mata-mata-progressao.js';
-
-import {
     desenharBracket
 }
 from "./mata-mata-layout.js";
@@ -44,8 +37,8 @@ const grupos = [
 
 async function iniciar(){
 
-    const jogos =
-        await carregarJogos();
+    const jogosGrupos =
+    await carregarJogos();
 
     const classificacoes=[];
 
@@ -54,7 +47,7 @@ async function iniciar(){
         classificacoes.push(
 
             gerarClassificacao(
-                jogos,
+                jogosGrupos,
                 g
             )
 
@@ -67,103 +60,48 @@ async function iniciar(){
         classificacoes
     );
 
-    const jogos16Avos =
-    await gerar16Avos(
-        classificados
-    );
+    let jogos =
+    await carregarJogosMataMata();
+
+if(jogos.length === 0){
+
+    jogos =
+        await inicializarMataMata(
+            classificados
+        );
 
     await salvarJogosMataMata(
-    jogos16Avos
-);
+        jogos
+    );
+
+    }
+
+    const jogos16Avos =
+    jogos.filter(
+        j => j.fase === "16-avos"
+    );
 
 const jogosOitavas =
-    Array.from({length:8}, (_,i)=>({
-
-        id:i+1,
-
-        timeA:null,
-
-        timeB:null,
-
-        golsA:null,
-
-        golsB:null,
-
-        vencedor:null
-
-    }));
+    jogos.filter(
+        j => j.fase === "oitavas"
+    );
 
 const jogosQuartas =
-    Array.from({length:4}, (_,i)=>({
-
-        id:i+1,
-
-        timeA:null,
-
-        timeB:null,
-
-        golsA:null,
-
-        golsB:null,
-
-        vencedor:null
-
-    }));
+    jogos.filter(
+        j => j.fase === "quartas"
+    );
 
 const jogosSemi =
-    Array.from({length:2}, (_,i)=>({
+    jogos.filter(
+        j => j.fase === "semifinal"
+    );
 
-        id:i+1,
+const jogoFinal =
+    jogos.find(
+        j => j.fase === "final"
+    );
 
-        timeA:null,
-
-        timeB:null,
-
-        golsA:null,
-
-        golsB:null,
-
-        vencedor:null
-
-    }));
-
-const jogoFinal = {
-
-    id:1,
-
-    timeA:null,
-
-    timeB:null,
-
-    golsA:null,
-
-    golsB:null,
-
-    vencedor:null
-
-};
-
-atualizarOitavas(
-    jogos16Avos,
-    jogosOitavas
-);
-
-atualizarQuartas(
-    jogosOitavas,
-    jogosQuartas
-);
-
-atualizarSemifinais(
-    jogosQuartas,
-    jogosSemi
-);
-
-atualizarFinal(
-    jogosSemi,
-    jogoFinal
-);
-
-desenharBracket(
+    desenharBracket(
 
     jogos16Avos,
 
