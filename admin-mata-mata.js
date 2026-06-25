@@ -1,4 +1,9 @@
 import {
+    atualizarJogoMataMata
+}
+from "./mata-mata-firebase.js";
+
+import {
     carregarConfiguracoes
 }
 from "./configuracoes-firebase.js";
@@ -192,18 +197,99 @@ botaoSalvar.addEventListener(
 
     "click",
 
-    () => {
+    async () => {
 
-        console.log(jogo);
+        jogo.golsA =
+            Number(golsA.value);
 
-        console.log(
+        jogo.golsB =
+            Number(golsB.value);
 
-            "Gols:",
+        if(
 
-            golsA.value,
+            jogo.golsA >
 
-            golsB.value
+            jogo.golsB
 
+        ){
+
+            jogo.vencedor =
+                jogo.timeA;
+
+        }
+
+        else if(
+
+            jogo.golsB >
+
+            jogo.golsA
+
+        ){
+
+            jogo.vencedor =
+                jogo.timeB;
+
+        }
+
+        else{
+
+            const penaltiA =
+                Number(
+
+                    card.querySelector(
+                        `#penaltiA-${jogo.id}`
+                    ).value
+
+                );
+
+            const penaltiB =
+                Number(
+
+                    card.querySelector(
+                        `#penaltiB-${jogo.id}`
+                    ).value
+
+                );
+
+            jogo.golsPenaltiA =
+                penaltiA;
+
+            jogo.golsPenaltiB =
+                penaltiB;
+
+            jogo.penalti =
+                true;
+
+            if(
+
+                penaltiA >
+
+                penaltiB
+
+            ){
+
+                jogo.vencedor =
+                    jogo.timeA;
+
+            }
+
+            else{
+
+                jogo.vencedor =
+                    jogo.timeB;
+
+            }
+
+        }
+
+        jogo.encerrado = true;
+
+        await atualizarJogoMataMata(
+            jogo
+        );
+
+        alert(
+            "Resultado salvo!"
         );
 
     }
