@@ -40,11 +40,23 @@ function desenharJogos(jogos){
 
     jogos.forEach(jogo=>{
 
-        const card =
-            document.createElement("div");
+        lista.appendChild(
 
-        card.className =
-            "regras-card";
+            criarCardJogoAdmin(jogo)
+
+        );
+
+    });
+
+}
+
+function criarCardJogoAdmin(jogo){
+
+    const card =
+        document.createElement("div");
+
+    card.className =
+        "regras-card";
 
         card.innerHTML = `
 
@@ -122,10 +134,83 @@ ${jogo.timeB?.time ?? "A definir"}
 </button>
 
 `;
+        const golsA =
+    card.querySelector(
+        `#golsA-${jogo.id}`
+    );
 
-        lista.appendChild(card);
+const golsB =
+    card.querySelector(
+        `#golsB-${jogo.id}`
+    );
 
-    });
+const painelPenaltis =
+    card.querySelector(
+        `#penaltis-${jogo.id}`
+    );
+
+function verificarEmpate(){
+
+    if(
+        golsA.value !== "" &&
+        golsB.value !== "" &&
+        Number(golsA.value) === Number(golsB.value)
+    ){
+
+        painelPenaltis.style.display =
+            "block";
+
+    }
+
+    else{
+
+        painelPenaltis.style.display =
+            "none";
+
+    }
+
+}
+
+golsA.addEventListener(
+    "input",
+    verificarEmpate
+);
+
+golsB.addEventListener(
+    "input",
+    verificarEmpate
+);
+
+verificarEmpate();
+
+const botaoSalvar =
+    card.querySelector(
+        `#salvar-${jogo.id}`
+    );
+
+botaoSalvar.addEventListener(
+
+    "click",
+
+    () => {
+
+        console.log(jogo);
+
+        console.log(
+
+            "Gols:",
+
+            golsA.value,
+
+            golsB.value
+
+        );
+
+    }
+
+);
+
+return card;
 
 }
 
