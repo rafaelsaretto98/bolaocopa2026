@@ -19,7 +19,7 @@ export async function gerar16Avos(classificados){
 
         confrontos16Avos.map(async confronto => ({
 
-            id: confronto.id,
+            id:`16A-${confronto.id}`,
 
             fase: "16-avos",
 
