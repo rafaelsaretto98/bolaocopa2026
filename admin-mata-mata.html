@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Administração Mata-Mata
+</title>
+
+<link
+    rel="stylesheet"
+    href="style.css"
+>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <a
+        href="admin.html"
+        class="nav-btn"
+    >
+        ⚙️ Admin
+    </a>
+
+    <a
+        href="painel-jogos.html"
+        class="nav-btn"
+    >
+        ⚽ Jogos
+    </a>
+
+    <a
+        href="admin-mata-mata.html"
+        class="nav-btn active"
+    >
+        🏆 Mata-Mata
+    </a>
+
+    <a
+        href="index.html"
+        class="nav-btn"
+    >
+        🌎 Site
+    </a>
+
+</nav>
+
+<div class="painel-topo">
+
+    <header class="header-card">
+
+        <h1>
+            🏆 Administração do Mata-Mata
+        </h1>
+
+        <p id="faseAtual">
+
+            Carregando fase...
+
+        </p>
+
+    </header>
+
+</div>
+
+<section class="regras-card">
+
+    <div
+        style="
+            display:flex;
+            gap:15px;
+            justify-content:center;
+            flex-wrap:wrap;
+        "
+    >
+
+        <button
+            id="abrirPalpites"
+            class="btn-relampago"
+        >
+
+            🔓 Liberar Palpites
+
+        </button>
+
+        <button
+            id="encerrarFase"
+            class="btn-relampago"
+        >
+
+            🔒 Encerrar Fase
+
+        </button>
+
+    </div>
+
+</section>
+
+<div id="listaJogos">
+
+</div>
+
+<script
+    type="module"
+    src="admin-mata-mata.js"
+></script>
+
+</body>
+
+</html>
