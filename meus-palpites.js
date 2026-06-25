@@ -1,3 +1,13 @@
+import {
+    carregarConfiguracoes
+}
+from "./configuracoes-firebase.js";
+
+import {
+    carregarJogosPorFase
+}
+from "./mata-mata-firebase.js";
+
 async function iniciar(){
 
     const nome =
@@ -48,6 +58,7 @@ async function iniciar(){
 
 }
 
+
 function montarDashboard(participante){
 
     document.getElementById(
@@ -66,11 +77,7 @@ function montarDashboard(participante){
 
     <div>
 
-        <strong>
-
-            🏆 Grupo
-
-        </strong>
+        <strong>🏆 Grupo</strong>
 
         <br>
 
@@ -80,11 +87,7 @@ function montarDashboard(participante){
 
     <div>
 
-        <strong>
-
-            ⚽ Mata-Mata
-
-        </strong>
+        <strong>⚽ Mata-Mata</strong>
 
         <br>
 
@@ -94,11 +97,7 @@ function montarDashboard(participante){
 
     <div>
 
-        <strong>
-
-            ⭐ Total
-
-        </strong>
+        <strong>⭐ Total</strong>
 
         <br>
 
@@ -201,54 +200,41 @@ VS
 
 </div>
 
-<br>
-
-<div style="text-align:center;">
-
-<button
-    class="btn-relampago"
-
->
-
-💾 Salvar Palpite
-
-</button>
-
-</div>
-
 `;
 
-const opcoes =
-    card.querySelectorAll(
-        ".time-card"
-    );
+    const opcoes =
+        card.querySelectorAll(
+            ".time-card"
+        );
 
-opcoes.forEach(opcao=>{
+    opcoes.forEach(opcao=>{
 
-    opcao.addEventListener(
+        opcao.addEventListener(
 
-        "click",
+            "click",
 
-        ()=>{
+            ()=>{
 
-            opcoes.forEach(o=>
+                opcoes.forEach(o=>
 
-                o.classList.remove(
+                    o.classList.remove(
+                        "selecionado"
+                    )
+
+                );
+
+                opcao.classList.add(
                     "selecionado"
-                )
+                );
 
-            );
+            }
 
-            opcao.classList.add(
-                "selecionado"
-            );
+        );
 
-        }
-
-    );
-
-});
+    });
 
     return card;
 
 }
+
+iniciar();
