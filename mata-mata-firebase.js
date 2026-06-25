@@ -6,7 +6,9 @@ import {
     getDocs,
     doc,
     setDoc,
-    updateDoc
+    updateDoc,
+    query,
+    where
 }
 from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
@@ -64,6 +66,44 @@ export async function carregarJogosMataMata(){
         doc => doc.data()
 
     );
+
+}
+
+export async function carregarJogosPorFase(fase){
+
+    const q =
+        query(
+
+            collection(
+                db,
+                "mata-mata"
+            ),
+
+            where(
+                "fase",
+                "==",
+                fase
+            )
+
+        );
+
+   const snapshot =
+    await getDocs(q);
+
+const jogos =
+    snapshot.docs.map(
+
+        doc => doc.data()
+
+    );
+
+jogos.sort(
+
+    (a,b)=>a.ordem-b.ordem
+
+);
+
+return jogos;
 
 }
 
