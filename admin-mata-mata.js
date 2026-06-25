@@ -1,4 +1,9 @@
 import {
+    avancarVencedor
+}
+from "./mata-mata-progressao.js";
+
+import {
     atualizarJogoMataMata
 }
 from "./mata-mata-firebase.js";
@@ -285,12 +290,18 @@ botaoSalvar.addEventListener(
         jogo.encerrado = true;
 
         await atualizarJogoMataMata(
+        jogo
+        );
+        
+        await avancarVencedor(
             jogo
         );
-
+        
         alert(
             "Resultado salvo!"
         );
+        
+        iniciar();
 
     }
 
