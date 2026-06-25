@@ -145,83 +145,69 @@ function criarCardJogo(jogo){
 
     card.innerHTML = `
 
-<h3 style="text-align:center;">
+<h3 class="titulo-confronto">
 
 ${jogo.timeA?.time}
 
-<span style="
-color:#9ca3af;
-font-size:14px;
-padding:0 10px;
-">
-VS
-</span>
+<span>×</span>
 
 ${jogo.timeB?.time}
 
 </h3>
 
-<div class="escolha-time">
-
-<label>
-
-<input
-    type="radio"
-    name="${jogo.id}"
-    value="${jogo.timeA?.time}"
+<div
+    class="time-card"
+    data-jogo="${jogo.id}"
+    data-time="${jogo.timeA?.time}"
 >
 
-<img
-    class="bandeira-mata"
-    src="img/band_${jogo.timeA?.time}.png"
-    onerror="this.src='img/band_placeholder.png'"
->
+    <img
+        class="bandeira-mata"
+        src="img/band_${jogo.timeA?.time}.png"
+        onerror="this.src='img/band_placeholder.png'"
+    >
 
-<span>
+    <span>
 
-${jogo.timeA?.time}
+        ${jogo.timeA?.time}
 
-</span>
-
-</label>
+    </span>
 
 </div>
 
-<div class="escolha-time">
+<div class="vs-card">
 
-<label>
-
-<input
-    type="radio"
-    name="${jogo.id}"
-    value="${jogo.timeB?.time}"
->
-
-<img
-    class="bandeira-mata"
-    src="img/band_${jogo.timeB?.time}.png"
-    onerror="this.src='img/band_placeholder.png'"
->
-
-<span>
-
-${jogo.timeB?.time}
-
-</span>
-
-</label>
+VS
 
 </div>
 
 <div
-    style="
-        text-align:center;
-        margin-top:20px;
-    "
+    class="time-card"
+    data-jogo="${jogo.id}"
+    data-time="${jogo.timeB?.time}"
 >
+
+    <img
+        class="bandeira-mata"
+        src="img/band_${jogo.timeB?.time}.png"
+        onerror="this.src='img/band_placeholder.png'"
+    >
+
+    <span>
+
+        ${jogo.timeB?.time}
+
+    </span>
+
+</div>
+
+<br>
+
+<div style="text-align:center;">
 
 <button
     class="btn-relampago"
+
 >
 
 💾 Salvar Palpite
@@ -231,6 +217,37 @@ ${jogo.timeB?.time}
 </div>
 
 `;
+
+const opcoes =
+    card.querySelectorAll(
+        ".time-card"
+    );
+
+opcoes.forEach(opcao=>{
+
+    opcao.addEventListener(
+
+        "click",
+
+        ()=>{
+
+            opcoes.forEach(o=>
+
+                o.classList.remove(
+                    "selecionado"
+                )
+
+            );
+
+            opcao.classList.add(
+                "selecionado"
+            );
+
+        }
+
+    );
+
+});
 
     return card;
 
