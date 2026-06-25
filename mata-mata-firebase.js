@@ -4,6 +4,7 @@ from './firebase.js';
 import {
     collection,
     getDocs,
+    getDoc,
     doc,
     setDoc,
     updateDoc,
@@ -120,5 +121,28 @@ export async function atualizarJogoMataMata(jogo){
         jogo
 
     );
+
+}
+
+export async function carregarJogoMataMata(id){
+
+    const snapshot =
+        await getDoc(
+
+            doc(
+                db,
+                "mata-mata",
+                id
+            )
+
+        );
+
+    if(!snapshot.exists()){
+
+        return null;
+
+    }
+
+    return snapshot.data();
 
 }
