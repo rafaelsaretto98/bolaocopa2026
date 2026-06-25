@@ -1,3 +1,9 @@
+import {
+    carregarJogoMataMata,
+    atualizarJogoMataMata
+}
+from "./mata-mata-firebase.js";
+
 export const mapaProgressao = {
 
     // 16 Avos → Oitavas
@@ -57,3 +63,41 @@ export const mapaProgressao = {
     "SEMI-2": { jogo:"FINAL-1", lado:"B" }
 
 };
+
+export async function avancarVencedor(jogoFinalizado){
+
+    const destino =
+        mapaProgressao[
+            jogoFinalizado.id
+        ];
+
+    if(!destino){
+
+        return;
+
+    }
+
+    const proximoJogo =
+        await carregarJogoMataMata(
+            destino.jogo
+        );
+
+    if(destino.lado === "A"){
+
+        proximoJogo.timeA =
+            jogoFinalizado.vencedor;
+
+    }
+
+    else{
+
+        proximoJogo.timeB =
+            jogoFinalizado.vencedor;
+
+    }
+
+    await atualizarJogoMataMata(
+        proximoJogo
+    );
+
+}
