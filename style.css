@@ -180,6 +180,21 @@ progress::-webkit-progress-value { background-color: #10b981; }
     flex-direction: column;
 }
 
+.grupo-esquerda{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.grupo-esquerda img{
+    width:28px;
+}
+
+.grupo-direita{
+    font-size:18px;
+    font-weight:bold;
+}
+
 .grupo h3 {
     text-align: center;
     margin: 0;
@@ -1126,13 +1141,26 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 .linha-grupo{
     display:flex;
+    justify-content:space-between;
     align-items:center;
-    gap:12px;
+    padding:10px 14px;
+    border-radius:10px;
     margin:8px 0;
 }
 
+
 .linha-grupo img{
     width:28px;
+}
+
+.linha-grupo.acertou{
+    background:#dcfce7;
+    border-left:5px solid #22c55e;
+}
+
+.linha-grupo.errou{
+    background:#fee2e2;
+    border-left:5px solid #ef4444;
 }
 
 .acertou{
@@ -1149,9 +1177,15 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 .resultado-grupo{
     margin-top:15px;
-    padding-top:10px;
-    border-top:1px solid #ddd;
+    padding-top:12px;
+    border-top:1px solid #e5e7eb;
     text-align:center;
+}
+
+.estrelas-grupo{
+    font-size:22px;
+    color:#eab308;
+    margin-bottom:8px;
 }
 
 /* =========================================
