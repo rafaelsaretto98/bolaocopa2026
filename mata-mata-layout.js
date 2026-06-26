@@ -52,7 +52,7 @@ const bandeiras = {
     "Portugal": "band_Portugal.png",
     "RD Congo": "band_RD_Congo.png",
     "Suécia": "band_Suecia.png",
-    "Suíça": "band_Suica"
+    "Suíça": "band_Suica",
     "Uruguai": "band_Uruguai"
 
     
