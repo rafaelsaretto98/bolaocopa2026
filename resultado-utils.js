@@ -6,11 +6,9 @@ export function gerarResumoParticipante(
 
 ){
 
-    const resumo = [];
+    return classificacoes.map(
 
-    classificacoes.forEach(grupo=>{
-
-        resumo.push(
+        grupo =>
 
             gerarResumoGrupo(
 
@@ -20,11 +18,7 @@ export function gerarResumoParticipante(
 
             )
 
-        );
-
-    });
-
-    return resumo;
+    );
 
 }
 
@@ -32,58 +26,71 @@ function gerarResumoGrupo(
 
     participante,
 
-    grupo
+    classificacao
 
 ){
 
+    if(
+
+        !classificacao ||
+
+        classificacao.length === 0
+
+    ){
+
+        return null;
+
+    }
+
+    const grupo =
+
+        classificacao[0].grupo;
+
     const palpite =
 
-        participante.palpites?.[grupo.grupo];
-    
+        participante.palpites?.[grupo];
+
     const linhas = [];
 
     let pontos = 0;
+
     ["1º","2º","3º","4º"]
 
-    .forEach(
+    .forEach((posicao,index)=>{
 
-        (posicao,index)=>{
+        const oficial =
 
-            const oficial =
+            classificacao[index]?.time;
 
-                grupo.times[index].time;
+        const escolhido =
 
-            const escolhido =
+            palpite?.[posicao];
 
-                palpite?.[posicao];
-                      const acertou =
+        const acertou =
 
-                escolhido === oficial;
-                      if(acertou){
+            escolhido === oficial;
 
-                pontos++;
+        if(acertou){
 
-            }
-
-                  linhas.push({
-
-                posicao,
-
-                time:escolhido,
-
-                acertou
-
-            });
+            pontos++;
 
         }
 
-    );
+        linhas.push({
+
+            posicao,
+
+            time: escolhido,
+
+            acertou
+
+        });
+
+    });
 
     return{
 
-        grupo:
-
-            grupo.grupo,
+        grupo,
 
         pontos,
 
@@ -92,4 +99,3 @@ function gerarResumoGrupo(
     };
 
 }
-
