@@ -5,11 +5,6 @@ import {
 from "./palpites-mata-mata-firebase.js";
 
 import {
-    salvarPalpitesMataMata
-}
-from "./palpites-mata-mata-firebase.js";
-
-import {
     carregarParticipantes
 }
 from "./participantes-firebase.js";
