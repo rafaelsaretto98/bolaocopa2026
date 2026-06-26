@@ -157,19 +157,6 @@ async function carregarParticipanteSelecionado(){
 
     });
 
-    const resumo =
-
-        gerarResumoParticipante(
-
-            participante,
-
-            classificacoes
-
-        );
-
-    desenharHistoricoGrupos(
-        resumo
-    );
 
     desenharJogos(
 
@@ -184,28 +171,32 @@ async function carregarParticipanteSelecionado(){
 const resumo =
 
     gerarResumoParticipante(
-
         participante,
-
         classificacoes
-
     );
 
     desenharHistoricoGrupos(
     resumo
 );
 
-document
-.getElementById(
-    "salvarTodos"
-)
-.addEventListener(
+     desenharJogos(
+        jogosAtuais,
+        participante.palpitesMataMata || {}
+    );
 
-    "click",
+}
 
-    salvarTodos
-
-);
+        document
+        .getElementById(
+            "salvarTodos"
+        )
+        .addEventListener(
+        
+            "click",
+        
+            salvarTodos
+        
+        );
 
 async function salvarTodos(){
 
