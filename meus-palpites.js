@@ -1,4 +1,24 @@
 import {
+    carregarJogos
+}
+from "./jogos-firebase.js";
+
+import {
+    gerarClassificacao
+}
+from "./classificacao-utils.js";
+
+import {
+    gerarResumoParticipante
+}
+from "./resultado-utils.js";
+
+import {
+    desenharHistoricoGrupos
+}
+from "./meus-resultados-layout.js";
+
+import {
     carregarParticipante,
     salvarPalpitesMataMata
 }
@@ -24,6 +44,16 @@ import {
     desenharJogos
 }
 from "./meus-palpites-layout.js";
+
+const grupos = [
+
+    "A","B","C","D",
+
+    "E","F","G","H",
+
+    "I","J","K","L"
+
+];
 
 let jogosAtuais = [];
 
@@ -106,6 +136,41 @@ async function carregarParticipanteSelecionado(){
         participante
     );
 
+    const jogosGrupo =
+        await carregarJogos();
+
+    const classificacoes = [];
+
+    grupos.forEach(grupo=>{
+
+        classificacoes.push(
+
+            gerarClassificacao(
+
+                jogosGrupo,
+
+                grupo
+
+            )
+
+        );
+
+    });
+
+    const resumo =
+
+        gerarResumoParticipante(
+
+            participante,
+
+            classificacoes
+
+        );
+
+    desenharHistoricoGrupos(
+        resumo
+    );
+
     desenharJogos(
 
         jogosAtuais,
@@ -115,6 +180,20 @@ async function carregarParticipanteSelecionado(){
     );
 
 }
+
+const resumo =
+
+    gerarResumoParticipante(
+
+        participante,
+
+        classificacoes
+
+    );
+
+    desenharHistoricoGrupos(
+    resumo
+);
 
 document
 .getElementById(
@@ -194,4 +273,4 @@ async function salvarTodos(){
 
 }
 
-iniciar();
+iniciar(); 
