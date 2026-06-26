@@ -30,8 +30,10 @@ async function iniciar(){
             config.faseAtual
         );
 
-    desenharJogos(jogos);
-    
+    desenharJogos(
+        jogos
+    );
+
 }
 
 
@@ -87,12 +89,7 @@ function montarDashboard(participante){
 
 }
 
-function desenharJogos(
-
-    jogos,
-    palpites
-){
-    criarCardJogo(jogo);
+function desenharJogos(jogos){
 
     const lista =
         document.getElementById(
