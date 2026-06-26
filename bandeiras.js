@@ -1,0 +1,38 @@
+const bandeiras = { 
+  
+  "Alemanha": "band_Alemanha.png", 
+  "Argélia": "band_Argelia.png", 
+  "Argentina": "band_Argentina.png", 
+  "Austrália": "band_Australia.png", 
+  "Áustria": "band_Austria.png", 
+  "Bélgica": "band_Belgica.png", 
+  "Bósnia e Hezergovina": "band_Bosnia_e_Hezergovinia", 
+  "Brasil": "band_Brasil.png", 
+  "Cabo Verde": "band_Cabo_Verde.png", 
+  "Canadá": "band_Canada.png", 
+  "Chéquia": "band_Chequia.png", 
+  "Colômbia": "band_Colombia.png", 
+  "Coreia do Sul": "band_Coreia_do_Sul.png", 
+  "Egito": "band_Egito.png", 
+  "Equador": "band_Equador.png", 
+  "Escócia": "band_Escocia.png", 
+  "Espanha": "band_Espanha.png", 
+  "Estados Unidos": "band_Estados_Unidos.png", 
+  "França": "band_França.png", 
+  "Gana": "band_Gana.png", 
+  "Haiti": "band_Haiti.png", 
+  "Holanda": "band_Holanda.png", 
+  "Inglaterra": "band_Inglaterra.png", 
+  "Irã": "band_Ira.png", 
+  "Japão": "band_Japao.png", 
+  "Marrocos": "band_Marrocos.png", 
+  "México": "band_Mexico.png", 
+  "Noruega": "band_Noruega.png", 
+  "Paraguai": "band_Paraguai.png", 
+  "Portugal": "band_Portugal.png", 
+  "RD Congo": "band_RD_Congo.png", 
+  "Suécia": "band_Suecia.png", 
+  "Suíça": "band_Suica" 
+  "Uruguai": "band_Uruguai" 
+
+};
