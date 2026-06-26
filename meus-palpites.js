@@ -1,4 +1,9 @@
 import {
+    carregarParticipantes
+}
+from "./participantes-firebase.js";
+
+import {
     carregarConfiguracoes
 }
 from "./configuracoes-firebase.js";
@@ -10,39 +15,7 @@ from "./mata-mata-firebase.js";
 
 async function iniciar(){
 
-    const nome =
-        localStorage.getItem(
-            "nomeParticipante"
-        );
-
-    if(!nome){
-
-        alert(
-            "Identifique-se primeiro."
-        );
-
-        location.href =
-            "index.html";
-
-        return;
-
-    }
-
-    const participante = {
-
-        nome,
-
-        pontosGrupo:0,
-
-        pontosMataMata:0,
-
-        total:0
-
-    };
-
-    montarDashboard(
-        participante
-    );
+    await carregarListaParticipantes();
 
     const config =
         await carregarConfiguracoes();
@@ -234,6 +207,37 @@ VS
     });
 
     return card;
+
+}
+
+async function carregarListaParticipantes(){
+
+    const participantes =
+        await carregarParticipantes();
+
+    const select =
+        document.getElementById(
+            "participanteSelect"
+        );
+
+    participantes.forEach(participante=>{
+
+        const option =
+            document.createElement(
+                "option"
+            );
+
+        option.value =
+            participante.id;
+
+        option.textContent =
+            participante.nome;
+
+        select.appendChild(
+            option
+        );
+
+    });
 
 }
 
