@@ -21,10 +21,12 @@ function bandeira(nome){
 const bandeiras = {
     
     "Alemanha": "band_Alemanha.png",
+    "Argélia": "band_Argelia.png",
     "Argentina": "band_Argentina.png",
     "Austrália": "band_Australia.png",
     "Áustria": "band_Austria.png",
     "Bélgica": "band_Belgica.png",
+    "Bósnia e Hezergovina": "band_Bosnia_e_Hezergovinia",
     "Brasil": "band_Brasil.png",
     "Cabo Verde": "band_Cabo_Verde.png",
     "Canadá": "band_Canada.png",
@@ -50,7 +52,8 @@ const bandeiras = {
     "Portugal": "band_Portugal.png",
     "RD Congo": "band_RD_Congo.png",
     "Suécia": "band_Suecia.png",
-    "Suíça": "band_Suiça"
+    "Suíça": "band_Suica"
+    "Uruguai": "band_Uruguai"
 
     
 };
