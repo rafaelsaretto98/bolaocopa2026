@@ -1,4 +1,9 @@
 import {
+    carregarConfiguracoes
+}
+from "./configuracoes-firebase.js";
+
+import {
     carregarParticipantes,
     excluirParticipanteFirebase
 }
@@ -20,6 +25,8 @@ let participantes = [];
 
 
 async function iniciar(){
+
+    await atualizarPainelMataMata();
 
     console.log('Buscando participantes...');
 
@@ -259,3 +266,82 @@ document.getElementById('logout')
         'login.html';
 
 };
+
+async function atualizarPainelMataMata(){
+
+    const config =
+        await carregarConfiguracoes();
+
+    const fase = nomeFase(
+        config.faseAtual
+    );
+
+    document.getElementById(
+        "statusMataMata"
+    ).innerHTML = `
+
+<strong>
+
+Fase Atual:
+
+</strong>
+
+${fase}
+
+<br><br>
+
+<strong>
+
+Palpites:
+
+</strong>
+
+${
+
+config.palpitesAbertos
+
+?
+
+"🟢 Abertos"
+
+:
+
+"🔴 Fechados"
+
+}
+
+`;
+
+}
+
+function nomeFase(fase){
+
+    switch(fase){
+
+        case "16-avos":
+
+            return "16 Avos de Final";
+
+        case "oitavas":
+
+            return "Oitavas de Final";
+
+        case "quartas":
+
+            return "Quartas de Final";
+
+        case "semifinal":
+
+            return "Semifinais";
+
+        case "final":
+
+            return "Final";
+
+        default:
+
+            return "Fase de Grupos";
+
+    }
+
+}
