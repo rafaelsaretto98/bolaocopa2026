@@ -1124,6 +1124,36 @@ progress::-webkit-progress-value { background-color: #10b981; }
     margin-top:10px;
 }
 
+.linha-grupo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin:8px 0;
+}
+
+.linha-grupo img{
+    width:28px;
+}
+
+.acertou{
+    margin-left:auto;
+    color:#16a34a;
+    font-weight:bold;
+}
+
+.errou{
+    margin-left:auto;
+    color:#dc2626;
+    font-weight:bold;
+}
+
+.resultado-grupo{
+    margin-top:15px;
+    padding-top:10px;
+    border-top:1px solid #ddd;
+    text-align:center;
+}
+
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
    ========================================= */
