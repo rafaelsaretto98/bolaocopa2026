@@ -155,23 +155,45 @@ async function carregarParticipanteSelecionado(){
     const resumo =
 
         gerarResumoParticipante(
-
             participante,
-
             classificacoes
+        );
 
+    const pontosGrupo =
+
+    resumo.reduce(
+
+        (total, grupo) =>
+
+            total + grupo.pontos,
+
+        0
+
+    );
+
+    participante.pontosGrupo =
+        pontosGrupo;
+
+    participante.pontosMataMata =
+        participante.pontosMataMata || 0;
+
+    participante.total =
+
+        participante.pontosGrupo +
+        participante.pontosMataMata;
+    
+    montarDashboard(
+        participante
         );
 
     desenharHistoricoGrupos(
         resumo
     );
 
+
     desenharJogos(
-
         jogosAtuais,
-
         participante.palpitesMataMata || {}
-
     );
 
 }
