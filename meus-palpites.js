@@ -1,4 +1,10 @@
 import {
+    carregarParticipante,
+    salvarPalpitesMataMata
+}
+from "./palpites-mata-mata-firebase.js";
+
+import {
     salvarPalpitesMataMata
 }
 from "./palpites-mata-mata-firebase.js";
@@ -89,7 +95,10 @@ function montarDashboard(participante){
 
 }
 
-function desenharJogos(jogos){
+function desenharJogos(
+    jogos,
+    palpites = {}
+)
 
     const lista =
         document.getElementById(
@@ -102,7 +111,10 @@ function desenharJogos(jogos){
 
         lista.appendChild(
 
-            criarCardJogo(jogo)
+            criarCardJogo(
+                jogo,
+                palpites[jogo.id]
+            )
 
         );
 
@@ -110,7 +122,10 @@ function desenharJogos(jogos){
 
 }
 
-function criarCardJogo(jogo){
+function criarCardJogo(
+    jogo,
+    palpite
+)
 
     const card =
         document.createElement(
@@ -187,6 +202,28 @@ VS
         card.querySelectorAll(
             ".time-card"
         );
+if(palpite){
+
+    opcoes.forEach(opcao=>{
+
+        if(
+
+            opcao.dataset.time === palpite
+
+        ){
+
+            opcao.classList.add(
+                "selecionado"
+            );
+
+            card.dataset.escolhido =
+                palpite;
+
+        }
+
+    });
+
+}
 
     opcoes.forEach(opcao=>{
 
@@ -258,6 +295,41 @@ async function carregarListaParticipantes(){
         );
 
     });
+    
+        select.addEventListener(
+    
+        "change",
+    
+        async ()=>{
+    
+            const participante =
+                await carregarParticipante(
+                    select.value
+                );
+    
+            montarDashboard(
+                participante
+            );
+    
+            const config =
+                await carregarConfiguracoes();
+    
+            const jogos =
+                await carregarJogosPorFase(
+                    config.faseAtual
+                );
+    
+            desenharJogos(
+    
+                jogos,
+    
+                participante.palpitesMataMata || {}
+    
+            );
+    
+        }
+
+);
 
 }
 
