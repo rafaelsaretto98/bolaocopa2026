@@ -1,4 +1,9 @@
 import {
+    salvarPalpitesMataMata
+}
+from "./palpites-mata-mata-firebase.js";
+
+import {
     carregarParticipantes
 }
 from "./participantes-firebase.js";
@@ -196,9 +201,21 @@ VS
 
                 );
 
-                opcao.classList.add(
-                    "selecionado"
-                );
+                opcoes.forEach(o=>{
+
+            o.classList.remove(
+                "selecionado"
+            );
+        
+        });
+        
+             opcao.classList.add(
+            "selecionado"
+        );
+        
+        card.dataset.escolhido =
+        
+            opcao.dataset.time;
 
             }
 
@@ -240,5 +257,60 @@ async function carregarListaParticipantes(){
     });
 
 }
+
+document
+.getElementById(
+    "salvarTodos"
+)
+.addEventListener(
+
+    "click",
+
+    async ()=>{
+
+        const participante =
+            document.getElementById(
+                "participanteSelect"
+            ).value;
+
+        if(!participante){
+
+            alert(
+                "Selecione o participante."
+            );
+
+            return;
+
+        }
+
+        const palpites = {};
+
+        document
+        .querySelectorAll(
+            ".regras-card"
+        )
+        .forEach(card=>{
+
+            if(
+                card.dataset.escolhido
+            ){
+
+                palpites[
+                    card.dataset.jogo
+                ] =
+
+                card.dataset.escolhido;
+
+            }
+
+        });
+
+        console.log(
+            palpites
+        );
+
+    }
+
+);
 
 iniciar();
