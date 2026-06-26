@@ -30,10 +30,8 @@ async function iniciar(){
             config.faseAtual
         );
 
-    desenharJogos(
-        jogos
-    );
-
+    desenharJogos(jogos);
+    
 }
 
 
@@ -89,7 +87,12 @@ function montarDashboard(participante){
 
 }
 
-function desenharJogos(jogos){
+function desenharJogos(
+
+    jogos,
+    palpites
+){
+    criarCardJogo(jogo);
 
     const lista =
         document.getElementById(
@@ -119,6 +122,9 @@ function criarCardJogo(jogo){
 
     card.className =
         "regras-card";
+    
+    card.dataset.jogo =
+    jogo.id;
 
     card.innerHTML = `
 
@@ -245,7 +251,7 @@ async function carregarListaParticipantes(){
             );
 
         option.value =
-            participante.id;
+            participante.nome;
 
         option.textContent =
             participante.nome;
@@ -305,9 +311,36 @@ document
 
         });
 
-        console.log(
-            palpites
-        );
+        try{
+
+    await salvarPalpitesMataMata(
+
+        participante,
+
+        palpites
+
+    );
+
+    alert(
+
+        "✅ Palpites salvos!"
+
+    );
+
+    await iniciar();
+
+}
+catch(erro){
+
+    console.error(erro);
+
+    alert(
+
+        "Erro ao salvar."
+
+    );
+
+}
 
     }
 
