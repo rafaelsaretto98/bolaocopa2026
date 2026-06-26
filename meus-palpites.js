@@ -8,7 +8,7 @@ import {
     carregarParticipantes
 }
 from "./participantes-firebase.js";
-
+ 
 import {
     carregarConfiguracoes
 }
