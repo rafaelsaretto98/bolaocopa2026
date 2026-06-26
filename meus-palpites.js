@@ -19,6 +19,14 @@ import {
 }
 from "./mata-mata-firebase.js";
 
+import {
+    montarDashboard,
+    desenharJogos
+}
+from "./meus-palpites-layout.js";
+
+let jogosAtuais = [];
+
 async function iniciar(){
 
     await carregarListaParticipantes();
@@ -26,239 +34,12 @@ async function iniciar(){
     const config =
         await carregarConfiguracoes();
 
-    const jogos =
+    jogosAtuais =
         await carregarJogosPorFase(
             config.faseAtual
         );
 
-    desenharJogos(
-        jogos
-    );
-
-}
-
-
-function montarDashboard(participante){
-
-    document.getElementById(
-
-        "dashboardParticipante"
-
-    ).innerHTML = `
-
-<h2>
-
-👤 ${participante.nome}
-
-</h2>
-
-<div class="dashboard-pontos">
-
-    <div>
-
-        <strong>🏆 Grupo</strong>
-
-        <br>
-
-        ${participante.pontosGrupo}
-
-    </div>
-
-    <div>
-
-        <strong>⚽ Mata-Mata</strong>
-
-        <br>
-
-        ${participante.pontosMataMata}
-
-    </div>
-
-    <div>
-
-        <strong>⭐ Total</strong>
-
-        <br>
-
-        ${participante.total}
-
-    </div>
-
-</div>
-
-`;
-
-}
-
-function desenharJogos(
-    jogos,
-    palpites = {}
-)
-
-    const lista =
-        document.getElementById(
-            "listaJogos"
-        );
-
-    lista.innerHTML = "";
-
-    jogos.forEach(jogo=>{
-
-        lista.appendChild(
-
-            criarCardJogo(
-                jogo,
-                palpites[jogo.id]
-            )
-
-        );
-
-    });
-
-}
-
-function criarCardJogo(
-    jogo,
-    palpite
-)
-
-    const card =
-        document.createElement(
-            "div"
-        );
-
-    card.className =
-        "regras-card";
-    
-    card.dataset.jogo =
-    jogo.id;
-
-    card.innerHTML = `
-
-<h3 class="titulo-confronto">
-
-${jogo.timeA?.time}
-
-<span>×</span>
-
-${jogo.timeB?.time}
-
-</h3>
-
-<div
-    class="time-card"
-    data-jogo="${jogo.id}"
-    data-time="${jogo.timeA?.time}"
->
-
-    <img
-        class="bandeira-mata"
-        src="img/band_${jogo.timeA?.time}.png"
-        onerror="this.src='img/band_placeholder.png'"
-    >
-
-    <span>
-
-        ${jogo.timeA?.time}
-
-    </span>
-
-</div>
-
-<div class="vs-card">
-
-VS
-
-</div>
-
-<div
-    class="time-card"
-    data-jogo="${jogo.id}"
-    data-time="${jogo.timeB?.time}"
->
-
-    <img
-        class="bandeira-mata"
-        src="img/band_${jogo.timeB?.time}.png"
-        onerror="this.src='img/band_placeholder.png'"
-    >
-
-    <span>
-
-        ${jogo.timeB?.time}
-
-    </span>
-
-</div>
-
-`;
-
-    const opcoes =
-        card.querySelectorAll(
-            ".time-card"
-        );
-if(palpite){
-
-    opcoes.forEach(opcao=>{
-
-        if(
-
-            opcao.dataset.time === palpite
-
-        ){
-
-            opcao.classList.add(
-                "selecionado"
-            );
-
-            card.dataset.escolhido =
-                palpite;
-
-        }
-
-    });
-
-}
-
-    opcoes.forEach(opcao=>{
-
-        opcao.addEventListener(
-
-            "click",
-
-            ()=>{
-
-                opcoes.forEach(o=>
-
-                    o.classList.remove(
-                        "selecionado"
-                    )
-
-                );
-
-                opcoes.forEach(o=>{
-
-            o.classList.remove(
-                "selecionado"
-            );
-        
-        });
-        
-             opcao.classList.add(
-            "selecionado"
-        );
-        
-        card.dataset.escolhido =
-        
-            opcao.dataset.time;
-
-            }
-
-        );
-
-    });
-
-    return card;
+    desenharJogos(jogosAtuais);
 
 }
 
@@ -272,12 +53,16 @@ async function carregarListaParticipantes(){
             "participanteSelect"
         );
 
+    select.innerHTML = `
+        <option value="">
+            Selecione seu nome
+        </option>
+    `;
+
     participantes.forEach(participante=>{
 
         const option =
-            document.createElement(
-                "option"
-            );
+            document.createElement("option");
 
         option.value =
             participante.nome;
@@ -285,46 +70,49 @@ async function carregarListaParticipantes(){
         option.textContent =
             participante.nome;
 
-        select.appendChild(
-            option
-        );
+        select.appendChild(option);
 
     });
-    
-        select.addEventListener(
-    
-        "change",
-    
-        async ()=>{
-    
-            const participante =
-                await carregarParticipante(
-                    select.value
-                );
-    
-            montarDashboard(
-                participante
-            );
-    
-            const config =
-                await carregarConfiguracoes();
-    
-            const jogos =
-                await carregarJogosPorFase(
-                    config.faseAtual
-                );
-    
-            desenharJogos(
-    
-                jogos,
-    
-                participante.palpitesMataMata || {}
-    
-            );
-    
-        }
 
-);
+    select.addEventListener(
+
+        "change",
+
+        carregarParticipanteSelecionado
+
+    );
+
+}
+
+async function carregarParticipanteSelecionado(){
+
+    const nome =
+        document.getElementById(
+            "participanteSelect"
+        ).value;
+
+    if(!nome){
+
+        return;
+
+    }
+
+    const participante =
+        await carregarParticipante(
+            nome
+        );
+
+    montarDashboard(
+        participante
+    );
+
+    desenharJogos(
+
+        jogosAtuais,
+
+        participante.palpitesMataMata || {}
+
+    );
 
 }
 
@@ -336,78 +124,74 @@ document
 
     "click",
 
-    async ()=>{
+    salvarTodos
 
-        const participante =
-            document.getElementById(
-                "participanteSelect"
-            ).value;
+);
 
-        if(!participante){
+async function salvarTodos(){
 
-            alert(
-                "Selecione o participante."
-            );
+    const nome =
+        document.getElementById(
+            "participanteSelect"
+        ).value;
 
-            return;
+    if(!nome){
 
-        }
+        alert(
+            "Selecione o participante."
+        );
 
-        const palpites = {};
-
-        document
-        .querySelectorAll(
-            ".regras-card"
-        )
-        .forEach(card=>{
-
-            if(
-                card.dataset.escolhido
-            ){
-
-                palpites[
-                    card.dataset.jogo
-                ] =
-
-                card.dataset.escolhido;
-
-            }
-
-        });
-
-        try{
-
-    await salvarPalpitesMataMata(
-
-        participante,
-
-        palpites
-
-    );
-
-    alert(
-
-        "✅ Palpites salvos!"
-
-    );
-
-    await iniciar();
-
-}
-catch(erro){
-
-    console.error(erro);
-
-    alert(
-
-        "Erro ao salvar."
-
-    );
-
-}
+        return;
 
     }
 
-);
+    const palpites = {};
+
+    document
+    .querySelectorAll(
+        ".regras-card"
+    )
+    .forEach(card=>{
+
+        if(card.dataset.escolhido){
+
+            palpites[
+                card.dataset.jogo
+            ] =
+
+            card.dataset.escolhido;
+
+        }
+
+    });
+
+    try{
+
+        await salvarPalpitesMataMata(
+
+            nome,
+
+            palpites
+
+        );
+
+        alert(
+            "✅ Palpites salvos!"
+        );
+
+        await carregarParticipanteSelecionado();
+
+    }
+    catch(erro){
+
+        console.error(erro);
+
+        alert(
+            "Erro ao salvar."
+        );
+
+    }
+
+}
 
 iniciar();
