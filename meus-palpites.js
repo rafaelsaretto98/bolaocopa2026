@@ -122,9 +122,7 @@ async function carregarParticipanteSelecionado(){
         ).value;
 
     if(!nome){
-
         return;
-
     }
 
     const participante =
@@ -146,17 +144,27 @@ async function carregarParticipanteSelecionado(){
         classificacoes.push(
 
             gerarClassificacao(
-
                 jogosGrupo,
-
                 grupo
-
             )
 
         );
 
     });
 
+    const resumo =
+
+        gerarResumoParticipante(
+
+            participante,
+
+            classificacoes
+
+        );
+
+    desenharHistoricoGrupos(
+        resumo
+    );
 
     desenharJogos(
 
@@ -164,24 +172,6 @@ async function carregarParticipanteSelecionado(){
 
         participante.palpitesMataMata || {}
 
-    );
-
-}
-
-const resumo =
-
-    gerarResumoParticipante(
-        participante,
-        classificacoes
-    );
-
-    desenharHistoricoGrupos(
-    resumo
-);
-
-     desenharJogos(
-        jogosAtuais,
-        participante.palpitesMataMata || {}
     );
 
 }
