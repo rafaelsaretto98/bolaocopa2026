@@ -1,10 +1,4 @@
-export function desenharHistoricoGrupos(
-
-    classificacoesOficiais,
-
-    palpitesParticipante
-
-){
+export function desenharHistoricoGrupos(resumo){
 
     const container =
         document.getElementById(
@@ -13,20 +7,11 @@ export function desenharHistoricoGrupos(
 
     container.innerHTML = "";
 
-    classificacoesOficiais.forEach(grupo=>{
-
-        const palpite =
-            palpitesParticipante?.[grupo.grupo] || [];
+    resumo.forEach(grupo=>{
 
         container.appendChild(
 
-            criarCardGrupo(
-
-                grupo,
-
-                palpite
-
-            )
+            criarCardGrupo(grupo)
 
         );
 
@@ -34,13 +19,7 @@ export function desenharHistoricoGrupos(
 
 }
 
-function criarCardGrupo(
-
-    grupo,
-
-    palpite
-
-){
+function criarCardGrupo(grupo){
 
     const card =
         document.createElement("div");
@@ -48,7 +27,7 @@ function criarCardGrupo(
     card.className =
         "regras-card";
 
-        card.innerHTML = `
+    card.innerHTML = `
 
 <h2>
 
@@ -58,8 +37,7 @@ function criarCardGrupo(
 
 `;
 
-
-        const posicoes = [
+    const posicoes = [
 
         "🥇",
 
@@ -71,121 +49,96 @@ function criarCardGrupo(
 
     ];
 
-    grupo.times.forEach(
+    grupo.linhas.forEach((linha,index)=>{
 
-        (time,index)=>{
+        const item =
+            document.createElement("div");
 
-            const linha =
-                document.createElement(
-                    "div"
-                );
+        item.className =
 
-            linha.className =
-                "linha-grupo";
+            linha.acertou
 
-                        const acertou =
+            ?
 
-                palpite[index] ===
+            "linha-grupo acertou"
 
-                time.time;
+            :
 
-                        linha.innerHTML = `
+            "linha-grupo errou";
 
-<span>
+        item.innerHTML = `
 
-${posicoes[index]}
+<div class="grupo-esquerda">
 
-</span>
+    <span>
 
-<img
+        ${posicoes[index]}
 
-class="bandeira-mata"
+    </span>
 
-src="img/band_${time.time}.png"
+    <img
 
-onerror="this.src='img/band_placeholder.png'"
+        class="bandeira-mata"
 
->
+        src="img/band_${linha.time}.png"
 
-<span>
+        onerror="this.src='img/band_placeholder.png'"
 
-${time.time}
+    >
 
-</span>
+    <span>
 
-<span class="${
-acertou ?
-"acertou" :
-"errou"
-}">
+        ${linha.time}
 
-${acertou ?
+    </span>
 
-"✅"
+</div>
 
-:
+<div class="grupo-direita">
 
-"❌"
+    ${linha.acertou ? "✅" : "❌"}
 
-}
-
-</span>
+</div>
 
 `;
 
-                        card.appendChild(
-                linha
-            );
+        card.appendChild(item);
 
-        }
+    });
 
-    );
+    const estrelas =
 
-        let pontos = 0;
+        "⭐".repeat(grupo.pontos) +
 
-    grupo.times.forEach(
+        "☆".repeat(4 - grupo.pontos);
 
-        (time,index)=>{
-
-            if(
-
-                palpite[index] ===
-
-                time.time
-
-            ){
-
-                pontos++;
-
-            }
-
-        }
-
-    );
-
-        const rodape =
-        document.createElement(
-            "div"
-        );
+    const rodape =
+        document.createElement("div");
 
     rodape.className =
         "resultado-grupo";
 
     rodape.innerHTML = `
 
+<div class="estrelas-grupo">
+
+${estrelas}
+
+</div>
+
+<div>
+
 <strong>
 
-${pontos}
-
-/
-
-4 pontos
+${grupo.pontos} de 4 acertos
 
 </strong>
 
+</div>
+
 `;
 
-        card.appendChild(
+    card.appendChild(
         rodape
     );
 
