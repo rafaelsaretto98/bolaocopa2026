@@ -1115,6 +1115,15 @@ progress::-webkit-progress-value { background-color: #10b981; }
     border-color:#22c55e;
 }
 
+.input-padrao{
+    width:100%;
+    padding:12px;
+    font-size:16px;
+    border:1px solid #d1d5db;
+    border-radius:8px;
+    margin-top:10px;
+}
+
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
    ========================================= */
