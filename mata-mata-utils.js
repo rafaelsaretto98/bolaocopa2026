@@ -8,6 +8,12 @@ import {
 }
 from './terceiros-loader.js';
 
+import {
+    carregarJogosMataMata,
+    atualizarConfronto
+}
+from "./mata-mata-firebase.js";
+
 console.log("MATA-MATA UTILS NOVO");
 
 export async function gerar16Avos(classificados){
@@ -50,6 +56,75 @@ export async function gerar16Avos(classificados){
         }))
 
     );
+
+}
+
+export async function atualizar16Avos(classificados){
+
+    const novosJogos =
+        await gerar16Avos(
+            classificados
+        );
+
+    const jogosAtuais =
+        await carregarJogosMataMata();
+
+    for(const novo of novosJogos){
+
+        const atual =
+            jogosAtuais.find(
+
+                j => j.id === novo.id
+
+            );
+
+        if(!atual){
+
+            continue;
+
+        }
+
+        const mudouMandante =
+
+            atual.timeA?.time !==
+            novo.timeA?.time;
+
+        const mudouVisitante =
+
+            atual.timeB?.time !==
+            novo.timeB?.time;
+
+        if(
+
+            mudouMandante ||
+
+            mudouVisitante
+
+        ){
+
+            atual.timeA =
+                novo.timeA;
+
+            atual.timeB =
+                novo.timeB;
+
+            await atualizarConfronto(
+
+            atual.id,
+            novo.timeA,
+            novo.timeB
+
+            );
+
+            console.log(
+
+                `${atual.id} atualizado.`
+
+            );
+
+        }
+
+    }
 
 }
 
@@ -181,4 +256,3 @@ function resolverTerceiro(
     ) || null;
 
 }
-
