@@ -124,6 +124,36 @@ export async function atualizarJogoMataMata(jogo){
 
 }
 
+export async function atualizarConfronto(
+
+    id,
+
+    timeA,
+
+    timeB
+
+){
+
+    await updateDoc(
+
+        doc(
+            db,
+            "mata-mata",
+            id
+        ),
+
+        {
+
+            timeA,
+
+            timeB
+
+        }
+
+    );
+
+}
+
 export async function carregarJogoMataMata(id){
 
     const snapshot =
