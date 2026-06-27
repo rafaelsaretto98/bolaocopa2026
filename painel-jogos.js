@@ -6,6 +6,21 @@ import {
 }
 from './jogos-firebase.js';
 
+import {
+    gerarClassificacao
+}
+from "./classificacao-utils.js";
+
+import {
+    gerarClassificados
+}
+from "./classificados-utils.js";
+
+import {
+    atualizar16Avos
+}
+from "./mata-mata-utils.js";
+
 
 async function iniciar(){
 
@@ -347,14 +362,14 @@ document
             id,
             golsA,
             golsB,
-
             amarelosA,
             amarelosB,
-
             vermelhosA,
             vermelhosB
         );
-
+        
+        await atualizarMataMata();
+        
         alert(
             'Resultado salvo.'
         );
@@ -404,5 +419,50 @@ window.excluirJogoTela = async function(id){
     }
 
 };
+
+async function atualizarMataMata(){
+
+    const jogos =
+        await carregarJogos();
+
+    const grupos = [
+
+        "A","B","C","D",
+
+        "E","F","G","H",
+
+        "I","J","K","L"
+
+    ];
+
+    const classificacoes =
+
+        grupos.map(grupo=>
+
+            gerarClassificacao(
+
+                jogos,
+
+                grupo
+
+            )
+
+        );
+
+    const classificados =
+
+        gerarClassificados(
+
+            classificacoes
+
+        );
+
+    await atualizar16Avos(
+
+        classificados
+
+    );
+
+}
 
 iniciar();
