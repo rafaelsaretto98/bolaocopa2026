@@ -61,3 +61,66 @@ export function calcularPontuacao(
     return pontos;
 
 }
+
+export async function calcularPontuacaoMataMata(
+    participante,
+    jogosMataMata
+){
+
+    let pontos = 0;
+
+    const palpites =
+
+        participante.palpitesMataMata || {};
+
+    jogosMataMata.forEach(jogo=>{
+
+        if(
+
+            !jogo.encerrado ||
+            !jogo.vencedor
+
+        ){
+            return;
+        }
+
+        if(
+            palpites[jogo.id] ===
+            jogo.vencedor
+        ){
+            pontos++;
+        }
+    });
+    return pontos;
+}
+
+export async function calcularTotal(
+
+    participante,
+    jogosGrupo,
+    jogosMataMata
+){
+
+    const grupo =
+
+        calcularPontuacao(
+            participante,
+            jogosGrupo
+        );
+
+    const mata =
+
+        await calcularPontuacaoMataMata(
+            participante,
+            jogosMataMata
+        );
+
+    return{
+
+        grupo,
+        mata,
+        total:
+            grupo + mata
+    };
+
+}
