@@ -13,6 +13,15 @@ from './home-ranking.js';
 import { carregarUltimoRecado }
 from './home-recados.js';
 
+import {criarNavbar}
+from "./navbar.js";
+
+document.getElementById("navbar").innerHTML =
+
+    criarNavbar(
+        "inicio"
+    );
+
 criarDashboard();
 
 await carregarResumoBolao();
