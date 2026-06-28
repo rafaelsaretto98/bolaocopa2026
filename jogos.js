@@ -19,9 +19,6 @@ document.getElementById(
     criarNavbar("jogos");
 
 async function iniciar(){
-
-    const jogos =
-        await carregarJogos();
     
     const jogosGrupo =
     await carregarJogos();
@@ -97,9 +94,9 @@ async function iniciar(){
         }
         const jogoDoBrasil =
 
-            jogo.timeA === 'Brasil' ||
+            nomeTimeA === 'Brasil' ||
         
-            jogo.timeB === 'Brasil';
+            nomeTimeB === 'Brasil';
         
         const card =
             document.createElement('div');
@@ -259,6 +256,12 @@ function nomeFase(fase){
             return fase;
 
     }
+
+}
+
+function nomeTime(time){
+
+    return time?.time || time || "A definir";
 
 }
 
