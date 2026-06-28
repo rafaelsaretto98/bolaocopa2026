@@ -13,6 +13,14 @@ import {
 }
 from './ranking-utils.js';
 
+import {criarNavbar}
+from "./navbar.js";
+
+document.getElementById(
+    "navbar"
+).innerHTML =
+    criarNavbar("ranking");
+
 
 
 // 2. Calcula pontos de todos e ordena do maior para o menor
