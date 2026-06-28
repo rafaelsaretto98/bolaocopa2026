@@ -1,3 +1,8 @@
+import {
+    BRACKET
+}
+from "./bracket-config.js";
+
 function bandeira(nome){
 
     if(!nome){
@@ -15,6 +20,30 @@ function bandeira(nome){
         .replaceAll("'", "");
 
     return `img/band_${arquivo}.png`;
+
+}
+
+function ordenarJogos(
+
+    jogos,
+
+    ordem
+
+){
+
+    return ordem
+
+        .map(id=>
+
+            jogos.find(
+
+                jogo=>jogo.id===id
+
+            )
+
+        )
+
+        .filter(Boolean);
 
 }
 
@@ -231,48 +260,99 @@ export function desenharBracket(
 `;
 
     desenharColuna(
-        "col16E",
-        jogos16.slice(0,8)
+    "col16E",
+        ordenarJogos(
+            jogos16,
+            BRACKET.ladoEsquerdo.dezesseis
+        )
     );
 
     desenharColuna(
-        "col16D",
-        jogos16.slice(8)
+    "col16D",
+        ordenarJogos(
+            jogos16,
+            BRACKET.ladoDireito.dezesseis
+        )
     );
 
     desenharColuna(
-        "col8E",
-        jogosOitavas.slice(0,4)
+    "col8E",
+        ordenarJogos(
+            jogosOitavas,
+            BRACKET.ladoEsquerdo.oitavas
+        )
     );
 
     desenharColuna(
-        "col8D",
-        jogosOitavas.slice(4)
+    "col8D",
+        ordenarJogos(
+        jogosOitavas,
+        BRACKET.ladoDireito.oitavas
+        )
     );
 
     desenharColuna(
-        "col4E",
-        jogosQuartas.slice(0,2)
+    "col4E",
+        ordenarJogos(
+        jogosQuartas,
+        BRACKET.ladoEsquerdo.quartas
+        )
     );
 
     desenharColuna(
-        "col4D",
-        jogosQuartas.slice(2)
+    "col4D",
+        ordenarJogos(
+        jogosQuartas,
+        BRACKET.ladoDireito.quartas
+        )
     );
 
     desenharColuna(
-        "col2E",
-        [jogosSemi[0]]
+    "col2E",
+        ordenarJogos(
+        jogosSemi,
+        BRACKET.ladoEsquerdo.semi
+        )
     );
 
     desenharColuna(
-        "col2D",
-        [jogosSemi[1]]
+    "col2D",
+        ordenarJogos(
+        jogosSemi,
+        BRACKET.ladoDireito.semi
+        )
     );
 
     desenharColuna(
-        "colFinal",
-        [jogoFinal]
+    "colFinal",
+        ordenarJogos(
+        [jogoFinal],
+        [BRACKET.final]
+        )
     );
+
+}
+
+function ordenarJogos(
+
+    jogos,
+
+    ordem
+
+){
+
+    return ordem
+
+        .map(id=>
+
+            jogos.find(
+
+                jogo=>jogo.id===id
+
+            )
+
+        )
+
+        .filter(Boolean);
 
 }
