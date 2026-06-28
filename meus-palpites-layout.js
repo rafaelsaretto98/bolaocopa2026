@@ -1,3 +1,8 @@
+import {
+    jogoAberto
+}
+from "./palpites-utils.js";
+
 export function montarDashboard(participante){
 
     document.getElementById(
@@ -100,6 +105,9 @@ function criarCardJogo(
 
     card.dataset.jogo =
         jogo.id;
+
+    const aberto =
+    jogoAberto(jogo);
 
     card.innerHTML = `
 
@@ -207,32 +215,38 @@ ${jogo.timeB?.time}
 
     opcoes.forEach(opcao=>{
 
-        opcao.addEventListener(
+    opcao.addEventListener(
 
-            "click",
+        "click",
 
-            ()=>{
+        ()=>{
 
-                opcoes.forEach(o=>
+            if(!aberto){
 
-                    o.classList.remove(
-                        "selecionado"
-                    )
-
-                );
-
-                opcao.classList.add(
-                    "selecionado"
-                );
-
-                card.dataset.escolhido =
-                    opcao.dataset.time;
+                return;
 
             }
 
-        );
+            opcoes.forEach(o=>
 
-    });
+                o.classList.remove(
+                    "selecionado"
+                )
+
+            );
+
+            opcao.classList.add(
+                "selecionado"
+            );
+
+            card.dataset.escolhido =
+                opcao.dataset.time;
+
+        }
+
+    );
+
+});
 
     return card;
 
