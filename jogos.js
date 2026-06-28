@@ -1,4 +1,9 @@
 import {
+    carregarJogosMataMata
+}
+from "./mata-mata-firebase.js";
+
+import {
     carregarJogos 
 }
 from './jogos-firebase.js';
@@ -17,6 +22,20 @@ async function iniciar(){
 
     const jogos =
         await carregarJogos();
+    
+    const jogosGrupo =
+    await carregarJogos();
+
+    const jogosMata =
+        await carregarJogosMataMata();
+
+    const jogos = [
+
+        ...jogosGrupo,
+
+        ...jogosMata
+
+    ];   
 
     jogos.sort((a, b) => {
 
@@ -105,7 +124,10 @@ async function iniciar(){
                 font-weight:800;
                 margin-bottom:15px;
             ">
-                🏆 Grupo ${jogo.grupo}
+                ${jogo.grupo
+                    ? `🏆 Grupo ${jogo.grupo}`
+                    : `🏆 ${nomeFase(jogo.fase)}`
+                }
             </div>
         
             <div style="
@@ -211,6 +233,32 @@ function formatarData(data){
         data.split('-');
 
     return `${partes[2]}/${partes[1]}/${partes[0]}`;
+
+}
+
+function nomeFase(fase){
+
+    switch(fase){
+
+        case "16-avos":
+            return "16 Avos";
+
+        case "oitavas":
+            return "Oitavas";
+
+        case "quartas":
+            return "Quartas de Final";
+
+        case "semifinal":
+            return "Semifinal";
+
+        case "final":
+            return "Final";
+
+        default:
+            return fase;
+
+    }
 
 }
 
