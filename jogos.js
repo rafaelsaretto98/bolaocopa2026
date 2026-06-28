@@ -3,6 +3,16 @@ import {
 }
 from './jogos-firebase.js';
 
+import {
+    criarNavbar
+}
+from "./navbar.js";
+
+document.getElementById(
+    "navbar"
+).innerHTML =
+    criarNavbar("jogos");
+
 async function iniciar(){
 
     const jogos =
