@@ -332,27 +332,3 @@ export function desenharBracket(
     );
 
 }
-
-function ordenarJogos(
-
-    jogos,
-
-    ordem
-
-){
-
-    return ordem
-
-        .map(id=>
-
-            jogos.find(
-
-                jogo=>jogo.id===id
-
-            )
-
-        )
-
-        .filter(Boolean);
-
-}
