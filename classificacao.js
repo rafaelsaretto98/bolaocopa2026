@@ -13,6 +13,14 @@ import {
 }
 from './classificados-utils.js';
 
+import {criarNavbar}from "./navbar.js";
+
+
+document.getElementById(
+    "navbar"
+).innerHTML =
+    criarNavbar("classificacao");
+
 const grupos = [
     'A','B','C','D',
     'E','F','G','H',
