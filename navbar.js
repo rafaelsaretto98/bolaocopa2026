@@ -1,60 +1,76 @@
+export const MENU = [
+
+    {
+        id:"inicio",
+        nome:"Início",
+        icone:"🏠",
+        link:"home.html"
+    },
+
+    {
+        id:"ranking",
+        nome:"Ranking",
+        icone:"🏆",
+        link:"ranking.html"
+    },
+
+    {
+        id:"jogos",
+        nome:"Jogos",
+        icone:"📅",
+        link:"jogos.html"
+    },
+
+    {
+        id:"classificacao",
+        nome:"Classificação",
+        icone:"📊",
+        link:"classificacao.html"
+    },
+
+    {
+        id:"mata",
+        nome:"Mata-Mata",
+        icone:"🏆",
+        link:"mata-mata.html"
+    },
+
+    {
+        id:"meu-bolao",
+        nome:"Meu Bolão",
+        icone:"👤",
+        link:"meu-bolao.html"
+    },
+
+];
+
 export function criarNavbar(paginaAtual){
 
     return `
 
 <nav class="navbar">
 
-<a href="index.html"
+${MENU.map(item=>`
+
+<a
+
+href="${item.link}"
+
 class="${
-paginaAtual==="inicio"
+item.id === paginaAtual
 ?
 "active"
 :
 ""
-}">
+}"
 
-🌎 Início
+>
 
-</a>
-
-<a href="classificacao.html"
-class="${
-paginaAtual==="classificacao"
-?
-"active"
-:
-""
-}">
-
-📊 Classificação
+${item.icone} ${item.nome}
 
 </a>
 
-<a href="mata-mata.html"
-class="${
-paginaAtual==="mata"
-?
-"active"
-:
-""
-}">
-
-🏆 Mata-Mata
-
-</a>
-
-<a href="meus-palpites.html"
-class="${
-paginaAtual==="palpites"
-?
-"active"
-:
-""
-}">
-
-✍️ Meus Palpites
-
-</a>
+`).join("")}
 
 </nav>
 
