@@ -45,6 +45,11 @@ import {
 }
 from "./meus-palpites-layout.js";
 
+import { criarNavbar } from "./navbar.js";
+
+document.getElementById("navbar").innerHTML =
+    criarNavbar("meus-palpites");
+
 const grupos = [
 
     "A","B","C","D",
