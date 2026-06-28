@@ -58,6 +58,12 @@ async function iniciar(){
 
     jogos.forEach(jogo => {
 
+        const nomeTimeA =
+            jogo.timeA?.time || jogo.timeA || "A definir";
+
+        const nomeTimeB =
+            jogo.timeB?.time || jogo.timeB || "A definir";
+
         if(dataAtual !== jogo.data){
 
             dataAtual = jogo.data;
