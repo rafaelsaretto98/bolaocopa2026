@@ -34,6 +34,13 @@ import {
 }
 from "./mata-mata-layout.js";
 
+import { criarNavbar } from "./navbar.js";
+
+document.getElementById(
+    "navbar"
+).innerHTML =
+    criarNavbar("mata");
+
 const grupos = [
 'A','B','C','D',
 'E','F','G','H',
