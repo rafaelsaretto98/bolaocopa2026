@@ -36,10 +36,10 @@ export const MENU = [
     },
 
     {
-        id:"meu-bolao",
-        nome:"Meu Bolão",
+        id:"meus-palpites",
+        nome:"Meus Palpites",
         icone:"👤",
-        link:"meu-bolao.html"
+        link:"meus-palpites.html"
     },
 
 ];
