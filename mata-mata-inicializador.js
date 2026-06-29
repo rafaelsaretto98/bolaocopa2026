@@ -18,8 +18,12 @@ export async function inicializarMataMata(classificados){
 
     jogos16.forEach(jogo=>{
 
+        console.log(jogo.id);
+
     const agenda =
         agendaMataMata[jogo.id];
+
+        console.log(agenda);
 
     if(agenda){
 
