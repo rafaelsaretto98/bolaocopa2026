@@ -1,8 +1,3 @@
-import {
-    salvarPalpiteAdmin
-}
-from "./palpites-mata-mata-firebase.js";
-
 import { db }
 from "./firebase.js";
 
