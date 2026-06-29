@@ -1,4 +1,9 @@
 import {
+    agendaMataMata
+}
+from "./agenda-mata-mata.js";
+
+import {
     gerar16Avos
 }
 from "./mata-mata-utils.js";
@@ -12,6 +17,25 @@ export async function inicializarMataMata(classificados){
         await gerar16Avos(classificados);
 
     jogos16.forEach(jogo=>{
+
+    const agenda =
+        agendaMataMata[jogo.id];
+
+    if(agenda){
+
+        jogo.data =
+            agenda.data;
+
+        jogo.horario =
+            agenda.horario;
+
+        jogo.cidade =
+            agenda.cidade;
+
+        jogo.estadio =
+            agenda.estadio;
+
+        }
 
         jogo.encerrado = false;
 
