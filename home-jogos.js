@@ -1,22 +1,49 @@
 import {
+    carregarJogosMataMata
+}
+from "./mata-mata-firebase.js";
+
+import {
     carregarJogos
 }
 from './jogos-firebase.js';
 
 export async function carregarProximosJogos(){
 
-const jogos =
-await carregarJogos();
+const jogosGrupo =
+    await carregarJogos();
+
+const jogosMata =
+    await carregarJogosMataMata();
+
+const jogos = [
+
+    ...jogosGrupo,
+
+    ...jogosMata
+
+];
 
 const futuros =
 jogos
 .filter(j => !j.encerrado)
 .sort((a,b) => {
 
-const dataA =
-new Date(
-`${a.data}T${a.horario}`
-);
+.sort((a,b)=>{
+
+    if(!a.data) return 1;
+
+    if(!b.data) return -1;
+
+    const dataA =
+        new Date(`${a.data}T${a.horario}`);
+
+    const dataB =
+        new Date(`${b.data}T${b.horario}`);
+
+    return dataA - dataB;
+
+})
 
 const dataB =
 new Date(
@@ -37,11 +64,17 @@ container.innerHTML = '';
 
 futuros.forEach(jogo => {
 
+const nomeTimeA =
+    jogo.timeA?.time || jogo.timeA;
+
+const nomeTimeB =
+    jogo.timeB?.time || jogo.timeB;
+
 const jogoBrasil =
 
-jogo.timeA === 'Brasil' ||
+    nomeTimeA === "Brasil" ||
 
-jogo.timeB === 'Brasil';
+    nomeTimeB === "Brasil";
 
 const div =
 document.createElement('div');
@@ -73,9 +106,9 @@ div.innerHTML = `
                    : ''
                }
 
-               ${jogo.timeA}
-               x
-               ${jogo.timeB}
+                ${nomeTimeA}
+                x                
+                ${nomeTimeB}
            </strong>
 
            <br>
