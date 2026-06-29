@@ -25,7 +25,7 @@ export const boloesRelampago = [
     timeB:'Haiti',
 
     bandeiraA:'img/band_Brasil.png',
-    bandeiraB:'img/Band_Haiti.png',
+    bandeiraB:'img/band_Haiti.png',
 
     placar:'3 × 0',
 
@@ -36,7 +36,7 @@ export const boloesRelampago = [
 
 {
     id:3,
-    encerrado:false,
+    encerrado:true,
 
     timeA:'Brasil',
     timeB:'Escócia',
@@ -44,7 +44,24 @@ export const boloesRelampago = [
     bandeiraA:'img/band_Brasil.png',
     bandeiraB:'img/band_Escocia.png',
 
-    textoData:'Quarta-feira • 24/06 • 19:00'
+    placar:'3 × 0',
+
+    vencedor:true,
+
+    mensagem:'Junior, Letícia e Tânia acertaram o placar.'
+},
+
+    {
+    id:4,
+    encerrado:false,
+
+    timeA:'Brasil',
+    timeB:'Japão',
+
+    bandeiraA:'img/band_Brasil.png',
+    bandeiraB:'img/band_Japao.png',
+
+    textoData:'Segunda-feira • 29/06 • 14:00'
 }
 
 ];
