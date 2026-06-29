@@ -15,10 +15,10 @@ import {
 } from "./navbar.js";
 
 import {
-
-    carregarParticipantes
-
-} from "./participantes-firebase.js";
+    carregarParticipantes,
+    carregarParticipante
+}
+from "./participantes-firebase.js";
 
 document.getElementById(
 
@@ -74,13 +74,21 @@ async function iniciar(){
 
     "change",
 
-    ()=>{
+    async ()=>{
+
+        const participante =
+
+            await carregarParticipante(
+
+                select.value
+
+            );
 
         desenharJogos(
 
             jogos,
 
-            select.value
+            participante
 
         );
 
@@ -98,6 +106,9 @@ function desenharJogos(
 
 ){
 
+    const palpites =
+        participante?.palpitesMataMata || {};
+
     const lista =
         document.getElementById(
             "listaJogos"
@@ -113,6 +124,9 @@ function desenharJogos(
         const nomeTimeB =
             jogo.timeB?.time || "A definir";
 
+        const escolhido =
+            palpites[jogo.id];
+
         const card =
             document.createElement("div");
 
@@ -123,11 +137,7 @@ function desenharJogos(
 
 <h3>
 
-${nomeTimeA}
-
-x
-
-${nomeTimeB}
+${nomeTimeA} x ${nomeTimeB}
 
 </h3>
 
@@ -156,43 +166,62 @@ ${nomeTimeB}
         lista.appendChild(card);
 
         const botoes =
-    card.querySelectorAll(".btn-time");
+            card.querySelectorAll(".btn-time");
 
-botoes.forEach(botao=>{
+        botoes.forEach(botao=>{
 
-    botao.addEventListener(
+            if(botao.dataset.time === escolhido){
 
-        "click",
-
-        async ()=>{
-
-            try{
-
-                await salvarPalpiteAdmin(
-
-                    participante,
-
-                    botao.dataset.jogo,
-
-                    botao.dataset.time
-
-                );
-
-                alert("✅ Palpite salvo!");
-
-            }catch(erro){
-
-                console.error(erro);
-
-                alert("Erro ao salvar.");
+                botao.style.background = "#16a34a";
+                botao.style.color = "white";
 
             }
 
-        }
+            botao.addEventListener(
 
-    );
+                "click",
 
-});
+                async ()=>{
+
+                    botoes.forEach(b=>{
+
+                        b.style.background = "";
+                        b.style.color = "";
+
+                    });
+
+                    botao.style.background = "#16a34a";
+                    botao.style.color = "white";
+
+                    try{
+
+                        await salvarPalpiteAdmin(
+
+                            participante.nome,
+
+                            botao.dataset.jogo,
+
+                            botao.dataset.time
+
+                        );
+
+                        alert("✅ Palpite salvo!");
+
+                    }
+
+                    catch(erro){
+
+                        console.error(erro);
+
+                        alert("Erro ao salvar.");
+
+                    }
+
+                }
+
+            );
+
+        });
 
     });
 
