@@ -25,35 +25,24 @@ const jogos = [
 ];
 
 const futuros =
-jogos
-.filter(j => !j.encerrado)
-.sort((a,b) => {
+    jogos
+        .filter(j => !j.encerrado)
+        .sort((a,b)=>{
 
-.sort((a,b)=>{
+            if(!a.data) return 1;
 
-    if(!a.data) return 1;
+            if(!b.data) return -1;
 
-    if(!b.data) return -1;
+            const dataA =
+                new Date(`${a.data}T${a.horario}`);
 
-    const dataA =
-        new Date(`${a.data}T${a.horario}`);
+            const dataB =
+                new Date(`${b.data}T${b.horario}`);
 
-    const dataB =
-        new Date(`${b.data}T${b.horario}`);
+            return dataA - dataB;
 
-    return dataA - dataB;
-
-})
-
-const dataB =
-new Date(
-`${b.data}T${b.horario}`
-);
-
-return dataA - dataB;
-
-})
-.slice(0,3);
+        })
+        .slice(0,3);
 
 const container =
 document.getElementById(
@@ -130,9 +119,15 @@ container.appendChild(div);
 
 function formatarData(data){
 
-const partes =
-data.split('-');
+    if(!data){
 
-return `${partes[2]}/${partes[1]}`;
+        return "A definir";
+
+    }
+
+    const partes =
+        data.split("-");
+
+    return `${partes[2]}/${partes[1]}`;
 
 }
