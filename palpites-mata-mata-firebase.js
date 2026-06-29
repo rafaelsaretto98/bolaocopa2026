@@ -75,3 +75,50 @@ export async function salvarPalpitesMataMata(
     );
 
 }
+
+export async function salvarPalpiteAdmin(
+
+    nome,
+
+    idJogo,
+
+    vencedor
+
+){
+
+    const participante =
+        await carregarParticipante(nome);
+
+    if(!participante){
+
+        throw new Error(
+            "Participante não encontrado."
+        );
+
+    }
+
+    const palpites = {
+
+        ...(participante.palpitesMataMata || {}),
+
+        [idJogo]: vencedor
+
+    };
+
+    await updateDoc(
+
+        doc(
+            db,
+            "participantes",
+            participante.id
+        ),
+
+        {
+
+            palpitesMataMata: palpites
+
+        }
+
+    );
+
+}
