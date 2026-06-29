@@ -48,12 +48,6 @@ export async function atualizarParticipante(participante){
 
 }
 
-import {
-    query,
-    where
-}
-from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
-
 export async function carregarParticipante(nome){
 
     const q =
