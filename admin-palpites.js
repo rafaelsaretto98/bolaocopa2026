@@ -1,4 +1,9 @@
 import {
+    salvarPalpiteAdmin
+}
+from "./palpites-mata-mata-firebase.js";
+
+import {
     carregarJogosMataMata
 }
 from "./mata-mata-firebase.js";
@@ -149,6 +154,45 @@ ${nomeTimeB}
 `;
 
         lista.appendChild(card);
+
+        const botoes =
+    card.querySelectorAll(".btn-time");
+
+botoes.forEach(botao=>{
+
+    botao.addEventListener(
+
+        "click",
+
+        async ()=>{
+
+            try{
+
+                await salvarPalpiteAdmin(
+
+                    participante,
+
+                    botao.dataset.jogo,
+
+                    botao.dataset.time
+
+                );
+
+                alert("✅ Palpite salvo!");
+
+            }catch(erro){
+
+                console.error(erro);
+
+                alert("Erro ao salvar.");
+
+            }
+
+        }
+
+    );
+
+});
 
     });
 
