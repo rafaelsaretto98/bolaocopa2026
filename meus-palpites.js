@@ -40,7 +40,8 @@ import {
 from "./configuracoes-firebase.js";
 
 import {
-    carregarJogosPorFase
+    carregarJogosPorFase,
+    carregarJogosMataMata
 }
 from "./mata-mata-firebase.js";
 
@@ -148,9 +149,7 @@ async function carregarParticipanteSelecionado(){
         await carregarJogos();
 
     const jogosMata =
-        await carregarJogosPorFase(
-            "todas"
-        );
+    await carregarJogosMataMata();
 
     const classificacoes = [];
 
@@ -174,28 +173,29 @@ async function carregarParticipanteSelecionado(){
             classificacoes
         );
 
-    const pontosGrupo =
+    const pontos =
 
-    resumo.reduce(
+    await calcularTotal(
 
-        (total, grupo) =>
+        participante,
 
-            total + grupo.pontos,
+        jogosGrupo,
 
-        0
+        jogosMata
 
     );
 
-    participante.pontosGrupo =
-        pontosGrupo;
+participante.pontosGrupo =
 
-    participante.pontosMataMata =
-        participante.pontosMataMata || 0;
+    pontos.grupo;
 
-    participante.total =
+participante.pontosMataMata =
 
-        participante.pontosGrupo +
-        participante.pontosMataMata;
+    pontos.mata;
+
+participante.total =
+
+    pontos.total;
     
     montarDashboard(
         participante
