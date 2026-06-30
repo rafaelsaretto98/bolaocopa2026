@@ -35,11 +35,11 @@ const palpitesAmigos =
 const jogos =
     await carregarJogos();
 
-console.log("Jogos grupo:", jogos);
-console.log("Jogos mata:", jogosMata);
-
 const jogosMata =
     await carregarJogosMataMata();
+
+console.log("Jogos grupo:", jogos);
+console.log("Jogos mata:", jogosMata);
 
 const participantesRanking =
     palpitesAmigos.map(p => ({
@@ -49,6 +49,8 @@ const participantesRanking =
     }));
 
 console.log(participantesRanking);
+
+console.log("Primeiro participante:", participantesRanking[0]);
 
   for(const amigo of participantesRanking){
 
