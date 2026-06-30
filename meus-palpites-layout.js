@@ -3,6 +3,26 @@ import {
 }
 from "./palpites-utils.js";
 
+function bandeira(nome){
+
+    if(!nome){
+        return "img/band_placeholder.png";
+    }
+
+    if(bandeiras[nome]){
+        return `img/${bandeiras[nome]}`;
+    }
+
+    const arquivo = nome
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g,"")
+        .replaceAll(" ","_")
+        .replaceAll("'","");
+
+    return `img/band_${arquivo}.png`;
+
+}
+
 export function montarDashboard(participante){
 
     document.getElementById(
