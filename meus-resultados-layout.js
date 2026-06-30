@@ -6,6 +6,7 @@ export function desenharHistoricoGrupos(resumo){
         );
 
     container.innerHTML = "";
+    container.className = "grupos-grid";
 
     resumo.forEach(grupo=>{
 
