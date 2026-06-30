@@ -14,6 +14,11 @@ import {
 from './jogos-firebase.js';
 
 import {
+    carregarJogosMataMata
+}
+from "./mata-mata-firebase.js";
+
+import {
     calcularTotal
 }
 from './ranking-utils.js';
