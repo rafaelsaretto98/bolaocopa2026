@@ -62,7 +62,7 @@ export function calcularPontuacao(
 
 }
 
-export async function calcularPontuacaoMataMata(
+export function calcularPontuacaoMataMata(
     participante,
     jogosMataMata
 ){
