@@ -62,7 +62,7 @@ export function calcularPontuacao(
 
 }
 
-export function calcularPontuacaoMataMata(
+export async function calcularPontuacaoMataMata(
     participante,
     jogosMataMata
 ){
@@ -70,28 +70,37 @@ export function calcularPontuacaoMataMata(
     let pontos = 0;
 
     const palpites =
-
         participante.palpitesMataMata || {};
+
+    console.log("Participante:", participante.nome);
+    console.log("Palpites:", palpites);
 
     jogosMataMata.forEach(jogo=>{
 
-        if(
-
-            !jogo.encerrado ||
-            !jogo.vencedor
-
-        ){
+        if(!jogo.encerrado || !jogo.vencedor){
             return;
         }
 
-        if(
-            palpites[jogo.id] ===
+        console.log(
+            jogo.id,
+            "Palpite:",
+            palpites[jogo.id],
+            "Vencedor:",
             jogo.vencedor
+        );
+
+        if(
+            palpites[jogo.id] === jogo.vencedor
         ){
             pontos++;
         }
+
     });
+
+    console.log("Pontos:", pontos);
+
     return pontos;
+
 }
 
 export async function calcularTotal(
