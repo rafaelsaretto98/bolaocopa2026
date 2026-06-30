@@ -71,22 +71,14 @@ export function montarDashboard(participante){
 
     ).innerHTML = `
 
-<h2>
-
-👤 ${participante.nome}
-
-</h2>
+<h2>👤 ${participante.nome}</h2>
 
 <div class="dashboard-pontos">
 
     <div>
-
         <strong>🏆 Grupo</strong>
-
         <br>
-
         ${participante.pontosGrupo ?? 0}
-
     </div>
 
     <div>
@@ -117,7 +109,6 @@ export function montarDashboard(participante){
 export function desenharJogos(
 
     jogos,
-
     palpites = {}
 
 ){
@@ -136,21 +127,15 @@ export function desenharJogos(
             criarCardJogo(
 
                 jogo,
-
                 palpites[jogo.id]
-
             )
-
         );
-
     });
-
 }
 
 function criarCardJogo(
 
     jogo,
-
     palpite
 
 ){
@@ -260,9 +245,28 @@ ${jogo.timeB?.time}
 
             ){
 
-                opcao.classList.add(
-                    "selecionado"
-                );
+                if(!jogo.encerrado){
+
+        opcao.classList.add("pendente");
+
+    }else{
+
+        const vencedor =
+
+            jogo.vencedor?.time ||
+            jogo.vencedor;
+
+        if(vencedor === palpite){
+
+            opcao.classList.add("acertou");
+
+        }else{
+
+            opcao.classList.add("errou");
+
+        }
+
+    }
 
                 card.dataset.escolhido =
                     palpite;
@@ -287,16 +291,24 @@ ${jogo.timeB?.time}
 
             }
 
-            opcoes.forEach(o=>
+            opcoes.forEach(o=>{
 
                 o.classList.remove(
-                    "selecionado"
-                )
-
-            );
+            
+                    "selecionado",
+            
+                    "acertou",
+            
+                    "errou",
+            
+                    "pendente"
+            
+                );
+            
+            });
 
             opcao.classList.add(
-                "selecionado"
+                "pendente"
             );
 
             card.dataset.escolhido =
