@@ -35,6 +35,9 @@ const palpitesAmigos =
 const jogos =
     await carregarJogos();
 
+console.log("Jogos grupo:", jogos);
+console.log("Jogos mata:", jogosMata);
+
 const jogosMata =
     await carregarJogosMataMata();
 
@@ -45,8 +48,13 @@ const participantesRanking =
 
     }));
 
+console.log(participantesRanking);
+
   for(const amigo of participantesRanking){
 
+console.log("Calculando:", amigo.nome);
+
+      
     const pontos =
 
         await calcularTotal(
@@ -58,6 +66,8 @@ const participantesRanking =
             jogosMata
 
         );
+
+      console.log(pontos);
 
     amigo.pontosGrupo =
 
