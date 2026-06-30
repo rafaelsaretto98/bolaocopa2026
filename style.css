@@ -1208,6 +1208,24 @@ progress::-webkit-progress-value { background-color: #10b981; }
     margin-bottom:8px;
 }
 
+.time-card.pendente{
+    background:#dbeafe;
+    border:2px solid #2563eb;
+    color:#1d4ed8;
+}
+
+.time-card.acertou{
+    background:#dcfce7;
+    border:2px solid #16a34a;
+    color:#166534;
+}
+
+.time-card.errou{
+    background:#fee2e2;
+    border:2px solid #dc2626;
+    color:#991b1b;
+}
+
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
    ========================================= */
