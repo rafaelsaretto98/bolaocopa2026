@@ -1,9 +1,4 @@
 import {
-    carregarJogosMataMata
-}
-from "./mata-mata-firebase.js";
-
-import {
     carregarParticipantesRanking
 }
 from './ranking-firebase.js';
@@ -45,10 +40,9 @@ const jogosMata =
 
 const participantesRanking =
     palpitesAmigos.map(p => ({
-        nome: p.nome,
-        palpites: p.palpites,
-        protocolo: p.protocolo,
-        data: p.data
+
+        ...p
+
     }));
 
   for(const amigo of participantesRanking){
