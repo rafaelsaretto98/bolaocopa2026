@@ -1,4 +1,9 @@
 import {
+    calcularTotal
+}
+from "./ranking-utils.js";
+
+import {
     carregarJogos
 }
 from "./jogos-firebase.js";
@@ -141,6 +146,11 @@ async function carregarParticipanteSelecionado(){
 
     const jogosGrupo =
         await carregarJogos();
+
+    const jogosMata =
+        await carregarJogosPorFase(
+            "todas"
+        );
 
     const classificacoes = [];
 
