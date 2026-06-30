@@ -89,11 +89,13 @@ export async function calcularPontuacaoMataMata(
             jogo.vencedor
         );
 
-        if(
-            palpites[jogo.id] === jogo.vencedor
-        ){
-            pontos++;
-        }
+        const vencedor =
+
+                jogo.vencedor?.time || jogo.vencedor;
+            if(
+                palpites[jogo.id] === vencedor
+            ){
+                pontos++;}
 
     });
 
