@@ -1,4 +1,9 @@
 import {
+    carregarJogosMataMata
+}
+from "./mata-mata-firebase.js";
+
+import {
     carregarParticipantesRanking
 }
 from './ranking-firebase.js';
@@ -9,7 +14,7 @@ import {
 from './jogos-firebase.js';
 
 import {
-    calcularPontuacao
+    calcularTotal
 }
 from './ranking-utils.js';
 
@@ -30,6 +35,9 @@ const palpitesAmigos =
 const jogos =
     await carregarJogos();
 
+const jogosMata =
+    await carregarJogosMataMata();
+
 const participantesRanking =
     palpitesAmigos.map(p => ({
         nome: p.nome,
@@ -38,15 +46,33 @@ const participantesRanking =
         data: p.data
     }));
 
-  participantesRanking.forEach(amigo => {
+  for(const amigo of participantesRanking){
 
-    amigo.pontuacao =
-        calcularPontuacao(
+    const pontos =
+
+        await calcularTotal(
+
             amigo,
-            jogos
+
+            jogos,
+
+            jogosMata
+
         );
 
-});
+    amigo.pontosGrupo =
+
+        pontos.grupo;
+
+    amigo.pontosMata =
+
+        pontos.mata;
+
+    amigo.pontuacao =
+
+        pontos.total;
+
+}
 
 participantesRanking.sort(
     (a,b) => b.pontuacao - a.pontuacao
