@@ -157,7 +157,7 @@ data-time="${jogo.timeA?.time}"
 
 class="bandeira-mata"
 
-src="img/band_${jogo.timeA?.time}.png"
+src="${bandeira(jogo.timeA?.time)}"
 
 onerror="this.src='img/band_placeholder.png'"
 
@@ -189,7 +189,7 @@ data-time="${jogo.timeB?.time}"
 
 class="bandeira-mata"
 
-src="img/band_${jogo.timeB?.time}.png"
+src="${bandeira(jogo.timeB?.time)}"
 
 onerror="this.src='img/band_placeholder.png'"
 
