@@ -3,10 +3,11 @@ import { boloesRelampago } from './home-relampago.js';
 const bolaoAtual =
     boloesRelampago.find(b => !b.encerrado);
 
-const ultimoBolao =
+const ultimosBoloes =
     [...boloesRelampago]
+    .filter(b => b.encerrado)
     .reverse()
-    .find(b => b.encerrado);
+    .slice(0,3);
 
 export function criarDashboard(){
 
@@ -20,7 +21,9 @@ export function criarDashboard(){
     <!-- PALPITE -->
     <div class="regras-card placar-relampago-card">
 
-        <h2>🔥 Palpite Relâmpago #4</h2>
+        <h2>
+            🔥 Palpite Relâmpago #${bolaoAtual.id}
+        </h2>
 
         <p style="text-align:center;font-size:18px;font-weight:700;">
             ${bolaoAtual.timeA} x ${bolaoAtual.timeB}
@@ -113,58 +116,71 @@ export function criarDashboard(){
 
     </div>
 
-    <!-- RESULTADO -->
     <div class="regras-card resultado-relampago">
 
-        <h2>
-            Palpite Relâmpago #${ultimoBolao.id}
-        </h2>
+<h2>
 
-        <div class="resultado-relampago-conteudo">
+🏆 Últimos Relâmpagos
 
-            <div class="placar-final">
+</h2>
 
-                <div class="placar-final">
+${ultimosBoloes.map(b=>`
 
-    <img
-        src="${ultimoBolao.bandeiraA}"
-        class="bandeira-placar"
-    >
+<div class="historico-relampago">
 
-    <span>
-        ${ultimoBolao.placar}
-    </span>
+    <div class="titulo-relampago">
 
-    <img
-        src="${ultimoBolao.bandeiraB}"
-        class="bandeira-placar"
-    >
+        <strong>
 
-</div>
+        #${b.id}
 
-            </div>
+        </strong>
 
-            <div class="jogo-final">
+    </div>
 
-                ${ultimoBolao.timeA}
-                x
-                ${ultimoBolao.timeB}
+    <div class="placar-mini">
 
-            </div>
+        <img
+            src="${b.bandeiraA}"
+            class="bandeira-mini"
+        >
 
-            <div class="sem-vencedor">
+        <span>
 
-                ${ultimoBolao.mensagem}
+            ${b.placar}
 
-            </div>
+        </span>
 
-        </div>
+        <img
+            src="${b.bandeiraB}"
+            class="bandeira-mini"
+        >
+
+    </div>
+
+    <div class="confronto-mini">
+
+        ${b.timeA}
+
+        ×
+
+        ${b.timeB}
+
+    </div>
+
+    <div class="vencedor-mini">
+
+        ${b.mensagem}
 
     </div>
 
 </div>
 
+`).join("")}
 
+</div>
+
+</div>
 <div class="conteudo-home">
 
    <div class="regras-card hero-bolao">
