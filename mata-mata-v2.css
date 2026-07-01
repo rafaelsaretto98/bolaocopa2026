@@ -1,32 +1,40 @@
 #chaveamento{
-
     display:flex;
-
     gap:60px;
-
     overflow-x:auto;
-
     padding:20px;
-
     align-items:flex-start;
-
 }
 
 .coluna-fase{
-
     min-width:260px;
-
 }
 
 .titulo-fase{
-
     text-align:center;
-
     font-weight:800;
-
     color:#1e3a8a;
-
     margin-bottom:20px;
+}
 
+.card-jogo{
+    background:white;
+    border-radius:12px;
+    padding:12px;
+    margin-bottom:16px;
+    box-shadow:0 3px 8px rgba(0,0,0,.08);
+}
+
+.linha-time{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:8px 0;
+    font-weight:600;
+}
+
+.bandeira-mini{
+    width:24px;
+    height:24px;
 }
 
