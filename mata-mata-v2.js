@@ -21,13 +21,11 @@ document.getElementById(
 async function iniciar(){
 
     const jogos =
-
         await carregarJogosMataMata();
 
     console.log(jogos);
 
-    export function desenharChaveamento(jogos){
-        console.log(jogos);
+    desenharChaveamento(jogos);
 
 }
 
