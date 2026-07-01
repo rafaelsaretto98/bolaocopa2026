@@ -26,7 +26,8 @@ async function iniciar(){
 
     console.log(jogos);
 
-    desenharChaveamento(jogos);
+    export function desenharChaveamento(jogos){
+        console.log(jogos);
 
 }
 
