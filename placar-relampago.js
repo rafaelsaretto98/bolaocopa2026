@@ -63,8 +63,8 @@ if(btn){
                         golsBrasil:Number(brasil),
                         golsAdversario:Number(adversario),
                         selecaoA:'Brasil',
-                        selecaoB:'Japão',
-                        jogo:'Brasil x Japão',
+                        selecaoB:'Noruega',
+                        jogo:'Brasil x Noruega',
                         criadoEm:new Date().toISOString()
                     }
 
@@ -121,7 +121,7 @@ async function carregarPalpitesRelampago(){
         const q =
         query(
         collection(db, 'placar-relampago'),
-        where('jogo', '==', 'Brasil x Japão'),
+        where('jogo', '==', 'Brasil x Noruega'),
         orderBy('criadoEm', 'desc'),
         limit(20)
     );
