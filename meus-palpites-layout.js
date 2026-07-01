@@ -53,12 +53,15 @@ const bandeiras = {
     "Marrocos": "band_Marrocos.png",
     "México": "band_Mexico.png",
     "Noruega": "band_Noruega.png",
+    "Nova Zelândia": "band_Nova_Zelandia.png",
     "Paraguai": "band_Paraguai.png",
     "Portugal": "band_Portugal.png",
     "RD Congo": "band_RD_Congo.png",
     "Suécia": "band_Suecia.png",
+    "Senegal": "band-Senegal.png",
     "Suíça": "band_Suica",
-    "Uruguai": "band_Uruguai"
+    "Uruguai": "band_Uruguai",
+    "Uzbequistão": "band_Uzbequistao"
 
     
 };
