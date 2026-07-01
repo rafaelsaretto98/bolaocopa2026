@@ -1235,6 +1235,42 @@ progress::-webkit-progress-value { background-color: #10b981; }
     align-items:start;
 }
 
+.historico-relampago{
+    padding:15px 0;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.historico-relampago:last-child{
+    border-bottom:none;
+}
+
+.placar-mini{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    font-size:22px;
+    font-weight:800;
+    margin:8px 0;
+}
+
+.bandeira-mini{
+    width:28px;
+}
+
+.confronto-mini{
+    text-align:center;
+    font-weight:600;
+    color:#475569;
+}
+
+.vencedor-mini{
+    text-align:center;
+    margin-top:8px;
+    font-size:13px;
+    color:#16a34a;
+}
+
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
    ========================================= */
