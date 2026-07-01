@@ -53,7 +53,7 @@ export const boloesRelampago = [
 
     {
     id:4,
-    encerrado:false,
+    encerrado:true,
 
     timeA:'Brasil',
     timeB:'Japão',
@@ -61,7 +61,24 @@ export const boloesRelampago = [
     bandeiraA:'img/band_Brasil.png',
     bandeiraB:'img/band_Japao.png',
 
-    textoData:'Segunda-feira • 29/06 • 14:00'
+      placar:'2 × 1',
+
+    vencedor:true,
+
+    mensagem:'Letícia e Isabel acertaram o placar.'
+},
+
+    {
+    id:5,
+    encerrado:false,
+
+    timeA:'Brasil',
+    timeB:'Noruega',
+
+    bandeiraA:'img/band_Brasil.png',
+    bandeiraB:'img/band_Noruega.png',
+
+    textoData:'Domingo • 05/07 • 17:00'
 }
 
 ];
