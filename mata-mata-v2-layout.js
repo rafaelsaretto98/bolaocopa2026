@@ -1,4 +1,6 @@
-export function desenharChaveamento(){
+export function desenharChaveamento(jogos){
+
+    console.log(jogos);
 
     const container =
         document.getElementById(
@@ -17,7 +19,9 @@ export function desenharChaveamento(){
 
         "Semifinal",
 
-        "Final"
+        "Final",
+
+        "3º Lugar"
 
     ];
 
