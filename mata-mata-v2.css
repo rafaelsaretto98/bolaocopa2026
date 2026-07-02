@@ -2,19 +2,38 @@
 
     display:flex;
 
-    gap:60px;
+    justify-content:center;
 
-    overflow-x:auto;
+    align-items:flex-start;
+
+    gap:70px;
 
     padding:20px;
 
-    align-items:flex-start;
+    overflow-x:auto;
+
+}
+
+#ladoEsquerdo,
+#ladoDireito{
+
+    display:flex;
+
+    gap:50px;
+
+}
+
+#colunaFinal{
+
+    display:flex;
+
+    align-items:center;
 
 }
 
 .coluna-fase{
 
-    min-width:260px;
+    min-width:240px;
 
 }
 
@@ -24,9 +43,11 @@
 
     color:#1e3a8a;
 
-    margin-bottom:20px;
+    font-size:20px;
 
     font-weight:800;
+
+    margin-bottom:20px;
 
 }
 
