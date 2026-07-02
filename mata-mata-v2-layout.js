@@ -1,122 +1,84 @@
 export function desenharChaveamento(jogos){
 
-    console.log(jogos);
-
     const container =
         document.getElementById(
             "chaveamento"
         );
 
+    container.innerHTML = "";
+
     container.appendChild(
+        criarColuna(
+            "16 Avos",
+            "16-avos",
+            jogos
+        )
+    );
 
-    criarColuna(
+    container.appendChild(
+        criarColuna(
+            "Oitavas",
+            "oitavas",
+            jogos
+        )
+    );
 
-        "16 Avos",
+    container.appendChild(
+        criarColuna(
+            "Quartas",
+            "quartas",
+            jogos
+        )
+    );
 
-        "16-avos",
+    container.appendChild(
+        criarColuna(
+            "Semifinal",
+            "semifinal",
+            jogos
+        )
+    );
 
-        jogos
+    container.appendChild(
+        criarColuna(
+            "Final",
+            "final",
+            jogos
+        )
+    );
 
-    )
+}
 
-);
+function criarColuna(
+    titulo,
+    fase,
+    jogos
+){
 
-container.appendChild(
+    const coluna =
+        document.createElement("div");
 
-    criarColuna(
+    coluna.className =
+        "coluna-fase";
 
-        "Oitavas",
+    coluna.innerHTML = `
+        <h2 class="titulo-fase">
+            ${titulo}
+        </h2>
+    `;
 
-        "oitavas",
+    jogos
+        .filter(j => j.fase === fase)
+        .sort((a,b)=>a.ordem-b.ordem)
+        .forEach(jogo=>{
 
-        jogos
+            coluna.appendChild(
+                criarCardJogo(jogo)
+            );
 
-    )
+        });
 
-);
-
-container.appendChild(
-
-    criarColuna(
-
-        "Quartas",
-
-        "quartas",
-
-        jogos
-
-    )
-
-);
-
-container.appendChild(
-
-    criarColuna(
-
-        "Semifinal",
-
-        "semifinal",
-
-        jogos
-
-    )
-
-);
-
-container.appendChild(
-
-    criarColuna(
-
-        "Final",
-
-        "final",
-
-        jogos
-
-    )
-
-);
-    
-
-    const fases = [
-
-        "16 Avos",
-
-        "Oitavas",
-
-        "Quartas",
-
-        "Semifinal",
-
-        "Final",
-
-        "3º Lugar"
-
-    ];
-
-    fases.forEach(fase=>{
-
-        const coluna =
-            document.createElement("div");
-
-        coluna.className =
-            "coluna-fase";
-
-        coluna.innerHTML = `
-
-<h2 class="titulo-fase">
-
-${fase}
-
-</h2>
-
-`;
-
-        container.appendChild(
-            coluna
-        );
-
-    });
+    return coluna;
 
 }
 
@@ -136,77 +98,31 @@ function criarCardJogo(jogo){
 
     card.innerHTML = `
 
-<div class="linha-time">
+        <div class="linha-time">
 
-    <img
-        class="bandeira-mini"
-        src="img/band_${timeA}.png"
-        onerror="this.src='img/band_placeholder.png'"
-    >
+            <img
+                class="bandeira-mini"
+                src="img/band_${timeA}.png"
+                onerror="this.src='img/band_placeholder.png'"
+            >
 
-    <span>${timeA}</span>
+            <span>${timeA}</span>
 
-</div>
+        </div>
 
-<div class="linha-time">
+        <div class="linha-time">
 
-    <img
-        class="bandeira-mini"
-        src="img/band_${timeB}.png"
-        onerror="this.src='img/band_placeholder.png'"
-    >
+            <img
+                class="bandeira-mini"
+                src="img/band_${timeB}.png"
+                onerror="this.src='img/band_placeholder.png'"
+            >
 
-    <span>${timeB}</span>
+            <span>${timeB}</span>
 
-</div>
+        </div>
 
-`;
-
-    function criarColuna(
-
-    titulo,
-
-    fase,
-
-    jogos
-
-){
-
-    const coluna =
-        document.createElement("div");
-
-    coluna.className =
-        "coluna-fase";
-
-    coluna.innerHTML = `
-
-<h2 class="titulo-fase">
-
-${titulo}
-
-</h2>
-
-`;
-
-    jogos
-
-        .filter(j=>j.fase===fase)
-
-        .sort((a,b)=>a.ordem-b.ordem)
-
-        .forEach(jogo=>{
-
-            coluna.appendChild(
-
-                criarCardJogo(jogo)
-
-            );
-
-        });
-
-    return coluna;
-
-}
+    `;
 
     return card;
 
