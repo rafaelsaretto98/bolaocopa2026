@@ -1,49 +1,107 @@
 export function desenharChaveamento(jogos){
 
-    const container =
-        document.getElementById(
-            "chaveamento"
-        );
+    const esquerdo =
+    document.getElementById("ladoEsquerdo");
+
+    const direito =
+        document.getElementById("ladoDireito");
+    
+    const centro =
+        document.getElementById("colunaFinal");
+
+    esquerdo.innerHTML = "";
+    direito.innerHTML = "";
+    centro.innerHTML = "";
 
     container.innerHTML = "";
 
-    container.appendChild(
-        criarColuna(
-            "16 Avos",
-            "16-avos",
-            jogos
-        )
-    );
+    esquerdo.appendChild(
+    criarColuna(
+        "16 Avos",
+        "16-avos",
+        jogos,
+        1,
+        8
+    )
+);
 
-    container.appendChild(
+    esquerdo.appendChild(
         criarColuna(
             "Oitavas",
             "oitavas",
-            jogos
+            jogos,
+            1,
+            4
         )
     );
-
-    container.appendChild(
+    
+    esquerdo.appendChild(
         criarColuna(
             "Quartas",
             "quartas",
-            jogos
+            jogos,
+            1,
+            2
         )
     );
-
-    container.appendChild(
+    
+    esquerdo.appendChild(
         criarColuna(
             "Semifinal",
             "semifinal",
-            jogos
+            jogos,
+            1,
+            1
         )
     );
-
-    container.appendChild(
+    
+    centro.appendChild(
         criarColuna(
             "Final",
             "final",
-            jogos
+            jogos,
+            1,
+            1
+        )
+    );
+    
+    direito.appendChild(
+        criarColuna(
+            "Semifinal",
+            "semifinal",
+            jogos,
+            2,
+            2
+        )
+    );
+    
+    direito.appendChild(
+        criarColuna(
+            "Quartas",
+            "quartas",
+            jogos,
+            3,
+            4
+        )
+    );
+    
+    direito.appendChild(
+        criarColuna(
+            "Oitavas",
+            "oitavas",
+            jogos,
+            5,
+            8
+        )
+    );
+    
+    direito.appendChild(
+        criarColuna(
+            "16 Avos",
+            "16-avos",
+            jogos,
+            9,
+            16
         )
     );
 
@@ -52,8 +110,10 @@ export function desenharChaveamento(jogos){
 function criarColuna(
     titulo,
     fase,
-    jogos
-){
+    jogos,
+    inicio,
+    fim
+)
 
     const coluna =
         document.createElement("div");
@@ -68,13 +128,12 @@ function criarColuna(
     `;
 
     jogos
-        .filter(j => j.fase === fase)
-        .sort((a,b)=>a.ordem-b.ordem)
-        .forEach(jogo=>{
+    .filter(j =>
 
-            coluna.appendChild(
-                criarCardJogo(jogo)
-            );
+        j.fase === fase &&
+        j.ordem >= inicio &&
+        j.ordem <= fim
+    )
 
         });
 
