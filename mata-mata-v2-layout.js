@@ -13,8 +13,6 @@ export function desenharChaveamento(jogos){
     direito.innerHTML = "";
     centro.innerHTML = "";
 
-    container.innerHTML = "";
-
     esquerdo.appendChild(
     criarColuna(
         "16 Avos",
@@ -113,7 +111,7 @@ function criarColuna(
     jogos,
     inicio,
     fim
-)
+){
 
     const coluna =
         document.createElement("div");
@@ -133,9 +131,18 @@ function criarColuna(
         j.fase === fase &&
         j.ordem >= inicio &&
         j.ordem <= fim
-    )
 
-        });
+    )
+    .sort((a,b)=>a.ordem-b.ordem)
+    .forEach(jogo=>{
+
+        coluna.appendChild(
+
+            criarCardJogo(jogo)
+
+        );
+
+    });
 
     return coluna;
 
