@@ -1268,6 +1268,12 @@ progress::-webkit-progress-value { background-color: #10b981; }
     margin-left:25px;
 }
 
+.conector-horizontal{
+    width:30px;
+    height:2px;
+    background:#b8c2d6;
+}
+
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
    ========================================= */
