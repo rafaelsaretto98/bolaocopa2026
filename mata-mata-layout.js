@@ -208,68 +208,77 @@ function criarRamo(
 
 }
 
-function criarArvore(
+function criarBloco16(
 
-    jogo16A,
-    jogo16B,
-    jogo16C,
-    jogo16D,
+    jogo1,
+    jogo2,
+    jogo3,
+    jogo4,
 
     oitavas1,
-    oitavas2,
-
-    quartas
+    oitavas2
 
 ){
 
-    const arvore =
+    const bloco =
         document.createElement("div");
 
-    arvore.className = "arvore";
+    bloco.className =
+        "bloco16";
 
-
-    const ramoSuperior =
+    bloco.appendChild(
 
         criarRamo(
 
-            jogo16A,
-            jogo16B,
+            jogo1,
+            jogo2,
             oitavas1
 
-        );
-
-
-    const ramoInferior =
-
-        criarRamo(
-
-            jogo16C,
-            jogo16D,
-            oitavas2
-
-        );
-
-
-    const quartasDiv =
-        document.createElement("div");
-
-    quartasDiv.className =
-        "quartas";
-
-    quartasDiv.appendChild(
-
-        criarCardJogo(quartas)
+        )
 
     );
 
+    bloco.appendChild(
 
-    arvore.appendChild(ramoSuperior);
+        criarRamo(
 
-    arvore.appendChild(ramoInferior);
+            jogo3,
+            jogo4,
+            oitavas2
 
-    arvore.appendChild(quartasDiv);
+        )
 
-    return arvore;
+    );
+
+    return bloco;
+
+}
+
+function criarBlocoQuartas(
+
+    bloco16,
+
+    jogoQuartas
+
+){
+
+    const bloco =
+        document.createElement("div");
+
+    bloco.className =
+        "bloco-quartas";
+
+    bloco.appendChild(
+        bloco16
+    );
+
+    bloco.appendChild(
+        criarCardJogo(
+            jogoQuartas
+        )
+    );
+
+    return bloco;
 
 }
 
@@ -293,41 +302,55 @@ export function desenharBracket(
 
 esquerda.className = "lado";
 
-esquerda.appendChild(
+const blocoSuperior =
 
-    criarArvore(
+    criarBlocoQuartas(
 
-        jogos16[0],
-        jogos16[1],
-        jogos16[2],
-        jogos16[3],
+        criarBloco16(
 
-        jogosOitavas[0],
-        jogosOitavas[1],
+            jogos16[0],
+            jogos16[1],
+            jogos16[2],
+            jogos16[3],
 
-        jogosQuartas[0]
+            jogosOitavas[0],
+            jogosOitavas[1]
 
-    )
+        ),
 
-);
+            jogosQuartas[0]
+    
+        );
+    
+    esquerda.appendChild(
+        blocoSuperior
+    );
 
-esquerda.appendChild(
+const blocoInferior =
 
-    criarArvore(
+    criarBlocoQuartas(
 
-        jogos16[4],
-        jogos16[5],
-        jogos16[6],
-        jogos16[7],
+        criarBloco16(
 
-        jogosOitavas[2],
-        jogosOitavas[3],
+            jogos16[4],
+            jogos16[5],
+            jogos16[6],
+            jogos16[7],
+
+            jogosOitavas[2],
+            jogosOitavas[3]
+
+        ),
 
         jogosQuartas[1]
 
-    )
+    );
 
+esquerda.appendChild(
+    blocoInferior
 );
 
+esquerda.appendChild(blocoSuperior);
+esquerda.appendChild(blocoInferior);
 container.appendChild(esquerda);
 }
