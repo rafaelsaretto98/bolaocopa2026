@@ -1498,37 +1498,56 @@ progress::-webkit-progress-value { background-color: #10b981; }
     gap:45px;
 }
 
-.ramo{
-    display:flex;
-    align-items:center;
-    gap:35px;
-}
-
 .jogos16{
     display:flex;
     flex-direction:column;
     gap:18px;
 }
 
-.oitavas{
-    margin-left:20px;
-}
-
 .quartas{
     margin-left:40px;
 }
 
-.ligacao{
-    width:60px;
+.ramo{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.jogos{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.oitavas{
+    display:flex;
+    align-items:center;
+    margin-left:20px;
+}
+
+.ligacao{  
     position:relative;
+    width:70px;
+    height:140px;
 }
 
 .ligacao::before{
     content:"";
     position:absolute;
-    top:50%;
     left:0;
-    width:100%;
+    top:0;
+    width:2px;
+    height:100%;
+    background:#cfd5df;
+}
+
+.ligacao::after{
+    content:"";
+    position:absolute;
+    left:0;
+    top:50%;
+    width:70px;
     height:2px;
-    background:#9ca3af;
+    background:#cfd5df;
 }
