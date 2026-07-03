@@ -265,11 +265,21 @@ function criarArvore(
     );
 
 
-    ramoSuperior.appendChild(
-        jogosSuperior
+    ramo.appendChild(
+    jogos
     );
-
-    ramoSuperior.appendChild(
+    
+    const ligacao =
+        document.createElement("div");
+    
+    ligacao.className =
+        "ligacao";
+    
+    ramo.appendChild(
+        ligacao
+    );
+    
+    ramo.appendChild(
         oitavasSuperior
     );
 
@@ -309,11 +319,21 @@ function criarArvore(
     );
 
 
-    ramoInferior.appendChild(
-        jogosInferior
+   ramo.appendChild(
+    jogos
     );
-
-    ramoInferior.appendChild(
+    
+    const ligacao =
+        document.createElement("div");
+    
+    ligacao.className =
+        "ligacao";
+    
+    ramo.appendChild(
+        ligacao
+    );
+    
+    ramo.appendChild(
         oitavasInferior
     );
 
