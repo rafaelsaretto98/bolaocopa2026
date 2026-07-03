@@ -1551,3 +1551,44 @@ progress::-webkit-progress-value { background-color: #10b981; }
     height:2px;
     background:#cfd5df;
 }
+
+.conector{
+    position:relative;
+    width:70px;
+    height:140px;
+}
+
+.linha-cima{
+    position:absolute;
+    top:32px;
+    width:40px;
+    height:2px;
+    background:#cfd5df;
+}
+
+.linha-baixo{
+    position:absolute;
+    bottom:32px;
+    width:40px;
+    height:2px;
+    background:#cfd5df;
+}
+
+.linha-vertical{
+    position:absolute;
+    left:40px;
+    top:32px;
+    width:2px;
+    height:76px;
+    background:#cfd5df;
+}
+
+.conector::after{
+    content:"";
+    position:absolute;
+    left:40px;
+    top:50%;
+    width:30px;
+    height:2px;
+    background:#cfd5df;
+}
