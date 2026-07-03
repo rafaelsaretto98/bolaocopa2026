@@ -225,56 +225,122 @@ function criarArvore(
     const arvore =
         document.createElement("div");
 
-    arvore.className = "arvore";
+    arvore.className =
+        "arvore";
 
-    // ---------- BLOCO SUPERIOR ----------
 
-const ramoSuperior =
+    // ======== RAMO SUPERIOR ========
 
-    criarRamo(
+    const ramoSuperior =
+        document.createElement("div");
 
-        jogo16A,
-        jogo16B,
-        oitavas1
+    ramoSuperior.className =
+        "ramo";
 
+
+    const jogosSuperior =
+        document.createElement("div");
+
+    jogosSuperior.className =
+        "jogos16";
+
+
+    jogosSuperior.appendChild(
+        criarCardJogo(jogo16A)
     );
 
-const ramoInferior =
-
-    criarRamo(
-
-        jogo16C,
-        jogo16D,
-        oitavas2
-
+    jogosSuperior.appendChild(
+        criarCardJogo(jogo16B)
     );
-    // ---------- QUARTAS ----------
+
+
+    const oitavasSuperior =
+        document.createElement("div");
+
+    oitavasSuperior.className =
+        "oitavas";
+
+    oitavasSuperior.appendChild(
+        criarCardJogo(oitavas1)
+    );
+
+
+    ramoSuperior.appendChild(
+        jogosSuperior
+    );
+
+    ramoSuperior.appendChild(
+        oitavasSuperior
+    );
+
+
+    // ======== RAMO INFERIOR ========
+
+    const ramoInferior =
+        document.createElement("div");
+
+    ramoInferior.className =
+        "ramo";
+
+
+    const jogosInferior =
+        document.createElement("div");
+
+    jogosInferior.className =
+        "jogos16";
+
+    jogosInferior.appendChild(
+        criarCardJogo(jogo16C)
+    );
+
+    jogosInferior.appendChild(
+        criarCardJogo(jogo16D)
+    );
+
+
+    const oitavasInferior =
+        document.createElement("div");
+
+    oitavasInferior.className =
+        "oitavas";
+
+    oitavasInferior.appendChild(
+        criarCardJogo(oitavas2)
+    );
+
+
+    ramoInferior.appendChild(
+        jogosInferior
+    );
+
+    ramoInferior.appendChild(
+        oitavasInferior
+    );
+
+
+    // ======== QUARTAS ========
 
     const quartasDiv =
         document.createElement("div");
 
     quartasDiv.className =
-        "quartas-arvore";
+        "quartas";
 
     quartasDiv.appendChild(
         criarCardJogo(quartas)
     );
 
-        arvore.appendChild(
-            ramoSuperior
-        );
-        
-        arvore.appendChild(
-            ramoInferior
-        );
-        
-        arvore.appendChild(
-            quartasDiv
-        );
+
+    arvore.appendChild(ramoSuperior);
+
+    arvore.appendChild(ramoInferior);
+
+    arvore.appendChild(quartasDiv);
 
     return arvore;
 
 }
+
 export function desenharBracket(
 
     jogos16,
