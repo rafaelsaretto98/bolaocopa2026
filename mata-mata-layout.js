@@ -190,10 +190,29 @@ function criarRamo(
         jogos
     );
 
-    const ligacao =
+   const conector =
     document.createElement("div");
 
-ligacao.className = "ligacao";
+conector.className = "conector";
+
+const cima =
+    document.createElement("div");
+
+cima.className = "linha-cima";
+
+const vertical =
+    document.createElement("div");
+
+vertical.className = "linha-vertical";
+
+const baixo =
+    document.createElement("div");
+
+baixo.className = "linha-baixo";
+
+conector.appendChild(cima);
+conector.appendChild(vertical);
+conector.appendChild(baixo);
 
 const oitavas =
     document.createElement("div");
@@ -206,7 +225,7 @@ oitavas.appendChild(
 
 ramo.appendChild(jogos);
 
-ramo.appendChild(ligacao);
+ramo.appendChild(conector);
 
 ramo.appendChild(oitavas);
 
