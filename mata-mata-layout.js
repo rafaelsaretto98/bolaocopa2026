@@ -160,32 +160,85 @@ function criarCardJogo(jogo){
 
 }
 
-function desenharColuna(id, jogos){
+function criarBloco16(
 
-    const coluna =
-        document.getElementById(id);
+    jogo1,
 
-    coluna.innerHTML = "";
+    jogo2,
 
-    jogos.forEach((jogo,index)=>{
+    oitavas
 
-        const wrapper =
-            document.createElement("div");
+){
 
-        wrapper.className =
-            "match-wrapper";
+    const bloco =
+        document.createElement("div");
 
-        wrapper.appendChild(
-            criarCardJogo(jogo)
-        );
+    bloco.className = "bloco16";
 
-        coluna.appendChild(
-            wrapper
-        );
+    bloco.appendChild(
+        criarCardJogo(jogo1)
+    );
 
-    });
+    bloco.appendChild(
+        criarCardJogo(jogo2)
+    );
+
+    const conector =
+        document.createElement("div");
+
+    conector.className =
+        "conector16";
+
+    bloco.appendChild(conector);
+
+    bloco.appendChild(
+        criarCardJogo(oitavas)
+    );
+
+    return bloco;
 
 }
+
+function criarLado(
+
+    jogos16,
+
+    jogosOitavas,
+
+    jogosQuartas,
+
+    jogosSemi
+
+){
+
+    const lado =
+        document.createElement("div");
+
+    lado.className = "lado-arvore";
+
+    for(let i=0;i<4;i++){
+
+        lado.appendChild(
+
+            criarBloco16(
+
+                jogos16[i*2],
+
+                jogos16[i*2+1],
+
+                jogosOitavas[i]
+
+            )
+
+        );
+
+    }
+
+    return lado;
+
+}
+
+
 
 export function desenharBracket(
 
