@@ -1481,3 +1481,39 @@ progress::-webkit-progress-value { background-color: #10b981; }
     }
 
 }
+
+/* ===========================================
+      NOVO MATA-MATA FIFA
+=========================================== */
+
+.lado{
+    display:flex;
+    flex-direction:column;
+    gap:120px;
+}
+
+.arvore{
+    display:flex;
+    align-items:center;
+    gap:45px;
+}
+
+.ramo{
+    display:flex;
+    align-items:center;
+    gap:35px;
+}
+
+.jogos16{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.oitavas{
+    margin-left:20px;
+}
+
+.quartas{
+    margin-left:40px;
+}
