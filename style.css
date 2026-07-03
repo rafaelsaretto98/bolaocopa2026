@@ -1246,6 +1246,42 @@ progress::-webkit-progress-value { background-color: #10b981; }
     color:#16a34a;
 }
 
+.lado{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:90px;
+
+}
+
+.arvore{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:35px;
+
+}
+
+.bloco-arvore{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+.quartas-arvore{
+
+    margin-left:25px;
+
+}
+
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
    ========================================= */
