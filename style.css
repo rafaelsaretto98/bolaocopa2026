@@ -1517,3 +1517,18 @@ progress::-webkit-progress-value { background-color: #10b981; }
 .quartas{
     margin-left:40px;
 }
+
+.ligacao{
+    width:60px;
+    position:relative;
+}
+
+.ligacao::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:0;
+    width:100%;
+    height:2px;
+    background:#9ca3af;
+}
