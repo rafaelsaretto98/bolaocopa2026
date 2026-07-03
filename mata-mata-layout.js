@@ -249,97 +249,35 @@ export function desenharBracket(
     jogoFinal
 
 ){
+
     const container =
         document.getElementById("mataMata");
 
     container.innerHTML = "";
 
     const esquerda =
-    document.createElement("div");
+        document.createElement("div");
 
-    esquerda.className =
-        "lado";
+    esquerda.className = "lado";
 
     esquerda.appendChild(
 
-    criarArvore(
+        criarArvore(
 
-        jogos16[0],
-        jogos16[1],
-        jogos16[2],
-        jogos16[3],
+            jogos16[0],
+            jogos16[1],
+            jogos16[2],
+            jogos16[3],
 
-        jogosOitavas[0],
-        jogosOitavas[1],
+            jogosOitavas[0],
+            jogosOitavas[1],
 
-        jogosQuartas[0]
+            jogosQuartas[0]
 
-    )
+        )
 
-);
+    );
 
     container.appendChild(esquerda);
-
-    const container =
-        document.getElementById(
-            "mataMata"
-        );
-
-    container.innerHTML = `
-
-//<div class="bracket">
-
-//  <div id="ladoEsquerdo" class="lado"></div>
-
-//  <div id="centroBracket"></div>
-
-//    <div id="ladoDireito" class="lado"></div>
-
-//</div>
-
-`;
-
-    //const ladoEsquerdo =
-    //document.getElementById(
-    //    "ladoEsquerdo"
-    //);
-
-    //const centro =
-      //  document.getElementById(
-        //    "centroBracket"
-        //);
-    
-  //  const ladoDireito =
-    //    document.getElementById(
-      //      "ladoDireito"
-        //);
-
-   // ladoEsquerdo.appendChild(
-
-  // criarLado(
-
-     //   ordenarJogos(
-        //    jogos16,
-          //  BRACKET.ladoEsquerdo.dezesseis
-        //),
-
-     //   ordenarJogos(
-      //      jogosOitavas,
-      //      BRACKET.ladoEsquerdo.oitavas
-      //  ),
-
-      //  ordenarJogos(
-       //     jogosQuartas,
-       //     BRACKET.ladoEsquerdo.quartas
-       // ),
-
-       // ordenarJogos(
-       //     jogosSemi,
-      //      BRACKET.ladoEsquerdo.semi
-      //  )
-
-  //  )
-
-//);
 
 }
