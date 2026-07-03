@@ -181,43 +181,65 @@ function criarArvore(
 
     // ---------- BLOCO SUPERIOR ----------
 
-    const blocoSuperior =
-        document.createElement("div");
+// ---------- RAMO SUPERIOR ----------
 
-    blocoSuperior.className =
-        "bloco-arvore";
+const ramoSuperior =
+    document.createElement("div");
 
-    blocoSuperior.appendChild(
-        criarCardJogo(jogo16A)
-    );
+ramoSuperior.className =
+    "ramo";
 
-    blocoSuperior.appendChild(
-        criarCardJogo(jogo16B)
-    );
+const jogosSuperior =
+    document.createElement("div");
 
-    blocoSuperior.appendChild(
-        criarCardJogo(oitavas1)
-    );
+jogosSuperior.className =
+    "jogos";
+
+jogosSuperior.appendChild(
+    criarCardJogo(jogo16A)
+);
+
+jogosSuperior.appendChild(
+    criarCardJogo(jogo16B)
+);
+
+ramoSuperior.appendChild(
+    jogosSuperior
+);
+
+ramoSuperior.appendChild(
+    criarCardJogo(oitavas1)
+);
 
     // ---------- BLOCO INFERIOR ----------
 
-    const blocoInferior =
-        document.createElement("div");
+  const ramoInferior =
+    document.createElement("div");
 
-    blocoInferior.className =
-        "bloco-arvore";
+ramoInferior.className =
+    "ramo";
 
-    blocoInferior.appendChild(
-        criarCardJogo(jogo16C)
-    );
+const jogosInferior =
+    document.createElement("div");
 
-    blocoInferior.appendChild(
-        criarCardJogo(jogo16D)
-    );
+jogosInferior.className =
+    "jogos";
 
-    blocoInferior.appendChild(
-        criarCardJogo(oitavas2)
-    );
+jogosInferior.appendChild(
+    criarCardJogo(jogo16C)
+);
+
+jogosInferior.appendChild(
+    criarCardJogo(jogo16D)
+);
+
+ramoInferior.appendChild(
+    jogosInferior
+);
+
+ramoInferior.appendChild(
+    criarCardJogo(oitavas2)
+);
 
     // ---------- QUARTAS ----------
 
@@ -231,11 +253,17 @@ function criarArvore(
         criarCardJogo(quartas)
     );
 
-    arvore.appendChild(blocoSuperior);
-
-    arvore.appendChild(blocoInferior);
-
-    arvore.appendChild(quartasDiv);
+        arvore.appendChild(
+            ramoSuperior
+        );
+        
+        arvore.appendChild(
+            ramoInferior
+        );
+        
+        arvore.appendChild(
+            quartasDiv
+        );
 
     return arvore;
 
