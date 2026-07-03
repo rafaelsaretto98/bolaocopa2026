@@ -289,28 +289,45 @@ export function desenharBracket(
     container.innerHTML = "";
 
     const esquerda =
-        document.createElement("div");
+    document.createElement("div");
 
-    esquerda.className = "lado";
+esquerda.className = "lado";
 
-    esquerda.appendChild(
+esquerda.appendChild(
 
-        criarArvore(
+    criarArvore(
 
-            jogos16[0],
-            jogos16[1],
-            jogos16[2],
-            jogos16[3],
+        jogos16[0],
+        jogos16[1],
+        jogos16[2],
+        jogos16[3],
 
-            jogosOitavas[0],
-            jogosOitavas[1],
+        jogosOitavas[0],
+        jogosOitavas[1],
 
-            jogosQuartas[0]
+        jogosQuartas[0]
 
-        )
+    )
 
-    );
+);
 
-    container.appendChild(esquerda);
+esquerda.appendChild(
 
+    criarArvore(
+
+        jogos16[4],
+        jogos16[5],
+        jogos16[6],
+        jogos16[7],
+
+        jogosOitavas[2],
+        jogosOitavas[3],
+
+        jogosQuartas[1]
+
+    )
+
+);
+
+container.appendChild(esquerda);
 }
