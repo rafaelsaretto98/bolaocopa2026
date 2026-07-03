@@ -160,6 +160,54 @@ function criarCardJogo(jogo){
 
 }
 
+function criarRamo(
+
+    jogo1,
+    jogo2,
+    jogoOitavas
+
+){
+
+    const ramo =
+        document.createElement("div");
+
+    ramo.className = "ramo";
+
+    const jogos =
+        document.createElement("div");
+
+    jogos.className = "jogos";
+
+    jogos.appendChild(
+        criarCardJogo(jogo1)
+    );
+
+    jogos.appendChild(
+        criarCardJogo(jogo2)
+    );
+
+    ramo.appendChild(
+        jogos
+    );
+
+    const conector =
+        document.createElement("div");
+
+    conector.className =
+        "conector-horizontal";
+
+    ramo.appendChild(
+        conector
+    );
+
+    ramo.appendChild(
+        criarCardJogo(jogoOitavas)
+    );
+
+    return ramo;
+
+}
+
 function criarArvore(
 
     jogo16A,
@@ -181,66 +229,25 @@ function criarArvore(
 
     // ---------- BLOCO SUPERIOR ----------
 
-// ---------- RAMO SUPERIOR ----------
-
 const ramoSuperior =
-    document.createElement("div");
 
-ramoSuperior.className =
-    "ramo";
+    criarRamo(
 
-const jogosSuperior =
-    document.createElement("div");
+        jogo16A,
+        jogo16B,
+        oitavas1
 
-jogosSuperior.className =
-    "jogos";
+    );
 
-jogosSuperior.appendChild(
-    criarCardJogo(jogo16A)
-);
+const ramoInferior =
 
-jogosSuperior.appendChild(
-    criarCardJogo(jogo16B)
-);
+    criarRamo(
 
-ramoSuperior.appendChild(
-    jogosSuperior
-);
+        jogo16C,
+        jogo16D,
+        oitavas2
 
-ramoSuperior.appendChild(
-    criarCardJogo(oitavas1)
-);
-
-    // ---------- BLOCO INFERIOR ----------
-
-  const ramoInferior =
-    document.createElement("div");
-
-ramoInferior.className =
-    "ramo";
-
-const jogosInferior =
-    document.createElement("div");
-
-jogosInferior.className =
-    "jogos";
-
-jogosInferior.appendChild(
-    criarCardJogo(jogo16C)
-);
-
-jogosInferior.appendChild(
-    criarCardJogo(jogo16D)
-);
-
-ramoInferior.appendChild(
-    jogosInferior
-);
-
-ramoInferior.appendChild(
-    criarCardJogo(oitavas2)
-);
-
+    );
     // ---------- QUARTAS ----------
 
     const quartasDiv =
