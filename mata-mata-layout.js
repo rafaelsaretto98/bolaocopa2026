@@ -163,15 +163,11 @@ function criarCardJogo(jogo){
 function criarArvore(
 
     jogo16A,
-
     jogo16B,
-
     jogo16C,
-
     jogo16D,
 
     oitavas1,
-
     oitavas2,
 
     quartas
@@ -181,13 +177,69 @@ function criarArvore(
     const arvore =
         document.createElement("div");
 
-    arvore.className =
-        "arvore";
+    arvore.className = "arvore";
+
+    // ---------- BLOCO SUPERIOR ----------
+
+    const blocoSuperior =
+        document.createElement("div");
+
+    blocoSuperior.className =
+        "bloco-arvore";
+
+    blocoSuperior.appendChild(
+        criarCardJogo(jogo16A)
+    );
+
+    blocoSuperior.appendChild(
+        criarCardJogo(jogo16B)
+    );
+
+    blocoSuperior.appendChild(
+        criarCardJogo(oitavas1)
+    );
+
+    // ---------- BLOCO INFERIOR ----------
+
+    const blocoInferior =
+        document.createElement("div");
+
+    blocoInferior.className =
+        "bloco-arvore";
+
+    blocoInferior.appendChild(
+        criarCardJogo(jogo16C)
+    );
+
+    blocoInferior.appendChild(
+        criarCardJogo(jogo16D)
+    );
+
+    blocoInferior.appendChild(
+        criarCardJogo(oitavas2)
+    );
+
+    // ---------- QUARTAS ----------
+
+    const quartasDiv =
+        document.createElement("div");
+
+    quartasDiv.className =
+        "quartas-arvore";
+
+    quartasDiv.appendChild(
+        criarCardJogo(quartas)
+    );
+
+    arvore.appendChild(blocoSuperior);
+
+    arvore.appendChild(blocoInferior);
+
+    arvore.appendChild(quartasDiv);
 
     return arvore;
 
 }
-
 export function desenharBracket(
 
     jogos16,
