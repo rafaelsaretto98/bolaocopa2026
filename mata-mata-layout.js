@@ -160,99 +160,73 @@ function criarCardJogo(jogo){
 
 }
 
-function criarBloco16(
+function criarArvore(
 
-    jogo1,
+    jogo16A,
 
-    jogo2,
+    jogo16B,
 
-    oitavas
+    jogo16C,
 
-){
+    jogo16D,
 
-    const bloco =
-        document.createElement("div");
+    oitavas1,
 
-    bloco.className = "bloco16";
+    oitavas2,
 
-    bloco.appendChild(
-        criarCardJogo(jogo1)
-    );
-
-    bloco.appendChild(
-        criarCardJogo(jogo2)
-    );
-
-    const conector =
-        document.createElement("div");
-
-    conector.className =
-        "conector16";
-
-    bloco.appendChild(conector);
-
-    bloco.appendChild(
-        criarCardJogo(oitavas)
-    );
-
-    return bloco;
-
-}
-
-function criarLado(
-
-    jogos16,
-
-    jogosOitavas,
-
-    jogosQuartas,
-
-    jogosSemi
+    quartas
 
 ){
 
-    const lado =
+    const arvore =
         document.createElement("div");
 
-    lado.className = "lado-arvore";
+    arvore.className =
+        "arvore";
 
-    for(let i=0;i<4;i++){
-
-        lado.appendChild(
-
-            criarBloco16(
-
-                jogos16[i*2],
-
-                jogos16[i*2+1],
-
-                jogosOitavas[i]
-
-            )
-
-        );
-
-    }
-
-    return lado;
+    return arvore;
 
 }
-
-
 
 export function desenharBracket(
 
     jogos16,
-
     jogosOitavas,
-
     jogosQuartas,
-
     jogosSemi,
-
     jogoFinal
 
 ){
+    const container =
+        document.getElementById("mataMata");
+
+    container.innerHTML = "";
+
+    const esquerda =
+    document.createElement("div");
+
+    esquerda.className =
+        "lado";
+
+    esquerda.appendChild(
+
+    criarArvore(
+
+        jogos16[0],
+        jogos16[1],
+        jogos16[2],
+        jogos16[3],
+
+        jogosOitavas[0],
+        jogosOitavas[1],
+
+        jogosQuartas[0]
+
+    )
+
+);
+
+    container.appendChild(esquerda);
 
     const container =
         document.getElementById(
@@ -261,59 +235,59 @@ export function desenharBracket(
 
     container.innerHTML = `
 
-<div class="bracket">
+//<div class="bracket">
 
-    <div id="ladoEsquerdo" class="lado"></div>
+//  <div id="ladoEsquerdo" class="lado"></div>
 
-    <div id="centroBracket"></div>
+//  <div id="centroBracket"></div>
 
-    <div id="ladoDireito" class="lado"></div>
+//    <div id="ladoDireito" class="lado"></div>
 
-</div>
+//</div>
 
 `;
 
-    const ladoEsquerdo =
-    document.getElementById(
-        "ladoEsquerdo"
-    );
+    //const ladoEsquerdo =
+    //document.getElementById(
+    //    "ladoEsquerdo"
+    //);
 
-    const centro =
-        document.getElementById(
-            "centroBracket"
-        );
+    //const centro =
+      //  document.getElementById(
+        //    "centroBracket"
+        //);
     
-    const ladoDireito =
-        document.getElementById(
-            "ladoDireito"
-        );
+  //  const ladoDireito =
+    //    document.getElementById(
+      //      "ladoDireito"
+        //);
 
-    ladoEsquerdo.appendChild(
+   // ladoEsquerdo.appendChild(
 
-    criarLado(
+  // criarLado(
 
-        ordenarJogos(
-            jogos16,
-            BRACKET.ladoEsquerdo.dezesseis
-        ),
+     //   ordenarJogos(
+        //    jogos16,
+          //  BRACKET.ladoEsquerdo.dezesseis
+        //),
 
-        ordenarJogos(
-            jogosOitavas,
-            BRACKET.ladoEsquerdo.oitavas
-        ),
+     //   ordenarJogos(
+      //      jogosOitavas,
+      //      BRACKET.ladoEsquerdo.oitavas
+      //  ),
 
-        ordenarJogos(
-            jogosQuartas,
-            BRACKET.ladoEsquerdo.quartas
-        ),
+      //  ordenarJogos(
+       //     jogosQuartas,
+       //     BRACKET.ladoEsquerdo.quartas
+       // ),
 
-        ordenarJogos(
-            jogosSemi,
-            BRACKET.ladoEsquerdo.semi
-        )
+       // ordenarJogos(
+       //     jogosSemi,
+      //      BRACKET.ladoEsquerdo.semi
+      //  )
 
-    )
+  //  )
 
-);
+//);
 
 }
