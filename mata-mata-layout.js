@@ -225,120 +225,30 @@ function criarArvore(
     const arvore =
         document.createElement("div");
 
-    arvore.className =
-        "arvore";
+    arvore.className = "arvore";
 
-
-    // ======== RAMO SUPERIOR ========
 
     const ramoSuperior =
-        document.createElement("div");
 
-    ramoSuperior.className =
-        "ramo";
+        criarRamo(
 
+            jogo16A,
+            jogo16B,
+            oitavas1
 
-    const jogosSuperior =
-        document.createElement("div");
+        );
 
-    jogosSuperior.className =
-        "jogos16";
-
-
-    jogosSuperior.appendChild(
-        criarCardJogo(jogo16A)
-    );
-
-    jogosSuperior.appendChild(
-        criarCardJogo(jogo16B)
-    );
-
-
-    const oitavasSuperior =
-        document.createElement("div");
-
-    oitavasSuperior.className =
-        "oitavas";
-
-    oitavasSuperior.appendChild(
-        criarCardJogo(oitavas1)
-    );
-
-
-    ramo.appendChild(
-    jogos
-    );
-    
-    const ligacao =
-        document.createElement("div");
-    
-    ligacao.className =
-        "ligacao";
-    
-    ramo.appendChild(
-        ligacao
-    );
-    
-    ramo.appendChild(
-        oitavasSuperior
-    );
-
-
-    // ======== RAMO INFERIOR ========
 
     const ramoInferior =
-        document.createElement("div");
 
-    ramoInferior.className =
-        "ramo";
+        criarRamo(
 
+            jogo16C,
+            jogo16D,
+            oitavas2
 
-    const jogosInferior =
-        document.createElement("div");
+        );
 
-    jogosInferior.className =
-        "jogos16";
-
-    jogosInferior.appendChild(
-        criarCardJogo(jogo16C)
-    );
-
-    jogosInferior.appendChild(
-        criarCardJogo(jogo16D)
-    );
-
-
-    const oitavasInferior =
-        document.createElement("div");
-
-    oitavasInferior.className =
-        "oitavas";
-
-    oitavasInferior.appendChild(
-        criarCardJogo(oitavas2)
-    );
-
-
-   ramo.appendChild(
-    jogos
-    );
-    
-    const ligacao =
-        document.createElement("div");
-    
-    ligacao.className =
-        "ligacao";
-    
-    ramo.appendChild(
-        ligacao
-    );
-    
-    ramo.appendChild(
-        oitavasInferior
-    );
-
-
-    // ======== QUARTAS ========
 
     const quartasDiv =
         document.createElement("div");
@@ -347,7 +257,9 @@ function criarArvore(
         "quartas";
 
     quartasDiv.appendChild(
+
         criarCardJogo(quartas)
+
     );
 
 
