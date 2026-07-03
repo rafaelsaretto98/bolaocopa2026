@@ -24,27 +24,19 @@ function bandeira(nome){
 }
 
 function ordenarJogos(
-
     jogos,
-
     ordem
-
 ){
 
     return ordem
 
         .map(id=>
-
             jogos.find(
-
                 jogo=>jogo.id===id
-
             )
 
         )
-
         .filter(Boolean);
-
 }
 
 const bandeiras = {
@@ -83,11 +75,8 @@ const bandeiras = {
     "Suécia": "band_Suecia.png",
     "Suíça": "band_Suica",
     "Uruguai": "band_Uruguai"
-
     
 };
-
-
 
 function criarCardJogo(jogo){
 
@@ -254,11 +243,9 @@ function criarBloco16(
     bloco.appendChild(
 
         criarRamo(
-
             jogo1,
             jogo2,
             oitavas1
-
         )
 
     );
@@ -266,11 +253,9 @@ function criarBloco16(
     bloco.appendChild(
 
         criarRamo(
-
             jogo3,
             jogo4,
             oitavas2
-
         )
 
     );
@@ -280,11 +265,8 @@ function criarBloco16(
 }
 
 function criarBlocoQuartas(
-
     bloco16,
-
     jogoQuartas
-
 ){
 
     const bloco =
@@ -308,13 +290,11 @@ function criarBlocoQuartas(
 }
 
 export function desenharBracket(
-
     jogos16,
     jogosOitavas,
     jogosQuartas,
     jogosSemi,
     jogoFinal
-
 ){
 
     const container =
