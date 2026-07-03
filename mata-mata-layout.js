@@ -210,125 +210,57 @@ export function desenharBracket(
 
 <div class="bracket">
 
-    <div class="coluna">
-        <h2>16 Avos</h2>
-        <div id="col16E"></div>
-    </div>
+    <div id="ladoEsquerdo" class="lado"></div>
 
-    <div class="coluna">
-        <h2>Oitavas</h2>
-        <div id="col8E"></div>
-    </div>
+    <div id="centroBracket"></div>
 
-    <div class="coluna">
-        <h2>Quartas</h2>
-        <div id="col4E"></div>
-    </div>
-
-    <div class="coluna">
-        <h2>Semifinal</h2>
-        <div id="col2E"></div>
-    </div>
-
-    <div class="coluna coluna-final">
-        <h2>🏆 Final</h2>
-        <div id="colFinal"></div>
-    </div>
-
-    <div class="coluna">
-        <h2>Semifinal</h2>
-        <div id="col2D"></div>
-    </div>
-
-    <div class="coluna">
-        <h2>Quartas</h2>
-        <div id="col4D"></div>
-    </div>
-
-    <div class="coluna">
-        <h2>Oitavas</h2>
-        <div id="col8D"></div>
-    </div>
-
-    <div class="coluna">
-        <h2>16 Avos</h2>
-        <div id="col16D"></div>
-    </div>
+    <div id="ladoDireito" class="lado"></div>
 
 </div>
 
 `;
 
-    desenharColuna(
-    "col16E",
+    const ladoEsquerdo =
+    document.getElementById(
+        "ladoEsquerdo"
+    );
+
+    const centro =
+        document.getElementById(
+            "centroBracket"
+        );
+    
+    const ladoDireito =
+        document.getElementById(
+            "ladoDireito"
+        );
+
+    ladoEsquerdo.appendChild(
+
+    criarLado(
+
         ordenarJogos(
             jogos16,
             BRACKET.ladoEsquerdo.dezesseis
-        )
-    );
+        ),
 
-    desenharColuna(
-    "col16D",
-        ordenarJogos(
-            jogos16,
-            BRACKET.ladoDireito.dezesseis
-        )
-    );
-
-    desenharColuna(
-    "col8E",
         ordenarJogos(
             jogosOitavas,
             BRACKET.ladoEsquerdo.oitavas
-        )
-    );
+        ),
 
-    desenharColuna(
-    "col8D",
         ordenarJogos(
-        jogosOitavas,
-        BRACKET.ladoDireito.oitavas
-        )
-    );
+            jogosQuartas,
+            BRACKET.ladoEsquerdo.quartas
+        ),
 
-    desenharColuna(
-    "col4E",
         ordenarJogos(
-        jogosQuartas,
-        BRACKET.ladoEsquerdo.quartas
+            jogosSemi,
+            BRACKET.ladoEsquerdo.semi
         )
-    );
 
-    desenharColuna(
-    "col4D",
-        ordenarJogos(
-        jogosQuartas,
-        BRACKET.ladoDireito.quartas
-        )
-    );
+    )
 
-    desenharColuna(
-    "col2E",
-        ordenarJogos(
-        jogosSemi,
-        BRACKET.ladoEsquerdo.semi
-        )
-    );
-
-    desenharColuna(
-    "col2D",
-        ordenarJogos(
-        jogosSemi,
-        BRACKET.ladoDireito.semi
-        )
-    );
-
-    desenharColuna(
-    "colFinal",
-        ordenarJogos(
-        [jogoFinal],
-        [BRACKET.final]
-        )
-    );
+);
 
 }
