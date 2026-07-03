@@ -323,17 +323,43 @@ const blocoSuperior =
 
         ),
 
-            jogosQuartas[0]
-    
-        );
-    
-    esquerda.appendChild(
-        blocoSuperior
+        criarBloco16(
+
+            jogos16[4],
+            jogos16[5],
+            jogos16[6],
+            jogos16[7],
+
+            jogosOitavas[2],
+            jogosOitavas[3]
+
+        ),
+
+        jogosQuartas[0]
+
     );
+
+esquerda.appendChild(
+
+    blocoSuperior
+
+);
 
 const blocoInferior =
 
     criarBlocoQuartas(
+
+        criarBloco16(
+
+            jogos16[0],
+            jogos16[1],
+            jogos16[2],
+            jogos16[3],
+
+            jogosOitavas[0],
+            jogosOitavas[1]
+
+        ),
 
         criarBloco16(
 
@@ -347,12 +373,14 @@ const blocoInferior =
 
         ),
 
-        jogosQuartas[1]
+        jogosQuartas[0]
 
     );
 
 esquerda.appendChild(
+
     blocoInferior
+
 );
 
 esquerda.appendChild(blocoSuperior);
