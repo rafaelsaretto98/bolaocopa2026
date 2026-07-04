@@ -149,7 +149,82 @@ function criarCardJogo(jogo){
 
 }
 
-function criarRamo(
+function criarColuna(jogos, classe){
+
+    const coluna =
+        document.createElement("div");
+
+    coluna.className = classe;
+
+    jogos.forEach(jogo=>{
+
+        coluna.appendChild(
+            criarCardJogo(jogo)
+        );
+
+    });
+
+    return coluna;
+
+}
+
+
+function criarLado(
+
+    jogos16,
+    jogos8,
+    jogos4,
+    jogos2
+
+){
+
+    const lado =
+        document.createElement("div");
+
+    lado.className = "lado";
+
+    lado.appendChild(
+
+        criarColuna(
+            jogos16,
+            "coluna16"
+        )
+
+    );
+
+    lado.appendChild(
+
+        criarColuna(
+            jogos8,
+            "coluna8"
+        )
+
+    );
+
+    lado.appendChild(
+
+        criarColuna(
+            jogos4,
+            "coluna4"
+        )
+
+    );
+
+    lado.appendChild(
+
+        criarColuna(
+            jogos2,
+            "coluna2"
+        )
+
+    );
+
+    return lado;
+
+}
+
+
+/*function criarRamo(
 
     jogo1,
     jogo2,
@@ -387,14 +462,16 @@ function criarFase(
 
     return fase;
 
-}
+}*/
 
 export function desenharBracket(
+
     jogos16,
     jogosOitavas,
     jogosQuartas,
     jogosSemi,
     jogoFinal
+
 ){
 
     const container =
@@ -402,60 +479,34 @@ export function desenharBracket(
 
     container.innerHTML = "";
 
-    const esquerda =
-    document.createElement("div");
+    const ladoEsquerdo =
 
-esquerda.className = "lado";
+        criarLado(
 
-const quartasSuperior =
+            ordenarJogos(
+                jogos16,
+                BRACKET.ladoEsquerdo.dezesseis
+            ),
 
-    criarBlocoQuartas(
+            ordenarJogos(
+                jogosOitavas,
+                BRACKET.ladoEsquerdo.oitavas
+            ),
 
-        criarBloco16(
+            ordenarJogos(
+                jogosQuartas,
+                BRACKET.ladoEsquerdo.quartas
+            ),
 
-            jogos16[0],
-            jogos16[1],
-            jogos16[2],
-            jogos16[3],
+            ordenarJogos(
+                jogosSemi,
+                BRACKET.ladoEsquerdo.semi
+            )
 
-            jogosOitavas[0],
-            jogosOitavas[1]
+        );
 
-        ),
-
-        criarBloco16(
-
-            jogos16[4],
-            jogos16[5],
-            jogos16[6],
-            jogos16[7],
-
-            jogosOitavas[2],
-            jogosOitavas[3]
-
-        ),
-
-        jogosQuartas[0]
-
+    container.appendChild(
+        ladoEsquerdo
     );
 
-const semiSuperior =
-
-    criarFase(
-
-        quartasSuperior,
-
-        jogosSemi[0]
-
-    );
-
-esquerda.appendChild(
-    semiSuperior
-);
-
-esquerda.appendChild(
-    quartasSuperior
-);
-
-container.appendChild(esquerda);
 }
