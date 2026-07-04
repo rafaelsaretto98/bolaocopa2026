@@ -136,7 +136,10 @@ export function desenharJogos(
             )
         );
 
-        desenharHistorico(
+       
+    }); 
+    
+    desenharHistorico(
 
             jogos,
 
@@ -145,83 +148,6 @@ export function desenharJogos(
             jogos[0].fase
 
         );
-    });
-}
-
-function desenharHistorico(
-
-    jogos,
-
-    participante
-
-){
-    const lista =
-
-    document.getElementById(
-
-        "historicoMataMata"
-
-    );
-
-lista.innerHTML = "";
-
-const ordem = [
-
-    "16-avos",
-
-    "oitavas",
-
-    "quartas",
-
-    "semifinal",
-
-    "final"
-
-];
-
-const indiceAtual =
-
-    ordem.indexOf(
-
-        jogos[0].fase
-
-    );
-
-    for(
-
-    let i=0;
-
-    i<indiceAtual;
-
-    i++
-
-){
-
-    const fase =
-
-        ordem[i];
-
-}
-
-const titulo =
-
-    document.createElement("h3");
-
-titulo.textContent =
-
-    nomeFase(fase);
-
-lista.appendChild(titulo);
-
-const jogosFase =
-
-    jogos.filter(
-
-        j=>j.fase===fase
-
-    );
-
-
 }
 
 function criarCardJogo(
@@ -608,5 +534,31 @@ function desenharHistorico(
         });
 
     });
+
+}
+
+function nomeFase(fase){
+
+    switch(fase){
+
+        case "16-avos":
+            return "16 Avos de Final";
+
+        case "oitavas":
+            return "Oitavas de Final";
+
+        case "quartas":
+            return "Quartas de Final";
+
+        case "semifinal":
+            return "Semifinais";
+
+        case "final":
+            return "Final";
+
+        default:
+            return fase;
+
+    }
 
 }
