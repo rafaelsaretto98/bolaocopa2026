@@ -1458,8 +1458,9 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 .lado{
     display:flex;
-    flex-direction:column;
-    gap:120px;
+    flex-direction:row;
+    align-items:flex-start;
+    gap:55px;
 }
 
 .arvore{
@@ -1570,111 +1571,92 @@ progress::-webkit-progress-value { background-color: #10b981; }
 }
 
 .colunaQuartas{
-
     display:flex;
-
     flex-direction:column;
-
     gap:18px;
-
 }
 
 .conectorQuartas{
-
     position:relative;
-
     width:90px;
-
     height:330px;
-
 }
 
 .linha-cima-q{
-
     position:absolute;
-
     top:82px;
-
     width:50px;
-
     height:2px;
-
     background:#cfd5df;
-
 }
 
 .linha-baixo-q{
-
     position:absolute;
-
     bottom:82px;
-
     width:50px;
-
     height:2px;
-
     background:#cfd5df;
-
 }
 
 .linha-vertical-q{
-
     position:absolute;
-
     left:50px;
-
     top:82px;
-
     width:2px;
-
     height:166px;
-
     background:#cfd5df;
-
 }
 
 .conectorQuartas::after{
-
     content:"";
-
     position:absolute;
-
     left:50px;
-
     top:50%;
-
     width:40px;
-
     height:2px;
-
     background:#cfd5df;
-
 }
 
 .fase{
-
     display:flex;
-
     align-items:center;
-
     gap:18px;
-
 }
 
 .faseAtual{
-
     display:flex;
-
     align-items:center;
-
 }
 
 .conectorFase{
-
     width:50px;
-
     height:2px;
-
     background:#cfd8dc;
+}
 
+.coluna16,
+.coluna8,
+.coluna4,
+.coluna2{
+    display:flex;
+    flex-direction:column;
+}
+
+.coluna16{
+    gap:14px;
+}
+
+.coluna8{
+    gap:88px;
+    margin-top:48px;
+}
+
+.coluna4{
+    gap:250px;
+    margin-top:150px;
+}
+
+.coluna2{
+    gap:510px;
+    margin-top:320px;
 }
