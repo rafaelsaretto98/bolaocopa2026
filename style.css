@@ -1640,6 +1640,8 @@ progress::-webkit-progress-value { background-color: #10b981; }
 .coluna2{
     display:flex;
     flex-direction:column;
+    justify-content:space-evenly;
+    height:900px;
 }
 
 .coluna16{
@@ -1659,4 +1661,10 @@ progress::-webkit-progress-value { background-color: #10b981; }
 .coluna2{
     gap:510px;
     margin-top:320px;
+}
+
+.item-fase{
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
