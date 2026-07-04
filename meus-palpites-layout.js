@@ -280,43 +280,36 @@ ${jogo.timeB?.time}
 
     }
 
-    opcoes.forEach(opcao=>{
+opcoes.forEach(opcao=>{
 
     opcao.addEventListener("click", ()=>{
 
-    console.log("Clique", aberto, jogo);
+        console.log("Clique", aberto, jogo);
 
-    if(!aberto){
-        return;
-    }
+        if(!aberto){
+            return;
+        }
 
-    opcoes.forEach(o=>{
-        o.classList.remove(
-            "selecionado",
-            "acertou",
-            "errou",
-            "pendente"
-        );
-    });
+        opcoes.forEach(o=>{
 
-    opcao.classList.add("pendente");
-
-    card.dataset.escolhido = opcao.dataset.time;
-
-});
-            opcao.classList.add(
+            o.classList.remove(
+                "selecionado",
+                "acertou",
+                "errou",
                 "pendente"
             );
 
-            card.dataset.escolhido =
-                opcao.dataset.time;
+        });
 
-        }
+        opcao.classList.add("pendente");
 
-    );
+        card.dataset.escolhido =
+            opcao.dataset.time;
+
+    });
 
 });
 
-    return card;
+return card;
 
 }
