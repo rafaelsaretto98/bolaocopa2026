@@ -1,18 +1,52 @@
-for (const id in agendaMataMata) {
+import {
+    carregarJogosMataMata,
+    atualizarJogoMataMata
+}
+from "./mata-mata-firebase.js";
 
-    const jogo = await carregarJogoMataMata(id);
+import {
+    agendaMataMata
+}
+from "./agenda-mata-mata.js";
 
-    if (!jogo) continue;
+async function corrigirAgenda(){
 
-    await atualizarJogoMataMata({
+    const jogos =
+        await carregarJogosMataMata();
 
-        ...jogo,
+    for(const jogo of jogos){
 
-        data: agendaMataMata[id].data,
-        horario: agendaMataMata[id].horario,
-        cidade: agendaMataMata[id].cidade,
-        estadio: agendaMataMata[id].estadio
+        const agenda =
+            agendaMataMata[jogo.id];
 
-    });
+        if(!agenda){
+            continue;
+        }
+
+        jogo.data =
+            agenda.data;
+
+        jogo.horario =
+            agenda.horario;
+
+        jogo.cidade =
+            agenda.cidade;
+
+        jogo.estadio =
+            agenda.estadio;
+
+        await atualizarJogoMataMata(jogo);
+
+        console.log(
+            `✔ ${jogo.id} atualizado`
+        );
+
+    }
+
+    console.log(
+        "Migração concluída!"
+    );
 
 }
+
+corrigirAgenda();
