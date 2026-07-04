@@ -4,7 +4,7 @@ import {
 from "./bracket-config.js";
  
 function bandeira(nome){
-
+ 
     if(!nome){
         return "img/band_placeholder.jpg";
     }
