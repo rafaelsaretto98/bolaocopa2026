@@ -362,46 +362,40 @@ export function desenharBracket(
 
 esquerda.className = "lado";
 
-const blocoSuperior =
+const quartasSuperior =
 
-    criarBloco16(
+    criarBlocoQuartas(
 
-        jogos16[0],
-        jogos16[1],
-        jogos16[2],
-        jogos16[3],
+        criarBloco16(
 
-        jogosOitavas[0],
-        jogosOitavas[1]
+            jogos16[0],
+            jogos16[1],
+            jogos16[2],
+            jogos16[3],
 
-    );
+            jogosOitavas[0],
+            jogosOitavas[1]
 
-const blocoInferior =
+        ),
 
-    criarBloco16(
+        criarBloco16(
 
-        jogos16[4],
-        jogos16[5],
-        jogos16[6],
-        jogos16[7],
+            jogos16[4],
+            jogos16[5],
+            jogos16[6],
+            jogos16[7],
 
-        jogosOitavas[2],
-        jogosOitavas[3]
+            jogosOitavas[2],
+            jogosOitavas[3]
+
+        ),
+
+        jogosQuartas[0]
 
     );
 
 esquerda.appendChild(
-
-    criarBlocoQuartas(
-
-        blocoSuperior,
-
-        blocoInferior,
-
-        jogosQuartas[0]
-
-    )
-
+    quartasSuperior
 );
 
 container.appendChild(esquerda);
