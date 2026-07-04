@@ -282,34 +282,28 @@ ${jogo.timeB?.time}
 
     opcoes.forEach(opcao=>{
 
-    opcao.addEventListener(
+    opcao.addEventListener("click", ()=>{
 
-        "click",
+    console.log("Clique", aberto, jogo);
 
-        ()=>{
+    if(!aberto){
+        return;
+    }
 
-            if(!aberto){
+    opcoes.forEach(o=>{
+        o.classList.remove(
+            "selecionado",
+            "acertou",
+            "errou",
+            "pendente"
+        );
+    });
 
-                return;
+    opcao.classList.add("pendente");
 
-            }
+    card.dataset.escolhido = opcao.dataset.time;
 
-            opcoes.forEach(o=>{
-
-                o.classList.remove(
-            
-                    "selecionado",
-            
-                    "acertou",
-            
-                    "errou",
-            
-                    "pendente"
-            
-                );
-            
-            });
-
+});
             opcao.classList.add(
                 "pendente"
             );
