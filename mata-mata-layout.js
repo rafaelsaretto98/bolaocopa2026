@@ -49,7 +49,7 @@ const bandeiras = {
     "Austrália": "band_Australia.png",
     "Áustria": "band_Austria.png",
     "Bélgica": "band_Belgica.png",
-    "Bósnia e Hezergovina": "band_Bosnia_e_Hezergovinia",
+    "Bósnia e Hezergovina": "band_Bosnia_e_Hezergovinia.png",
     "Brasil": "band_Brasil.png",
     "Cabo Verde": "band_Cabo_Verde.png",
     "Canadá": "band_Canada.png",
@@ -82,10 +82,10 @@ const bandeiras = {
     "RD Congo": "band_RD_Congo.png",
     "Senegal": "band_Senegal.png",
     "Suécia": "band_Suecia.png",
-    "Suíça": "band_Suica",
+    "Suíça": "band_Suica.png",
     "Tunísia": "band_Tunisia.png",
     "Turquia": "band_Turquia.png",
-    "Uruguai": "band_Uruguai"
+    "Uruguai": "band_Uruguai.png"
     
 };
 
