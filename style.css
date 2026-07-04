@@ -752,12 +752,6 @@ progress::-webkit-progress-value { background-color: #10b981; }
     font-size:40px;
 }
 
-.nome-time{
-
-    margin:8px 0;
-    font-weight:700;
-}
-
 .versus{
 
     font-size:34px;
@@ -952,9 +946,11 @@ progress::-webkit-progress-value { background-color: #10b981; }
 }
 
 .jogo-card{
-    width:180px;
+    
+    width:115px;
+    padding:6px 8px;
+    border-radius:10px;
     background:white;
-    border-radius:14px;
     border:2px solid #dbeafe;
     overflow:hidden;
     box-shadow:0 8px 18px rgba(0,0,0,.08);
@@ -973,10 +969,11 @@ progress::-webkit-progress-value { background-color: #10b981; }
 }
 
 .time-linha{
+    min-height:28px;
+    padding:3px 0;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:12px;
 }
 
 .time-linha:first-child{
@@ -987,13 +984,13 @@ progress::-webkit-progress-value { background-color: #10b981; }
     display:flex;
     align-items:center;
     gap:10px;
-    font-size:12px;
+    font-size:11px;
     font-weight:700;
 }
 
 .bandeira-mata{
-    width:22px;
-    height:16px;
+    width:16px;
+    height:11px;
     object-fit:cover;
     border-radius:3px;
 }
@@ -1001,8 +998,8 @@ progress::-webkit-progress-value { background-color: #10b981; }
 .gols{
     width:26px;
     text-align:center;
-    font-size:18px;
-    font-weight:800;
+    font-size:13px;
+    font-weight:700;
     color:#1e3a8a;
 }
 
@@ -1495,7 +1492,7 @@ progress::-webkit-progress-value { background-color: #10b981; }
 .arvore{
     display:flex;
     align-items:center;
-    gap:45px;
+    gap:16px;
 }
 
 .jogos16{
@@ -1547,14 +1544,14 @@ progress::-webkit-progress-value { background-color: #10b981; }
     position:absolute;
     left:0;
     top:50%;
-    width:70px;
+    width:45px;
     height:2px;
     background:#cfd5df;
 }
 
 .conector{
     position:relative;
-    width:70px;
+    width:45px;
     height:140px;
 }
 
@@ -1605,78 +1602,47 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
     flex-direction:column;
 
-    gap:40px;
+    gap:18px;
 
 }
 
 .conectorQuartas{
-
     position:relative;
-
     width:90px;
-
     height:330px;
-
 }
 
 .linha-cima-q{
-
     position:absolute;
-
     top:82px;
-
     width:50px;
-
     height:2px;
-
     background:#cfd5df;
-
 }
 
 .linha-baixo-q{
-
     position:absolute;
-
     bottom:82px;
-
     width:50px;
-
     height:2px;
-
     background:#cfd5df;
-
 }
 
 .linha-vertical-q{
-
     position:absolute;
-
     left:50px;
-
     top:82px;
-
     width:2px;
-
     height:166px;
-
     background:#cfd5df;
-
 }
 
 .conectorQuartas::after{
-
     content:"";
-
     position:absolute;
-
     left:50px;
-
     top:50%;
-
     width:40px;
-
     height:2px;
-
     background:#cfd5df;
-
 }
