@@ -227,4 +227,15 @@ ${nomeTimeB}
 
 }
 
+document
+    .getElementById("encerrarFase")
+    .addEventListener(
+        "click",
+        async () => {
+
+            alert("Botão funcionando!");
+
+        }
+    );
+
 iniciar();
