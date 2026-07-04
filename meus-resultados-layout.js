@@ -1,148 +1,612 @@
-export function desenharHistoricoGrupos(resumo){
+import {
+    jogoAberto
+}
+from "./palpites-utils.js";
 
-    const container =
-        document.getElementById(
-            "historicoGrupos"
-        );
+function bandeira(nome){
 
-    container.innerHTML = "";
-    container.className = "grupos-grid";
+    if(!nome){
+        return "img/band_placeholder.png";
+    }
 
-    resumo.forEach(grupo=>{
+    if(bandeiras[nome]){
+        return `img/${bandeiras[nome]}`;
+    }
 
-        container.appendChild(
+    const arquivo = nome
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g,"")
+        .replaceAll(" ","_")
+        .replaceAll("'","");
 
-            criarCardGrupo(grupo)
-
-        );
-
-    });
+    return `img/band_${arquivo}.png`;
 
 }
 
-function criarCardGrupo(grupo){
+const bandeiras = {
+    
+    "Alemanha": "band_Alemanha.png",
+    "Argélia": "band_Argelia.png",
+    "Argentina": "band_Argentina.png",
+    "Austrália": "band_Australia.png",
+    "Áustria": "band_Austria.png",
+    "Bélgica": "band_Belgica.png",
+    "Bósnia e Hezergovina": "band_Bosnia_e_Hezergovinia",
+    "Brasil": "band_Brasil.png",
+    "Cabo Verde": "band_Cabo_Verde.png",
+    "Canadá": "band_Canada.png",
+    "Chéquia": "band_Chequia.png",
+    "Colômbia": "band_Colombia.png",
+    "Coreia do Sul": "band_Coreia_do_Sul.png",
+    "Egito": "band_Egito.png",
+    "Equador": "band_Equador.png",
+    "Escócia": "band_Escocia.png",
+    "Espanha": "band_Espanha.png",
+    "Estados Unidos": "band_Estados_Unidos.png",
+    "França": "band_França.png",
+    "Gana": "band_Gana.png",
+    "Haiti": "band_Haiti.png",
+    "Holanda": "band_Holanda.png",
+    "Inglaterra": "band_Inglaterra.png",
+    "Irã": "band_Ira.png",
+    "Japão": "band_Japao.png",
+    "Marrocos": "band_Marrocos.png",
+    "México": "band_Mexico.png",
+    "Noruega": "band_Noruega.png",
+    "Nova Zelândia": "band_Nova_Zelandia.png",
+    "Paraguai": "band_Paraguai.png",
+    "Portugal": "band_Portugal.png",
+    "RD Congo": "band_RD_Congo.png",
+    "Suécia": "band_Suecia.png",
+    "Senegal": "band-Senegal.png",
+    "Suíça": "band_Suica",
+    "Uruguai": "band_Uruguai",
+    "Uzbequistão": "band_Uzbequistao"
+
+    
+};
+
+export function montarDashboard(participante){
+
+    document.getElementById(
+
+        "dashboardParticipante"
+
+    ).innerHTML = `
+
+<h2>👤 ${participante.nome}</h2>
+
+<div class="dashboard-pontos">
+
+    <div>
+        <strong>🏆 Grupo</strong>
+        <br>
+        ${participante.pontosGrupo ?? 0}
+    </div>
+
+    <div>
+
+        <strong>⚽ Mata-Mata</strong>
+
+        <br>
+
+        ${participante.pontosMataMata ?? 0}
+
+    </div>
+
+    <div>
+
+        <strong>⭐ Total</strong>
+
+        <br>
+
+        ${participante.total ?? 0}
+
+    </div>
+
+</div>
+
+`;
+
+}
+export function desenharJogos(
+
+    jogos,
+    palpites = {}
+
+)
+
+{
+
+    const lista =
+        document.getElementById(
+            "listaJogos"
+        );
+
+    lista.innerHTML = "";
+
+    jogos.forEach(jogo=>{
+
+        lista.appendChild(
+
+            criarCardJogo(
+
+                jogo,
+                palpites[jogo.id]
+            )
+        );
+
+        desenharHistorico(
+
+            jogos,
+
+            palpites,
+
+            jogos[0].fase
+
+        );
+    });
+}
+
+function desenharHistorico(
+
+    jogos,
+
+    participante
+
+){
+    const lista =
+
+    document.getElementById(
+
+        "historicoMataMata"
+
+    );
+
+lista.innerHTML = "";
+
+const ordem = [
+
+    "16-avos",
+
+    "oitavas",
+
+    "quartas",
+
+    "semifinal",
+
+    "final"
+
+];
+
+const indiceAtual =
+
+    ordem.indexOf(
+
+        jogos[0].fase
+
+    );
+
+    for(
+
+    let i=0;
+
+    i<indiceAtual;
+
+    i++
+
+){
+
+    const fase =
+
+        ordem[i];
+
+}
+
+const titulo =
+
+    document.createElement("h3");
+
+titulo.textContent =
+
+    nomeFase(fase);
+
+lista.appendChild(titulo);
+
+const jogosFase =
+
+    jogos.filter(
+
+        j=>j.fase===fase
+
+    );
+
+
+}
+
+function criarCardJogo(
+
+    jogo,
+    palpite
+
+){
+
+    const card =
+        document.createElement(
+            "div"
+        );
+
+    card.className =
+        "regras-card";
+
+    card.dataset.jogo =
+        jogo.id;
+
+    const aberto =
+    jogoAberto(jogo);
+
+    card.innerHTML = `
+
+<h3 class="titulo-confronto">
+
+${jogo.timeA?.time ?? "A definir"}
+
+<span>
+
+×
+
+</span>
+
+${jogo.timeB?.time ?? "A definir"}
+
+</h3>
+
+<div
+
+class="time-card"
+
+data-time="${jogo.timeA?.time}"
+
+>
+
+<img
+
+class="bandeira-mata"
+
+src="${bandeira(jogo.timeA?.time)}"
+
+onerror="this.src='img/band_placeholder.png'"
+
+>
+
+<span>
+
+${jogo.timeA?.time}
+
+</span>
+
+</div>
+
+<div class="vs-card">
+
+VS
+
+</div>
+
+<div
+
+class="time-card"
+
+data-time="${jogo.timeB?.time}"
+
+>
+
+<img
+
+class="bandeira-mata"
+
+src="${bandeira(jogo.timeB?.time)}"
+
+onerror="this.src='img/band_placeholder.png'"
+
+>
+
+<span>
+
+${jogo.timeB?.time}
+
+</span>
+
+</div>
+
+`;
+
+    const opcoes =
+        card.querySelectorAll(
+            ".time-card"
+        );
+
+    if(palpite){
+
+        opcoes.forEach(opcao=>{
+
+            if(
+
+                opcao.dataset.time === palpite
+
+            ){
+
+                if(!jogo.encerrado){
+
+        opcao.classList.add("pendente");
+
+    }else{
+
+        const vencedor =
+
+            jogo.vencedor?.time ||
+            jogo.vencedor;
+
+        if(vencedor === palpite){
+
+            opcao.classList.add("acertou");
+
+        }else{
+
+            opcao.classList.add("errou");
+
+        }
+
+    }
+
+                card.dataset.escolhido =
+                    palpite;
+
+            }
+
+        });
+
+    }
+
+    opcoes.forEach(opcao=>{
+
+    opcao.addEventListener(
+
+        "click",
+
+        ()=>{
+
+            if(!aberto){
+
+                return;
+
+            }
+
+            opcoes.forEach(o=>{
+
+                o.classList.remove(
+            
+                    "selecionado",
+            
+                    "acertou",
+            
+                    "errou",
+            
+                    "pendente"
+            
+                );
+            
+            });
+
+            opcao.classList.add(
+                "pendente"
+            );
+
+            card.dataset.escolhido =
+                opcao.dataset.time;
+
+        }
+
+    );
+
+});
+
+    return card;
+
+}
+
+function criarCardHistorico(
+
+    jogo,
+
+    palpite
+
+){
 
     const card =
         document.createElement("div");
 
     card.className =
-        "regras-card";
+        "regras-card historico";
+
+    const vencedor =
+
+        jogo.vencedor?.time ||
+
+        jogo.vencedor ||
+
+        "-";
+
+    const acertou =
+
+        vencedor === palpite;
 
     card.innerHTML = `
 
-<h2>
+<h3>
 
-🏆 Grupo ${grupo.grupo}
+${jogo.timeA?.time}
 
-</h2>
+<span>x</span>
 
-`;
+${jogo.timeB?.time}
 
-    const posicoes = [
+</h3>
 
-        "🥇",
+<p>
 
-        "🥈",
-
-        "🥉",
-
-        "4️⃣"
-
-    ];
-
-    grupo.linhas.forEach((linha,index)=>{
-
-        const item =
-            document.createElement("div");
-
-        item.className =
-
-            linha.acertou
-
-            ?
-
-            "linha-grupo acertou"
-
-            :
-
-            "linha-grupo errou";
-
-        item.innerHTML = `
-
-<div class="grupo-esquerda">
-
-    <span>
-
-        ${posicoes[index]}
-
-    </span>
-
-    <img
-
-        class="bandeira-mata"
-
-        src="img/band_${linha.time}.png"
-
-        onerror="this.src='img/band_placeholder.png'"
-
-    >
-
-    <span>
-
-        ${linha.time}
-
-    </span>
-
-</div>
-
-<div class="grupo-direita">
-
-    ${linha.acertou ? "✅" : "❌"}
-
-</div>
-
-`;
-
-        card.appendChild(item);
-
-    });
-
-    const estrelas =
-
-        "⭐".repeat(grupo.pontos) +
-
-        "☆".repeat(4 - grupo.pontos);
-
-    const rodape =
-        document.createElement("div");
-
-    rodape.className =
-        "resultado-grupo";
-
-    rodape.innerHTML = `
-
-<div class="estrelas-grupo">
-
-${estrelas}
-
-</div>
-
-<div>
+Seu palpite:
 
 <strong>
 
-${grupo.pontos} de 4 acertos
+${palpite ?? "-"}
 
 </strong>
 
-</div>
+</p>
+
+<p>
+
+Resultado:
+
+<strong>
+
+${vencedor}
+
+</strong>
+
+</p>
 
 `;
 
-    card.appendChild(
-        rodape
-    );
+    if(acertou){
+
+        card.classList.add(
+
+            "historico-acertou"
+
+        );
+
+    }
+
+    else{
+
+        card.classList.add(
+
+            "historico-errou"
+
+        );
+
+    }
 
     return card;
+
+}
+
+function desenharHistorico(
+
+    jogos,
+
+    palpites,
+
+    faseAtual
+
+){
+
+    const historico =
+
+        document.getElementById(
+
+            "historicoMataMata"
+
+        );
+
+    historico.innerHTML = "";
+
+    const ordem = [
+
+        "16-avos",
+
+        "oitavas",
+
+        "quartas",
+
+        "semifinal",
+
+        "final"
+
+    ];
+
+    const indice =
+
+        ordem.indexOf(
+
+            faseAtual
+
+        );
+
+    if(indice <= 0){
+
+        return;
+
+    }
+
+    const fasesAnteriores =
+
+        ordem.slice(
+
+            0,
+
+            indice
+
+        );
+
+    historico.innerHTML +=
+
+        "<h2>📜 Histórico do Mata-Mata</h2>";
+
+    fasesAnteriores.forEach(fase=>{
+
+        const titulo =
+
+            document.createElement("h3");
+
+        titulo.textContent =
+
+            nomeFase(fase);
+
+        historico.appendChild(
+
+            titulo
+
+        );
+
+        jogos
+
+        .filter(
+
+            jogo =>
+
+                jogo.fase === fase
+
+        )
+
+        .forEach(jogo=>{
+
+            historico.appendChild(
+
+                criarCardHistorico(
+
+                    jogo,
+
+                    palpites[jogo.id]
+
+                )
+
+            );
+
+        });
+
+    });
 
 }
