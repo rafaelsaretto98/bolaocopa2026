@@ -344,6 +344,51 @@ function criarBlocoQuartas(
 
 }
 
+function criarFase(
+
+    blocoAnterior,
+
+    jogoAtual
+
+){
+
+    const fase =
+        document.createElement("div");
+
+    fase.className = "fase";
+
+    fase.appendChild(
+        blocoAnterior
+    );
+
+    const conector =
+        document.createElement("div");
+
+    conector.className =
+        "conectorFase";
+
+    fase.appendChild(
+        conector
+    );
+
+    const atual =
+        document.createElement("div");
+
+    atual.className =
+        "faseAtual";
+
+    atual.appendChild(
+        criarCardJogo(jogoAtual)
+    );
+
+    fase.appendChild(
+        atual
+    );
+
+    return fase;
+
+}
+
 export function desenharBracket(
     jogos16,
     jogosOitavas,
@@ -393,6 +438,20 @@ const quartasSuperior =
         jogosQuartas[0]
 
     );
+
+const semiSuperior =
+
+    criarFase(
+
+        quartasSuperior,
+
+        jogosSemi[0]
+
+    );
+
+esquerda.appendChild(
+    semiSuperior
+);
 
 esquerda.appendChild(
     quartasSuperior
