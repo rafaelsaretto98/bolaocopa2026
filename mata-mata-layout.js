@@ -175,10 +175,6 @@ function criarRamo(
         criarCardJogo(jogo2)
     );
 
-    ramo.appendChild(
-        jogos
-    );
-
    const conector =
     document.createElement("div");
 
@@ -265,25 +261,84 @@ function criarBloco16(
 }
 
 function criarBlocoQuartas(
-    bloco16,
+
+    blocoSuperior,
+    blocoInferior,
+
     jogoQuartas
+
 ){
 
     const bloco =
+
         document.createElement("div");
 
     bloco.className =
-        "bloco-quartas";
+        "blocoQuartas";
 
-    bloco.appendChild(
-        bloco16
+
+    const coluna =
+        document.createElement("div");
+
+    coluna.className =
+        "colunaQuartas";
+
+
+    coluna.appendChild(
+        blocoSuperior
     );
 
-    bloco.appendChild(
+    coluna.appendChild(
+        blocoInferior
+    );
+
+
+    const conector =
+    document.createElement("div");
+
+    conector.className =
+        "conectorQuartas";
+
+    const cima =
+        document.createElement("div");
+
+    cima.className =
+        "linha-cima-q";
+
+    const vertical =
+        document.createElement("div");
+
+    vertical.className =
+        "linha-vertical-q";
+
+    const baixo =
+        document.createElement("div");
+
+    baixo.className =
+        "linha-baixo-q";
+
+    conector.appendChild(cima);
+    conector.appendChild(vertical);
+    conector.appendChild(baixo);
+
+
+    const quartas =
+        document.createElement("div");
+
+    quartas.className =
+        "quartas";
+
+    quartas.appendChild(
+
         criarCardJogo(
             jogoQuartas
         )
+
     );
+
+    bloco.appendChild(coluna);
+    bloco.appendChild(conector);
+    bloco.appendChild(quartas);
 
     return bloco;
 
@@ -309,81 +364,45 @@ esquerda.className = "lado";
 
 const blocoSuperior =
 
-    criarBlocoQuartas(
+    criarBloco16(
 
-        criarBloco16(
+        jogos16[0],
+        jogos16[1],
+        jogos16[2],
+        jogos16[3],
 
-            jogos16[0],
-            jogos16[1],
-            jogos16[2],
-            jogos16[3],
-
-            jogosOitavas[0],
-            jogosOitavas[1]
-
-        ),
-
-        criarBloco16(
-
-            jogos16[4],
-            jogos16[5],
-            jogos16[6],
-            jogos16[7],
-
-            jogosOitavas[2],
-            jogosOitavas[3]
-
-        ),
-
-        jogosQuartas[0]
+        jogosOitavas[0],
+        jogosOitavas[1]
 
     );
-
-esquerda.appendChild(
-
-    blocoSuperior
-
-);
 
 const blocoInferior =
 
-    criarBlocoQuartas(
+    criarBloco16(
 
-        criarBloco16(
+        jogos16[4],
+        jogos16[5],
+        jogos16[6],
+        jogos16[7],
 
-            jogos16[0],
-            jogos16[1],
-            jogos16[2],
-            jogos16[3],
-
-            jogosOitavas[0],
-            jogosOitavas[1]
-
-        ),
-
-        criarBloco16(
-
-            jogos16[4],
-            jogos16[5],
-            jogos16[6],
-            jogos16[7],
-
-            jogosOitavas[2],
-            jogosOitavas[3]
-
-        ),
-
-        jogosQuartas[0]
+        jogosOitavas[2],
+        jogosOitavas[3]
 
     );
 
 esquerda.appendChild(
 
-    blocoInferior
+    criarBlocoQuartas(
+
+        blocoSuperior,
+
+        blocoInferior,
+
+        jogosQuartas[0]
+
+    )
 
 );
 
-esquerda.appendChild(blocoSuperior);
-esquerda.appendChild(blocoInferior);
 container.appendChild(esquerda);
 }
