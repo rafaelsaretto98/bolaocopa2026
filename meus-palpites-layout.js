@@ -2,7 +2,7 @@ import {
     jogoAberto
 }
 from "./palpites-utils.js";
-
+ 
 function bandeira(nome){
 
     if(!nome){
