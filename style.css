@@ -1607,42 +1607,101 @@ progress::-webkit-progress-value { background-color: #10b981; }
 }
 
 .conectorQuartas{
+
     position:relative;
+
     width:90px;
+
     height:330px;
+
 }
 
 .linha-cima-q{
+
     position:absolute;
+
     top:82px;
+
     width:50px;
+
     height:2px;
+
     background:#cfd5df;
+
 }
 
 .linha-baixo-q{
+
     position:absolute;
+
     bottom:82px;
+
     width:50px;
+
     height:2px;
+
     background:#cfd5df;
+
 }
 
 .linha-vertical-q{
+
     position:absolute;
+
     left:50px;
+
     top:82px;
+
     width:2px;
+
     height:166px;
+
     background:#cfd5df;
+
 }
 
 .conectorQuartas::after{
+
     content:"";
+
     position:absolute;
+
     left:50px;
+
     top:50%;
+
     width:40px;
+
     height:2px;
+
     background:#cfd5df;
+
+}
+
+.fase{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.faseAtual{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.conectorFase{
+
+    width:50px;
+
+    height:2px;
+
+    background:#cfd8dc;
+
 }
