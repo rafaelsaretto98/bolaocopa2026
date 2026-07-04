@@ -4,7 +4,7 @@ import {
 from "./bracket-config.js";
  
 function bandeira(nome){
-  
+
     if(!nome){
         return "img/band_placeholder.jpg";
     }
@@ -160,26 +160,26 @@ function criarCardJogo(jogo){
 
 }
 
-function criarColuna(listaJogos, classe){
+function criarColuna(jogos, classe){
 
     const coluna =
         document.createElement("div");
 
     coluna.className = classe;
 
-    listaJogos.forEach(jogo=>{
+    jogos.forEach(jogo=>{
 
-        const wrapper =
+        const item =
             document.createElement("div");
 
-        wrapper.className =
-            "match-wrapper";
+        item.className =
+            "item-fase";
 
-        wrapper.appendChild(
+        item.appendChild(
             criarCardJogo(jogo)
         );
 
-        coluna.appendChild(wrapper);
+        coluna.appendChild(item);
 
     });
 
