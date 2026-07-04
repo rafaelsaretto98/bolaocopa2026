@@ -18,10 +18,10 @@ import {
 }
 from "./resultado-utils.js";
 
-import {
+/*import {
     desenharHistoricoGrupos
 }
-from "./meus-resultados-layout.js";
+from "./meus-resultados-layout.js";*/
 
 import {
     carregarParticipante,
@@ -201,9 +201,9 @@ participante.total =
         participante
         );
 
-    desenharHistoricoGrupos(
+    /*desenharHistoricoGrupos(
         resumo
-    );
+    );*/
 
 
     desenharJogos(
