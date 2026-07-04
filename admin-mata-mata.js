@@ -9,7 +9,8 @@ import {
 from "./mata-mata-firebase.js";
 
 import {
-    carregarConfiguracoes
+    carregarConfiguracoes,
+    atualizarConfiguracoes
 }
 from "./configuracoes-firebase.js";
 
@@ -342,5 +343,99 @@ function nomeFase(fase){
     }
 
 }
+
+document
+    .getElementById("encerrarFase")
+    .addEventListener(
+        "click",
+        async () => {
+
+            const config =
+                await carregarConfiguracoes();
+
+            const jogos =
+                await carregarJogosPorFase(
+                    config.faseAtual
+                );
+
+            // Verifica se todos os jogos foram encerrados
+            const jogosPendentes =
+                jogos.filter(
+                    jogo => !jogo.encerrado
+                );
+
+            if(jogosPendentes.length > 0){
+
+                alert(
+                    `Ainda existem ${jogosPendentes.length} jogo(s) sem resultado.`
+                );
+
+                return;
+
+            }
+
+            let proximaFase;
+
+            switch(config.faseAtual){
+
+                case "16-avos":
+                    proximaFase = "oitavas";
+                    break;
+
+                case "oitavas":
+                    proximaFase = "quartas";
+                    break;
+
+                case "quartas":
+                    proximaFase = "semifinal";
+                    break;
+
+                case "semifinal":
+                    proximaFase = "final";
+                    break;
+
+                case "final":
+
+                    alert(
+                        "O torneio já está encerrado."
+                    );
+
+                    return;
+
+                default:
+
+                    alert(
+                        "Fase inválida."
+                    );
+
+                    return;
+
+            }
+
+            const confirmar =
+                confirm(
+                    `Deseja realmente encerrar ${nomeFase(config.faseAtual)} e abrir ${nomeFase(proximaFase)}?`
+                );
+
+            if(!confirmar){
+                return;
+            }
+
+            await atualizarConfiguracoes({
+
+                faseAtual: proximaFase
+
+            });
+
+            alert(
+
+                `${nomeFase(proximaFase)} liberada com sucesso!`
+
+            );
+
+            iniciar();
+
+        }
+    );
 
 iniciar();
