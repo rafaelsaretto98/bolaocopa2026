@@ -3,6 +3,11 @@ import {
 }
 from "./mata-mata-utils.js";
 
+import {
+    agendaMataMata
+}
+from "./agenda-mata-mata.js";
+
 export async function inicializarMataMata(classificados){
 
     const jogos = [];
@@ -30,38 +35,48 @@ export async function inicializarMataMata(classificados){
     // Oitavas
     for(let i=1;i<=8;i++){
 
-        jogos.push({
+    const agenda =
+        agendaMataMata[`OIT-${i}`];
 
-            id:`OIT-${i}`,
+    jogos.push({
 
-            fase:"oitavas",
+        id:`OIT-${i}`,
 
-            ordem:i,
+        fase:"oitavas",
 
-            timeA:null,
+        ordem:i,
 
-            timeB:null,
+        data:agenda.data,
 
-            golsA:null,
+        horario:agenda.horario,
 
-            golsB:null,
+        cidade:agenda.cidade,
 
-            golsPenaltiA:null,
+        estadio:agenda.estadio,
 
-            golsPenaltiB:null,
+        timeA:null,
 
-            vencedor:null,
+        timeB:null,
 
-            encerrado:false,
+        golsA:null,
 
-            palpitesAbertos:false,
+        golsB:null,
 
-            penalti:false
+        golsPenaltiA:null,
 
-        });
+        golsPenaltiB:null,
 
-    }
+        vencedor:null,
 
+        encerrado:false,
+
+        palpitesAbertos:false,
+
+        penalti:false
+
+    });
+
+}
     // Quartas
     for(let i=1;i<=4;i++){
 
