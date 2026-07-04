@@ -116,64 +116,66 @@ export const agendaMataMata = {
 
         data:"2026-07-04",
         horario:"18:00",
-        cidade:"",
-        estadio:""
+        cidade:"Filadélfia",
+        estadio:"Lincoln Financial Field"
     },
 
     "OIT-2":{
 
         data:"2026-07-04",
-        horario:"22:30",
-        cidade:"",
-        estadio:""
+        horario:"14:00",
+        cidade:"Houston",
+        estadio:"NRG Stadium"
     },
 
     "OIT-3":{
 
         data:"2026-07-06",
         horario:"16:00",
-        cidade:"",
-        estadio:""
+        cidade:"Arlington",
+        estadio:"AT&T Stadium"
     },
 
     "OIT-4":{
 
         data:"2026-07-06",
         horario:"21:00",
-        cidade:"",
-        estadio:""
+        cidade:"Seattle",
+        estadio:"Lumen Field"
     },
 
         "OIT-5":{
 
         data:"2026-07-05",
         horario:"17:00",
-        cidade:"",
-        estadio:""
+        cidade:"East Rutherford",
+        estadio:"MetLife Stadium"
     },
 
         "OIT-6":{
 
         data:"2026-07-05",
         horario:"21:00",
-        cidade:"",
-        estadio:""
+        cidade:"Cidade do México",
+        estadio:"Estadio Azteca"
     },
 
         "OIT-7":{
 
         data:"2026-07-07",
         horario:"13:00",
-        cidade:"",
-        estadio:""
+        cidade:"Atlanta",
+        estadio:"Mercedes-Benz Stadium"
     },
 
         "OIT-8":{
 
         data:"2026-07-07",
         horario:"17:00",
-        cidade:"",
-        estadio:""
+        cidade:"Vancouver",
+        estadio:"BC Place"
     }
+
+    
 
 };
