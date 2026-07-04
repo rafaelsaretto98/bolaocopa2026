@@ -2,7 +2,7 @@ import {
     BRACKET
 }
 from "./bracket-config.js";
-  
+ 
 function bandeira(nome){
 
     if(!nome){
@@ -40,8 +40,10 @@ function ordenarJogos(
 }
 
 const bandeiras = {
-    
+
+    "África do Sul": "band_Africa_do_Sul.png",
     "Alemanha": "band_Alemanha.png",
+    "Arábia Saudita": "band_Arabia_Saudita.png",
     "Argélia": "band_Argelia.png",
     "Argentina": "band_Argentina.png",
     "Austrália": "band_Australia.png",
@@ -54,6 +56,8 @@ const bandeiras = {
     "Chéquia": "band_Chequia.png",
     "Colômbia": "band_Colombia.png",
     "Coreia do Sul": "band_Coreia_do_Sul.png",
+    "Costa do Marfim": "band_Costa_do_Marfim.png",
+    "Curaçao": "band_Curacao.png",
     "Egito": "band_Egito.png",
     "Equador": "band_Equador.png",
     "Escócia": "band_Escocia.png",
@@ -65,15 +69,22 @@ const bandeiras = {
     "Holanda": "band_Holanda.png",
     "Inglaterra": "band_Inglaterra.png",
     "Irã": "band_Ira.png",
+    "Iraque": "band_Iraque.png",
     "Japão": "band_Japao.png",
+    "Jordânia": "band_Jordania.png",
     "Marrocos": "band_Marrocos.png",
     "México": "band_Mexico.png",
     "Noruega": "band_Noruega.png",
+    "Nova Zelândia": "band_Nova_Zelandia.png",
+    "Panamá": "band_Panama.png",
     "Paraguai": "band_Paraguai.png",
     "Portugal": "band_Portugal.png",
     "RD Congo": "band_RD_Congo.png",
+    "Senegal": "band_Senegal.png",
     "Suécia": "band_Suecia.png",
     "Suíça": "band_Suica",
+    "Tunísia": "band_Tunisia.png",
+    "Turquia": "band_Turquia.png",
     "Uruguai": "band_Uruguai"
     
 };
@@ -149,25 +160,32 @@ function criarCardJogo(jogo){
 
 }
 
-function criarColuna(jogos, classe){
+function criarColuna(listaJogos, classe){
 
     const coluna =
         document.createElement("div");
 
     coluna.className = classe;
 
-    jogos.forEach(jogo=>{
+    listaJogos.forEach(jogo=>{
 
-        coluna.appendChild(
+        const wrapper =
+            document.createElement("div");
+
+        wrapper.className =
+            "match-wrapper";
+
+        wrapper.appendChild(
             criarCardJogo(jogo)
         );
+
+        coluna.appendChild(wrapper);
 
     });
 
     return coluna;
 
 }
-
 
 function criarLado(
 
@@ -505,8 +523,18 @@ export function desenharBracket(
 
         );
 
-    container.appendChild(
-        ladoEsquerdo
-    );
+    const bracket =
+    document.createElement("div");
+
+        bracket.className =
+            "bracket";
+
+        bracket.appendChild(
+            ladoEsquerdo
+        );
+
+        container.appendChild(
+            bracket
+        );
 
 }
