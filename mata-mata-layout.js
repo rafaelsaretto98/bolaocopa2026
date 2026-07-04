@@ -2,7 +2,7 @@ import {
     BRACKET
 }
 from "./bracket-config.js";
- 
+  
 function bandeira(nome){
 
     if(!nome){
