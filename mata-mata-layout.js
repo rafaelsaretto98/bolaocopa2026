@@ -201,7 +201,14 @@ function criarLado(
 
     lado.className = "lado";
 
-    lado.appendChild(
+
+    const painel =
+        document.createElement("div");
+
+    painel.className = "painel-fases";
+
+
+    painel.appendChild(
 
         criarColuna(
             jogos16,
@@ -210,7 +217,7 @@ function criarLado(
 
     );
 
-    lado.appendChild(
+    painel.appendChild(
 
         criarColuna(
             jogos8,
@@ -219,7 +226,7 @@ function criarLado(
 
     );
 
-    lado.appendChild(
+    painel.appendChild(
 
         criarColuna(
             jogos4,
@@ -228,13 +235,18 @@ function criarLado(
 
     );
 
-    lado.appendChild(
+    painel.appendChild(
 
         criarColuna(
             jogos2,
             "coluna2"
         )
 
+    );
+
+
+    lado.appendChild(
+        painel
     );
 
     return lado;
