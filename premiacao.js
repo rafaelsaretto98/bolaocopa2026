@@ -2,7 +2,7 @@ import {
     carregarParticipantes
 }
 from './participantes-firebase.js';
-
+ 
 async function carregarPremiacao(){
 
     const participantes =
