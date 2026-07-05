@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
 <head>
@@ -12,12 +11,6 @@
 >
 
 <title>Admin - Palpites</title>
-
-<select id="participante">
-
-</select>
-
-<br><br>
 
 <link
     rel="stylesheet"
@@ -35,15 +28,47 @@
     <header class="header-card">
 
         <h1>
-            👥 Lançar Palpites
+            👥 Administração dos Palpites
         </h1>
 
     </header>
 
-    <div
-        id="participantes"
-        class="regras-card"
-    ></div>
+    <section class="regras-card">
+
+        <label>
+
+            Participante
+
+        </label>
+
+        <br>
+
+        <select id="participante">
+
+        </select>
+
+        <br><br>
+
+        <label>
+
+            Fase
+
+        </label>
+
+        <br>
+
+        <select id="filtroFase">
+
+            <option value="todas">Todas</option>
+            <option value="16-avos">16 Avos</option>
+            <option value="oitavas">Oitavas</option>
+            <option value="quartas">Quartas</option>
+            <option value="semifinal">Semifinal</option>
+            <option value="final">Final</option>
+
+        </select>
+
+    </section>
 
     <br>
 
@@ -52,9 +77,9 @@
 </div>
 
 <script
-    type="module"
-    src="admin-palpites.js"
-></script>
+type="module"
+src="admin-palpites.js">
+</script>
 
 </body>
 
