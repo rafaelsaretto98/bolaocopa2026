@@ -41,7 +41,7 @@ function ordenarJogos(
 
 const bandeiras = {
 
-    "África do Sul": "band_Africa_do_Sul.png",
+     "África do Sul": "band_Africa_do_Sul.png",
     "Alemanha": "band_Alemanha.png",
     "Arábia Saudita": "band_Arabia_Saudita.png",
     "Argélia": "band_Argelia.png",
@@ -57,6 +57,7 @@ const bandeiras = {
     "Colômbia": "band_Colombia.png",
     "Coreia do Sul": "band_Coreia_do_Sul.png",
     "Costa do Marfim": "band_Costa_do_Marfim.png",
+    "Croácia": "band_Croacia.png",
     "Curaçao": "band_Curacao.png",
     "Egito": "band_Egito.png",
     "Equador": "band_Equador.png",
@@ -85,7 +86,8 @@ const bandeiras = {
     "Suíça": "band_Suica.png",
     "Tunísia": "band_Tunisia.png",
     "Turquia": "band_Turquia.png",
-    "Uruguai": "band_Uruguai.png"
+    "Uruguai": "band_Uruguai.png",
+    "Uzbequistão": "band_Uzbequistao.png"
     
 };
 
