@@ -54,7 +54,7 @@ export async function criarBackup(descricao){
 
         participantes:
 
-            participantes.docs.map(doc=>doc.data()),
+            participantes.docs.map(doc=>({id:doc.id,...doc.data()})),
 
         jogosGrupo:
 
