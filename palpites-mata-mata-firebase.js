@@ -42,7 +42,7 @@ export async function salvarPalpitesMataMata(
 
     nome,
 
-    palpites
+    novosPalpites
 
 ){
 
@@ -56,6 +56,14 @@ export async function salvarPalpitesMataMata(
         );
 
     }
+
+    const palpites = {
+
+        ...(participante.palpitesMataMata || {}),
+
+        ...novosPalpites
+
+    };
 
     await updateDoc(
 
