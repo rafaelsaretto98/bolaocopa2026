@@ -34,8 +34,13 @@ async function iniciar(){
         await carregarParticipantes();
         
     const jogos =
+        await carregarJogosMataMata();
 
-    await carregarJogosMataMata();
+    const filtro =
+
+        document.getElementById(
+            "filtroFase"
+        );
 
         console.log(jogos);
 
@@ -96,6 +101,34 @@ async function iniciar(){
 
 );
 
+filtro.addEventListener(
+
+    "change",
+
+    async ()=>{
+
+        if(!select.value){
+            return;
+        }
+
+        const participante =
+
+            await carregarParticipante(
+                select.value
+            );
+
+        desenharJogos(
+
+            jogos,
+
+            participante
+
+        );
+
+    }
+
+);    
+
 }
 
 function desenharJogos(
@@ -116,7 +149,27 @@ function desenharJogos(
 
     lista.innerHTML = "";
 
-    jogos.forEach(jogo=>{
+    const fase =
+
+    document.getElementById(
+        "filtroFase"
+    ).value;
+
+    const listaJogos =
+
+        fase === "todas"
+
+            ? jogos
+
+            : jogos.filter(
+
+                jogo =>
+
+                    jogo.fase === fase
+
+            );
+
+    listaJogos.forEach(jogo=>{
 
         const nomeTimeA =
             jogo.timeA?.time || "A definir";
