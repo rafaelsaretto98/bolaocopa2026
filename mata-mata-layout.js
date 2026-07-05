@@ -49,7 +49,7 @@ const bandeiras = {
     "Austrália": "band_Australia.png",
     "Áustria": "band_Austria.png",
     "Bélgica": "band_Belgica.png",
-    "Bósnia e Hezergovina": "band_Bosnia_e_Hezergovinia.png",
+    "Bósnia e Herzegovina": "band_Bosnia_e_Herzegovina.png",
     "Brasil": "band_Brasil.png",
     "Cabo Verde": "band_Cabo_Verde.png",
     "Canadá": "band_Canada.png",
