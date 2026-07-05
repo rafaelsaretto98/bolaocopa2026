@@ -19,6 +19,12 @@ import {
 }
 from "./mata-mata-firebase.js";
 
+import {
+    criarBackup,
+    baixarBackup
+}
+from "./backup-firebase.js";
+
 async function iniciar(){
 
     const config =
@@ -437,5 +443,43 @@ document
 
         }
     );
+
+document
+
+.getElementById(
+
+    "criarBackup"
+
+)
+
+.addEventListener(
+
+    "click",
+
+    async ()=>{
+
+        const backup =
+
+            await criarBackup(
+
+                "Backup manual"
+
+            );
+
+        baixarBackup(
+
+            backup
+
+        );
+
+        alert(
+
+            "Backup criado com sucesso!"
+
+        );
+
+    }
+
+);
 
 iniciar();
