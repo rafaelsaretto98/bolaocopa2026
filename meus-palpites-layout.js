@@ -167,6 +167,14 @@ function criarCardJogo(
     const aberto =
     jogoAberto(jogo);
 
+    console.log({
+        id: jogo.id,
+        data: jogo.data,
+        horario: jogo.horario,
+        encerrado: jogo.encerrado,
+        aberto
+    });
+
     card.innerHTML = `
 
 <h3 class="titulo-confronto">
