@@ -482,4 +482,125 @@ document
 
 );
 
+export async function listarBackups(){
+
+    const snapshot =
+
+        await getDocs(
+
+            collection(
+                db,
+                "backups"
+            )
+
+        );
+
+    return snapshot.docs
+
+        .map(doc=>({
+
+            id:doc.id,
+
+            ...doc.data()
+
+        }))
+
+        .sort(
+
+            (a,b)=>
+
+                b.data.localeCompare(a.data)
+
+        );
+
+}
+
+export async function restaurarBackup(id){
+
+    const snapshot =
+
+        await getDoc(
+
+            doc(
+                db,
+                "backups",
+                id
+            )
+
+        );
+
+    if(!snapshot.exists()){
+
+        throw new Error(
+            "Backup não encontrado."
+        );
+
+    }
+
+    const backup =
+
+        snapshot.data();
+
+        for(const participante of backup.participantes){
+
+        await updateDoc(
+
+            doc(
+                db,
+                "participantes",
+                participante.id
+            ),
+
+            participante
+
+        );
+
+    }
+
+        for(const jogo of backup.jogosGrupo){
+
+        await updateDoc(
+
+            doc(
+                db,
+                "jogos",
+                jogo.id
+            ),
+
+            jogo
+
+        );
+
+    }
+
+            for(const jogo of backup.mataMata){
+
+        await updateDoc(
+
+            doc(
+                db,
+                "mata-mata",
+                jogo.id
+            ),
+
+            jogo
+
+        );
+
+    }
+
+            await updateDoc(
+
+        doc(
+            db,
+            "configuracoes",
+            "geral"
+        ),
+
+        backup.configuracoes
+
+    );
+
+}
+
 iniciar();
