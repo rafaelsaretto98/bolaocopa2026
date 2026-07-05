@@ -131,6 +131,32 @@ filtro.addEventListener(
 
 }
 
+function nomeFase(fase){
+
+    switch(fase){
+
+        case "16-avos":
+            return "🏆 16 Avos de Final";
+
+        case "oitavas":
+            return "🏆 Oitavas de Final";
+
+        case "quartas":
+            return "🏆 Quartas de Final";
+
+        case "semifinal":
+            return "🏆 Semifinais";
+
+        case "final":
+            return "🏆 Final";
+
+        default:
+            return fase;
+
+    }
+
+}
+
 function desenharJogos(
 
     jogos,
@@ -151,9 +177,9 @@ function desenharJogos(
 
     const fase =
 
-    document.getElementById(
-        "filtroFase"
-    ).value;
+        document.getElementById(
+            "filtroFase"
+        ).value;
 
     const listaJogos =
 
@@ -169,24 +195,51 @@ function desenharJogos(
 
             );
 
+    const fases = {};
+
     listaJogos.forEach(jogo=>{
 
-        const nomeTimeA =
-            jogo.timeA?.time || "A definir";
+        if(!fases[jogo.fase]){
 
-        const nomeTimeB =
-            jogo.timeB?.time || "A definir";
+            fases[jogo.fase] = [];
 
-        const escolhido =
-            palpites[jogo.id];
+        }
 
-        const card =
-            document.createElement("div");
+        fases[jogo.fase].push(jogo);
 
-        card.className =
-            "regras-card";
+    });
 
-        card.innerHTML = `
+    Object.keys(fases).forEach(fase=>{
+
+        const titulo =
+            document.createElement("h2");
+
+        titulo.className =
+            "titulo-fase-admin";
+
+        titulo.textContent =
+            nomeFase(fase);
+
+        lista.appendChild(titulo);
+
+        fases[fase].forEach(jogo=>{
+
+            const nomeTimeA =
+                jogo.timeA?.time || "A definir";
+
+            const nomeTimeB =
+                jogo.timeB?.time || "A definir";
+
+            const escolhido =
+                palpites[jogo.id];
+
+            const card =
+                document.createElement("div");
+
+            card.className =
+                "regras-card";
+
+            card.innerHTML = `
 
 <h3>
 
@@ -216,63 +269,63 @@ ${nomeTimeB}
 
 `;
 
-        lista.appendChild(card);
+            lista.appendChild(card);
 
-        const botoes =
-            card.querySelectorAll(".btn-time");
+            const botoes =
+                card.querySelectorAll(".btn-time");
 
-        botoes.forEach(botao=>{
+            botoes.forEach(botao=>{
 
-            if(botao.dataset.time === escolhido){
-
-                botao.style.background = "#16a34a";
-                botao.style.color = "white";
-
-            }
-
-            botao.addEventListener(
-
-                "click",
-
-                async ()=>{
-
-                    botoes.forEach(b=>{
-
-                        b.style.background = "";
-                        b.style.color = "";
-
-                    });
+                if(botao.dataset.time === escolhido){
 
                     botao.style.background = "#16a34a";
                     botao.style.color = "white";
 
-                    try{
-
-                        await salvarPalpiteAdmin(
-
-                            participante.nome,
-
-                            botao.dataset.jogo,
-
-                            botao.dataset.time
-
-                        );
-
-                        alert("✅ Palpite salvo!");
-
-                    }
-
-                    catch(erro){
-
-                        console.error(erro);
-
-                        alert("Erro ao salvar.");
-
-                    }
-
                 }
 
-            );
+                botao.addEventListener(
+
+                    "click",
+
+                    async ()=>{
+
+                        botoes.forEach(b=>{
+
+                            b.style.background = "";
+                            b.style.color = "";
+
+                        });
+
+                        botao.style.background = "#16a34a";
+                        botao.style.color = "white";
+
+                        try{
+
+                            await salvarPalpiteAdmin(
+
+                                participante.nome,
+
+                                botao.dataset.jogo,
+
+                                botao.dataset.time
+
+                            );
+
+                        }
+
+                        catch(erro){
+
+                            console.error(erro);
+
+                            alert("Erro ao salvar.");
+
+                        }
+
+                    }
+
+                );
+
+            });
 
         });
 
