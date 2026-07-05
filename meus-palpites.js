@@ -242,7 +242,17 @@ async function salvarTodos(){
 
     }
 
-    const palpites = {};
+    const participante =
+
+    await carregarParticipante(
+        nome
+    );
+
+    const palpites = {
+
+        ...(participante.palpitesMataMata || {})
+
+    };
 
     document
     .querySelectorAll(
