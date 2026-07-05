@@ -1,6 +1,6 @@
 import {
     calcularTotal
-} 
+}
 from "./ranking-utils.js";
 
 import {
