@@ -225,15 +225,3 @@ document
 
 );
 
-<a
-
-href="admin-backups.html"
-
-class="nav-btn"
-
->
-
-💾 Backups
-
-</a>
-
