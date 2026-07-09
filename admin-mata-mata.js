@@ -25,6 +25,16 @@ import {
 }
 from "./backup-firebase.js";
 
+import {
+    sincronizarAgendaMataMata
+}
+from "./mata-mata-firebase.js";
+
+import {
+    agendaMataMata
+}
+from "./agenda-mata-mata.js";
+
 async function iniciar(){
 
     const config =
