@@ -613,4 +613,36 @@ export async function restaurarBackup(id){
 
 }
 
+document
+
+.getElementById(
+
+    "sincronizarAgenda"
+
+)
+
+.addEventListener(
+
+    "click",
+
+    async ()=>{
+
+        await sincronizarAgendaMataMata(
+
+            agendaMataMata
+
+        );
+
+        alert(
+
+            "Agenda sincronizada!"
+
+        );
+
+        iniciar();
+
+    }
+
+);
+
 iniciar();
