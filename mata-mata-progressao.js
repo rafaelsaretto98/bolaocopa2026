@@ -4,6 +4,11 @@ import {
 }
 from "./mata-mata-firebase.js";
 
+import {
+    agendaMataMata
+}
+from "./agenda-mata-mata.js";
+
 export const mapaProgressao = {
 
     // 16 Avos → Oitavas
@@ -88,11 +93,30 @@ export async function avancarVencedor(jogoFinalizado){
             jogoFinalizado.vencedor;
 
     }
-
     else{
 
         proximoJogo.timeB =
             jogoFinalizado.vencedor;
+
+    }
+
+    // Preenche automaticamente a agenda
+    const agenda =
+        agendaMataMata[proximoJogo.id];
+
+    if(agenda){
+
+        proximoJogo.data =
+            agenda.data;
+
+        proximoJogo.horario =
+            agenda.horario;
+
+        proximoJogo.cidade =
+            agenda.cidade;
+
+        proximoJogo.estadio =
+            agenda.estadio;
 
     }
 
