@@ -222,6 +222,14 @@ export const agendaMataMata = {
         horario:"16:00",
         cidade:"Atlanta",
         estadio:"Mercedes-Benz Stadium"
+    },
+
+    "FINAL-1":{
+
+    data:"2026-07-19",
+    horario:"16:00",
+    cidade:"East Rutherford",
+    estadio:"MetLife Stadium"
     }
 
 };
