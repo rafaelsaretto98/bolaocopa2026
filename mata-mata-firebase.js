@@ -176,3 +176,35 @@ export async function carregarJogoMataMata(id){
     return snapshot.data();
 
 }
+
+export async function sincronizarAgendaMataMata(agenda){
+
+    const jogos =
+        await carregarJogosMataMata();
+
+    for(const jogo of jogos){
+
+        const dadosAgenda =
+            agenda[jogo.id];
+
+        if(!dadosAgenda){
+            continue;
+        }
+
+        jogo.data =
+            dadosAgenda.data;
+
+        jogo.horario =
+            dadosAgenda.horario;
+
+        jogo.cidade =
+            dadosAgenda.cidade;
+
+        jogo.estadio =
+            dadosAgenda.estadio;
+
+        await atualizarJogoMataMata(jogo);
+
+    }
+
+}
