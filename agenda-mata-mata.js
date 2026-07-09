@@ -174,8 +174,54 @@ export const agendaMataMata = {
         horario:"17:00",
         cidade:"Vancouver",
         estadio:"BC Place"
-    }
+    },
 
-    
+    "QUA-1":{
+
+        data:"2026-07-09",
+        horario:"17:00",
+        cidade:"Foxborough",
+        estadio:"Gillette Stadium"
+    },
+
+    "QUA-2":{
+
+        data:"2026-07-10",
+        horario:"16:00",
+        cidade:"Inglewood",
+        estadio:"SoFi Stadium"
+    },
+
+    "QUA-3":{
+
+        data:"2026-07-11",
+        horario:"18:00",
+        cidade:"Miami",
+        estadio:"Hard Rock Stadium"
+    },
+
+    "QUA-4":{
+
+        data:"2026-07-11",
+        horario:"22:00",
+        cidade:"Kansas City",
+        estadio:"Arrowhead Stadium"
+    },
+
+    "SEMI-1":{
+
+        data:"2026-07-14",
+        horario:"16:00",
+        cidade:"Arlington",
+        estadio:"AT&T Stadium"
+    },
+
+    "SEMI-2":{
+
+        data:"2026-07-15",
+        horario:"16:00",
+        cidade:"Atlanta",
+        estadio:"Mercedes-Benz Stadium"
+    }
 
 };
