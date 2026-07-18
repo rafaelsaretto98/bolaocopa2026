@@ -1593,6 +1593,19 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 }
 
+.jogos-finais{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:20px;
+}
+
+.card-jogo-final{
+    background:#fff;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+}
+
 /* ===========================================
       NOVO MATA-MATA FIFA
 =========================================== */
