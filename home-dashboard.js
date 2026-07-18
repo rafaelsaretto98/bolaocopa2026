@@ -1,10 +1,4 @@
 
-const ultimosBoloes =
-    [...boloesRelampago]
-    .filter(b => b.encerrado)
-    .reverse()
-    .slice(0,3);
-
 export function criarDashboard(){
 
     const dashboard =
