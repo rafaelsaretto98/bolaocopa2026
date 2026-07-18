@@ -6,38 +6,46 @@ export async function iniciarPalpitesFinais() {
 
     if (!container) return;
 
-    container.innerHTML = `
+  container.innerHTML = `
 
-        <div class="card-palpites-finais">
+<div class="card-palpites-finais">
 
-            <h2>🏆 Palpites dos Últimos Jogos</h2>
+    <h2>🏆 Palpites da Grande Decisão</h2>
 
-            <input
-                id="nomePalpite"
-                type="text"
-                placeholder="Seu nome">
+    <input
+        id="nomePalpite"
+        type="text"
+        placeholder="Seu nome">
 
-            ${criarJogo(
-                "terceiro",
-                "🥉 Disputa de 3º Lugar",
-                "França",
-                "Inglaterra"
-            )}
+    <div class="jogos-finais">
 
-            ${criarJogo(
-                "final",
-                "🏆 Grande Final",
-                "Espanha",
-                "Argentina"
-            )}
+        ${criarJogo(
+            "terceiro",
+            "🥉 Disputa de 3º Lugar",
+            "França",
+            "Alemanha",
+            "img/franca.png",
+            "img/alemanha.png"
+        )}
 
-            <button id="btnSalvarPalpite">
-                Enviar Palpite
-            </button>
+        ${criarJogo(
+            "final",
+            "🏆 Grande Final",
+            "Espanha",
+            "Argentina",
+            "img/espanha.png",
+            "img/argentina.png"
+        )}
 
-        </div>
+    </div>
 
-    `;
+    <button id="btnSalvarPalpite">
+        🚀 Enviar Palpite
+    </button>
+
+</div>
+
+`;
 
     document
         .getElementById("btnSalvarPalpite")
@@ -45,38 +53,37 @@ export async function iniciarPalpitesFinais() {
 
 }
 
-function criarJogo(prefixo, titulo, timeA, timeB){
+function criarJogo(prefixo, titulo, timeA, timeB, bandeiraA, bandeiraB) {
 
     return `
 
-        <div class="palpite-jogo">
+    <div class="card-jogo-final">
 
-            <h3>${titulo}</h3>
+        <h3>${titulo}</h3>
 
-            <div class="linha-palpite">
+        <div class="linha-time">
+            <img src="${bandeiraA}">
+            <span>${timeA}</span>
+        </div>
 
-                <span>${timeA}</span>
+        <div class="placar-final">
 
-                <input
-                    type="number"
-                    min="0"
-                    id="${prefixo}A">
+            <input id="${prefixo}A" type="number" min="0">
 
-                <strong>X</strong>
+            <strong>X</strong>
 
-                <input
-                    type="number"
-                    min="0"
-                    id="${prefixo}B">
-
-                <span>${timeB}</span>
-
-            </div>
+            <input id="${prefixo}B" type="number" min="0">
 
         </div>
 
-    `;
+        <div class="linha-time">
+            <img src="${bandeiraB}">
+            <span>${timeB}</span>
+        </div>
 
+    </div>
+
+    `;
 }
 
 async function salvar(){
