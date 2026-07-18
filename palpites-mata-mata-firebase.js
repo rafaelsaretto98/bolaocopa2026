@@ -133,15 +133,30 @@ export async function salvarPalpiteAdmin(
 
 export async function salvarPalpitesFinais(nome, palpitesFinais){
 
-    const ref = doc(
-        db,
-        "participantes",
-        nome
-    );
+    const participante =
+        await carregarParticipante(nome);
 
-    await updateDoc(ref, {
-        palpitesFinais
-    });
+    if(!participante){
+
+        throw new Error(
+            "Participante não encontrado."
+        );
+
+    }
+
+    await updateDoc(
+
+        doc(
+            db,
+            "participantes",
+            participante.id
+        ),
+
+        {
+            palpitesFinais
+        }
+
+    );
 
 }
 
@@ -149,6 +164,12 @@ export async function carregarPalpitesFinais(nome){
 
     const participante =
         await carregarParticipante(nome);
+
+    if(!participante){
+
+        return {};
+
+    }
 
     return participante.palpitesFinais || {};
 
