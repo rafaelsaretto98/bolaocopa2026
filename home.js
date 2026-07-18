@@ -1,3 +1,8 @@
+import { iniciarPalpitesFinais }
+from "./home-palpites.js";
+
+iniciarPalpitesFinais();
+
 import { criarDashboard }
 from './home-dashboard.js';
 
