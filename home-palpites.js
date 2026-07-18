@@ -21,7 +21,7 @@ export async function iniciarPalpitesFinais() {
                 "terceiro",
                 "🥉 Disputa de 3º Lugar",
                 "França",
-                "Alemanha"
+                "Inglaterra"
             )}
 
             ${criarJogo(
