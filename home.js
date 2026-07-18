@@ -1,8 +1,3 @@
-import { iniciarPalpitesFinais }
-from "./home-palpites.js";
-
-iniciarPalpitesFinais();
-
 import { criarDashboard }
 from './home-dashboard.js';
 
@@ -18,14 +13,14 @@ from './home-ranking.js';
 import { carregarUltimoRecado }
 from './home-recados.js';
 
-import {criarNavbar}
+import { iniciarPalpitesFinais }
+from "./home-palpites.js";
+
+import { criarNavbar }
 from "./navbar.js";
 
 document.getElementById("navbar").innerHTML =
-
-    criarNavbar(
-        "inicio"
-    );
+    criarNavbar("inicio");
 
 criarDashboard();
 
@@ -36,3 +31,5 @@ await carregarProximosJogos();
 await carregarTopRanking();
 
 await carregarUltimoRecado();
+
+await iniciarPalpitesFinais();
