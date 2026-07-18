@@ -1,4 +1,3 @@
-import { carregarJogosMataMata } from "./mata-mata-firebase.js";
 import { salvarPalpiteFinal } from "./palpites-finais-firebase.js";
 
 export async function iniciarPalpitesFinais() {
@@ -6,11 +5,6 @@ export async function iniciarPalpitesFinais() {
     const container = document.getElementById("palpites-finais");
 
     if (!container) return;
-
-    const jogos = await carregarJogosMataMata();
-
-    const terceiro = jogos.find(j => j.id === "TERCEIRO-1");
-    const final = jogos.find(j => j.id === "FINAL-1");
 
     container.innerHTML = `
 
@@ -23,9 +17,19 @@ export async function iniciarPalpitesFinais() {
                 type="text"
                 placeholder="Seu nome">
 
-            ${criarJogo("terceiro", "🥉 Disputa de 3º Lugar", terceiro)}
+            ${criarJogo(
+                "terceiro",
+                "🥉 Disputa de 3º Lugar",
+                "França",
+                "Alemanha"
+            )}
 
-            ${criarJogo("final", "🏆 Grande Final", final)}
+            ${criarJogo(
+                "final",
+                "🏆 Grande Final",
+                "Espanha",
+                "Argentina"
+            )}
 
             <button id="btnSalvarPalpite">
                 Enviar Palpite
@@ -41,15 +45,7 @@ export async function iniciarPalpitesFinais() {
 
 }
 
-function criarJogo(prefixo, titulo, jogo){
-
-    if(!jogo){
-
-        return `
-            <p>${titulo}<br>Jogo ainda não definido.</p>
-        `;
-
-    }
+function criarJogo(prefixo, titulo, timeA, timeB){
 
     return `
 
@@ -59,21 +55,21 @@ function criarJogo(prefixo, titulo, jogo){
 
             <div class="linha-palpite">
 
-                <span>${jogo.timeA}</span>
+                <span>${timeA}</span>
 
                 <input
                     type="number"
                     min="0"
                     id="${prefixo}A">
 
-                <strong>x</strong>
+                <strong>X</strong>
 
                 <input
                     type="number"
                     min="0"
                     id="${prefixo}B">
 
-                <span>${jogo.timeB}</span>
+                <span>${timeB}</span>
 
             </div>
 
@@ -100,27 +96,23 @@ async function salvar(){
 
         nome,
 
-        terceiro: {
+        terceiro:{
 
-            golsA:
-                Number(document.getElementById("terceiroA").value),
+            golsA:Number(document.getElementById("terceiroA").value),
 
-            golsB:
-                Number(document.getElementById("terceiroB").value)
+            golsB:Number(document.getElementById("terceiroB").value)
 
         },
 
-        final: {
+        final:{
 
-            golsA:
-                Number(document.getElementById("finalA").value),
+            golsA:Number(document.getElementById("finalA").value),
 
-            golsB:
-                Number(document.getElementById("finalB").value)
+            golsB:Number(document.getElementById("finalB").value)
 
         },
 
-        criadoEm: new Date()
+        criadoEm:new Date()
 
     };
 
