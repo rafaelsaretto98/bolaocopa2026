@@ -1595,15 +1595,46 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 .jogos-finais{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+    margin-top:20px;
 }
 
 .card-jogo-final{
-    background:#fff;
-    border-radius:12px;
-    padding:20px;
-    box-shadow:0 4px 12px rgba(0,0,0,.1);
+    background:#f8fafc;
+    border:2px solid #e2e8f0;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.linha-time{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    margin:15px 0;
+}
+
+.linha-time img{
+    width:42px;
+    height:30px;
+    object-fit:cover;
+    border-radius:4px;
+}
+
+.linha-time span{
+    font-size:18px;
+    font-weight:700;
+}
+
+.placar-final input{
+    width:70px;
+    height:55px;
+    text-align:center;
+    font-size:28px;
+    border:2px solid #d1d5db;
+    border-radius:10px;
 }
 
 /* ===========================================
@@ -1816,3 +1847,10 @@ progress::-webkit-progress-value { background-color: #10b981; }
     gap:34px;
 }
 
+@media (max-width:768px){
+
+    .jogos-finais{
+        grid-template-columns:1fr;
+    }
+
+}
