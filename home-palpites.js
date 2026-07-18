@@ -19,23 +19,23 @@ export async function iniciarPalpitesFinais() {
 
     <div class="jogos-finais">
 
-        ${criarJogo(
-            "terceiro",
-            "🥉 Disputa de 3º Lugar",
-            "França",
-            "Inglaterra",
-            "img/band_Franca.png",
-            "img/band_Inglaterra.png"
-        )}
+    ${criarJogo(
+        "terceiro",
+        "🥉 Disputa de 3º Lugar",
+        "França",
+        "Inglaterra",
+        "img/band_França.png",
+        "img/band_Inglaterra.png"
+    )}
 
-        ${criarJogo(
-            "final",
-            "🏆 Grande Final",
-            "Espanha",
-            "Argentina",
-            "img/band_Espanha.png",
-            "img/band_Argentina.png"
-        )}
+    ${criarJogo(
+        "final",
+        "🏆 Grande Final",
+        "Espanha",
+        "Argentina",
+        "img/band_Espanha.png",
+        "img/band_Argentina.png"
+    )}
 
     </div>
 
