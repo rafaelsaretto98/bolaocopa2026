@@ -130,3 +130,26 @@ export async function salvarPalpiteAdmin(
     );
 
 }
+
+export async function salvarPalpitesFinais(nome, palpitesFinais){
+
+    const ref = doc(
+        db,
+        "participantes",
+        nome
+    );
+
+    await updateDoc(ref, {
+        palpitesFinais
+    });
+
+}
+
+export async function carregarPalpitesFinais(nome){
+
+    const participante =
+        await carregarParticipante(nome);
+
+    return participante.palpitesFinais || {};
+
+}
