@@ -24,8 +24,8 @@ export async function iniciarPalpitesFinais() {
             "🥉 Disputa de 3º Lugar",
             "França",
             "Inglaterra",
-            "img/Franca.png",
-            "img/Inglaterra.png"
+            "img/band_Franca.png",
+            "img/band_Inglaterra.png"
         )}
 
         ${criarJogo(
@@ -33,8 +33,8 @@ export async function iniciarPalpitesFinais() {
             "🏆 Grande Final",
             "Espanha",
             "Argentina",
-            "img/Espanha.png",
-            "img/Argentina.png"
+            "img/band_Espanha.png",
+            "img/band_Argentina.png"
         )}
 
     </div>
