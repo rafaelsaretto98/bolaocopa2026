@@ -224,6 +224,14 @@ export const agendaMataMata = {
         estadio:"Mercedes-Benz Stadium"
     },
 
+    "TERCEIRO-1": {
+        
+        data: "18/07/2026",
+        horario: "18:00",
+        cidade:"Miami",
+        estadio:"Hard Rock Stadium"
+    },
+
     "FINAL-1":{
 
     data:"2026-07-19",
