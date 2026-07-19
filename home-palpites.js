@@ -8,40 +8,64 @@ export async function iniciarPalpitesFinais() {
 
   container.innerHTML = `
 
-<div class="card-palpites-finais">
+<div class="topo-palpites">
 
-    <h2>🏆 Palpites da Grande Decisão</h2>
+    <div class="card-palpites-finais">
 
-    <input
-        id="nomePalpite"
-        type="text"
-        placeholder="Seu nome">
+        <h2>🏆 Palpites da Grande Decisão</h2>
 
-    <div class="jogos-finais">
+        <input
+            id="nomePalpite"
+            type="text"
+            placeholder="Seu nome">
 
-    ${criarJogo(
-        "terceiro",
-        "🥉 Disputa de 3º Lugar",
-        "França",
-        "Inglaterra",
-        "img/band_França.png",
-        "img/band_Inglaterra.png"
-    )}
+        <div class="jogos-finais">
 
-    ${criarJogo(
-        "final",
-        "🏆 Grande Final",
-        "Espanha",
-        "Argentina",
-        "img/band_Espanha.png",
-        "img/band_Argentina.png"
-    )}
+            ${criarJogo(
+                "terceiro",
+                "🥉 Disputa de 3º Lugar",
+                "França",
+                "Inglaterra",
+                "img/band_França.png",
+                "img/band_Inglaterra.png"
+            )}
+
+            ${criarJogo(
+                "final",
+                "🏆 Grande Final",
+                "Espanha",
+                "Argentina",
+                "img/band_Espanha.png",
+                "img/band_Argentina.png"
+            )}
+
+        </div>
+
+        <button id="btnSalvarPalpite">
+            🚀 Enviar Palpite
+        </button>
 
     </div>
 
-    <button id="btnSalvarPalpite">
-        🚀 Enviar Palpite
-    </button>
+    <div class="card-palpites-lista">
+
+        <h2>🏆 Palpites da Final</h2>
+
+        <div id="listaFinal" class="lista-palpites">
+
+        </div>
+
+    </div>
+
+    <div class="card-palpites-lista">
+
+        <h2>🥉 Palpites 3º Lugar</h2>
+
+        <div id="listaTerceiro" class="lista-palpites">
+
+        </div>
+
+    </div>
 
 </div>
 
@@ -50,6 +74,8 @@ export async function iniciarPalpitesFinais() {
     document
         .getElementById("btnSalvarPalpite")
         .addEventListener("click", salvar);
+
+    carregarPalpites();
 
 }
 
