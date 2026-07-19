@@ -1245,9 +1245,11 @@ progress::-webkit-progress-value { background-color: #10b981; }
 }
 
 #palpites-finais{
-    max-width:900px;
+    width:100%;
+    max-width:1500px;
     margin:30px auto;
-    padding:0 15px;
+    padding:0 20px;
+    box-sizing:border-box;
 }
 
 .card-palpites-finais{
@@ -1389,6 +1391,7 @@ progress::-webkit-progress-value { background-color: #10b981; }
     border-radius:18px;
     padding:25px;
     box-shadow:0 8px 20px rgba(0,0,0,.08);
+    min-width:300px;
     min-height:520px;
 }
 
@@ -1658,11 +1661,11 @@ progress::-webkit-progress-value { background-color: #10b981; }
 }
 
 .topo-palpites{
-    max-width:1500px;
-    margin:30px auto;
+    width:100%;
     display:grid;
-    grid-template-columns:1.8fr 1fr 1fr;
-    gap:20px;
+    grid-template-columns:700px 320px 320px;
+    justify-content:center;
+    gap:25px;
     align-items:start;
 }
 
