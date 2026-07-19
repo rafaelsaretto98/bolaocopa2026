@@ -1,4 +1,7 @@
-import { salvarPalpiteFinal } from "./palpites-finais-firebase.js";
+import {
+    salvarPalpiteFinal,
+    carregarPalpitesFinais
+} from "./palpites-finais-firebase.js";
 
 export async function iniciarPalpitesFinais() {
 
@@ -75,7 +78,7 @@ export async function iniciarPalpitesFinais() {
         .getElementById("btnSalvarPalpite")
         .addEventListener("click", salvar);
 
-    carregarPalpites();
+    await carregarPalpites();
 
 }
 
@@ -161,6 +164,8 @@ async function salvar(){
         document.getElementById("finalA").value = "";
         document.getElementById("finalB").value = "";
 
+        await carregarPalpites();
+
     }
     catch(erro){
 
@@ -169,5 +174,39 @@ async function salvar(){
         alert("Erro ao enviar o palpite.");
 
     }
+
+}
+
+async function carregarPalpites(){
+
+    const listaFinal =
+        document.getElementById("listaFinal");
+
+    const listaTerceiro =
+        document.getElementById("listaTerceiro");
+
+    listaFinal.innerHTML = "";
+    listaTerceiro.innerHTML = "";
+
+    const palpites =
+        await carregarPalpitesFinais();
+
+    palpites.forEach(p => {
+
+        listaFinal.innerHTML += `
+            <div class="item-palpite">
+                <span>${p.nome}</span>
+                <strong>${p.final.golsA} x ${p.final.golsB}</strong>
+            </div>
+        `;
+
+        listaTerceiro.innerHTML += `
+            <div class="item-palpite">
+                <span>${p.nome}</span>
+                <strong>${p.terceiro.golsA} x ${p.terceiro.golsB}</strong>
+            </div>
+        `;
+
+    });
 
 }
