@@ -1391,8 +1391,8 @@ progress::-webkit-progress-value { background-color: #10b981; }
     border-radius:18px;
     padding:25px;
     box-shadow:0 8px 20px rgba(0,0,0,.08);
-    min-width:300px;
     min-height:520px;
+    box-sizing:border-box;
 }
 
 .lista-palpites{
@@ -1662,10 +1662,12 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 .topo-palpites{
     width:100%;
+    max-width:1450px;
+    margin:30px auto;
     display:grid;
-    grid-template-columns:700px 320px 320px;
+    grid-template-columns:680px 280px 280px;
     justify-content:center;
-    gap:25px;
+    column-gap:35px;
     align-items:start;
 }
 
