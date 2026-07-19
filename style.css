@@ -1384,6 +1384,28 @@ progress::-webkit-progress-value { background-color: #10b981; }
 
 }
 
+.card-palpites-lista{
+    background:#fff;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    height:100%;
+}
+
+.lista-palpites{
+    max-height:470px;
+    overflow-y:auto;
+}
+
+.item-palpite{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 0;
+    border-bottom:1px solid #ececec;
+    font-weight:600;
+}
+
 
 /* =========================================
    ANIMAÇÕES E EFEITOS VISUAIS
@@ -1636,6 +1658,14 @@ progress::-webkit-progress-value { background-color: #10b981; }
     border:2px solid #d1d5db;
     border-radius:10px;
 }
+
+.topo-palpites{
+    display:grid;
+    grid-template-columns:1.8fr 1fr 1fr;
+    gap:20px;
+    align-items:start;
+}
+
 
 /* ===========================================
       NOVO MATA-MATA FIFA
